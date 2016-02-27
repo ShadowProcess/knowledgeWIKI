@@ -14,6 +14,6 @@ def commit(msg):
     os.system('git commit -m %s' % (msg))
 
 if __name__ == '__main__':
-    set_sys_date(2016,2,25)   #设置那一天
+    set_sys_date(2016,2,27)   #设置那一天
     set_sys_time()
-    commit("跨函数使用内存")               #想要深色点，最低三个提交
+    commit("静态变量")               #想要深色点，最低三个提交
