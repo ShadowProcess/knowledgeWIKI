@@ -1,0 +1,39 @@
+// typedef举例.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
+//
+
+#include <iostream>
+
+typedef int ZHANG;  //重新再取一个名字
+
+typedef struct Student {
+
+	int age;
+}ST;
+
+typedef struct Teacher {
+	int age;
+
+}* PTeacher; //PTeacher是指针类型
+
+
+typedef struct Big {
+	
+	int age;
+
+}* PBig,Big; //Big等价于struct Big  ,, PBig等价于struct Big *
+
+int main(void)
+{
+	ST st;
+	ZHANG i = 20;
+
+	struct Teacher teacher;
+	PTeacher pt;
+	pt = &teacher;
+
+	printf("i = %d",i);
+	
+	return 0; 
+}
+
+
