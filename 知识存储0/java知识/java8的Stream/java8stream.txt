@@ -1,0 +1,51 @@
+===============================================================
+    @Test
+    public void contextLoads() {        
+
+    Stream.of("one", "two", "three", "four")
+              .filter(e -> e.length() > 3)
+              .peek(e -> System.out.println("Filtered value: " + e))
+              .map(String::toUpperCase)
+              .peek(e -> System.out.println("Mapped value: " + e))
+              .collect(Collectors.toList());
+
+//        Filtered value: three
+//        Mapped value: THREE
+//        Filtered value: four
+//        Mapped value: FOUR
+
+        //说明了流的元素，是一个一个经过该流的，而不是同时经过
+    }
+======peek[偷看，偷瞄]======================
+
+
+
+
+======Stream的map======【用于对所有元素的处理，无需返回值，对每一个元素都执行相应操作】==========================
+   @Test
+    public void test1() {
+        Stream.of("one", "two", "three", "four")
+              .map(String::toUpperCase)
+              .peek(it -> System.out.println(it))
+              .collect(Collectors.toList());
+
+//        ONE
+//        TWO
+//        THREE
+//        FOUR
+    }
+
+
+======Stream的filter====【用于对所有元素的过滤，需指定过滤条件，返回值必须为boolean】============================
+
+  @Test
+    public void test2() {
+        Stream.of("one", "two", "three", "four")
+              .filter(it -> it.equals("one"))
+              .peek(it -> System.out.println(it))
+              .collect(Collectors.toList());
+
+        //  one
+    }
+
+===============================================================================
