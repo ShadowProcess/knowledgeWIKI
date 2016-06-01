@@ -16,4 +16,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2016,6,1)         #设置那一天
     set_sys_time()
-    commit("intern方法")               #想要深色点，最低三个提交
+    commit("transient关键字")               #想要深色点，最低三个提交
