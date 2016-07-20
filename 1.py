@@ -14,6 +14,6 @@ def commit(msg):
     os.system('git commit -m %s' % (msg))
 
 if __name__ == '__main__':
-    set_sys_date(2016,7,12)         #设置那一天
+    set_sys_date(2016,7,20)         #设置那一天
     set_sys_time()
-    commit("动态代理")               #想要深色点，最低三个提交
+    commit("接口")               #想要深色点，最低三个提交
