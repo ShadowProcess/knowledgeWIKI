@@ -1,0 +1,1 @@
+concatenate(连接) files and print on the standard output
