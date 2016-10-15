@@ -16,4 +16,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2016,10,15)         #设置那一天
     set_sys_time()
-    commit("mac地址")               #想要深色点，最低三个提交
+    commit("nginx")               #想要深色点，最低三个提交
