@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+
+	<!--配置服务端的一些设置。一些设置如安全证书不应该和pom.xml一起分发。这种类型的信息应该存在于构建服务器上的settings.xml文件中。-->
+    <!-- 私服发布的用户名密码 -->
+	<servers>
+        <server> 
+            <id>nexus-liang</id> 
+            <username>jiahang</username> 
+            <password>Fie2eSh2Ietequ6I</password> 
+        </server> 
+		
+	
+	    <!--这是我自己使用docker配置的nexus私服，发行版-->
+		 <!-- <server>
+            <id>nexus-release</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server> -->
+		 <!--这是我自己使用docker配置的nexus私服，快照版-->
+		<!-- <server>
+            <id>nexus-snapshots</id>
+            <username>admin</username>
+            <password>admin123</password>
+        </server>  -->
+    </servers>
+	
+	
+
+
+	<!--配置仓库镜像,maven只能配置多个镜像，相同的mirrorof的镜像，只有第一个生效-->
+    <mirrors>
+	
+	
+	<mirror> 
+		<id>usa-maven</id> 
+		<name>Usa maven</name> 
+		<url>https://repo1.maven.org/maven2/</url> 
+		<mirrorOf>central</mirrorOf> 
+	</mirror> 
+	
+	<!-- 代表了一个镜像的替代位置，例如central就表示代替官方的中央库 -->
+	<!-- <mirror>
+		<id>alimaven</id>
+		<name>aliyun maven</name>
+		<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		<mirrorOf>central</mirrorOf>
+	</mirror> -->
+	
+	<!--我这台电脑不能使用阿里云的镜像，证书错误！-->
+	<mirror>
+        <id>nexus-aliyun</id>
+        <name>Nexus aliyun</name>
+		<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+		<!-- 代表了一个镜像的替代位置，例如central就表示代替官方的中央库 -->
+        <mirrorOf>central</mirrorOf>
+    </mirror>	
+	
+	
+	</mirrors>
+	
+
+ 
+	<!--profiles可以让我们定义一系列配置信息。 profiles配置在setings.xml中意味该配置是全局的，对所有项目都生效-->
+    <profiles>
+        <profile>
+            <id>nexus-liang</id>
+            <properties>
+                <maven.compiler.source>1.8</maven.compiler.source>
+                <maven.compiler.target>1.8</maven.compiler.target>
+                <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+                <altDeploymentRepository>nexus-liang::default::http://maven.liangteam.com/repository/devops/</altDeploymentRepository>
+            </properties>
+			
+			
+			<!--这个配置的仓库是项目发布的时候使用的，也就是项目上传的时候-->
+            <repositories>
+                <repository>
+                    <id>nexus-liang</id>
+                    <url>http://maven.liangteam.com/repository/devops/</url>
+					<!--true或者false表示该仓库是否为下载某种类型构件（发布版，快照版）开 -->
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                    <releases>
+                        <enabled>true</enabled>
+                    </releases>
+                </repository>
+            </repositories>
+        </profile>
+    </profiles>
+
+	<!--手动激活profiles的列表，按照profile被应用的顺序定义activeProfile。 该元素包含了一组activeProfile元素，每个activeProfile都含有一个profile id。-->  
+    <!--任何在activeProfile中定义的profile id，不论环境设置如何，其对应的 profile都会被激活。-->  
+	<!--如果没有匹配的profile，则什么都不会发生。例如，env-test是一个activeProfile，则在pom.xml（或者profile.xml）中对应id的profile会被激活。-->  
+	<!--如果运行过程中找不到这样一个profile，Maven则会像往常一样运行。  -->  
+    <activeProfiles>
+         <activeProfile>nexus-liang</activeProfile> 
+    </activeProfiles>
+	<!--用于激活指定的profile配置-->
+	
+</settings>
