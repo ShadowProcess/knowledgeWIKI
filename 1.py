@@ -14,6 +14,6 @@ def commit(msg):
     os.system('git commit -m %s' % (msg))
 
 if __name__ == '__main__':
-    set_sys_date(2017,2,28)         #设置那一天
+    set_sys_date(2017,3,5)         #设置那一天
     set_sys_time()
-    commit("路径匹配")               #想要深色点，最低三个提交
+    commit("面向切面与面向过程")               #想要深色点，最低三个提交
