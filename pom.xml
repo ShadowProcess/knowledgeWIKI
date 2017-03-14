@@ -21,6 +21,6 @@
     </properties>
 
     <modules>
-        <module></module>
+        <module>servlet3.0</module>
     </modules>
 </project>
