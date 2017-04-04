@@ -14,6 +14,6 @@ def commit(msg):
     os.system('git commit -m %s' % (msg))
 
 if __name__ == '__main__':
-    set_sys_date(2017,4,3)         #设置那一天
+    set_sys_date(2017,4,4)         #设置那一天
     set_sys_time()
-    commit("缓存问题")               #想要深色点，最低三个提交
+    commit("实现")               #想要深色点，最低三个提交
