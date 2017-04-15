@@ -14,6 +14,6 @@ def commit(msg):
     os.system('git commit -m %s' % (msg))
 
 if __name__ == '__main__':
-    set_sys_date(2017,4,12)         #设置那一天
+    set_sys_date(2017,4,15)         #设置那一天
     set_sys_time()
-    commit("异步代码--")               #想要深色点，最低三个提交
+    commit("学习asm框架")               #想要深色点，最低三个提交

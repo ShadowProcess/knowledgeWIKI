@@ -7,7 +7,7 @@
     <groupId>com.alex</groupId>
     <artifactId>knowledgeWIKI</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
     <description>探险家</description>
 
     <properties>
@@ -22,5 +22,6 @@
 
     <modules>
         <module>servlet3.0</module>
+        <module>asm</module>
     </modules>
 </project>
