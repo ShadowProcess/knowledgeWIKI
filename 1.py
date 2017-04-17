@@ -13,7 +13,21 @@ def commit(msg):
     os.system('git add .')
     os.system('git commit -m %s' % (msg))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
     set_sys_date(2017,4,17)         #设置那一天
     set_sys_time()
-    commit("学习asm框架-字节码手术")               #想要深色点，最低三个提交
+    commit("学习asm框架-字节码")               #想要深色点，最低三个提交

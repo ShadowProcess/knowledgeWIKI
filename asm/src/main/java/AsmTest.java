@@ -47,7 +47,7 @@ public class AsmTest {
 
         classWriter.visitEnd();
         byte[] code = classWriter.toByteArray();
-        File file = new File("D:\\DevelopmentSoftWare\\ideaWebWorkSpace\\knowledgeWIKI\\asm\\src\\main\\java\\com\\AsmTest.class");
+        File file = new File("D:\\DevelopmentSoftWare\\workstation\\knowledgeWIKI\\asm\\src\\main\\java\\com\\AsmTest.class");
         FileOutputStream output = new FileOutputStream(file);
         output.write(code);
         output.close();
