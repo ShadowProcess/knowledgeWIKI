@@ -23,5 +23,6 @@
     <modules>
         <module>servlet3.0</module>
         <module>asm</module>
+        <module>pkix-path-build-failed</module>
     </modules>
 </project>
