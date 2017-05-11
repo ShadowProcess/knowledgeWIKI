@@ -28,6 +28,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,5,10)         #设置那一天
+    set_sys_date(2017,5,11)         #设置那一天
     set_sys_time()
-    commit("证书错误")               #想要深色点，最低三个提交
+    commit("安装证书代码")               #想要深色点，最低三个提交
