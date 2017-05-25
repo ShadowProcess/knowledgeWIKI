@@ -17,7 +17,7 @@ import java.lang.reflect.Method;
 
 public class CreateClassTest {
 
-    private static final String classPath = "D:\\DevelopmentSoftWare\\ideaWebWorkSpace\\knowledgeWIKI\\javassist\\src\\main\\java";
+    private static final String classPath = "D:\\DevelopmentSoftWare\\workstation\\knowledgeWIKI\\javassist\\src\\main\\java";
 
     /**
      * 创建字节码文件
