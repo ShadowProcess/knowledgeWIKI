@@ -25,5 +25,6 @@
         <module>asm</module>
         <module>pkix-path-build-failed</module>
         <module>javassist</module>
+        <module>function-expression-college</module>
     </modules>
 </project>
