@@ -28,6 +28,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,5,28)         #设置那一天
+    set_sys_date(2017,5,30)         #设置那一天
     set_sys_time()
-    commit("函数表达式")               #想要深色点，最低三个提交
+    commit("二进制操作")               #想要深色点，最低三个提交
