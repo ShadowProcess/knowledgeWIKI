@@ -26,5 +26,6 @@
         <module>pkix-path-build-failed</module>
         <module>javassist</module>
         <module>function-expression-college</module>
+        <module>guava-college</module>
     </modules>
 </project>
