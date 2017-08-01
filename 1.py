@@ -26,6 +26,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,7,20)         #设置那一天
+    set_sys_date(2017,8,1)         #设置那一天
     set_sys_time()
-    commit("布隆过滤器")               #想要深色点，最低三个提交
+    commit("缓存")               #想要深色点，最低三个提交
