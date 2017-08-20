@@ -85,6 +85,4 @@ public class JoinerDemo {
         String s2 = CharMatcher.anyOf("ab").trimFrom("abacatba");
         System.out.println(s2);//cat
     }
-
-
 }
