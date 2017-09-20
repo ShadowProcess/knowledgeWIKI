@@ -26,6 +26,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,9,15)          #设置那一天
+    set_sys_date(2017,9,20)          #设置那一天
     set_sys_time()
-    commit("排序")                    #想要深色点，最低三个提交
+    commit("guava")                    #想要深色点，最低三个提交
