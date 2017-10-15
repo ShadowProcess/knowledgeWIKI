@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/' >
+
+    <appender name="myConsole" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern"
+                   value="[%d{dd HH:mm:ss,SSS\} %-5p] [%t] %c{2\} - %m%n" />
+        </layout>
+    </appender>
+
+    <appender name="myFile" class="org.apache.log4j.RollingFileAppender">
+        <param name="File" value="log/pregetmobile.log" />
+        <param name="Append" value="true" />
+        <param name="MaxBackupIndex" value="10" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%p (%c:%L)- %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="org.apache.http.impl">
+        <level value="info"></level>
+    </logger>
+    <logger name="org.apache.http.client">
+        <level value="info"></level>
+    </logger>
+
+    <!-- 根logger的设置-->
+    <root>
+        <priority value ="debug"/>
+        <appender-ref ref="myConsole"/>
+        <appender-ref ref="myFile" />
+    </root>
+</log4j:configuration>
