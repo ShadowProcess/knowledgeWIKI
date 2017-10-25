@@ -26,6 +26,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,10,15)          #设置那一天
+    set_sys_date(2017,10,25)          #设置那一天
     set_sys_time()
-    commit("加密工具1")                    #想要深色点，最低三个提交
+    commit("加密")                    #想要深色点，最低三个提交

@@ -1,9 +1,6 @@
 package com.example.demo.utils;
 
-import com.example.demo.src.utils.Constants;
-import com.example.demo.src.utils.cipher.RequestUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.example.demo.utils.cipher.RequestUtil;
 
 import java.util.HashMap;
 import java.util.Map;
