@@ -28,5 +28,6 @@
         <module>function-expression-college</module>
         <module>guava-college</module>
         <module>secret-util</module>
+        <module>nginx-college</module>
     </modules>
 </project>
