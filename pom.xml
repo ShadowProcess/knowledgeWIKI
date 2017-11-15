@@ -29,5 +29,6 @@
         <module>guava-college</module>
         <module>secret-util</module>
         <module>nginx-college</module>
+        <module>stream-college</module>
     </modules>
 </project>

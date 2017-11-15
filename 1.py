@@ -26,6 +26,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,11,1)          #设置那一天
+    set_sys_date(2017,11,15)          #设置那一天
     set_sys_time()
-    commit("nginx")                    #想要深色点，最低三个提交
+    commit("stream")                    #想要深色点，最低三个提交
