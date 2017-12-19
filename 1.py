@@ -24,6 +24,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2017,12,4)          #设置那一天
+    set_sys_date(2017,12,19)          #设置那一天
     set_sys_time()
-    commit("fork")                    #想要深色点，最低三个提交
+    commit("dir")                    #想要深色点，最低三个提交
