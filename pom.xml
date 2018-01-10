@@ -30,5 +30,6 @@
         <module>secret-util</module>
         <module>nginx-college</module>
         <module>stream-college</module>
+        <module>httpclient-college</module>
     </modules>
 </project>
