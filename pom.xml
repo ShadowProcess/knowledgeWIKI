@@ -31,5 +31,6 @@
         <module>nginx-college</module>
         <module>stream-college</module>
         <module>httpclient-college</module>
+        <module>docker-college</module>
     </modules>
 </project>
