@@ -1,0 +1,21 @@
+version: '3'
+services:
+  nexus:
+    restart: always
+    image: sonatype/nexus3
+    container_name: nexus
+    privileged: true
+    ports:
+     - 8081:8081
+    volumes:
+     - /usr/local/docker/nexus/data:/nexus/data
+
+
+☆然后以进入容器方式启动，
+  切换到/nexus-data目录， 
+  打开admin.password
+  复制密码
+  登录
+ 
+  之后可以修改密码
+                                                       

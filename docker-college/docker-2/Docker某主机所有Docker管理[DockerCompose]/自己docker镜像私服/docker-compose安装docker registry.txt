@@ -1,0 +1,36 @@
+#docker服务端配置：
+version: '3.1'
+services:
+ registry:
+  image: registry
+  restart: always
+  container_name: registry
+  ports:
+    - 5000:5000
+  volumes:
+    - /usr/local/docker/registry/data:/var/lib/registry
+ frontend:
+   image: konradkleine/docker-registry-frontend:v2
+   ports:
+     - 8080:80
+   volumes:
+     - ./certs/frontend.crt:/etc/apache2/server.crt:ro 
+     - ./certs/frontend.key:/etc/apache2/server.key:ro 
+   enviroment:
+     - ENV_DOCKER_REGISTRY_HOST=192.168.75.133
+     - ENV_DOCKER_REGISTRY_PORT=5000
+
+
+
+
+docker客户端配置：
+[root@centos7 docker]# cat daemon.json 
+{
+   "registry-mirrors": [
+        "https://registry.docker.cn.com"
+   ],
+   "insecure-registries":[
+        "ip:192.168.236.131:5000"
+   ]
+}
+
