@@ -25,4 +25,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2018,3,10)                 #设置那一天
     set_sys_time()
-    commit("docker-redis")                    #想要深色点，最低三个提交
+    commit("docker编码entity")                    #想要深色点，最低三个提交
