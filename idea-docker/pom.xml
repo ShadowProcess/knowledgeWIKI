@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.1.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+    <groupId>com.example</groupId>
+    <artifactId>idea-docker</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>idea-docker</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <!--这就是dockerHub的用户名-->
+        <docker.image.prefix>306881085</docker.image.prefix>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <!--|||||||||||||||||||||||||用来做maven和docker一键部署功能|||||||||||||||||||||||||||-->
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>1.0.0</version>
+
+                <configuration>
+                    <!--镜像名称  306881085/docker-demo-->
+                    <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                    <!--指定标签-->
+                    <imageTags>
+                        <imageTag>latest</imageTag>
+                    </imageTags>
+                    <!--基础镜像 jdk1.8-->
+                    <baseImage>java</baseImage>
+                    <!--制作者提供本人信息-->
+                    <maintainer>alex-jiaHangSocket@163.com</maintainer>
+                    <!--切换到/ROOT目录 [docker根目录中的ROOT文件夹]-->
+                    <workdir>/ROOT</workdir>
+                    <cmd>["java", "-version"]</cmd>
+
+                    <entryPoint>["java", "-jar", "${project.build.finalName}.jar"]</entryPoint>
+
+                    <!--指定Dockerfile路径-->
+                    <!--<dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>-->
+
+                    <!--指定远程docker api地址  [注意只有配置了CA才能使用https]-->
+                    <dockerHost>https://106.14.8.234:2375</dockerHost>
+                    <!--这里是复制jar包到docker容器指定目录配置-->
+                    <resources>
+                        <resource>
+                            <targetPath>/ROOT</targetPath>
+                            <!--用于指定需要复制的根目录，${project.build.directory} 表示target目录-->
+                            <directory>${project.build.directory}</directory>
+                            <!--用于指定需要复制的文件。${project.build.finalName}.jar指定的是打包后的jar文件-->
+                            <include>${project.build.finalName}.jar</include>
+                        </resource>
+                    </resources>
+                </configuration>
+
+                <!--绑定Docker命令到Maven的各个阶段 [可以不使用]-->
+                <executions>
+                    <!--当执行mvn package时，执行mvn package docker:build-->
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+        </plugins>
+
+    </build>
+
+
+</project>

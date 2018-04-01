@@ -32,5 +32,6 @@
         <module>stream-college</module>
         <module>httpclient-college</module>
         <module>docker-college</module>
+        <module>idea-docker</module>
     </modules>
 </project>
