@@ -33,5 +33,6 @@
         <module>httpclient-college</module>
         <module>docker-college</module>
         <module>idea-docker</module>
+        <module>webflux-college</module>
     </modules>
 </project>
