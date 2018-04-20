@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2018,4,16)                 #设置那一天
+    set_sys_date(2018,4,20)                 #设置那一天
     set_sys_time()
-    commit("redis")                         #想要深色点，最低三个提交
+    commit("redis数据")                         #想要深色点，最低三个提交
