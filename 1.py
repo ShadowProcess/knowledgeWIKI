@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2018,6,4)                 #设置那一天
+    set_sys_date(2018,6,10)                 #设置那一天
     set_sys_time()
-    commit("事务")                         #想要深色点，最低三个提交
+    commit("zset")                         #想要深色点，最低三个提交
