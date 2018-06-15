@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="person" 
+		class="com.atguigu.spring.struts2.beans.Person">
+		<property name="username" value="spring"></property>	
+	</bean>
+	
+	<bean id="personService"
+		class="com.atguigu.spring.struts2.services.PersonService"></bean>
+	
+	<!-- 注意: 在 IOC 容器中配置 Struts2 的 Action 时, 需要配置 scope 属性, 其值必须为 prototype -->
+	<bean id="personAction" 
+		class="com.atguigu.spring.struts2.actions.PersonAction"
+		scope="prototype">
+		<property name="personService" ref="personService"></property>	
+	</bean>
+	
+</beans>

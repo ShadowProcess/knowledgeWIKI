@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<!-- 自动装配: 只声明 bean, 而把 bean 之间的关系交给 IOC 容器来完成 -->
+	<!--  
+		byType: 根据类型进行自动装配. 但要求 IOC 容器中只有一个类型对应的 bean, 若有多个则无法完成自动装配.
+		byName: 若属性名和某一个 bean 的 id 名一致, 即可完成自动装配. 若没有 id 一致的, 则无法完成自动装配
+	-->
+	<!-- 在使用 XML 配置时, 自动转配用的不多. 但在基于 注解 的配置时, 自动装配使用的较多.  -->
+	<bean id="dao" class="com.atguigu.spring.ref.Dao">
+		<property name="dataSource" value="C3P0"></property>				
+	</bean>
+	
+	<!-- 默认情况下 bean 是单例的! -->
+	<!-- 但有的时候, bean 就不能使单例的. 例如: Struts2 的 Action 就不是单例的! 可以通过 scope 属性来指定 bean 的作用域 -->
+	<!--  
+		prototype: 原型的. 每次调用 getBean 方法都会返回一个新的 bean. 且在第一次调用 getBean 方法时才创建实例
+		singleton: 单例的. 每次调用 getBean 方法都会返回同一个 bean. 且在 IOC 容器初始化时即创建 bean 的实例. 默认值 
+	-->
+	<bean id="dao2" class="com.atguigu.spring.ref.Dao" scope="prototype"></bean>
+	
+	<bean id="service" class="com.atguigu.spring.ref.Service" autowire="byName"></bean>
+	
+	<bean id="action" class="com.atguigu.spring.ref.Action" autowire="byType"></bean>
+	
+	<!-- 导入外部的资源文件 -->
+	<context:property-placeholder location="classpath:db.properties"/>
+	
+	<!-- 配置数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		
+		<property name="initialPoolSize" value="${jdbc.initPoolSize}"></property>
+		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
+	</bean>
+	
+	<!-- 测试 SpEL: 可以为属性进行动态的赋值(了解) -->
+	<bean id="girl" class="com.atguigu.spring.helloworld.User">
+		<property name="userName" value="周迅"></property>
+	</bean>
+	
+	<bean id="boy" class="com.atguigu.spring.helloworld.User" init-method="init" destroy-method="destroy">
+		<property name="userName" value="高胜远"></property>
+		<property name="wifeName" value="#{girl.userName}"></property>
+	</bean>
+	
+	<!-- 配置 bean 后置处理器: 不需要配置 id 属性, IOC 容器会识别到他是一个 bean 后置处理器, 并调用其方法 -->
+	<bean class="com.atguigu.spring.ref.MyBeanPostProcessor"></bean>
+	
+	<!-- 通过工厂方法的方式来配置 bean -->
+	<!-- 1. 通过静态工厂方法: 一个类中有一个静态方法, 可以返回一个类的实例(了解) -->
+	<!-- 在 class 中指定静态工厂方法的全类名, 在 factory-method 中指定静态工厂方法的方法名 -->
+	<bean id="dateFormat" class="java.text.DateFormat" factory-method="getDateInstance">
+		<!-- 可以通过 constructor-arg 子节点为静态工厂方法指定参数 -->
+		<constructor-arg value="2"></constructor-arg>
+	</bean>
+	
+	<!-- 2. 实例工厂方法: 先需要创建工厂对象, 再调用工厂的非静态方法返回实例(了解) -->
+	<!-- ①. 创建工厂对应的 bean -->
+	<bean id="simpleDateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyyy-MM-dd hh:mm:ss"></constructor-arg>
+	</bean>
+	
+	<!-- ②. 有实例工厂方法来创建 bean 实例 -->
+	<!-- factory-bean 指向工厂 bean, factory-method 指定工厂方法(了解) -->
+	<bean id="datetime" factory-bean="simpleDateFormat" factory-method="parse">
+		<!-- 通过 constructor-arg 执行调用工厂方法需要传入的参数 -->
+		<constructor-arg value="1990-12-12 12:12:12"></constructor-arg>
+	</bean>
+	
+	<!-- 配置通过 FactroyBean 的方式来创建 bean 的实例(了解) -->
+	<bean id="user" class="com.atguigu.spring.ref.UserBean"></bean>
+	
+</beans>

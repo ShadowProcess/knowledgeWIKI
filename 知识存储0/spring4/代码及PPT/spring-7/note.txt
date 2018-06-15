@@ -1,0 +1,79 @@
+1. Spring 如何在 WEB 应用中使用 ?
+
+1). 需要额外加入的 jar 包:
+
+spring-web-4.0.0.RELEASE.jar
+spring-webmvc-4.0.0.RELEASE.jar
+
+2). Spring 的配置文件, 没有什么不同
+
+3). 如何创建 IOC 容器 ? 
+
+①. 非 WEB 应用在 main 方法中直接创建
+②. 应该在 WEB 应用被服务器加载时就创建 IOC 容器: 
+
+在 ServletContextListener#contextInitialized(ServletContextEvent sce) 方法中创建 IOC 容器.
+
+③. 在 WEB 应用的其他组件中如何来访问 IOC 容器呢 ?
+
+在 ServletContextListener#contextInitialized(ServletContextEvent sce) 方法中创建 IOC 容器后, 可以把其放在
+ServletContext(即 application 域)的一个属性中. 
+
+④. 实际上, Spring 配置文件的名字和位置应该也是可配置的! 将其配置到当前 WEB 应用的初始化参数中较为合适. 
+
+4). 在 WEB 环境下使用 Spring
+
+①. 需要额外加入的 jar 包:
+
+spring-web-4.0.0.RELEASE.jar
+spring-webmvc-4.0.0.RELEASE.jar
+
+②. Spring 的配置文件, 和非 WEB 环境没有什么不同
+
+③. 需要在 web.xml 文件中加入如下配置:
+
+<!-- 配置 Spring 配置文件的名称和位置 -->
+<context-param>
+	<param-name>contextConfigLocation</param-name>
+	<param-value>classpath:applicationContext.xml</param-value>
+</context-param>
+
+<!-- 启动 IOC 容器的 ServletContextListener -->
+<listener>
+	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+</listener>
+
+2. Spring 如何整合 Struts2 ?
+
+1). 整合目标 ? 使 IOC 容器来管理 Struts2 的 Action!
+
+2). 如何进行整合 ? 
+
+①. 正常加入 Struts2
+
+②. 在 Spring 的 IOC 容器中配置 Struts2 的 Action
+注意: 在 IOC 容器中配置 Struts2 的 Action 时, 需要配置 scope 属性, 其值必须为 prototype
+
+<bean id="personAction" 
+	class="com.atguigu.spring.struts2.actions.PersonAction"
+	scope="prototype">
+	<property name="personService" ref="personService"></property>	
+</bean>
+
+③. 配置 Struts2 的配置文件: action 节点的 class 属性需要指向 IOC 容器中该 bean 的 id
+
+<action name="person-save" class="personAction">
+	<result>/success.jsp</result>
+</action> 
+
+④. 加入 struts2-spring-plugin-2.3.15.3.jar
+
+3). 整合原理: 通过添加 struts2-spring-plugin-2.3.15.3.jar 以后, Struts2 会先从 IOC 容器中
+获取 Action 的实例.
+
+if (appContext.containsBean(beanName)) {
+    o = appContext.getBean(beanName);
+} else {
+    Class beanClazz = getClassInstance(beanName);
+    o = buildBean(beanClazz, extraContext);
+}

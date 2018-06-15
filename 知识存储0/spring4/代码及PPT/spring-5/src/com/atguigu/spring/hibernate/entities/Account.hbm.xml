@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.atguigu.spring.hibernate.entities.Account" table="SH_ACCOUNT">
+        
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="username" type="java.lang.String">
+            <column name="USERNAME" />
+        </property>
+        
+        <property name="balance" type="int">
+            <column name="BALANCE" />
+        </property>
+        
+    </class>
+</hibernate-mapping>

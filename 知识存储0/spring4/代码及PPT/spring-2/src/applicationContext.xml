@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!--  
+		1. 默认情况下, IOC 容器中的 bean 是单例的! 若对象是单例的, 则在创建 IOC 容器时即创建 bean 的实例, 并对 bean 的属性进行初始化. 
+		2. 可以通过 bean 的 scope 属性来修改 bean 的作用域. 若取值为 prototype, 则 bean 为原型的: 每次向容器获取实例, 得到的都是一个新的对象.
+		而且, 不在创建 IOC 容器时创建 bean 的实例了. 
+		3. IOC 容器中 bean 的生命周期: 
+		3.1 一般地, 讨论 bean 的生命周期, 是建立在 bean 是单例的基础上的. 
+		3.2 可以为 bean 指定 init 和 destroy 方法
+		3.3 还可以通过 bean 的后置处理器来更加丰富 bean 的生命周期方法(面试时.).
+	-->
+	<bean id="helloWorld" 
+		class="com.atguigu.spring.helloworld.HelloWorld" 
+		scope="singleton"
+		init-method="init"
+		destroy-method="destroy">
+		<property name="userName" value="atguigu"></property>
+	</bean>
+	
+	<!--  
+		1. 在 IOC 容器中配置 bean 之间的关联关系
+	-->
+	<bean id="userDao"
+		class="com.atguigu.spring.ref.UserDao"></bean>
+
+	<bean id="userService"
+		class="com.atguigu.spring.ref.UserService">
+		<property name="userDao" ref="userDao"></property>	
+	</bean>
+	
+	<bean id="userAction" 
+		class="com.atguigu.spring.ref.UserAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+</beans>
