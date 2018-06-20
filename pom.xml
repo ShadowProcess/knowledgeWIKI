@@ -35,5 +35,6 @@
         <module>idea-docker</module>
         <module>webflux-college</module>
         <module>redis-college</module>
+        <module>spring4</module>
     </modules>
 </project>
