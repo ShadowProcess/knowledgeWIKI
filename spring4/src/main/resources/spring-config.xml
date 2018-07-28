@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="car" class="com.hello.ioc.yuan.Car">
+        <constructor-arg value="Audi" index="0"></constructor-arg>
+        <constructor-arg value="Shanghai" index="1"></constructor-arg>
+        <constructor-arg value="300000" type="double"></constructor-arg>
+    </bean>
+    <bean id="car2" class="com.hello.ioc.yuan.Car">
+        <constructor-arg value="Baoma" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="Shanghai" type="java.lang.String"></constructor-arg>
+        <constructor-arg value="240" type="int"></constructor-arg>
+    </bean>
+    <bean id="car3" class="com.hello.ioc.yuan.Car">
+        <constructor-arg value="Baoma" type="java.lang.String"></constructor-arg>
+        <!--如果字面值包含特殊字符，可以使用 <![CDATA[]]> 包裹起来 -->
+        <!--属性值还可以使用value属性配置-->
+        <constructor-arg type="java.lang.String">
+            <value><![CDATA[<shanghai^>]]></value>
+        </constructor-arg>
+        <constructor-arg type="int">
+            <value>250</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="person" class="com.hello.ioc.yuan.Person">
+        <constructor-arg index="0" value="Tom"/>
+        <constructor-arg index="1" value="20"/>
+        <constructor-arg index="2" ref="car"/>
+   <!-- <property name="name" value="Tom" ></property>
+        <property name="age" value="20"></property>
+        &lt;!&ndash;可以使用property的ref属性建立 bean关系&ndash;&gt;
+        <property name="car" ref="car"></property>-->
+
+        <!--另外一种方式-->
+        <!--<property name="car">
+            <ref bean="car2"></ref>
+        </property>-->
+
+        <!--内部bean-->
+       <!-- <property name="car">
+            内部bean不需要写id，写了也没用，因为内部bean不能被外部引用，只能在内部使用
+            <bean class="com.hello.ioc.yuan.Car">
+                <constructor-arg value="ford"></constructor-arg>
+                <constructor-arg value="ChangAn"></constructor-arg>
+                <constructor-arg value="2000" type="double"></constructor-arg>
+            </bean>
+        </property>-->
+    </bean>
+
+    <bean id="person2" class="com.hello.ioc.yuan.Person">
+        <constructor-arg value="jerry"></constructor-arg>
+        <constructor-arg value="25"></constructor-arg>
+        <!--<constructor-arg ref="car"></constructor-arg>-->
+
+        <!--测试赋值null-->
+        <!--<constructor-arg><null/></constructor-arg>-->
+        <constructor-arg ref="car"></constructor-arg>
+        <!--级联属性复制 要有对应的set方法-->
+        <property name="car.maxSpeed" value="200"></property>
+    </bean>
+
+
+    <!--集合-->
+    <!--<bean id="person3" class="com.hello.ioc.yuan.Person">
+        <property name="name" value="mike"></property>
+        <property name="age" value="27"></property>
+        <property name="cars">
+            使用list节点为list类型的属性赋值
+            <list>
+                <ref bean="car"></ref>
+                <ref bean="car2"></ref>
+            </list>
+        </property>
+    </bean>-->
+
+
+    <!--map属性配置-->
+    <bean id="newPerson" class="com.hello.ioc.yuan.NewPerson">
+        <property name="name" value="rose"></property>
+        <property name="age"  value="28"/>
+        <property name="cars">
+            <map>
+                <entry key="aa" value-ref="car"></entry>
+                <entry key="bb" value-ref="car2"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--配置properties-->
+    <bean id="datasource" class="com.hello.ioc.yuan.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">123456</prop>
+                <prop key="user">jdbc:mysql:///test</prop>
+                <prop key="driverClass">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!--配置独立的集合bean,以供用多个bean用-->
+    <util:list id="cars">
+        <ref bean="car"></ref>
+        <ref bean="car2"></ref>
+    </util:list>
+
+
+    <!--使用p命名空间-->
+   <!-- <bean id="user" class="com.hello.ioc.yuan.User" p:name="alex" p:age="20" />-->
+
+
+    <!--我们可以将这个bean理解为我们的javaBean，其中两个property标签即表示给User类中的name和age属性赋值！-->
+    <bean id="user" class="com.hello.ioc.yuan.User">
+        <property name="name" value="张三"/>
+        <property name="age" value="18"/>
+    </bean>
+</beans>

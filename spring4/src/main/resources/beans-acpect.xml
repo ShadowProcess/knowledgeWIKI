@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="arithmeticCalculator" class="com.hello.aop.ArithmeticCalculatorImpl"></bean>
+
+    <!--配置切面的bean-->
+    <bean id="loggingAspect" class="com.hello.aop.impl.LoggingAspectXml"></bean>
+
+    <!--配置aop-->
+    <aop:config>
+        <!--配置切点表达式-->
+        <aop:pointcut id="pointcut" expression="execution(public int com.hello.aop.ArithmeticCalculator.*(..))"/>
+        <!--配置切面及通知-->
+        <aop:aspect ref="loggingAspect" order="1">
+            <aop:before method="beforeMethod" pointcut-ref="pointcut"></aop:before>
+            <aop:after-returning method="afterReturn" pointcut-ref="pointcut" returning="result"></aop:after-returning>
+            <aop:around method="aroundMethod" pointcut-ref="pointcut"></aop:around>
+        </aop:aspect>
+    </aop:config>
+</beans>

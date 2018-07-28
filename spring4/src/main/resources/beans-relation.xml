@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+    <!-- 抽象bean： bean的abstract属性为true的bean，这样的bean，不能被IOC容器实例化，只用来被继承配置
+    若一个bean的class属性没有指定，则bean必须是一个抽象bean
+    -->
+    <bean id="address" class="com.hello.ioc.autowire.Address"
+    p:city="beijing" p:street="huilonguan" abstract="true"></bean>
+
+    <!--bean配置的继承，使用parent指定-->
+    <bean id="address2" class="com.hello.ioc.autowire.Address"
+          p:street="huilonguan2"
+          parent="address"></bean>
+
+</beans>

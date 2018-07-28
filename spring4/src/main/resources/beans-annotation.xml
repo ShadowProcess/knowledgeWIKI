@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--指定spring IOC容器扫描的包-->
+
+    <!--
+    base-package: 指定扫描返回，包含所有子包
+    resource-pattern：也可以通过这个指定扫描的资源
+    <context:component-scan
+            base-package="com.hello.ioc.annotation"
+            resource-pattern="repository/*.class"></context:component-scan>
+    -->
+
+    <!--指定排除哪些指定表达式的组件
+    <context:exclude-filter type="annotation"
+                            expression="org.springframework.stereotype.Repository"/>-->
+
+
+    <!--
+    1.先指定spring不使用默认filter；
+    use-default-filters = "false"
+    2.再指定包含哪些表达式的组件
+    <context:include-filter type="annotation" expression="org.springframework.stereotype.Repository"/>-->
+
+    <!--指定不包含那个实现类
+    <context:exclude-filter type="assignable" expression="com.hello.ioc.annotation.repository.UserRepository"/>-->
+
+
+    <context:component-scan
+            base-package="com.hello.ioc.annotation">
+
+    </context:component-scan>
+</beans>
