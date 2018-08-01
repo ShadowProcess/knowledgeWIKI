@@ -36,5 +36,6 @@
         <module>webflux-college</module>
         <module>redis-college</module>
         <module>spring4</module>
+        <module>spring5</module>
     </modules>
 </project>
