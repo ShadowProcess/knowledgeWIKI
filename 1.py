@@ -25,4 +25,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2018,8,15)                 #设置那一天
     set_sys_time()
-    commit("spring5")                         #想要深色点，最低三个提交
+    commit("spring4注解-1")                         #想要深色点，最低三个提交

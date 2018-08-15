@@ -37,5 +37,6 @@
         <module>redis-college</module>
         <module>spring4</module>
         <module>spring5</module>
+        <module>spring4-annotation</module>
     </modules>
 </project>
