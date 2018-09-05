@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <!--包扫描,扫描注解 只要标注了@Controller @Service @Repository @Component-->
+    <!--use-default-filters="false" 禁用默认注解,默认是true-->
+    <context:component-scan base-package="com.annotation" use-default-filters="false"></context:component-scan>
+
+    <!--以前使用xml-->
+    <!--depends-on="book,user"表示创建person之前，需要先把book和user创建出来-->
+    <bean id="person" class="com.annotation.bean.Person" scope="prototype" depends-on="book,user"
+          init-method="" destroy-method="">
+        <constructor-arg index="0" value=""/>
+        <constructor-arg index="1" value=""/>
+        <property name="name" value="lisi"></property>
+        <property name="age" value="18"></property>
+    </bean>
+
+
+    <!--开启基于注解版的切面功能-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <!--开启基于注解的事务-->
+    <tx:annotation-driven/>
+
+</beans>
