@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+ <!--   <context:component-scan base-package="com.example">-->
+        <!--指定类-->
+        <!--<context:exclude-filter type="assignable" expression="com.example.bean.User"/>-->
+        <!--指定注解-->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+        <!--指定匹配-->
+        <!-- <context:exclude-filter type="aspectj" expression="com.example.injection..*"/>-->
+        <!--<context:exclude-filter type="regex" expression="..*"/>-->
+
+        <!-- <context:include-filter type="assignable" expression="com.example.injection.Category"/>-->
+   <!-- </context:component-scan>-->
+
+    <!--spring配置文件是可以覆盖注解的,注意id要和注解中一样-->
+    <!--id值 class值 要和注解中的配置保持一致-->
+    <!--如果不一致，spring就会把它当做新对象，就不会覆盖原有对象-->
+    <bean id="user" class="com.example.bean.User">
+        <property name="id" value="200"/>
+    </bean>
+
+    <!--引入配置文件-->
+    <context:property-placeholder location="classpath:init.properties"></context:property-placeholder>
+
+   <!-- <bean id="userService" class="com.example.injection.UserServiceImpl">
+        <property name="userDao" ref="userDaoImpl"></property>
+    </bean>-->
+
+</beans>
