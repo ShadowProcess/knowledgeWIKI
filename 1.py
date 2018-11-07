@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2018,11,1)
+    set_sys_date(2018,11,7)
     set_sys_time()
-    commit("spring5-注解-config")                         #想要深色点，最低三个提交
+    commit("spring5-注解-injection")                         #想要深色点，最低三个提交
