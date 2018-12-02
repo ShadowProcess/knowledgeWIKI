@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2018,11,27)
+    set_sys_date(2018,12,2)
     set_sys_time()
-    commit("websocket")                         #想要深色点，最低三个提交
+    commit("依赖")                         #想要深色点，最低三个提交
