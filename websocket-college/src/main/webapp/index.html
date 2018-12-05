@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var websocket = null;
+
+        function connection() {
+            var username = document.getElementById("name").value;
+            if ('WebSocket' in window) {
+                websocket = new WebSocket("ws://" + document.location.host + "websocket/" + username);
+            } else {
+                alert("什么破电脑，都不支持webSocket，砸了吧！！！");
+            }
+
+            websocket.onOpen = function () {
+                document.getElementById("message").innerHTML = "建立连接了"
+            };
+
+            websocket.onmessage = function (evt) {
+                var received_msg = evt.data;
+                alert("数据已接收...");
+            };
+
+            websocket.onclose = function()
+            {
+                // 关闭 websocket
+                alert("连接已关闭...");
+            };
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
