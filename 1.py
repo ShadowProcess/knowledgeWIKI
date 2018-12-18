@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2018,12,15)
+    set_sys_date(2018,12,18)
     set_sys_time()
-    commit("聊天")                         #想要深色点，最低三个提交
+    commit("发送信息")                         #想要深色点，最低三个提交
