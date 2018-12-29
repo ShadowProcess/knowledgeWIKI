@@ -23,7 +23,7 @@ public class TextMessageHandler extends TextWebSocketHandler {
         if (name!=null) {
             allClients.put(name,session);
         }
-        //super.afterConnectionEstablished(session);
+        ////super.afterConnectionEstablished(session);
     }
 
     /**
