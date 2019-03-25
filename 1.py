@@ -23,6 +23,12 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,12,30)
+    set_sys_date(2019,3,25)
+    #set_sys_date(2019,3,29)
+    #set_sys_date(2019,4,10)
+    #set_sys_date(2019,4,15)
+    #set_sys_date(2019,4,20)
+    #set_sys_date(2019,5,14)
+    #set_sys_date(2019,5,20)
     set_sys_time()
-    commit("拦截器")                         #想要深色点，最低三个提交
+    commit("配置项目路径")                         #想要深色点，最低三个提交
