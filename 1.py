@@ -23,8 +23,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,3,25)
-    #set_sys_date(2019,3,29)
+    set_sys_date(2019,3,29)
     #set_sys_date(2019,4,10)
     #set_sys_date(2019,4,15)
     #set_sys_date(2019,4,20)
