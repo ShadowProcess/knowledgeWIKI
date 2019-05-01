@@ -45,5 +45,6 @@
         <module>javafx-college</module>
         <module>jwt-college</module>
         <module>jpa-college</module>
+        <module>txmybatis-college</module>
     </modules>
 </project>
