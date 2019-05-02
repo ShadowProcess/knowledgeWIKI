@@ -1,0 +1,106 @@
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--代码生成器配置-->
+<generatorConfiguration>
+
+    <!-- 引用资源配置文件 -->
+    <properties resource="application.properties"/>
+
+    <!--
+    context: 生成一组对象的环境
+    id: 必选,上下文id,用于在生成错误时提示
+    defaultModelType: 指定生成对象的样式
+        1，conditional：类似hierarchical；
+        2，flat：所有内容（主键，blob）等全部生成在一个对象中；
+        3，hierarchical：主键生成一个XXKey对象(key class)，Blob等单独生成一个对象，其他简单属性在一个对象中(record class)
+    targetRuntime:
+        1，MyBatis3：默认的值，生成基于MyBatis3.x以上版本的内容，包括XXXBySample；
+        2，MyBatis3Simple：类似MyBatis3，只是不生成XXXBySample；
+    introspectedColumnImpl：类全限定名，用于扩展MBG
+    -->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--生成的java文件编码-->
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <!--是否使用通用Mapper提供的注释工具，默认true使用，这样在生成代码时会包含字段的注释（目前只有mysql和oracle支持），设置false后会用默认的，或者你可以配置自己的注释插件。-->
+        <property name="useMapperCommentGenerator" value="false"/>
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <!-- 配置后生成的 Mapper 接口都会自动继承接口 value: 需要继承的接口, 该接口不可以在 MapperScan 扫描范围中-->
+            <property name="mappers" value="com.example.demo.basecommonmapper.BaseCommonMapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="true"/>
+            <!--是否强制生成注解，默认false，如果设置为 true，不管数据库名和字段名是否一致，都会生成注解（包含 @Table 和 @Column)-->
+            <property name="forceAnnotation" value="true"/>
+        </plugin>
+
+        <!--数据库连接属性配置-->
+        <jdbcConnection
+                driverClass="${spring.datasource.driver-class-name}"
+                connectionURL="${spring.datasource.url}"
+                userId="${spring.datasource.username}"
+                password="${spring.datasource.password}">
+            <!-- mysql8要配置这个参数：否则会生成很多不在自己数据库中的数据表,应该是把所有表都生成了,nullCatalogMeansCurrent=true-->
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <!-- MyBatis 生成器生成 Model -->
+        <javaModelGenerator targetPackage="com.example.demo.model" targetProject="src/main/java">
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->
+            <property name="enableSubPackages" value="false" />
+            <!-- 从数据库返回的值被清理前后的空格 -->
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- MyBatis 生成器生成 Mapper XML -->
+        <sqlMapGenerator targetPackage="mapping" targetProject="src/main/resources"/>
+
+        <!-- MyBatis 生成器生成 Mapper Class -->
+        <javaClientGenerator targetPackage="com.example.demo.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <!--
+        生成全部的表,需要生成的表名,%为通配符
+        column: 主键列名
+
+        identity:如果为 true,则该列将标记为标识列,生成的<selectKey>元素将在插入后放置(对于标识列)。
+        如果为 false,则生成的<selectKey>将放置在插入之前(通常用于序列)。重要提示:即使您将类型属性指定为"post",
+        仍应将此值指定为标识列的"true"。这将标记 MBG 以从插入列表中删除列。默认值为 false。
+
+        type:type=post和identity=true的时候生成的<selectKey>中的order=AFTER,
+        当type=pre的时候，identity只能为false，生成的<selectKey>中的order=BEFORE。可以这么理解，
+        自动增长的列只有插入到数据库后才能得到ID，所以是AFTER,使用序列时，只有先获取序列之后，
+        才能插入数据库，所以是BEFORE。
+         -->
+        <table tableName="%">
+            <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from %" identity="false" type="pre"/>
+        </table>
+
+
+        <!--
+        1，schema：数据库的schema；
+        2，catalog：数据库的catalog；
+        3，alias：为数据表设置的别名，如果设置了alias，那么生成的所有的SELECT SQL语句中，列名会变成：alias_actualColumnName
+        4，domainObjectName：生成的domain类的名字，如果不设置，直接使用表名作为domain类的名字；可以设置为somepck.domainName，那么会自动把domainName类再放到somepck包里面；
+        5，enableInsert（默认true）：指定是否生成insert语句；
+        6，enableSelectByPrimaryKey（默认true）：指定是否生成按照主键查询对象的语句（就是getById或get）；
+        7，enableSelectByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询语句；
+        8，enableUpdateByPrimaryKey（默认true）：指定是否生成按照主键修改对象的语句（即update)；
+        9，enableDeleteByPrimaryKey（默认true）：指定是否生成按照主键删除对象的语句（即delete）；
+        10，enableDeleteByExample（默认true）：MyBatis3Simple为false，指定是否生成动态删除语句；
+        11，enableCountByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询总条数语句（用于分页的总条数查询）；
+        12，enableUpdateByExample（默认true）：MyBatis3Simple为false，指定是否生成动态修改语句（只修改对象中不为空的属性）；
+        13，modelType：参考context元素的defaultModelType，相当于覆盖；
+        14，delimitIdentifiers：参考tableName的解释，注意，默认的delimitIdentifiers是双引号，如果类似MYSQL这样的数据库，使用的是`（反引号，那么还需要设置context的beginningDelimiter和endingDelimiter属性）
+        15，delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性
+        -->
+        <!--<table tableName="attendance" domainObjectName="Attendance"
+               enableCountByExample="false"
+               enableUpdateByExample="false"
+               enableDeleteByExample="false"
+               enableSelectByExample="false"
+               selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"></generatedKey>
+        </table>-->
+    </context>
+</generatorConfiguration>

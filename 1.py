@@ -23,7 +23,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,5,1)
+    set_sys_date(2019,5,2)
     #set_sys_date(2019,5,8)
     #set_sys_date(2019,5,10)
     #set_sys_date(2019,7,24)
@@ -79,4 +79,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("pro")                         #想要深色点，最低三个提交
+    commit("数据库配置")                         #想要深色点，最低三个提交
