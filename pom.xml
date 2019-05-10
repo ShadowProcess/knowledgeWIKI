@@ -46,5 +46,6 @@
         <module>jwt-college</module>
         <module>jpa-college</module>
         <module>txmybatis-college</module>
+        <module>thymeleaf-college</module>
     </modules>
 </project>

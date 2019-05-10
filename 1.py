@@ -24,8 +24,7 @@ def commit(msg):
 
 if __name__ == '__main__':
 
-    set_sys_date(2019,5,8)
-    #set_sys_date(2019,5,10)
+    set_sys_date(2019,5,10)
     #set_sys_date(2019,7,24)
     #set_sys_date(2019,8,3)
     #set_sys_date(2019,8,17)
@@ -79,4 +78,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("用")                         #想要深色点，最低三个提交
+    commit("thymeleaf")                         #想要深色点，最低三个提交
