@@ -23,8 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,4,20)
-    #set_sys_date(2019,5,14)
-    #set_sys_date(2019,5,20)
+    set_sys_date(2019,5,20)
     set_sys_time()
-    commit("数据源-1")                         #想要深色点，最低三个提交
+    commit("jpa嘘嘘")                         #想要深色点，最低三个提交

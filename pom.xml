@@ -44,5 +44,6 @@
         <module>spring5-mybatis</module>
         <module>javafx-college</module>
         <module>jwt-college</module>
+        <module>jpa-college</module>
     </modules>
 </project>
