@@ -25,4 +25,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2019,5,20)
     set_sys_time()
-    commit("jpa--")                         #想要深色点，最低三个提交
+    commit("jpa总结")                         #想要深色点，最低三个提交

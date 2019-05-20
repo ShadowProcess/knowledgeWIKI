@@ -1,0 +1,6 @@
+#EntityManagerFactory
+创建EntityManager的工厂
+EntityManagerFactory的创建成本很高，对于给定的数据库，系统应该只创建一个与之关联的Factory
+可使用@PersistenceUnit注入
+
+#二级缓存就是EntityManagerFactory级别缓存
