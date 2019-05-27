@@ -40,5 +40,6 @@
         <module>spring4-annotation</module>
         <module>spring5-annotation</module>
         <module>websocket-college</module>
+        <module>springmvc-annotation</module>
     </modules>
 </project>
