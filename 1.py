@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,6,4)
+    set_sys_date(2019,6,6)
     set_sys_time()
-    commit("pom.0")                         #想要深色点，最低三个提交
+    commit("webapp")                         #想要深色点，最低三个提交
