@@ -25,4 +25,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2019,6,6)
     set_sys_time()
-    commit("webapp")                         #想要深色点，最低三个提交
+    commit("mvc-配置")                         #想要深色点，最低三个提交
