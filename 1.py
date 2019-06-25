@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,6,17)
+    set_sys_date(2019,6,25)
     set_sys_time()
-    commit("mvc-控制")                         #想要深色点，最低三个提交
+    commit("mvc-拦截")                         #想要深色点，最低三个提交
