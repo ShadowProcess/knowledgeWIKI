@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,7,4)
+    set_sys_date(2019,7,7)
     set_sys_time()
-    commit("mvc-service")                         #想要深色点，最低三个提交
+    commit("3.0规范")                         #想要深色点，最低三个提交
