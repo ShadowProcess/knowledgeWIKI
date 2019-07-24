@@ -47,5 +47,6 @@
         <module>jpa-college</module>
         <module>txmybatis-college</module>
         <module>thymeleaf-college</module>
+        <module>springboot-principle</module>
     </modules>
 </project>
