@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!--连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!--创建mybatis的SqlSessionFactory  spring使用SqlSessionFactoryBean封装SqlSessionFactory -->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.example.mybatis.entity"/>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:mapper/*Mapper.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--创建Dao对象 MapperScannerConfigure-->
+    <bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+        <property name="basePackage" value="com.example.mybatis.dao"/>
+    </bean>
+
+
+    <!--上边的MapperScannerConfigure会帮创建Dao，规则为名字首字母小写-->
+    <bean id="userService" class="com.example.mybatis.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+
+    <!--DataSourceTransactionManager-->
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!--proxy-target-class="false" 代表使用JDK动态代理，指定为true可以指定为Cglib代理-->
+    <tx:annotation-driven transaction-manager="dataSourceTransactionManager" proxy-target-class="false"/>
+</beans>

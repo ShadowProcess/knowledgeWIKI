@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!--连接池-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test?useSSL=false"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123456"/>
+    </bean>
+
+    <!--创建mybatis的SqlSessionFactory  spring使用SqlSessionFactoryBean封装SqlSessionFactory -->
+    <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="typeAliasesPackage" value="com.example.mybatis.entity"/>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:mapper/*Mapper.xml</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--创建Dao对象 MapperScannerConfigure-->
+    <bean id="scanner" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactoryBean"/>
+        <property name="basePackage" value="com.example.mybatis.dao"/>
+    </bean>
+
+
+    <!--上边的MapperScannerConfigure会帮创建Dao，规则为名字首字母小写-->
+    <bean id="userService" class="com.example.mybatis.service.UserServiceImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+
+    <!--DataSourceTransactionManager-->
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!--proxy-target-class="false" 代表使用JDK动态代理，指定为true可以指定为Cglib代理-->
+    <!--<tx:annotation-driven transaction-manager="dataSourceTransactionManager" proxy-target-class="false"/>-->
+    <!--使用标签事务，不使用注解,了解即可-->
+    <!--<tx:advice id="txAdvice" transaction-manager="dataSourceTransactionManager">
+        <tx:attributes>
+            <tx:method name="register" isolation="DEFAULT" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>-->
+
+
+    <!--实战编程用这种方式-->
+    <tx:advice id="txAdvice" transaction-manager="dataSourceTransactionManager">
+        <tx:attributes>
+            <!--编程的时候，service中负责进行增删改操作的方法，都已modify开头-->
+            <tx:method name="register"/>
+            <tx:method name="modify*" isolation="DEFAULT" propagation="REQUIRED"/>
+            <!--查询操作随便命名-->
+            <tx:method name="*" propagation="SUPPORTS" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>
+    <!--应用的过程中，service放置到service包中-->
+    <aop:config>
+        <aop:pointcut id="pc" expression="execution(* com.example.mybatis.service..*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pc"/>
+    </aop:config>
+</beans>
