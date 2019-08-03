@@ -23,8 +23,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,7,24)
-    #set_sys_date(2019,8,3)
+    set_sys_date(2019,8,3)
     #set_sys_date(2019,8,17)
     #set_sys_date(2019,8,21)
     #set_sys_date(2019,8,31)
@@ -76,4 +75,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("springboot原理")                         #想要深色点，最低三个提交
+    commit("springboot原理-1")                         #想要深色点，最低三个提交
