@@ -25,4 +25,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2019,8,15)
     set_sys_time()
-    commit("sql")                         #想要深色点，最低三个提交
+    commit("dao")                         #想要深色点，最低三个提交
