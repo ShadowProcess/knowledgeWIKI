@@ -48,5 +48,6 @@
         <module>txmybatis-college</module>
         <module>thymeleaf-college</module>
         <module>springboot-principle</module>
+        <module>springboot-mybatis</module>
     </modules>
 </project>
