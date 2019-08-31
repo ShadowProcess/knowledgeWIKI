@@ -23,8 +23,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,8,21)
-    #set_sys_date(2019,8,31)
+    set_sys_date(2019,8,31)
     #set_sys_date(2019,10,4)
     #set_sys_date(2019,11,12)
     #set_sys_date(2019,12,3)
@@ -73,4 +72,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("springboot-mybatis数据库配置")                         #想要深色点，最低三个提交
+    commit("jsp")                         #想要深色点，最低三个提交

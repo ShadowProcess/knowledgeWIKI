@@ -49,5 +49,6 @@
         <module>thymeleaf-college</module>
         <module>springboot-principle</module>
         <module>springboot-mybatis</module>
+        <module>springboot-jsp</module>
     </modules>
 </project>
