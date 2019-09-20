@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,9,15)
+    set_sys_date(2019,9,20)
     set_sys_time()
-    commit("准备")                         #想要深色点，最低三个提交
+    commit("配置文件准备")                         #想要深色点，最低三个提交
