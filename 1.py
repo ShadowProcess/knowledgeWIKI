@@ -25,4 +25,4 @@ def commit(msg):
 if __name__ == '__main__':
     set_sys_date(2019,10,5)
     set_sys_time()
-    commit("自建starter")                         #想要深色点，最低三个提交
+    commit("ss")                         #想要深色点，最低三个提交
