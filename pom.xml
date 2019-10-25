@@ -42,5 +42,6 @@
         <module>websocket-college</module>
         <module>springmvc-annotation</module>
         <module>spring5-mybatis</module>
+        <module>javafx-college</module>
     </modules>
 </project>
