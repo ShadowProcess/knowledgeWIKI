@@ -2,14 +2,41 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <artifactId>knowledgeWIKI</artifactId>
-        <groupId>com.alex</groupId>
-        <version>1.0.0-SNAPSHOT</version>
+        <groupId>groupId</groupId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+    <groupId>javafx</groupId>
 
-    <artifactId>javafx-college</artifactId>
+    <artifactId>javafx-demo</artifactId>
+    <packaging>jar</packaging>
 
+    <properties>
+        <java.version>1.8</java.version>
+        <!--解决idea自动重置，language-level问题-->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <build>
+
+        <!--mvn 指定主类清单-->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.FX1</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
