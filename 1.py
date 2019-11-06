@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,11,2)
+    set_sys_date(2019,11,6)
     set_sys_time()
-    commit("引入依赖")                         #想要深色点，最低三个提交
+    commit("父级")                         #想要深色点，最低三个提交

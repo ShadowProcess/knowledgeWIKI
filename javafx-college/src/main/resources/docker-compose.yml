@@ -1,0 +1,11 @@
+###通过文本的方式，把要处理的容器按照顺序执行，如果是多容器也就是通过一条命令就搞定了[Docker Compose 是一个工具，命令行工具]
+
+version: '3.1'
+services:
+  myshop-service-user-provider:
+    image: 192.168.10.133:5000/myshop-service-user-provider:v1.0.0
+    container_name: myshop-service-user-provider
+    ports:
+    - 8501:8501
+    - 22222:22222
+    - 20881:20881
