@@ -23,9 +23,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,8,31)
-    #set_sys_date(2019,10,4)
-    #set_sys_date(2019,11,12)
+    set_sys_date(2019,11,12)
     #set_sys_date(2019,12,3)
     #set_sys_date(2019,12,4)
     #set_sys_date(2019,12,9)
@@ -72,4 +70,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("jsp")                         #想要深色点，最低三个提交
+    commit("jpa")                         #想要深色点，最低三个提交
