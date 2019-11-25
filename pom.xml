@@ -43,5 +43,6 @@
         <module>springmvc-annotation</module>
         <module>spring5-mybatis</module>
         <module>javafx-college</module>
+        <module>jwt-college</module>
     </modules>
 </project>
