@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,11,29)
+    set_sys_date(2019,12,19)
     set_sys_time()
-    commit("jwt令牌-1")                         #想要深色点，最低三个提交
+    commit("jwt令牌-静态资源")                         #想要深色点，最低三个提交
