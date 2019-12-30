@@ -23,6 +23,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2019,12,29)
+    set_sys_date(2019,12,30)
     set_sys_time()
-    commit("控制器")                         #想要深色点，最低三个提交
+    commit("拦截器")                         #想要深色点，最低三个提交
