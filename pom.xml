@@ -51,5 +51,6 @@
         <module>springboot-mybatis</module>
         <module>springboot-jsp</module>
         <module>springboot-jpa</module>
+        <module>spring-security</module>
     </modules>
 </project>
