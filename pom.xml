@@ -52,5 +52,6 @@
         <module>springboot-jsp</module>
         <module>springboot-jpa</module>
         <module>spring-security</module>
+        <module>kubernetes-college</module>
     </modules>
 </project>
