@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: NewKub
+  labels:
+    app: NewKub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: NewKub
+  template:
+    metadata:
+      name: NewKub
+      labels:
+        app: NewKub
+    spec:
+      containers:
+        - name: NewKub
+          image: mysql
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8090
+      restartPolicy: Always
+---
+#service
+apiVersion: v1
+kind: Service
+metadata:
+  name: springboot-web
+spec:
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: springboot-web
+  type: NodePort
+
+
+
+
