@@ -53,5 +53,6 @@
         <module>springboot-jpa</module>
         <module>spring-security</module>
         <module>kubernetes-college</module>
+        <module>oauth2-college</module>
     </modules>
 </project>
