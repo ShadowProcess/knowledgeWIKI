@@ -24,8 +24,7 @@ def commit(msg):
 
 if __name__ == '__main__':
 
-    set_sys_date(2020,2,1)
-    #set_sys_date(2020,2,5)
+    set_sys_date(2020,2,5)
     #set_sys_date(2020,2,8)
     #set_sys_date(2020,2,16)
     #set_sys_date(2020,2,20)
@@ -61,4 +60,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("oauth学习")                         #想要深色点，最低三个提交
+    commit("es")                         #想要深色点，最低三个提交

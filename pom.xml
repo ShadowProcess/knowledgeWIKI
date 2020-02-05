@@ -54,5 +54,6 @@
         <module>spring-security</module>
         <module>kubernetes-college</module>
         <module>oauth2-college</module>
+        <module>elasticsearch-college</module>
     </modules>
 </project>
