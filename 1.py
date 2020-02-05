@@ -60,4 +60,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("es")                         #想要深色点，最低三个提交
+    commit("导入")                         #想要深色点，最低三个提交
