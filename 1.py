@@ -23,10 +23,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-
-
-    set_sys_date(2020,2,8)
-    #set_sys_date(2020,2,16)
+    set_sys_date(2020,2,16)
     #set_sys_date(2020,2,20)
     #set_sys_date(2020,2,25)
     #set_sys_date(2020,2,26)
@@ -60,4 +57,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("use")                         #想要深色点，最低三个提交
+    commit("对接vue")                         #想要深色点，最低三个提交
