@@ -19,9 +19,8 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2020,3,7)
-    #set_sys_date(2020,3,10)
-    #set_sys_date(2020,3,15)
+
+    set_sys_date(2020,3,15)
     #set_sys_date(2020,3,17)
     #set_sys_date(2020,3,20)
     #set_sys_date(2020,3,26)
@@ -47,4 +46,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("con")                         #想要深色点，最低三个提交
+    commit("上线")                         #想要深色点，最低三个提交
