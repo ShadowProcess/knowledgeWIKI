@@ -9,9 +9,9 @@
         <relativePath/><!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>websocket</artifactId>
+    <artifactId>websocket-college</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>websocket</name>
+    <name>websocket-college</name>
     <description>Demo project for Spring Boot</description>
     <packaging>war</packaging>
 
@@ -75,9 +75,6 @@
             <version>2.4</version>
             <classifier>jdk15</classifier>
         </dependency>
-
-
-
     </dependencies>
 
     <build>
