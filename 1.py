@@ -19,8 +19,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2020,4,3)
-    #set_sys_date(2020,4,8)
+    set_sys_date(2020,4,8)
     #set_sys_date(2020,4,16)
     #set_sys_date(2020,4,20)
     #set_sys_date(2020,4,25)
@@ -40,4 +39,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("webflux")                         #想要深色点，最低三个提交
+    commit("tk")                         #想要深色点，最低三个提交
