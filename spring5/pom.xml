@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>spring5-demo</artifactId>
+    <artifactId>spring5</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <description>spring5演示学习</description>
 
