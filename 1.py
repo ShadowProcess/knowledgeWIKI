@@ -19,8 +19,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2020,4,29)
-    #set_sys_date(2020,5,14)
+    set_sys_date(2020,5,14)
     #set_sys_date(2020,5,19)
     #set_sys_date(2020,5,22)
     #set_sys_date(2020,5,26)
@@ -35,4 +34,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("spring4-1")                         #想要深色点，最低三个提交
+    commit("上传一些工具类")                         #想要深色点，最低三个提交
