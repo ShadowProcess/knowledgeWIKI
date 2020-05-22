@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>kubernetes-demo</artifactId>
+    <artifactId>kubernetes-college</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>kubernetes-demo</name>
+    <name>kubernetes-college</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
