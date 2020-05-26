@@ -10,9 +10,9 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>jwt-demo</artifactId>
+    <artifactId>jwt-college</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>jwt-demo</name>
+    <name>jwt-college</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
