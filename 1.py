@@ -19,8 +19,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2020,6,13)
-    #set_sys_date(2020,6,17)
+    set_sys_date(2020,6,17)
     #set_sys_date(2020,6,21)
     #set_sys_date(2020,6,26)
     #set_sys_date(2020,6,29)
@@ -28,4 +27,4 @@ if __name__ == '__main__':
     #set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("es()")                         #想要深色点，最低三个提交
+    commit("docker()")                         #想要深色点，最低三个提交
