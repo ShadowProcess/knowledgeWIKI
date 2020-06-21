@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>aliyun-demo</artifactId>
+    <artifactId>aliyun-vue</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>aliyun-demo</name>
+    <name>aliyun-vue</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
