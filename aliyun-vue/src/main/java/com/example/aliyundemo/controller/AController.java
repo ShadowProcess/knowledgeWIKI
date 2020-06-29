@@ -32,7 +32,7 @@ public class AController {
     private SliderService sliderService;
 
     @GetMapping("test")
-    public String get() throws UnsupportedEncodingException {
+    public String get() {
         System.out.println("request---" + request);
         System.out.println(request.getRequestURL());
         System.out.println(request.getMethod());
