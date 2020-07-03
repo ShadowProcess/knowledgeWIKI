@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 public class RequestParamDemo {
 
     /**
-     *
      * 请求不传参数可以正常访问
      */
     @GetMapping(value = "/ms")
