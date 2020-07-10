@@ -19,8 +19,7 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2020,7,3)
-    #set_sys_date(2020,7,10)
+    set_sys_date(2020,7,10)
     #set_ys_date(2020,7,15)
     set_sys_time()
-    commit("整理")                         #想要深色点，最低三个提交
+    commit("函数值")
