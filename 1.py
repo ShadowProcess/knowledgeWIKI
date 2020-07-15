@@ -19,7 +19,6 @@ def commit(msg):
 
 
 if __name__ == '__main__':
-    set_sys_date(2020,7,10)
-    #set_ys_date(2020,7,15)
+    set_sys_date(2020,7,15)
     set_sys_time()
-    commit("函数值")
+    #commit("函数值")
