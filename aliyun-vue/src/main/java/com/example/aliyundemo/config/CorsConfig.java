@@ -24,7 +24,6 @@ public class CorsConfig extends WebMvcConfigurationSupport {
 
 
     /*
-
     我的乱码问题，是因为docker设置mysql编码问题，而不是这下面的问题
 
     //1.这个为解决中文乱码

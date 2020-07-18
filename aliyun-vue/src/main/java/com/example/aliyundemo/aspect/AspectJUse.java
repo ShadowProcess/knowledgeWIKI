@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class AspectJUse {
-
     @Before(value = "execution(public String com.example.aliyundemo.controller.AController.get())")
     public void after(){
         System.out.println("方法执行之前");
