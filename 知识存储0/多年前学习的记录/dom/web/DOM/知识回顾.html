@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+ 课程回顾
+
+    js语法
+        js的动态函数和匿名函数
+        匿名函数：没有名称的函数，起个名称
+        var add = function(){
+
+        } ;
+
+    js中全局变量和局部变量
+        全局变量：定义<script/>标签中的变量，在页面的任意位置上都能拿到；
+        局部变量：定义在方法内部的变量
+
+    js的对象和API
+        string对象
+            属性：length长度
+            方法
+                和HTML相关的方法 bold()  fontcolor() 字体颜色 sup()上标 sub()下标
+
+            charAt() 返回指定位置的字符
+            indexOf() 返回字符的位置
+            substring(start,stop) 截取字符串
+            substr(start,length) 截取字符串
+
+    Array数组
+        声明数组
+            var arr = [22];
+            var arr = new Array(4或者"abc");
+
+        方法
+            concat() 链接数组或者元素
+            pop()  删除最后一个元素，返回
+            push() 向末尾添加一个元素，返回长度
+            sort()  排序
+
+     Date对象
+
+        var data = new Data(); 当前时间
+        方法
+            toLocaleString() 显示当地日期格式
+            getFullYear() 获取年份
+            getMonth()
+            getDate()
+            getDay()
+            getTime()
+            setTime() 根据毫秒值设置时间
+            Date.parse() 可以是字符串，返回毫秒值
+
+
+       Math数学
+        ceil() 上舍入
+        floor() 下舍入
+        round() 四舍五入
+        random() 随机数
+
+ RegExp对象
+ new RegExp("")
+ var reg = /^表达式$/; 记住
+    reg.test(string); (记住) 匹配返回true。不匹配返回false
+
+BOM 浏览器对象模型
+
+    window   窗口对象
+        alert()  提示框
+        confirm() 询问框
+        setInterval("run()",3000) //每隔三秒执行run方法
+        setTimeout("run()",3000)  //3秒后执行run方法，只执行一次
+
+    清除定时器
+        clearInterval(id)
+        clearTimeout(id)
+
+        open("","","") //打开新窗口
+        close()      //关闭窗口
+
+    navigator 浏览器相关的
+
+    history   和历史相关
+        back()    上一页
+        forward() 下一页
+        go(1或者-1)
+
+    location
+        href = "" 获取和设置当前网页的连接
+
+</body>
+</html>

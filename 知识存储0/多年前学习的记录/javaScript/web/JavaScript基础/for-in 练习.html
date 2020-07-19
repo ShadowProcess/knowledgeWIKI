@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for...in遍历对象的属性或者方法</title>
+</head>
+<body>
+
+
+<script>
+    var o = new Object();
+    o.name = "123";
+    o.password = "678";
+
+    // 属性名字
+    // for (var key in o) {
+    //     alert(key);
+    // }
+
+    // 属性值
+    for (var key in o) {
+        alert(o[key]);
+    }
+
+</script>
+</body>
+</html>

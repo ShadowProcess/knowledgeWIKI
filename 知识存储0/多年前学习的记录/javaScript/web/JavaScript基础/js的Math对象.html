@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jsShell/all.js"></script>
+</head>
+<body>
+
+    Math对象：
+        ceil(x) 上舍入
+        floor(x) 下舍入
+        round(x) 四舍五入
+        random() 随机数
+    <br/>
+
+<script>
+    println(Math.ceil(13.3));  //14
+
+    println(Math.floor(13.3)); //13
+
+    println(Math.round(13.3)); //13
+
+    // 获取10个 1-10之间的随机数
+    for (var i=0;i<10;i++) {
+        println(Math.floor(Math.random()*10));
+    }
+
+</script>
+
+</body>
+</html>

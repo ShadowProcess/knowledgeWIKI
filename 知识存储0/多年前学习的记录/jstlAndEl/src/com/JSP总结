@@ -1,0 +1,17 @@
+Jsp不需要配置
+    使用Jsp生成HTML页面非常简单
+    Jsp非常臃肿
+
+        Jsp显示页面
+            使用javaBean封装和处理数据
+
+
+ Model1时代：模型一  JSp+JavaBean
+
+    1.维护非常麻烦，如果开发一些比较大的系统
+
+    2.开发一些小的应用
+
+
+
+    Servlet时代 --> Jsp时代 --> Jsp+JavaBean时代 --> Jsp+Servlet+JavaBean时代

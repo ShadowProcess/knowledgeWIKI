@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="../jsShell/all.js"></script>
+</head>
+<body>
+
+
+<script type="text/javascript">
+
+
+    function trimSpace(str) {
+
+        var start = 0;  //起始位置
+        var end = str.length - 1; //最后位置
+
+
+        while (start <= end && str.charAt(start) == " ") {
+            start++;
+        }
+        ;
+
+        while (start <= end && str.charAt(end) == " ") {
+            end--;
+        }
+        ;
+
+        var result = str.substring(start, end + 1);
+
+        return result;
+    }
+
+    var str2 = "      abc      ";
+
+    alert("-" + str2 + "-");
+
+    alert("-" + trimSpace(str2) + "-");
+
+</script>
+</body>
+</html>

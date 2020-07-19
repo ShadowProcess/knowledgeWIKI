@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<a href="">1</a>
+<a href="">2</a>
+<a href="">3</a>
+<a href="">4</a>
+
+<span id="loop">点</span>
+
+<script>
+    var links = document.getElementsByTagName("a");
+
+    for (var i = 0;i < links.length ; i++) {
+
+        links[i].onclick = function () {
+            alert(this.innerText); // 获取节点中的内容
+        }
+    }
+
+
+
+    var sNode = document.getElementById("loop");
+    sNode.onclick = function () {
+        sNode.innerText = "击";
+    }
+
+</script>
+</body>
+</html>

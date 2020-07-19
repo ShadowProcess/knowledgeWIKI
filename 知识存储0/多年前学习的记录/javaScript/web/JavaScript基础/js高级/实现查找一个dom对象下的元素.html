@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .rect {
+            width: 400px;
+            height: 50px;
+            margin: 10px 0;
+        }
+
+        .c {
+            border: 1px solid red;
+        }
+
+        .c1 {
+            border: 1px solid green;
+        }
+
+        .c2 {
+            border: 1px solid blue;
+        }
+
+    </style>
+
+    <script src="../comm/comm.js"></script>
+</head>
+<body>
+
+<div class="c3">
+<div class="c1 rect"></div>
+<div class="c2 rect"></div>
+<div class="c rect"></div>
+<div class="c1 rect"></div>
+</div>
+
+<hr/>
+
+<div>
+    <div class="c1 rect"></div>
+    <div class="c2 rect"></div>
+    <div class="c rect"></div>
+    <div class="c1 rect"></div>
+</div>
+
+</body>
+<script>
+    var a;
+    a = get('.c3')[0][0];
+    a.style.border = '1px solid red';
+
+
+    //在页面中找到所有的.C3的节点，再找到.C3节点中的子节点
+
+</script>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+1.同一级路径
+<img src="1.jpg">
+
+2.下一级路径
+<img src="imgs/2.jpg">
+
+3.上一级路径
+<img src="../imgs/2.jpg">
+
+a.图像文件和HTML文件位于同一文件夹，只需输入图像文件名即可，如<img src="1.jpg" />
+b.图像文件位于HTML文件的下一级文件夹，输入文件夹名和文件名，之间用"/"隔开，如<img src="img/1.jpg" />
+c.图像文件位于HTML文件的上一级文件夹,在文件名之前加入"../"，如果是上两级,则需要使用"../../"，以此类推
+
+
+</body>
+</html>

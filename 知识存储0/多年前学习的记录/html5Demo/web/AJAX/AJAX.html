@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div align="center">XMLHttpRequest本质基于HTTP协议实现通信</div>
+
+
+<div style="color: aqua"> AJAX技术就是基于JS这种机制而产生的,并不是新技术，页面的JS请求后台返回数据通过js展示在指定页面区域，而不需要刷新整个页面 </div>
+
+<p>
+    xhr.readyState = 1时, OPENED open已调用
+    xhr.readyState = 2时, HEADERS_RECEIVED 接收到头信息
+    xhr.readyState = 3时, LOADING 接收到响应主体
+    xhr.readyState = 4时, DONE 响应完成
+
+    xhr.status表示响应码,如200
+    xhr.statusText表示响应信息 如OK
+</p>
+<hr color="red">
+
+<p id="result">
+</p>
+
+
+<!--异步-->
+<script>
+
+    var xhr = new XMLHttpRequest();
+
+    console.log(xhr.readyState)
+
+    // 请求方式,请求地址
+    xhr.open('post','success.jsp');
+
+    console.log(xhr.readyState)
+
+    // 设置请求头,POST方法请求体会有这个参数
+    xhr.setRequestHeader('Content-type','application/x-www/form-urlencoded');
+
+    // 设置请求主体
+    xhr.send('username=it&pass=123');
+
+    // 接受服务器响应
+    xhr.onreadystatechange = function () {
+        console.log(xhr.readyState)
+
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            console.log('响应结束')
+            console.log(xhr.responseText)
+
+            document.querySelector('#result').innerHTML = xhr.responseText
+        }
+
+    }
+</script>
+</body>
+</html>

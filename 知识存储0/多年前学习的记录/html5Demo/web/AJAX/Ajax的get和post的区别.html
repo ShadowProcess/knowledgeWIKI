@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('post','success.jsp');
+
+
+    //这段告诉服务器怎么处理我们的数据，否则服务器获取不到任何数据的  【get不需要设置,  post需要设置(1.传参数需要设置2.不传参数不需要设置)】
+    //xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+
+    xhr.send('name=it');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var result = xhr.responseText;
+            console.log(result)
+        }
+    }
+
+</script>
+</body>
+</html>

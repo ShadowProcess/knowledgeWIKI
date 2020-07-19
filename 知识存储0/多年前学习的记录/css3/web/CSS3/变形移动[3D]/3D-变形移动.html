@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            perspective: 600px;
+        }
+
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+
+            transition: all 0.6s;
+        }
+
+        div:hover {
+            /*transform: translateX(100px);*/
+            /*transform: translateY(100px);*/
+            transform: translateZ(100px);
+
+            /*透视是眼睛到屏幕的距离  透视只是一种展示形式,是有3D效果的意思*/
+            /*
+            translateZ 物体到屏幕的距离 Z就是用来控制物体远近大小的具体情况
+            translateZ 越大，我们看到的物体越近，物体越大
+            */
+        }
+    </style>
+</head>
+<body>
+
+
+    <div></div>
+
+</body>
+</html>

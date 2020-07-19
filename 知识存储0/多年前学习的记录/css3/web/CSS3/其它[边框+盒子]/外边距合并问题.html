@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.father{
+            width: 200px;
+            height: 200px;
+            background-color: #f34bff;
+
+            border: 1px solid red; /*1.解决外边距合并[塌陷]问题*/
+            /*padding: 1px; !*2.也可以解决外边距合并[塌陷]问题*!*/
+            /*overflow: hidden; !*3.也可以解决外边距合并[塌陷]问题*!*/
+        }
+        
+        div.son {
+            width: 100px;
+            height: 100px;
+            background-color: #8aff55;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="father">
+    <div class="son"></div>
+</div>
+
+
+</body>
+</html>

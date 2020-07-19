@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta http-equiv="refresh" content="5;url=http://www.baidu.com">
+</head>
+<body onload="run()">
+
+<a href="./refresh">页面将在 <span id="count">5</span>秒后跳转</a> <br/>
+
+</body>
+
+<script>
+
+    var x = 5;
+    
+    function run() {
+        var s = document.getElementById("count");
+        s.innerHTML = x;
+        x--;
+        window.setTimeout("run()",1000);
+    }
+
+</script>
+
+</html>

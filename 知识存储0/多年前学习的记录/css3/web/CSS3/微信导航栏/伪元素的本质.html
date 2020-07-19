@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪元素</title>
+
+    <style>
+        div:before {
+            content: '楚乔';
+            background-color: #ff8500;
+            border: 1px solid brown;
+            width: 100px;
+            height: 100px;
+
+            display: block;
+            /*类选择器和伪类选择器就是选择对象*/
+            /*伪元素选择器 本质上是插入了一个元素（标签 盒子）只不过是行内元素 span a*/
+        }
+
+        div:after {
+            content: "宇文余额";
+            display: block;
+            width: 50px;
+            height: 50px;
+            border: 1px solid crimson;
+        }
+
+    </style>
+</head>
+<body>
+
+
+    before和after伪元素（详解）
+
+        <div>是</div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div, p {
+            width: 100px;
+            height: 30px;
+            border: 1px solid red;
+
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+
+<div></div>
+<div></div>
+
+<p></p>
+<p></p>
+
+</body>
+<script>
+    // 传统的处理方式，就是使用函数获得
+
+    /*var get = function (tag) {
+        return document.getElementsByTagName(tag);
+    };*/
+
+    var divs = document.getElementsByTagName('div');
+    var ps = document.getElementsByTagName('p');
+
+    for (var i = 0; i < divs.length; i++) {
+        divs[i].style.backgroundColor = "pink";
+    }
+
+    for (var i = 0; i < ps.length; i++) {
+        ps[i].style.backgroundColor = "pink";
+    }
+
+    //凡事问为什么？
+
+
+</script>
+
+</html>

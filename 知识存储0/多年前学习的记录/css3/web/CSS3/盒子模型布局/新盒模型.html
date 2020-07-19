@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div:first-child {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            box-sizing: content-box; /*以前的盒模型[默认是这个值]   盒子宽度=width+padding+border  */
+            padding: 10px;
+            border: 15px solid red;
+        }
+
+        div:last-child {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            box-sizing: border-box; /*新盒模型  盒子宽度=width */
+            padding: 10px;
+            border: 15px solid red;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<div></div>
+<div></div>
+</body>
+</html>

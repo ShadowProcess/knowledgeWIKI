@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        /*类选择器 [优先级]0,0,1,0*/
+        .king {
+            color: blue;
+        }
+
+        /*标签选择器 [优先级]0,0,0,1*/
+        div {
+            color: pink;
+        }
+
+        /*伪类选择器 [优先级]0,0,1,0*/
+        :first-child {
+            color: green;
+        }
+
+        /*ID选择器 [优先级]0,1,0,0*/
+        #wa {
+            color: red;
+        }
+
+        /*行内元素属性 [优先级]1,0,0,0*/
+
+        /*最大的优先级 !important */
+        div {
+            color: orange!important; /*级别最高*/
+        }
+    </style>
+</head>
+<body>
+    <div class="king" id="wa">王者</div>
+</body>
+</html>

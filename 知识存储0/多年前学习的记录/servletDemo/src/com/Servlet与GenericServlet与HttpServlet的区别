@@ -1,0 +1,37 @@
+1.HttpServlet
+
+1). 是一个 Servlet, 继承自 GenericServlet. 针对于 HTTP 协议所定制.
+
+2). 在 service() 方法中直接把 ServletReuqest 和 ServletResponse 转为 HttpServletRequest 和 HttpServletResponse.
+并调用了重载的 service(HttpServletRequest, HttpServletResponse)
+
+在 service(HttpServletRequest, HttpServletResponse) 获取了请求方式: request.getMethod(). 根据请求方式有创建了
+doXxx() 方法(xxx 为具体的请求方式, 比如 doGet, doPost)
+
+3). 实际开发中, 直接继承 HttpServlet, 并根据请求方式复写 doXxx() 方法即可.
+
+4). 好处: 直接由针对性的覆盖 doXxx() 方法; 直接使用 HttpServletRequest 和 HttpServletResponse, 不再需要强转.
+
+
+
+
+
+2.GenericServlet
+
+1). 是一个 Serlvet. 是 Servlet 接口和 ServletConfig 接口的实现类. 但是一个抽象类. 其中的 service 方法为抽象方法
+
+2). 如果新建的 Servlet 程序直接继承 GenericSerlvet 会使开发更简洁.
+
+3). 具体实现:
+
+①. 在 GenericServlet 中声明了一个 SerlvetConfig 类型的成员变量, 在 init(ServletConfig) 方法中对其进行了初始化
+②. 利用 servletConfig 成员变量的方法实现了 ServletConfig 接口的方法
+③. 还定义了一个 init() 方法, 在 init(SerlvetConfig) 方法中对其进行调用, 子类可以直接覆盖 init() 在其中实现对 Servlet 的初始化.
+④. 不建议直接覆盖 init(ServletConfig), 因为如果忘记编写 super.init(config); 而还是用了 SerlvetConfig 接口的方法,
+则会出现空指针异常.
+⑤. 新建的 init(){} 并非 Serlvet 的生命周期方法. 而 init(ServletConfig) 是生命周期相关的方法.
+
+
+
+
+如果为了开发一个能用在网页上服务于使用HTTP协议请求的Servlet，你的Servlet必须要继承自HttpServlet

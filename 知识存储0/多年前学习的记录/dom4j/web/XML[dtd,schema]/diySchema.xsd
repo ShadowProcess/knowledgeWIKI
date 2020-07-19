@@ -1,0 +1,67 @@
+
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+* 引入w3c的名称
+    在根节点，使用属性xmlns(xml namespace)
+
+* 定义元素
+    <element name="书架"></element>
+
+* 判断是否是复杂还是简单元素
+    如果是简单：
+        在element有属性 type="数据的类型"
+    如果是复杂的：
+        声明标签是复杂的元素<complexType>
+        子元素之间的关系 <sequence>
+        子元素之间的关系 <choice> 等同于DTD的或 |
+
+*起名
+  targetNamespace 目标名称空间(起名)
+  值是任意的： http://www.itcast.cn/1110
+
+*elementFormDefault
+    qualified(使用)   ：合格的          在被约束的xml文档上，如果起了别名那么每个标签都要添加这个别名
+    unqualified      ：不合格的          在被约束的xml文档上，如果起了别名那么只有根节点添加别名，但是如果引入太多约束文件，那么将可能乱掉
+
+* 编写属性
+    <attribute name="出版社" type="string" use="required"></attribute>
+    * name 属性名称
+    * type 属性类型
+    * user 属性
+
+-->
+
+<schema xmlns = "http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.itcast.cn/1110" elementFormDefault="qualified">
+
+
+    <!--复杂元素-->
+    <element name="书架">
+        <!--复杂元素-->
+        <complexType>
+            <!--有顺序的-->
+            <sequence>
+
+                <element name="书" maxOccurs="unbounded"> <!--axOccurs="unbounded" 不限制出现的数量-->
+                    <!--复杂的元素-->
+                    <complexType>
+                        <!-- 有顺序的   -->
+                        <sequence>
+                            <!--简单元素-->
+                            <element name="书名" type="string"></element>
+                            <element name="价格" type="double"></element>
+                            <element name="作者" type="string"></element>
+                            <element name="简介" type="string"></element>
+                        </sequence>
+
+                        <!--属性【表示书的属性】-->
+                        <attribute name="出版社" type="string" use="required"></attribute>
+
+                    </complexType>
+                </element>
+
+            </sequence>
+        </complexType>
+    </element>
+
+</schema>

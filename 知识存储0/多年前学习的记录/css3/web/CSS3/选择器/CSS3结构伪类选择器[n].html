@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        /*
+        n = 0 1 2 3 4 5 ...     所有的
+        2n = 0 2 4 8 10 ...     偶数的
+        3n = 0 3 6 9 12 15 ...  奇数的
+        */
+        li:nth-child(2n) {
+            color: blue;
+        }
+
+
+        /*从最后一个往前数*/
+        li:nth-last-child(2) {
+            color: orange;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <ul>
+        <li>第一</li>
+        <li>第二</li>
+        <li>第三</li>
+        <li>第四</li>
+        <li>第五</li>
+        <li>第六</li>
+        <li>第七</li>
+    </ul>
+</body>
+</html>

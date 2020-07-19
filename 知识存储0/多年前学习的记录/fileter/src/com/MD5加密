@@ -1,0 +1,15 @@
+
+
+问题：
+1.如果用户名为中文，怎么处理？
+2.cookie中不能存储中文
+存储时。存UTF-8编码
+
+URLEncoder.encode(username ,"UTF-8")
+String usernameUTF = URLDecoder.decode(username,"UTF-8");
+
+
+关于密码安全问题：
+    使用MD5加密
+
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+        version="2.0">
+
+    <tlib-version>1.0</tlib-version>
+    <short-name>myc</short-name>
+    <uri>http://www.itcast.cn/1110/myc</uri>
+
+     <!--配置自定义标签-->
+    <tag>
+        <!--配置自定义标签的名称-->
+        <name>print</name>
+        <tag-class>com.TagDemo</tag-class>
+        <!--配置标签主体-->
+        <body-content>empty</body-content>
+    </tag>
+
+
+    <!--配置自定义带主体的标签-->
+    <tag>
+        <!--配置自定义标签的名称-->
+        <name>out</name>
+        <tag-class>com.TagDemo2</tag-class>
+        <!--配置标签主体-->
+        <body-content>scriptless</body-content>
+    </tag>
+
+</taglib>

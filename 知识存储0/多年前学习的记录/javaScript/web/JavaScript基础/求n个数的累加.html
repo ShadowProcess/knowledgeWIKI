@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    /**
+     * 求n个数的累加
+     *
+     * 例如： 求5的累加 5 + 4 + 3 + 2 + 1
+     * 求5的累加，就是求 5 + 4的累加
+     *
+     * 求4的累加，就是求 4 + 3的累加
+     *
+     * ...
+     */
+
+    function getSum(n) {
+        if (n === 1) {
+            return 1;
+        }
+
+        return n + getSum(n - 1);
+    }
+
+
+    //getSum(5)
+    //5 + getSum(4)
+    //5 + 4 + getSum(3)
+    //5 + 4 + 3 + getSum(2)
+    //5 + 4 + 3 + 2 + getSum(1)
+
+    //递归调用很消耗资源 [如果次数很多，会出现堆栈溢出]
+</script>
+</body>
+</html>

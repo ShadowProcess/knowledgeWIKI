@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="result"></p>
+
+<script>
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('post', 'success.jsp')
+
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
+
+    xhr.send('name=alex&age=108&sex=男');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var result = xhr.responseText;
+
+            console.log(result);
+        }
+    }
+
+</script>
+
+</body>
+</html>

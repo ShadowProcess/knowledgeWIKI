@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="../jsShell/all.js"></script>
+</head>
+<body>
+
+全局函数
+    #使用全局函数，不需要任何对象
+    #全局函数可以直接拿过来使用
+
+    global帮着管理全局函数。
+
+* eval() 可以解析字符串，执行字符串中的js代码
+* isNaN() 检查参数是否非数字值
+* parseInt() 解析字符串，返回一个整数
+
+* escape()    对字符串进行Unicode编码
+* unescape()  对字符串进行Unicode解码
+
+
+<hr/>
+
+
+<script>
+    var str = "alert('hehe')";
+    eval(str);
+
+    alert(isNaN('abc'-1));
+
+
+    parseInt('11');
+    parseInt('11',2);  //以二进制
+    parseInt('11',10); //以十进制解析
+    parseInt('11',16); //以16进制解析
+
+
+    var str2 = "abc张三";
+    var str3 = encodeURI(str2); //进行编码
+    println(str3);
+
+    var str4 = decodeURI("abc%E5%BC%A0%E4%B8%89"); //进行解码
+    println(str4);
+
+
+    var str5 = escape(str2); //对字符串进行Unicode编码
+    println(str5);
+
+    var str6 = unescape(str5); //对字符串进行Unicode解码
+    println(str6);
+
+</script>
+</body>
+</html>

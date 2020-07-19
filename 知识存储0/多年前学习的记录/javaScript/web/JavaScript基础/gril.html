@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img {
+            width: 500px;
+            height: 400px;
+        }
+
+        #ddd {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body onload="run()">
+
+<div id="ddd">
+    <a href="http://www.baidu.com"> <img src="../imgs/1.jpg" alt=""> </a>
+</div>
+
+<script>
+    function run() {
+        var nodeObject = document.getElementById("ddd");
+        nodeObject.style.top = Math.random()*300 + "px";
+        nodeObject.style.left = Math.random()*1000 + "px";
+
+        window.setTimeout("run()",1000);
+    }
+</script>
+
+</body>
+</html>

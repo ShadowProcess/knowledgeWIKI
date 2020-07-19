@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid brown;
+        }
+
+        div:first-child { /*结构伪类选择器 选亲兄弟*/
+            border-radius: 10px; /*一个数值表示4个角都是相同的,10px的弧度*/
+        }
+
+        div:nth-child(2) {
+            /*border-radius: 100px; !*取宽度和高度的一半[就是一个圆]*!*/
+            border-radius: 50%; /*取宽度和高度的一半[就是一个圆]*/
+        }
+
+        div:nth-child(3){
+            border-radius: 20px 40px; /*左上角和右下角是20px  右上角和左下角是40px */
+        }
+
+        div:nth-child(4) {
+            border-radius: 10px 40px 80px; /* 左上角=10 右上角,左下角=40  右下角=80*/
+        }
+
+        div:nth-child(5) {
+            border-radius: 10px 40px 80px 100px; /*左上角10 右上角80 左下角40 右下角100*/
+        }
+
+
+        div:nth-child(6) {
+            border-radius: 100px;
+            height: 100px;
+        }
+
+        div:nth-child(7) {
+            border-radius: 100px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div>10px 40px 80px 100px</div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>背景缩放</title>
+    <style>
+        body {
+            background-color: skyblue;
+        }
+
+        div {
+            width: 400px;
+            height: 500px;
+            background: hotpink url(../../imgs/2.png) no-repeat;
+            /*我们插入的图片 img 直接通过 width 和 height 设置就可*/
+
+            /*设置背景图片的大小*/
+            /*background-size: 100px 200px;*/
+
+            /*background-size: 50%; 把图片缩放为原来一半的大小*/
+
+            /*background-size: cover;*/
+            /*会自动调整缩放比例,保证图片始终填充充满背景区域,如有溢出部分则会被隐藏图片进行等比例缩放，
+            图片一定要保证宽度和高度同时满足盒子的大小，势必会有部分超出去，就看不见了*/
+
+
+            background-size: contain;
+            /*保证图片是完整的，如果图片高度或者宽度，有一个达到盒子大小，就停止缩放*/
+
+        }
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+</body>
+</html>

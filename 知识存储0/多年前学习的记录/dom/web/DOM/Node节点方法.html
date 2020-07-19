@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="ulId">
+    <li>bj</li>
+    <li id="sh">sh</li>
+    <li>gz</li>
+</ul>
+
+<ul>
+    <li></li>
+    <li id="xsd">小时代</li>
+    <li id="dw">点我</li>
+</ul>
+
+<button id="btn">
+点击
+</button>
+
+<span id="spanId"></span>
+
+</body>
+<script>
+
+
+    //替换节点
+    document.getElementById("sh").onclick = function () {
+        var sh = document.getElementById("sh");
+        var xsd = document.getElementById("xsd");
+
+        var ul = sh.parentNode;  //等价于 this.parentNode;
+        ul.replaceChild(xsd, sh);  //下面节点没了,替换了上面的
+    };
+
+    document.getElementById("dw").onclick = function () {
+        var dw = document.getElementById("dw");
+        this.parentNode.removeChild(dw);
+    };
+
+
+    var btn = document.getElementById("btn");
+    var newBtn = btn.cloneNode(true);
+
+    var span = document.getElementById("spanId");
+    span.appendChild(newBtn);
+
+    /**
+     * appendChild(node);
+     * insertBefore(new,old);
+     *
+     * cloneNode(boolean); 不是父节点调用,复制节点,
+     * 如果true复制子节点，如果false默认不复制子节点，默认false
+     */
+
+</script>
+</html>

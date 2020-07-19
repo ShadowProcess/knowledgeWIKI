@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!--
+在XML中直接书写DTD约束
+
+规范：
+    <!DOCTYPE 根节点 [DTD的代码]>
+-->
+
+<!DOCTYPE 书架 [
+    <!ELEMENT 书架 (书+)>
+    <!ELEMENT 书 (书名,作者,售价,简介)>
+    <!ELEMENT 书名 (#PCDATA)>
+    <!ELEMENT 作者 (#PCDATA)>
+    <!ELEMENT 售价 (#PCDATA)>
+    <!ELEMENT 简介 (#PCDATA)>
+
+    <!ATTLIST 作者 出版社 (清华|北大) #REQUIRED>
+        <!ATTLIST 作者 唯一 ID #REQUIRED>
+        <!ATTLIST 作者 日期 CDATA #FIXED "2019-9-9">
+
+        <!ENTITY username "张三">
+]>
+
+<书架 >
+    <书 >
+        <书名></书名>
+        <作者 出版社="清华" 唯一="v2" 日期="2019-9-9"></作者>
+        <售价>&username;</售价>
+        <简介></简介>
+    </书>
+</书架>

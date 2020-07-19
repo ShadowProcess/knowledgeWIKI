@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        /* class^=font 表示 font 开始位置就行了*/
+        div[class^=font]{
+            color: orange;
+        }
+
+        /* class$=font 表示 font 结束位置就行了*/
+        div[class$=font]{
+            color: red;
+        }
+
+        /* class*=font 表示 font 任意位置就行了*/
+        div[class*=tao]{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="font12">1</div>
+<div class="font13">2</div>
+<div class="font14">3</div>
+<div class="font15">4</div>
+<div class="12font">5</div>
+<div class="13font">6</div>
+<div class="12tao12">7</div>
+<div class="13tao12">8</div>
+</body>
+</html>

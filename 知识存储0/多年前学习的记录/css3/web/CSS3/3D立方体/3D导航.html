@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 微软雅黑;
+            background-color: #f7f7f7;
+        }
+
+        .nav {
+            height: 40px;
+            margin-top: 50px;
+            text-align: center;
+            list-style: none;
+
+            transform: rotateX(-10deg);
+        }
+
+        li {
+            width: 120px;
+            height: 40px;
+            float: left;
+            line-height: 40px;
+
+            position: relative;
+
+            transition: all 1s;
+
+            transform-style: preserve-3d;
+        }
+
+        li span {
+            position: absolute;
+            left: 0;
+            top: 0;
+
+            display: block;
+            width: 100%;
+        }
+
+        span:nth-child(1) {
+            background-color: green;
+
+            transform: rotateX(90deg) translateZ(20px);
+        }
+
+        span:nth-child(2) {
+            background-color: #ff8500;
+
+            transform: translateZ(20px);
+        }
+
+        li:hover {
+            transform: rotateX(-90deg);
+        }
+
+       /*
+         鼠标悬停ul,所有的都滚动
+        .nav:hover li {
+            transform: rotateX(-90deg);
+        }
+
+        .nav:hover li:nth-child(1) {
+            transition-delay: 0s;
+        }
+        .nav:hover li:nth-child(2) {
+            transition-delay: 0.25s;
+        }
+        .nav:hover li:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+        .nav:hover li:nth-child(4) {
+            transition-delay: 0.75s;
+        }*/
+
+    </style>
+</head>
+<body>
+
+
+<ul class="nav">
+    <li>
+        <span>传智播客</span>
+        <span>web前端</span>
+    </li>
+
+    <li>
+        <span>传智播客</span>
+        <span>web++</span>
+    </li>
+
+    <li>
+        <span>传智播客</span>
+        <span>web后端</span>
+    </li>
+
+    <li>
+        <span>传智播客</span>
+        <span>web4</span>
+    </li>
+</ul>
+
+</body>
+</html>

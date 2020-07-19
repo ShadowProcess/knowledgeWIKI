@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        div {
+            width: 400px;
+            height: 50px;
+            margin: 10px 0;
+        }
+
+        .c {
+            border: 1px solid red;
+        }
+
+        .c1 {
+            border: 1px solid green;
+        }
+
+        .c2 {
+           border: 1px solid blue;
+        }
+    </style>
+
+    <script>
+        // Object.create()
+        var getClass = function (className, results) {
+            results = results || [];
+
+            // 首先判断系统所提供的的方法是否可以实现该功能
+            if (document.getElementsByClassName) {
+
+                // 1.系统可以实现
+                results.push.apply(results, document.getElementsByClassName(className));
+
+            } else {
+
+                // 2.自定义实现
+                var tempArr, i;
+
+                // 思路:首先获取所有元素,然后在元素中搜索符合要求的，再加入到数组中
+                tempArr = document.getElementsByTagName('*');
+                //for 循环，判断是否符合要求
+                for (i = 0; i < tempArr.length; i++) {
+                    // tempArr[i].className === className; 多个样式
+
+                    //tempArr[i].className.indexOf(className) != -1;
+
+                    if((' ' + tempArr[i].className + ' ').indexOf(' ' + className + ' ') > 0){
+                        results.push(tempArr[i]);
+                    }
+                }
+            }
+
+            return results;
+        };
+    </script>
+</head>
+<body>
+<div class="c"></div>
+<div class="c1"></div>
+<div class="c2"></div>
+<div class="c1"></div>
+</body>
+
+<script>
+    var list = getClass('c1');
+
+    for (var k in list) {
+        list[k].style.backgroundColor = 'yellow';
+    }
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+	* 引入W3C的名称
+		* 在根节点上，使用属性xmlns(xml namespace)
+		* xmlns="http://www.w3.org/2001/XMLSchema"
+	* 定义元素
+		* <element name="书架"></element>
+	* 判断是否是复杂还是简单的元素
+		* 如果是简单	在element有属性	type="数据的类型"	
+		* 如果是复杂	
+			* 声明标签是复杂的元素	<complexType>
+			* 子元素之间的关系	<sequence>
+	* 起名：targetNamespace	目标名称空间（起名）
+		* 值是任意的：http://www.itcast.cn/1110
+		
+	* elementFormDefault	： 
+		* qualified（使用）	：质量好的
+		* unqualified		：质量不好的
+		
+	* 编写属性
+		* <attribute name="出版社" type="string" use="required" ></attribute>
+			* name	属性名称
+			* type 	属性类型
+			* user	属性约束
+ -->
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.itcast.cn/1110" elementFormDefault="qualified">
+	
+	<!-- 复杂元素 -->
+	<element name="书架">
+		<!-- 复杂元素 -->
+		<complexType>
+			<!-- 有顺序的 -->
+			<sequence maxOccurs="unbounded">
+				<element name="书">
+					<!-- 复杂的元素 -->
+					<complexType>
+						<!-- 有顺序的 -->
+						<sequence>
+							<!-- 简单元素 -->
+							<element name="书名" type="string"></element>
+							<element name="作者" type="string"></element>
+							<element name="售价" type="double"></element>
+							<element name="简介" type="string"></element>
+						</sequence>
+						
+						<!-- 书的属性 -->
+						<attribute name="出版社" type="string" use="required" ></attribute>
+					</complexType>
+				</element>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

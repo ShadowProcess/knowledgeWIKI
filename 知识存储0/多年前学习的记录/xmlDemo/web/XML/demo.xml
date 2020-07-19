@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/css" href="country.css" ?><demo>
+    <person>
+        <name>凤姐</name>
+        <age>35</age>
+        <desc>外国人</desc>
+    </person>
+
+<!--
+
+        standalone="yes" 是否可引入外部文件
+
+         注释不能嵌套
+
+         特殊字符
+         &  &amp;
+         <  &lt;
+         >  &gt;
+         "  &quot;
+         '  &apos;
+
+         CDATA区：
+            把标签中的内容作为字符串
+
+            <![CDATA[ ...  ]]>
+
+
+
+        PI(指令)：Processing Instruction
+
+        作用：用来指挥软件如何解析XML文档
+        语法：必须以 "<?" 作为开头，以 "?>" 作为结尾
+
+        常用命令：
+            XML声明: <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+            xml-stylesheet指令: <?xml-stylesheet type="text/css" href="country.css" ?>
+
+-->
+
+    <![CDATA[  if(1>2) { println("123") }  ]]>
+
+
+</demo>

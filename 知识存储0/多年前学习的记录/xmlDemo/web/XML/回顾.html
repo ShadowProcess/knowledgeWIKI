@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function run1() {
+           var uspan = document.getElementById("uspan");
+           uspan.innerHTML="不能输入特殊字符";
+        }
+        
+        function run() {
+            var name = document.getElementById("nameId").value;
+            if (name == "" || name.length == 0){
+                var uspan = document.getElementById("uspan").value;
+                uspan.innerHTML = "用户名不能为空";
+                return false;
+            }
+
+            var pwd = document.getElementById("pwd").value;
+            if (name == "" || name.length < 6){
+                var uspan = document.getElementById("pwd").value;
+                uspan.innerHTML = "用户名不能为空";
+                return false;
+            }
+
+        }
+    </script>
+</head>
+<body>
+
+事件
+onclick
+ondblclick
+onload 加载
+onunload 在用户从页面导航离开时发生（通过点击链接、提交表单或者关闭浏览器窗口等等）。
+onfocus 获得焦点
+onblur 失去焦点
+onchange 改变事件
+
+onchange 改变事件
+onsubmit 控制表单的提交
+
+=====================================================================
+onsubmit事件
+控制表单提交，需要把onsubmit作用到表单上
+<form onsubmit=""></form>
+值的写法 onsubmit = "return run()"
+
+run()必须要有返回值，必须返回true或者false
+如果返回是true，表单可以提交，如果返回false 表单不能提交 如果没有返回值，默认是表单提交
+
+run()的逻辑写什么？ 表单的校验
+
+
+<form action="success.html" method="post" onsubmit="run()">
+    <table border="1" width="60%">
+        <tr>
+            <td>姓名</td>
+            <td>
+                <input type="text" name="username" id="nameId" onfocus="run1()"/><span id="uspan"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>密码</td>
+            <td>
+                <input type="text" name="password" id="pwdId"/><span id="pspan"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>邮箱</td>
+            <td>
+                <input type="text" name="email" id="emailId"/><span id="espan"></span>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="注册"></td>
+            <td></td>
+        </tr>
+    </table>
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    document.write("<table border='1px' cellspacing='0' cellpadding='0'>");
+    for (var i = 1; i <= 9; i++) {
+        //外循环 控制行
+        document.write("<tr>");
+        for (var j = 1; j <= i; j++) {
+            document.write("<td>");
+            document.write(i + "*" + j + "=" + i * j);
+            document.write("</td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+</script>
+</body>
+</html>

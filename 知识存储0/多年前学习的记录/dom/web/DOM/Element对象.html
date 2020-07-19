@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="nameId" value="zhangsan">
+
+</body>
+
+<script>
+    /**
+     * 获取元素对象
+     *  getAttribute("属性名称")
+     *  setAttribute("属性名称","属性值")
+     *  removeAttribute("属性名称")
+     *
+     *
+     *
+     * @type {HTMLElement}
+     */
+    var input = document.getElementById("nameId");
+
+    //alert(input.value);
+    alert(input.getAttribute("value"));
+
+    input.setAttribute("value","zhaosi");
+    alert(input.getAttribute("value"));
+
+    input.removeAttribute("value");
+
+</script>
+</html>

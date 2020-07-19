@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+
+
+    <!--这个配置为/的Servlet可以处理服务器报错  [但是尽量不要配置，除非你非常自信的可以处理，服务器的错误]-->
+    <servlet>
+        <servlet-name>ServletError</servlet-name>
+        <servlet-class>com.ServletError</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletError</servlet-name>
+        <url-pattern>/</url-pattern>
+        <!--
+        Tomcat有一个缺省的Servlet，它配置的就是/
+        如果我的Servlet也配置了/，那么就会替代掉，tomcat的缺省的Servlet
+
+        tomcat缺省的Servlet在其配置文件中配置名字叫做 DefaultServlet
+        -->
+    </servlet-mapping>
+
+</web-app>

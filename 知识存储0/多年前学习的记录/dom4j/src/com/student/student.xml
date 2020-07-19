@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+    <student>
+        <num>007</num>
+        <name>邦德</name>
+        <desc>能打</desc>
+    </student>
+</students>

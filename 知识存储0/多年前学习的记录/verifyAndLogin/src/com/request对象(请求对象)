@@ -1,0 +1,63 @@
+
+Request对象 (域对象)
+
+ServletRequest
+    |
+HttpServletRequest
+
+    获取客户机信息
+        getRemoteAddr(***) 获取IP地址
+        getMethod() 获取请求方式
+        getContextPath()  获取虚拟路径（默认是和项目的名称相同的）
+
+        <form action="${xxx}/demo">
+
+        getQueryString()  获取查询字符串
+
+        /day10/demo?username=zhangsan&password=123
+
+
+
+        post方法传的参数，getQueryString（）得不到，它只对get方法得到的数据有效。
+
+
+
+
+
+String queryString = request.getQueryString();
+
+上面这句话的意思是：获取查询字符串。
+
+比如客户端发送
+
+http://localhost/test.do?a=b&c=d&e=f
+
+通过request.getQueryString()得到的是
+
+a=b&c=d&e=f
+
+API 中注释写到：’
+
+意思是：获取带参数查询。
+---------------------
+版权声明：本文为CSDN博主「拔刀怒向猪头」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/weikeke410/article/details/48654887
+
+
+
+
+    获取请求头信息
+
+    获取请求参数（****）
+
+    利用请求域传递对象
+
+    getParameter()
+
+    setCharacterEncoding()
+
+    HTTP请求中的所有信息都被封装到Request对象中
+
+    重定向和转发的区别（转发）
+
+

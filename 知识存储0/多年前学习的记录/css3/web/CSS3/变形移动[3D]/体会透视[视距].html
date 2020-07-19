@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+
+        body {
+            perspective: 500px;
+            /*
+            视距  眼睛到屏幕的距离
+
+            视距越大，效果越不明显 视距越小，透视效果越明显
+            */
+        }
+
+        img {
+            display: block;
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            transition: all 5s;
+            transform-origin: center; /*设置旋转中心点*/
+        }
+
+        img:hover {
+            /*transform: rotateX(180deg);*/ /* 沿X轴旋转 */
+            transform: rotateY(180deg); /* 沿Z轴旋转[垂直于屏幕] */
+        }
+    </style>
+</head>
+<body>
+
+
+<img src="../../imgs/1.png" alt="">
+
+<hr/>
+
+<span>
+简单记住CSS3的坐标：
+1. x左边是负的，右边是正的
+2. y上面是负的，下面是正的
+3. z里面是负的，外面是正的
+
+rotateX()
+就是沿着x立体旋转
+</span>
+
+</body>
+</html>

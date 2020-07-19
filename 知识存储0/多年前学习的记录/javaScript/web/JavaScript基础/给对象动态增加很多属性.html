@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    var o = new Object();
+
+    for (var i = 0; i < 10; i++) {
+        //动态给对象增加属性
+        o["n" + i] = i;
+    }
+
+
+
+    function test() {
+        alert(this);  //这个this就是window对象
+    }
+
+    window.test(); //window是js的顶级对象
+
+</script>
+</body>
+</html>

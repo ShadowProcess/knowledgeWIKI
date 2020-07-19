@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var sum = 0;
+    for (var i = 1; i <= 100; i++) {
+        if (i % 3 === 0) {
+            continue; //结束本次循环，执行下次循环
+        }
+
+        sum += i;
+
+        if (sum > 10) {
+            console.log(sum);
+            break; //结束当前循环
+        }
+    }
+</script>
+</body>
+</html>

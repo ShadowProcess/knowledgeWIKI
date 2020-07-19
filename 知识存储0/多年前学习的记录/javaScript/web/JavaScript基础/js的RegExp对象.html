@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式</title>
+
+    <script type="text/javascript" src="../jsShell/all.js"></script>
+</head>
+<body>
+
+
+<script>
+
+    /*三种方式*/
+
+    var reg1 = new RegExp("表达式");
+
+    var reg2 = /表达式/;
+
+    var reg3 = /^表达式$/;
+
+
+    reg1.exec("String"); //如果匹配，返回匹配的结果
+
+    reg1.test("String"); //如果匹配，返回true
+
+</script>
+</body>
+</html>

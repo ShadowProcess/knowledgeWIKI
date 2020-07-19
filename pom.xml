@@ -56,5 +56,6 @@
         <module>oauth2-college</module>
         <module>elasticsearch-college</module>
         <module>aliyun-vue</module>
+        <module>gitlab-college</module>
     </modules>
 </project>

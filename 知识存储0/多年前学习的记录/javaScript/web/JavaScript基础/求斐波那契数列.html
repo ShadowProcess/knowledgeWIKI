@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+
+    function getF(n) {
+
+        if (n==1 || n==2) {
+            return 1;
+        }
+
+        return getF(n-1) + getF(n-2);
+    }
+
+    console.log(getF(5));
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+
+
+
+dbutils是什么，有什么作用？
+
+    它就是一个简单的jdbc封装工具
+
+    要使用需要导入Dbutils的jar包
+
+
+DbUtils核心
+
+    1.QueryRunner类
+        它是用于执行SQL语句的类
+              query用于执行select
+              update用于执行update delete insert
+              batch 批处理
+
+    2.ResultSetHandler接口
+        用于定义结果集的封装
+
+    3.
+
+

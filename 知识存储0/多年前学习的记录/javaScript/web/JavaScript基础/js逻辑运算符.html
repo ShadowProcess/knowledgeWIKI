@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+如果第一个操作数是对象，返回第二个操作数
+如果第二个操作数是对象，并且第一个操作数是true返回第二个操作数
+如果有一个操作数是null(NaN/undefined),返回null(NaN/undefined)
+
+<script>
+    /**
+     *
+     *  如果两个操作数都不是布尔类型，
+     *  如果两个值转换成布尔类型都是true，返回第二个操作数
+     *  如果有一个操作数转换成布尔类型是false，返回这个数
+     *  如果两个都是false，返回undefined
+     *
+     * @type {string}
+     */
+
+    var b = "abc" && "bcd";
+    alert(b); // "bcd"
+
+
+    sum0(null,5)
+    function sum0(n1,n2) {  //null会被转换为数字0
+        alert(n1+n2); //5
+    }
+
+    sum1(undefined,5)
+    function sum1(n1,n2) {
+        alert(n1+n2); //undefine
+    }
+
+    sum2(undefined,5)
+    function sum2(n1,n2) {
+        n1 = n1 || 0;
+        n2 = n2 || 0;
+        alert(n1+n2); //0
+    }
+
+    var z = a * (x/=y) * x;
+    var z = a * x/y * x/y;
+    var z = a * (x*x)/(y*y);
+
+</script>
+
+</body>
+</html>

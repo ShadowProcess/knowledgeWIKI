@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+【PageContext对象】
+
+域对象
+* 自己存取值
+* 向其它域存取值
+setAttribute(String name,Object obj,int scope)
+getAttribute(String name ,int scope)
+findAttribute(String name)
+
+
+可以获取其它8个对象
+* 编写框架或者通用性高的代码
+
+* 在JSP的时候（4个域对象）
+    ServletContext  整个web应用
+    Session         一次会话
+    Request         一次请求
+    PageContext     当前页面
+
+
+<h4>向其他域中存入值</h4>
+<%
+    pageContext.setAttribute("name","美美")
+%>
+
+</body>
+</html>

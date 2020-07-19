@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            margin-left: auto;
+            margin-right: auto; /* auto表示盒子居中对齐*/
+            text-align: center; /* 文字水平居中*/
+
+            /*vertical-align: middle;*/
+            /*
+            这个垂直居中，对于块级元素无效
+            只针对行内元素，行内块元素有效
+            */
+        }
+
+        img {
+            /*vertical-align: baseline;*/ /*默认基线对齐*/
+            vertical-align: middle; /*让图片和文字实现这种居中对齐的效果 【行内块元素和文字对齐】*/
+        }
+    </style>
+</head>
+<body>
+
+<div>
+123
+</div>
+<hr/>
+
+<img src="../../imgs/文字.png" alt=""> 等待AAS阿迪达斯多
+
+<hr/>
+
+用户留言:<textarea></textarea>
+
+
+</body>
+</html>

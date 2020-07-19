@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    var g = function (tag) {
+        return document.getElementsByTagName(tag);
+    }
+
+    var divs = g('divs');
+    var ps = g('p');
+
+    //性能
+    //两个循环
+    //沾过来，改一下遍历的数组的名字
+
+    var each = function (arr) {
+        //遍历
+        for (var i = 0; i < arr.length; i++) {
+            arr[i].style.backgroundColor = 'blue';
+        }
+    };
+
+    each(divs);
+    each(ps);
+
+
+</script>
+</html>

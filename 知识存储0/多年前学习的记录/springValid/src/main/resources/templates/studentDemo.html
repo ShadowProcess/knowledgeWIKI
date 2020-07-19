@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="application/javascript">
+        function submitData() {
+            $.post("/student/add",{name:$("#name").val(),age:$("#age").val()},function (result) {
+                alert(result);
+            });
+        }
+    </script>
+</head>
+<body>
+
+<!--<form action="/book/add" method="post">-->
+    姓名:<input type="text" id="name" name="name"> <br/>
+    年龄:<input type="text" id="age" name="age"> <br/>
+    <input type="button" onclick="submitData()" value="提交">
+<!--</form>-->
+
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: goldenrod;
+
+            /*animation: 动画名称 动画时间 运动曲线 何时开始 播放次数 是否反反向;*/
+
+            animation: go 2s ease 0s infinite alternate;
+            /*动画名称是自定义的*/
+            /*infinite[表示无限循环]*/
+
+            /*
+            normal:正常方向
+            reverse:反方向运行
+            alternate:动画先正常运行再反方向运行，并持续交替运行
+            alternate-reverse:动画先反运行再正方向运行，并持续交替运行
+            */
+
+            /*
+            一般情况，就用前两个 animation:go 2s;
+            */
+        }
+
+
+        @keyframes go {
+
+            /*从哪开始*/
+            from {
+                transform: translateX(0);
+            }
+
+            /*从哪结束*/
+            to {
+                transform: translateX(600px);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div></div>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<function>
+    <name>decode</name>
+    <function-class>com.myelfunction.MyEl</function-class>
+    <function-signature>java.lang.String.myDecode(java.lang.String)</function-signature>
+</function>
