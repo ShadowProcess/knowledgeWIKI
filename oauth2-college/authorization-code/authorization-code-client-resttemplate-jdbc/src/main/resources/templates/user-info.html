@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>用户详情页面</title>
+</head>
+<body>
+<div>当前登录的用户为：<h4 th:text="${currentLoginUsername}">test</h4></div>
+<br/>
+<div>
+    获得的用户信息为：
+    <ul>
+        <li>用户名：<span th:text="${user.username}">测试用户</span></li>
+        <li>密码：<span th:text="${user.email}">测试email</span></li>
+    </ul>
+</div>
+
+</body>
+</html>
