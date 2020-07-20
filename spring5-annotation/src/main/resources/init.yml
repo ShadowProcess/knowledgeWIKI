@@ -1,0 +1,13 @@
+account:
+  name: alex
+  password: 123456
+
+
+list: 111,222
+
+
+#声明集合
+#list:
+# - 111
+# - 222
+

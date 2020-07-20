@@ -58,5 +58,6 @@
         <module>aliyun-vue</module>
         <module>gitlab-college</module>
         <module>apache-commons-college</module>
+        <module>yaml-college</module>
     </modules>
 </project>
