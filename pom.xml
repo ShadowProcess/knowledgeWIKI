@@ -57,5 +57,6 @@
         <module>elasticsearch-college</module>
         <module>aliyun-vue</module>
         <module>gitlab-college</module>
+        <module>apache-commons-college</module>
     </modules>
 </project>
