@@ -69,7 +69,19 @@
             <version>5.6.0-M1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.4</version>
+            <scope>compile</scope>
+        </dependency>
 
+        <!-- https://mvnrepository.com/artifact/commons-betwixt/commons-betwixt -->
+        <dependency>
+            <groupId>commons-betwixt</groupId>
+            <artifactId>commons-betwixt</artifactId>
+            <version>0.8</version>
+        </dependency>
 
     </dependencies>
 </project>
