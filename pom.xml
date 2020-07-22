@@ -59,5 +59,7 @@
         <module>gitlab-college</module>
         <module>apache-commons-college</module>
         <module>yaml-college</module>
+        <module>Test</module>
+        <module>A-Test</module>
     </modules>
 </project>

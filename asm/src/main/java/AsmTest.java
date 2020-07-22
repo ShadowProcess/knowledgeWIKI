@@ -51,6 +51,5 @@ public class AsmTest {
         FileOutputStream output = new FileOutputStream(file);
         output.write(code);
         output.close();
-
     }
 }
