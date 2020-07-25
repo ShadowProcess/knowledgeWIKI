@@ -58,8 +58,6 @@
         <module>aliyun-vue</module>
         <module>gitlab-college</module>
         <module>apache-commons-college</module>
-        <module>yaml-college</module>
-        <module>Test</module>
         <module>A-Test</module>
         <module>java-8</module>
     </modules>

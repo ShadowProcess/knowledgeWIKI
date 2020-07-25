@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /*
  * 一、Lambda 表达式的基础语法：Java8中引入了一个新的操作符 "->" 该操作符称为箭头操作符或 Lambda 操作符
@@ -69,7 +69,7 @@ public class TestLambda2 {
 	@Test
 	public void test2(){
 		Consumer<String> con = x -> System.out.println(x);
-		con.accept("我大尚硅谷威武！");
+		con.accept("我威武！");
 	}
 	
 	@Test
@@ -88,7 +88,7 @@ public class TestLambda2 {
 	@Test
 	public void test5(){
 //		String[] strs;
-//		strs = {"aaa", "bbb", "ccc"};
+//		strs = {"aaa", "bbb", "ccc"}; 这样写会报错，因为jvm推断不出后边的类型
 		
 		List<String> list = new ArrayList<>();
 		

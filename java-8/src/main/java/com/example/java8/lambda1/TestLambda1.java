@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.TreeSet;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class TestLambda1 {
 	
@@ -101,7 +101,7 @@ public class TestLambda1 {
 			System.out.println(employee);
 		}
 		
-		System.out.println("------------------------------------------");
+		System.out.println("-----------------策略模式-------------------------");
 		
 		List<Employee> list2 = filterEmployee(emps, new FilterEmployeeForSalary());
 		for (Employee employee : list2) {
