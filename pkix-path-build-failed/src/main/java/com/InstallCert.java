@@ -15,6 +15,7 @@ import java.security.cert.X509Certificate;
  * 2.运行程序
  * 3.在控制台输出停止的时候，键入Enter键
  * 4.结束
+ *
  */
 
 public class InstallCert {
