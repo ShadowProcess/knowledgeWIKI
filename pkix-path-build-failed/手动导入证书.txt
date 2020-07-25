@@ -1,4 +1,6 @@
-keytool -importcert -noprompt -trustcacerts -alias xxx(你想要导入的别名) -file "C:\Program Files\Java\jdk1.8.0_221\jre\lib\security\xxx.cer(你的证书文件的地址)" -keystore "C:\Program Files\Java\jdk1.8.0_221\jre\lib\security\cacerts" -storepass changeit
+例子：
+keytool -importcert -noprompt -trustcacerts -alias xxx(你想要导入的别名) -file "C:\Program Files\Java\jdk1.8.0_221\jre\lib\security\xxx.cer(你的证书文件的地址)" -keystore "C:\Program Files\Java\jdk1.8.0_221\jre\lib\security\cacerts(jdk对应的目录)" -storepass changeit
 
 
-keytool -importcert -noprompt -trustcacerts -alias aliyunmvn1 -file "‪D:\DevelopmentSoftWare\cert\aliyun1.cer" -keystore "C:\Program Files\Java\jdk8u252\jre\lib\security\cacerts" -storepass changeit
+实际应用：
+keytool -importcert -noprompt -trustcacerts -alias googleapi1 -file "‪D:\DevelopmentSoftWare\cert\googleapi.cer" -keystore "C:\Program Files\Java\jdk8u252\jre\lib\security\cacerts" -storepass changeit

@@ -8,22 +8,36 @@ import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
 /**
- * 解决PKIX path building failed
+ * 解决javax.net.ssl.SSLHandshakeException:
+ * sun.security.validator.ValidatorException:
+ * PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException:
+ * unable to find valid certification path to requested target
  *
  * 使用说明：
  * 1.修改domain为要生成的网站名称
- * 2.运行程序
- * 3.在控制台输出停止的时候，键入Enter键
- * 4.结束
  *
+ * 2.运行程序
+ *
+ * 3.在控制台输出停止的时候，在命令行输入：1，生成文件，会在执行目录下生成：jssecacerts
+ *
+ * 4.这个时候再运行一遍InstallCert就不会报错，因为已经有jssecacerts文件，
+ *   直接copy jssecacerts文件到%JAVA_HOME%\jre\lib\security下，就可以愉快的玩耍了。
+ *
+ * 5.导入之后重启项目(完美解决)
  */
 
+/**
+ * 为什么Java同时具有cacerts和jssecacerts文件？
+ *
+ * 据我了解，cacerts文件是出厂默认文件。
+ * 如果有cacerts文件，则仅用于jssecacerts文件。
+ * 我的建议：保留cacerts文件，复制到jssecacerts并将所需的任何专用CA /签名证书添加到jssecacerts文件中
+ */
 public class InstallCert {
 
     public static void main(String[] args) throws Exception {
 
         //TODO 要生成证书的网站域名
-        //String domain = "maven.aliyun.com";
         String domain = "maven.aliyun.com";
 
         create(new String[]{domain});
@@ -112,8 +126,7 @@ public class InstallCert {
             System.out.println();
         }
 
-        System.out
-                .println("Enter certificate to add to trusted keystore or 'q' to quit: [1]");
+        System.out.println("Enter certificate to add to trusted keystore or 'q' to quit: [1]");
         String line = reader.readLine().trim();
         int k;
         try {
@@ -176,5 +189,4 @@ public class InstallCert {
             tm.checkServerTrusted(chain, authType);
         }
     }
-
 }
