@@ -13,11 +13,11 @@ import java.io.IOException;
 public class HelloAsyncServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(final HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //0.支持异步 asyncSupported = true
         //1.开启异步处理
         System.out.println("主线程开始："+Thread.currentThread()+"=="+System.currentTimeMillis());
-        AsyncContext startAsync = req.startAsync();
+        final AsyncContext startAsync = req.startAsync();
         //startAsync.setTimeout(); //异步处理超时时间
 
         //2.进行异步处理业务逻辑；开始异步处理

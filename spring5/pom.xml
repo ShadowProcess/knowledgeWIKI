@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.1.4.RELEASE</version>
+            <version>5.1.14.RELEASE</version>
         </dependency>
 
         <!--日志-->
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.11</version>
+            <version>8.0.16</version>
         </dependency>
 
         <dependency>
