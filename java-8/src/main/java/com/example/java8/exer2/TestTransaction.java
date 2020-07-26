@@ -1,13 +1,14 @@
 package com.example.java8.exer2;
 
+import org.junit.Before;
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
-import org.junit.Before;
-import org.junit.Test;
 
 public class TestTransaction {
 	

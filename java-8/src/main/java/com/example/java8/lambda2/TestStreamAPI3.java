@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import com.atguigu.java8.Employee.Status;
+import com.example.java8.lambda2.Employee.Status;
 
 public class TestStreamAPI3 {
 	

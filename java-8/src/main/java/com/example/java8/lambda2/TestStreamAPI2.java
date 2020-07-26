@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
-import com.atguigu.java8.Employee.Status;
 
 /*
  * 一、 Stream 的操作步骤
@@ -21,13 +20,13 @@ import com.atguigu.java8.Employee.Status;
 public class TestStreamAPI2 {
 	
 	List<Employee> emps = Arrays.asList(
-			new Employee(102, "李四", 59, 6666.66, Status.BUSY),
-			new Employee(101, "张三", 18, 9999.99, Status.FREE),
-			new Employee(103, "王五", 28, 3333.33, Status.VOCATION),
-			new Employee(104, "赵六", 8, 7777.77, Status.BUSY),
-			new Employee(104, "赵六", 8, 7777.77, Status.FREE),
-			new Employee(104, "赵六", 8, 7777.77, Status.FREE),
-			new Employee(105, "田七", 38, 5555.55, Status.BUSY)
+			new Employee(102, "李四", 59, 6666.66, Employee.Status.BUSY),
+			new Employee(101, "张三", 18, 9999.99, Employee.Status.FREE),
+			new Employee(103, "王五", 28, 3333.33, Employee.Status.VOCATION),
+			new Employee(104, "赵六", 8, 7777.77, Employee.Status.BUSY),
+			new Employee(104, "赵六", 8, 7777.77, Employee.Status.FREE),
+			new Employee(104, "赵六", 8, 7777.77, Employee.Status.FREE),
+			new Employee(105, "田七", 38, 5555.55, Employee.Status.BUSY)
 	);
 	
 	//3. 终止操作
@@ -44,17 +43,17 @@ public class TestStreamAPI2 {
 	@Test
 	public void test1(){
 			boolean bl = emps.stream()
-				.allMatch((e) -> e.getStatus().equals(Status.BUSY));
+				.allMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
 			
 			System.out.println(bl);
 			
 			boolean bl1 = emps.stream()
-				.anyMatch((e) -> e.getStatus().equals(Status.BUSY));
+				.anyMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
 			
 			System.out.println(bl1);
 			
 			boolean bl2 = emps.stream()
-				.noneMatch((e) -> e.getStatus().equals(Status.BUSY));
+				.noneMatch((e) -> e.getStatus().equals(Employee.Status.BUSY));
 			
 			System.out.println(bl2);
 	}
@@ -70,7 +69,7 @@ public class TestStreamAPI2 {
 		System.out.println("--------------------------------");
 		
 		Optional<Employee> op2 = emps.parallelStream()
-			.filter((e) -> e.getStatus().equals(Status.FREE))
+			.filter((e) -> e.getStatus().equals(Employee.Status.FREE))
 			.findAny();
 		
 		System.out.println(op2.get());
@@ -79,7 +78,7 @@ public class TestStreamAPI2 {
 	@Test
 	public void test3(){
 		long count = emps.stream()
-						 .filter((e) -> e.getStatus().equals(Status.FREE))
+						 .filter((e) -> e.getStatus().equals(Employee.Status.FREE))
 						 .count();
 		
 		System.out.println(count);
@@ -100,7 +99,7 @@ public class TestStreamAPI2 {
 	@Test
 	public void test4(){
 		Stream<Employee> stream = emps.stream()
-		 .filter((e) -> e.getStatus().equals(Status.FREE));
+		 .filter((e) -> e.getStatus().equals(Employee.Status.FREE));
 		
 		long count = stream.count();
 		
