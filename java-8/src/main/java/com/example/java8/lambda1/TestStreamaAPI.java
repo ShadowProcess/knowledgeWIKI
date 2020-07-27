@@ -39,7 +39,7 @@ public class TestStreamaAPI {
 		Stream<Integer> stream3 = Stream.iterate(0, (x) -> x + 2).limit(10);
 		stream3.forEach(System.out::println);
 		
-		//生成
+		//5. 生成流
 		Stream<Double> stream4 = Stream.generate(Math::random).limit(2);
 		stream4.forEach(System.out::println);
 		
