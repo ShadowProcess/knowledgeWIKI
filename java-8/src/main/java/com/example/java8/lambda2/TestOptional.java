@@ -45,8 +45,8 @@ public class TestOptional {
 	
 	@Test
 	public void test2(){
-		/*Optional<Employee> op = Optional.ofNullable(null);
-		System.out.println(op.get());*/
+		Optional<Employee> op = Optional.ofNullable(null);
+		System.out.println(op.get());
 		
 //		Optional<Employee> op = Optional.empty();
 //		System.out.println(op.get());
@@ -63,14 +63,14 @@ public class TestOptional {
 	public void test5(){
 		Man man = new Man();
 		
-		String name = getGodnessName(man);
+		String name = getGoddessName(man);
 		System.out.println(name);
 	}
 	
 	//需求：获取一个男人心中女神的名字
-	public String getGodnessName(Man man){
+	public String getGoddessName(Man man){
 		if(man != null){
-			Godness g = man.getGod();
+			Goddess g = man.getGod();
 			
 			if(g != null){
 				return g.getName();
@@ -83,17 +83,17 @@ public class TestOptional {
 	//运用 Optional 的实体类
 	@Test
 	public void test6(){
-		Optional<Godness> godness = Optional.ofNullable(new Godness("林志玲"));
+		Optional<Goddess> goddess = Optional.ofNullable(new Goddess("林志玲"));
 		
-		Optional<NewMan> op = Optional.ofNullable(new NewMan(godness));
-		String name = getGodnessName2(op);
+		Optional<NewMan> op = Optional.ofNullable(new NewMan(goddess));
+		String name = getGoddessName2(op);
 		System.out.println(name);
 	}
 	
-	public String getGodnessName2(Optional<NewMan> man){
+	public String getGoddessName2(Optional<NewMan> man){
 		return man.orElse(new NewMan())
 				  .getGodness()
-				  .orElse(new Godness("苍老师"))
+				  .orElse(new Goddess("苍老师"))
 				  .getName();
 	}
 }

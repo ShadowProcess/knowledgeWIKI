@@ -1,13 +1,13 @@
 package com.example.java8.lambda2;
 
-public class Godness {
+public class Goddess {
 
 	private String name;
 
-	public Godness() {
+	public Goddess() {
 	}
 
-	public Godness(String name) {
+	public Goddess(String name) {
 		this.name = name;
 	}
 

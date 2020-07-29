@@ -5,26 +5,26 @@ import java.util.Optional;
 //注意：Optional 不能被序列化
 public class NewMan {
 
-	private Optional<Godness> godness = Optional.empty();
+	private Optional<Goddess> godness = Optional.empty();
 	
-	private Godness god;
+	private Goddess god;
 	
-	public Optional<Godness> getGod(){
+	public Optional<Goddess> getGod(){
 		return Optional.of(god);
 	}
 
 	public NewMan() {
 	}
 
-	public NewMan(Optional<Godness> godness) {
+	public NewMan(Optional<Goddess> godness) {
 		this.godness = godness;
 	}
 
-	public Optional<Godness> getGodness() {
+	public Optional<Goddess> getGodness() {
 		return godness;
 	}
 
-	public void setGodness(Optional<Godness> godness) {
+	public void setGodness(Optional<Goddess> godness) {
 		this.godness = godness;
 	}
 

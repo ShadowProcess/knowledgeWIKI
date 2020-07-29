@@ -2,20 +2,20 @@ package com.example.java8.lambda2;
 
 public class Man {
 
-	private Godness god;
+	private Goddess god;
 
 	public Man() {
 	}
 
-	public Man(Godness god) {
+	public Man(Goddess god) {
 		this.god = god;
 	}
 
-	public Godness getGod() {
+	public Goddess getGod() {
 		return god;
 	}
 
-	public void setGod(Godness god) {
+	public void setGod(Goddess god) {
 		this.god = god;
 	}
 

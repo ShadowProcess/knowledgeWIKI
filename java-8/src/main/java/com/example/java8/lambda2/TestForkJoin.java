@@ -39,7 +39,11 @@ public class TestForkJoin {
 		
 		System.out.println("耗费的时间为: " + (end - start)); //34-3174-3132-4227-4223-31583
 	}
-	
+
+
+	/**
+	 * java8封装的 fork-join框架，可以下面样式使用
+	 */
 	@Test
 	public void test3(){
 		long start = System.currentTimeMillis();

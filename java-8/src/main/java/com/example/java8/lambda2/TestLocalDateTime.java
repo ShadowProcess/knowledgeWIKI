@@ -16,6 +16,13 @@ import java.util.Set;
 
 import org.junit.Test;
 
+/**
+ * jdk1.8的新时间API都是线程安全的，都是不可变的，变化就会产生新实例
+ * LocalDateTime 是线程安全的
+ *
+ * 之前的日期类都不是线程安全的；都是可变的， 例如：SimpleDateFormat
+ */
+
 public class TestLocalDateTime {
 	
 	//6.ZonedDate、ZonedTime、ZonedDateTime ： 带时区的时间或日期
@@ -134,10 +141,10 @@ public class TestLocalDateTime {
 		LocalDateTime ld2 = LocalDateTime.of(2016, 11, 21, 10, 10, 10);
 		System.out.println(ld2);
 		
-		LocalDateTime ldt3 = ld2.plusYears(20);
+		LocalDateTime ldt3 = ld2.plusYears(20); //在这个时间上 加20年
 		System.out.println(ldt3);
 		
-		LocalDateTime ldt4 = ld2.minusMonths(2);
+		LocalDateTime ldt4 = ld2.minusMonths(2); //在这个时间上 减2个月
 		System.out.println(ldt4);
 		
 		System.out.println(ldt.getYear());
