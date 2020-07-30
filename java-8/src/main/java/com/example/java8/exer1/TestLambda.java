@@ -17,7 +17,8 @@ public class TestLambda {
 			new Employee(104, "赵六", 8, 7777.77),
 			new Employee(105, "田七", 38, 5555.55)
 	);
-	
+
+	//先按年龄降序，年龄相等，再按姓名升序
 	@Test
 	public void test1(){
 		Collections.sort(emps, (e1, e2) -> {

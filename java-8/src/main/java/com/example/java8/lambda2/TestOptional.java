@@ -92,7 +92,7 @@ public class TestOptional {
 	
 	public String getGoddessName2(Optional<NewMan> man){
 		return man.orElse(new NewMan())
-				  .getGodness()
+				  .getGoddess()
 				  .orElse(new Goddess("苍老师"))
 				  .getName();
 	}
