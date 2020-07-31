@@ -41,7 +41,7 @@ public class InstallCert {
 
 
     public static void main(String[] args) throws Exception {
-        getCert(new String[]{"jcenter.bintray.com"});
+        getCert(new String[]{"maven.aliyun.com"});
     }
 
 
