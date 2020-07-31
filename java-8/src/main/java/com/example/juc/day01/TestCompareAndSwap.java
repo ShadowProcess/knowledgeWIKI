@@ -1,4 +1,4 @@
-package com.example.juc.day01.com.juc;
+package com.example.juc.day01;
 
 /*
  * 模拟 CAS 算法
@@ -24,6 +24,9 @@ public class TestCompareAndSwap {
 	
 }
 
+
+
+/////模拟CAS算法
 class CompareAndSwap{
 	private int value;
 	

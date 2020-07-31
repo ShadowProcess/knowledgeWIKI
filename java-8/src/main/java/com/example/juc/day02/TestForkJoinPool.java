@@ -1,4 +1,4 @@
-package com.example.juc.day02.com.juc;
+package com.example.juc.day02;
 
 import java.time.Duration;
 import java.time.Instant;

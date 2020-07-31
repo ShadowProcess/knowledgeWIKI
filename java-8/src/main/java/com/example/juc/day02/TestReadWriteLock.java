@@ -1,4 +1,4 @@
-package com.example.juc.day02.com.juc;
+package com.example.juc.day02;
 
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;

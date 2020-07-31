@@ -1,7 +1,8 @@
-package com.example.juc.day02.com.juc;
+package com.example.juc.day02;
 
 /*
  * 生产者和消费者案例
+ * 等待唤醒机制
  */
 public class TestProductorAndConsumer {
 
@@ -30,14 +31,14 @@ class Clerk{
 			System.out.println("产品已满！");
 			
 			try {
-				this.wait();
+				this.wait(); //等待，并释放锁资源
 			} catch (InterruptedException e) {
 			}
 			
 		}
 		
 		System.out.println(Thread.currentThread().getName() + " : " + ++product);
-		this.notifyAll();
+		this.notifyAll(); //唤醒
 	}
 	
 	//卖货
@@ -46,13 +47,13 @@ class Clerk{
 			System.out.println("缺货！");
 			
 			try {
-				this.wait();
+				this.wait(); //等待，并释放锁资源
 			} catch (InterruptedException e) {
 			}
 		}
 		
 		System.out.println(Thread.currentThread().getName() + " : " + --product);
-		this.notifyAll();
+		this.notifyAll(); //唤醒
 	}
 }
 

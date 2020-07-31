@@ -1,4 +1,4 @@
-package com.example.juc.day02.com.juc;
+package com.example.juc.day02;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
@@ -31,6 +31,8 @@ public class TestCallable {
 
 }
 
+
+
 class ThreadDemo implements Callable<Integer>{
 
 	@Override
@@ -43,7 +45,6 @@ class ThreadDemo implements Callable<Integer>{
 		
 		return sum;
 	}
-	
 }
 
 /*class ThreadDemo implements Runnable{

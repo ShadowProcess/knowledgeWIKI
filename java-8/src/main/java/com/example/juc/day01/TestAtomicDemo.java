@@ -1,4 +1,4 @@
-package com.example.juc.day01.com.juc;
+package com.example.juc.day01;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -7,9 +7,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 		  int i = 10;
  * 		  i = i++; //10
  * 
- * 		  int temp = i;
- * 		  i = i + 1;
- * 		  i = temp;
+ * 		  int temp = i;  //读
+ * 		  i = i + 1;	 //改
+ * 		  i = temp;      //写
  * 
  * 二、原子变量：在 java.util.concurrent.atomic 包下提供了一些原子变量。
  * 		1. volatile 保证内存可见性
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 			①内存值  V
  * 			②预估值  A
  * 			③更新值  B
- * 			当且仅当 V == A 时， V = B; 否则，不会执行任何操作。
+ * 			当且仅当 V == A 时， V = B; 否则，不会执行任何操作。并且不会放弃CPU执行权，会再次尝试，一直到成功
  */
 public class TestAtomicDemo {
 
@@ -30,9 +30,12 @@ public class TestAtomicDemo {
 			new Thread(ad).start();
 		}
 	}
-	
 }
 
+
+
+
+/// 创建一个线程
 class AtomicDemo implements Runnable{
 	
 //	private volatile int serialNumber = 0;
@@ -53,6 +56,4 @@ class AtomicDemo implements Runnable{
 	public int getSerialNumber(){
 		return serialNumber.getAndIncrement();
 	}
-	
-	
 }

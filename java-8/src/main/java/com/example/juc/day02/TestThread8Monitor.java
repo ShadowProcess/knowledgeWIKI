@@ -1,4 +1,4 @@
-package com.example.juc.day02.com.juc;
+package com.example.juc.day02;
 
 /*
  * 题目：判断打印的 "one" or "two" ？
