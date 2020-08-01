@@ -23,11 +23,17 @@ import java.util.concurrent.Future;
  * ExecutorService newSingleThreadExecutor() : 创建单个线程池。线程池中只有一个线程
  * 
  * ScheduledExecutorService newScheduledThreadPool() : 创建固定大小的线程，可以延迟或定时的执行任务。
+ *
+ * 关闭线程池【以平和的方式关闭线程池，它会等待线程池任务都执行完，并且不会再接收新任务】
+ *	pool.shutdown();
+ *
+ * 立即关闭，不管你是否执行完毕
+ *  pool.shutdownNow()
  */
 public class TestThreadPool {
 	
 	public static void main(String[] args) throws Exception {
-		//1. 创建线程池
+		//1. 创建固定大小的线程池
 		ExecutorService pool = Executors.newFixedThreadPool(5);
 		
 		List<Future<Integer>> list = new ArrayList<>();
@@ -45,7 +51,6 @@ public class TestThreadPool {
 					
 					return sum;
 				}
-				
 			});
 
 			list.add(future);
@@ -66,7 +71,7 @@ public class TestThreadPool {
 			pool.submit(tpd);
 		}
 		
-		//3. 关闭线程池
+		//3. 关闭线程池【以平和的方式关闭线程池，它会等待线程池任务都执行完，并且不会再接收新任务】
 		pool.shutdown();*/
 	}
 	

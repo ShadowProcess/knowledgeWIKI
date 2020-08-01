@@ -14,7 +14,9 @@ public class TestReadWriteLock {
 
 	public static void main(String[] args) {
 		ReadWriteLockDemo rw = new ReadWriteLockDemo();
-		
+
+
+		//写操作
 		new Thread(new Runnable() {
 			
 			@Override
@@ -23,7 +25,8 @@ public class TestReadWriteLock {
 			}
 		}, "Write:").start();
 		
-		
+
+		//读操作
 		for (int i = 0; i < 100; i++) {
 			new Thread(new Runnable() {
 				

@@ -1,5 +1,14 @@
 package com.example.juc.day02;
 
+
+/**
+ * 线程八锁的关键：
+ * ①非静态方法的锁默认为  this,  静态方法的锁为 对应的 Class 实例
+ * ②某一个时刻内，只能有一个线程持有锁，无论几个方法。
+ *
+ * [注意：字节码文件只有一份，对象可以有多个]
+ */
+
 /*
  * 题目：判断打印的 "one" or "two" ？
  * 
@@ -50,7 +59,7 @@ public class TestThread8Monitor {
 
 class Number{
 	
-	public static synchronized void getOne(){//Number.class
+	public static synchronized void getOne(){//Number.class [注意：字节码文件只有一份，对象可以有多个]
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
