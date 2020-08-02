@@ -30,7 +30,32 @@ import org.junit.Test;
  * 2. 缓冲区（Buffer）：负责数据的存取
  * 
  * 3. 选择器（Selector）：是 SelectableChannel 的多路复用器。用于监控 SelectableChannel 的 IO 状况
- * 
+ *
+ */
+
+/**
+ *
+ * NIO中的selector是阻塞的，为什么效率就更高了？
+ * 对比传统的阻塞IO，从原来的读写阻塞，转换到了selector的阻塞，请问，这个效率不是应该更低了吗？
+ * 假设有8个读数据请求过来，他不是要在这个地方阻塞8次吗？如果更大的并发的情况，岂不是很容易形成瓶颈？
+ *
+ *
+ * selector.select（）可以不阻塞
+ * selector.select（1000），不阻塞
+ * selector.wakeup()也可以唤醒selector
+ *
+ * selector也可以设置成不阻塞的，大体原理上来说,他可以搞一个轮询机制去检查是否有可以满足事件的通道可以使用
+ * 比如每隔1000ms，不满足期间你可以干别的事.个人认为:jvm调os做文件操作，os完成后返回jvm结果，
+ * jvm去维护selector,用户线程只是去查询selector是否有可操作的channel而已，而这期间，
+ * 用户线程永远可以不阻塞,当然你也可以自己一直阻塞在那，比如你没别的事干。。
+ *
+ * 8个连接只用了一个线程阻塞，假设其中五个连接可读，方法直接返回这5个连接，
+ * 通过Iterator<SelectionKey> selectedKeys = selector.selectedKeys().iterator();
+ * 分别读取即可，而socketChannel.read方法不阻塞，通过一个线程可以处理多个连接，
+ * 而传统阻塞IO需要8个线程。这就是多路复用解决连接数多的情况下线程太多线程切换导致性能低下，
+ * 而且线程的数量是有限制的。
+ *
+ * Selector：NIO核心的东西，负责监听ServerSocketChannel、SocketChannel。NIO是可以实现单线程为多个客户端服务的。传统IO是做不到的， 传统IO要多线程才行。
  */
 public class TestNonBlockingNIO {
 	
