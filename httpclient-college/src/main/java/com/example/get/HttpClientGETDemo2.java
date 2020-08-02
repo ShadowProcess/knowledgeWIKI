@@ -1,6 +1,6 @@
 package com.example.get;
 
-import com.example.httpclient_demo.utils.HttpUtils;
+import com.example.utils.HttpUtils;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.config.RequestConfig;

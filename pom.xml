@@ -48,8 +48,6 @@
         <module>txmybatis-college</module>
         <module>thymeleaf-college</module>
         <module>springboot-principle</module>
-        <module>springboot-mybatis</module>
-        <module>springboot-jsp</module>
         <module>springboot-jpa</module>
         <module>spring-security</module>
         <module>kubernetes-college</module>
@@ -60,5 +58,6 @@
         <module>apache-commons-college</module>
         <module>A-Test</module>
         <module>java-8</module>
+        <module>java-9</module>
     </modules>
 </project>

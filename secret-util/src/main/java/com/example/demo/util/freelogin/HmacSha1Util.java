@@ -1,5 +1,7 @@
 package com.example.demo.util.freelogin;
 
+import java.util.Locale;
+
 /**
 * @author: Chenzhenyong
 * @description: HMAC_SHA1算法工具类

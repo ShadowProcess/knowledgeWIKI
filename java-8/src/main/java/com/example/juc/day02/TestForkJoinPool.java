@@ -9,6 +9,20 @@ import java.util.stream.LongStream;
 
 import org.junit.Test;
 
+
+/**
+ * CPU有几核心，它默认分成几个线程
+ * 然后将任务分别压入线程队列中
+ * 	   线程1	  线程2   线程3   线程4
+ * 		0      0      0      0
+ * 		0      0      0      0
+ * 		0      0      0      0
+ * 		0      0      0      0
+ *
+ * 先执行完任务的线程，会去偷取其它没有执行完的线程的任务
+ *
+ */
+
 public class TestForkJoinPool {
 	
 	public static void main(String[] args) {
@@ -26,7 +40,9 @@ public class TestForkJoinPool {
 		
 		System.out.println("耗费时间为：" + Duration.between(start, end).toMillis());//166-1996-10590
 	}
-	
+
+
+
 	@Test
 	public void test1(){
 		Instant start = Instant.now();
@@ -62,11 +78,15 @@ public class TestForkJoinPool {
 
 }
 
+
+
+/**
+ * 二者区别：
+ * RecursiveTask   没返回值
+ * RecursiveAction 没有返回值
+ */
 class ForkJoinSumCalculate extends RecursiveTask<Long>{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -259195479995561737L;
 	
 	private long start;

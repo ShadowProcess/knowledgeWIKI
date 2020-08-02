@@ -13,6 +13,13 @@
 
     <artifactId>javafx-college</artifactId>
     <packaging>jar</packaging>
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+        </dependency>
+    </dependencies>
 
     <properties>
         <java.version>1.8</java.version>

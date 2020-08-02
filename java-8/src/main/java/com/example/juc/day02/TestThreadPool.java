@@ -24,6 +24,7 @@ import java.util.concurrent.Future;
  * 
  * ScheduledExecutorService newScheduledThreadPool() : 创建固定大小的线程，可以延迟或定时的执行任务。
  *
+ *
  * 关闭线程池【以平和的方式关闭线程池，它会等待线程池任务都执行完，并且不会再接收新任务】
  *	pool.shutdown();
  *

@@ -35,7 +35,7 @@ public class TestLambda {
 	
 	@Test
 	public void test2(){
-		String trimStr = strHandler("\t\t\t 我威武   ", (str) -> str.trim());
+		String trimStr = strHandler("\t\t\t 我尚硅谷威武   ", (str) -> str.trim());
 		System.out.println(trimStr);
 		
 		String upper = strHandler("abcdef", (str) -> str.toUpperCase());

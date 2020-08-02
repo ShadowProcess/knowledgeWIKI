@@ -44,7 +44,7 @@ public class TestScheduledThreadPool {
 			System.out.println(result.get());
 		}
 		
-		pool.shutdown();
+		pool.shutdown(); //要记得关池，不然不会结束
 	}
 	
 }
