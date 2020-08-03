@@ -7,9 +7,9 @@ import java.nio.channels.Pipe;
 import org.junit.Test;
 
 /**
- * Java NIO管道是两个线程之间的单向数据连接
+ * Java NIO管道是两个线程之间的单向数据连接[注意是单向]
  *
- * ThreadA --pipe-- ThreadB
+ * ThreadA -->pipe--> ThreadB
  *
  */
 

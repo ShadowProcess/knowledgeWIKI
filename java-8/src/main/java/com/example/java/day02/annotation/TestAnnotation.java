@@ -28,7 +28,9 @@ public class TestAnnotation {
 
     @MyAnnotation("hello")
     @MyAnnotation("world")
-    public void show(@MyAnnotation("abc") String s){
+    @MyAnnotation("alex")
+    @MyAnnotation("alex1")
+    public void show(/*@MyAnnotation("abc") String s*/){
 
     }
 }

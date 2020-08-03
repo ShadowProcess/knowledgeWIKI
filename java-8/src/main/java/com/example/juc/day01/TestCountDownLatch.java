@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 public class TestCountDownLatch {
 
 	public static void main(String[] args) {
-		final CountDownLatch latch = new CountDownLatch(50); //每个线程完成就将这个数减1，一直减为0，表示其它线程都执行完了
+		final CountDownLatch latch = new CountDownLatch(50); //每个线程执行完成就将这个数减1，一直减为0，表示其它线程都执行完了
 		LatchDemo ld = new LatchDemo(latch);
 
 		long start = System.currentTimeMillis();

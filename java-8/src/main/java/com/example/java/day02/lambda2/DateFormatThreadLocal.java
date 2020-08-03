@@ -5,9 +5,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * 以前使用ThreadLocal保证该变量多线程安全问题
+ */
 public class DateFormatThreadLocal {
-
-	private static final ThreadLocal<String> ddd = ThreadLocal.withInitial(()-> "这个值，每一个线程都会有的！");
 
 	private static final ThreadLocal<DateFormat> df = new ThreadLocal<DateFormat>(){
 		
@@ -16,7 +17,6 @@ public class DateFormatThreadLocal {
 		}
 		
 	};
-	
 	public static final Date convert(String source) throws ParseException{
 		return df.get().parse(source);
 	}

@@ -1,0 +1,6 @@
+jshell> int k = 1+2;
+jshell> System.out.println(k);
+输出: 3
+
+
+jshell> import java.util.*;
