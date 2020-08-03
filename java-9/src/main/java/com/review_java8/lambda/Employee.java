@@ -1,8 +1,5 @@
 package com.review_java8.lambda;
 
-/**
- * Created by shkstart on 2017/8/28 0028.
- */
 public class Employee {
 
     private int id;

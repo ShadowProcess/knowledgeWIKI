@@ -15,8 +15,6 @@ import org.junit.Test;
 
 /**
  * 步骤三：终止操作
- *
- * Created by shkstart on 2017/8/29 0029.
  */
 public class StreamAPITest2 {
 

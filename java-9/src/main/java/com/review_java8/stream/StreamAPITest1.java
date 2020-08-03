@@ -17,8 +17,6 @@ import org.junit.Test;
  * 2.中间操作，只有在执行了终止操作以后才会执行。
  *
  *
- *
- * Created by shkstart on 2017/8/29 0029.
  */
 public class StreamAPITest1 {
 

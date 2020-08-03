@@ -10,10 +10,6 @@ import org.junit.Test;
 
 /**
  * jdk 8 之前 日期+时间 API的使用
- * 
- * 
- * @author shkstart 邮箱：shkstart@126.com
- * @version  创建时间：2017年8月15日  上午11:37:44
  *
  */
 public class TimeTest {

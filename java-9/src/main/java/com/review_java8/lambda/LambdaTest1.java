@@ -22,8 +22,6 @@ import org.junit.Test;
  * 2.lambda表达式的使用，依赖于函数式接口
  * 3.只有需要实例化函数式接口时，我们才可以使用lambda表达式 ---lambda表达式使用场景
  * 4.在接口声明上，可以添加@FunctionalInterface，检验一个接口是否是函数式接口
- * 
- * 
  */
 public class LambdaTest1 {
 	

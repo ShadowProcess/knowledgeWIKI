@@ -1,4 +1,4 @@
-package com.example.diamond_operator;
+package com.example.diamond_operator_new;
 
 import org.junit.Test;
 

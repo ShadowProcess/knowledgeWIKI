@@ -1,4 +1,4 @@
-package com.example.external_jar;
+package com.example.external_jar_new;
 
 import com.atguigu.Application;
 

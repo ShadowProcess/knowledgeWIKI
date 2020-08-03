@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  * 提供用于测试的数据
- * 
- * @author shkstart 邮箱：shkstart@126.com
- * @version 创建时间：2017年8月27日 下午11:57:25
- *
  */
 public class EmployeeData {
 	

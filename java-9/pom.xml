@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>java-9</artifactId>
+    <description>jdk9将G1垃圾回收器作为默认垃圾回收器</description>
 
     <properties>
         <!--解决idea自动重置，language-level问题-->

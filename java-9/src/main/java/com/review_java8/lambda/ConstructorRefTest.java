@@ -15,8 +15,6 @@ import java.util.function.Supplier;
  *
  * 二、数组引用
  *
- *
- * Created by shkstart on 2017/8/29 0029.
  */
 public class ConstructorRefTest {
 

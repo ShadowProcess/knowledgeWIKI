@@ -27,8 +27,6 @@ import java.util.function.Supplier;
  *   
  *   ③ 类 :: 实例方法  （有难度）
  *
- *
- * Created by shkstart.
  */
 public class MethodRefTest {
 

@@ -1,6 +1,4 @@
-package com.example.under_score;
-
-import org.junit.Test;
+package com.example.under_score_new;
 
 
 public class UnderScoreTest {
