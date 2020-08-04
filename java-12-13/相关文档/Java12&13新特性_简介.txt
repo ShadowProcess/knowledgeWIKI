@@ -1,0 +1,49 @@
+   2019年9月17日，国际知名的OpenJDK开源社区发布了Java编程语言环境的最新版本OpenJDK13。尚硅谷第一时间推出
+   针对于Java 13的新特性。另外，6个月前，Oracle发布了Java 12版本，二者一脉相承。这里一并深入解析。视频涉及
+   Java 12 和 Java 13新特性的方方面面。主要体现在：
+   1. Java语法层面的变化：switch表达式、yield关键字、Text Block等
+   2. API层面的更新：JVM常量API、String及Files新增方法、新版Socket底层实现；
+   3. 对G1 Mixed GC、ZGC的改进，新的Shenandoah GC 进行了细致讲解。同时为了更好的理解GC机制，还强调了STW、
+   热点代码、低延迟与吞吐量优先、GC多种分类场景进行了深入剖析。
+   4. 对微基准测试套件、CDS文件等进行介绍
+   此外，作者还从多个方面对是否升级以及升级的注意事项提供建设性意见。最后高屋建瓴般的对JDK的版本升级走向、Oracle及第三方大厂
+   在其中的支持提供有力见解。
+
+------------------------------------
+
+视频内容：
+
+01-尚硅谷-深入解读Java12&13-新特性内容目录概述.avi
+02-尚硅谷-深入解读Java12&13-Java生态圈的介绍.avi
+03-尚硅谷-深入解读Java12&13-Java的语言优势.avi
+04-尚硅谷-深入解读Java12&13-JDK各个版本的新特性介绍.avi
+05-尚硅谷-深入解读Java12&13-JDK版本的更新周期.avi
+06-尚硅谷-深入解读Java12&13-Java版本更新的破坏性.avi
+07-尚硅谷-深入解读Java12&13-JDK12&13的下载与IDEA2019.2版本的安装.avi
+08-尚硅谷-深入解读Java12&13-Java12新特性概述.avi
+09-尚硅谷-深入解读Java12&13-Java12新特性：switch表达式.avi
+10-尚硅谷-深入解读Java12&13-垃圾回收过程的Stop-The-World.avi
+11-尚硅谷-深入解读Java12&13-垃圾回收器的分类.avi
+12-尚硅谷-深入解读Java12&13-GC的吞吐量优先与低延迟.avi
+13-尚硅谷-深入解读Java12&13-Java12新特性：Shenandoah垃圾收集器.avi
+14-尚硅谷-深入解读Java12&13-Java12新特性：常量API.avi
+15-尚硅谷-深入解读Java12&13-Java12新特性：微基准测试套件.avi
+16-尚硅谷-深入解读Java12&13-Java12新特性：只保留一个 AArch64 实现.avi
+17-尚硅谷-深入解读Java12&13-Java12新特性：默认生成类数据共享(CDS)归档文件.avi
+18-尚硅谷-深入解读Java12&13-Java12新特性：可中断的 G1 Mixed GC.avi
+19-尚硅谷-深入解读Java12&13-Java12新特性：增强G1，自动返回未用堆内存给操作系统.avi
+20-尚硅谷-深入解读Java12&13-Java12新特性：支持unicode 11和压缩数字格式化.avi
+21-尚硅谷-深入解读Java12&13-Java12新特性：String中新增加的方法.avi
+22-尚硅谷-深入解读Java12&13-Java12新特性：Files新增方法.avi
+23-尚硅谷-深入解读Java12&13-Java12其他新特性_总结.avi
+24-尚硅谷-深入解读Java12&13-Java13新特性概述.avi
+25-尚硅谷-深入解读Java12&13-Java13新特性：switch中引入yield.avi
+26-尚硅谷-深入解读Java12&13-Java13新特性：TextBlock应用举例.avi
+27-尚硅谷-深入解读Java12&13-Java13新特性：关于TextBlock的基本使用.avi
+28-尚硅谷-深入解读Java12&13-Java13新特性：TextBlock使用中的注意点.avi
+29-尚硅谷-深入解读Java12&13-Java13新特性：动态CDS档案.avi
+30-尚硅谷-深入解读Java12&13-Java13新特性：ZGC-取消使用未使用的内存.avi
+31-尚硅谷-深入解读Java12&13-Java13新特性：重新实现旧版Socket API.avi
+32-尚硅谷-深入解读Java12&13-Java13其他新特性_小结.avi
+33-尚硅谷-深入解读Java12&13-采用新版本Java的注意事项.avi
+34-尚硅谷-深入解读Java12&13-写在最后：Java生态的走向与未来展望.avi
