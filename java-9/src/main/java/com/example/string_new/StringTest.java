@@ -27,6 +27,7 @@ package com.example.string_new;
  */
 public class StringTest {
     public void _0(){
+        String join = String.join(",", "1", "2", "3");
         String s = "s";
     }
 }

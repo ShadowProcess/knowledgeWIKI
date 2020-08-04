@@ -60,5 +60,6 @@
         <module>java-8</module>
         <module>java-9</module>
         <module>java9demo</module>
+        <module>java-11</module>
     </modules>
 </project>

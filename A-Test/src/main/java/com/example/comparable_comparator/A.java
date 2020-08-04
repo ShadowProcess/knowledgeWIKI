@@ -13,6 +13,8 @@ import java.util.stream.Collectors;
  * 实现了Comparable接口的类的对象的列表或数组可以通过Collections.sort或Arrays.sort进行自动排序。
  *
  * 　此外，实现此接口的对象可以用作有序映射中的键或有序集合中的集合，无需指定比较器
+ *
+ * 两种接口的最主要区别还是一个对象自己实现和后期实现的区别。
  */
 public class A implements Comparable {
     @Override

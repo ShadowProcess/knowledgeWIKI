@@ -83,7 +83,6 @@ public class JDK8TimeTest {
 		// 得到时间戳
 		long milli = instant.toEpochMilli();
 		System.out.println(milli);// 
-		
 
 		// 根据毫秒数，得到时间点的对象
 		Instant instant2 = Instant.ofEpochMilli(milli);
