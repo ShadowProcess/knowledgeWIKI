@@ -7,8 +7,6 @@ import java.util.HashSet;
 /**
  *  Record类型的演示
  *
- * @author shkstart Email:shkstart@126.com
- * @create 下午 6:13
  */
 public class Feature03 {
     @Test

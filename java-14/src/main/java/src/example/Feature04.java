@@ -5,8 +5,6 @@ import org.junit.Test;
 /**
  *  switch的新特性
  *
- * @author shkstart Email:shkstart@126.com
- * @create 下午 12:10
  */
 public class Feature04 {
     //jdk12之前的用法

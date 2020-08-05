@@ -4,9 +4,6 @@ import org.junit.Test;
 
 /**
  * 1. JEP 305：instanceof的模式匹配（预览）
- *
- * @author shkstart Email:shkstart@126.com
- * @create 上午 11:32
  */
 public class Feature01 {
     @Test

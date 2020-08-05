@@ -4,8 +4,6 @@ import org.junit.Test;
 
 /**
  * java 13新特性：TextBlock （预览）
- * @author shkstart
- * @create 2019 下午 3:00
  */
 public class TextBlockTest {
 

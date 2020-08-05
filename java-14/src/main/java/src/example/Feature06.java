@@ -10,12 +10,9 @@ import java.util.ArrayList;
  *
  *  -XX:-UseParallelOldGC
  *
- *   -XX:+UseConcMarkSweepGC
+ *  -XX:+UseConcMarkSweepGC
  *
- *   -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
- *
- * @author shkstart Email:shkstart@126.com
- * @create 2020-04-01 下午 4:02
+ *  -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
  */
 public class Feature06 {
 

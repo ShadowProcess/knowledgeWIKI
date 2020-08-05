@@ -2,10 +2,6 @@ package src.example;
 
 import java.util.Objects;
 
-/**
- * @author shkstart Email:shkstart@126.com
- * @create 下午 6:18
- */
 public final class User {
     private final String name;
     private final User partner;

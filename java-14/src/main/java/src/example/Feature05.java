@@ -4,9 +4,6 @@ import org.junit.Test;
 
 /**
  * 文本块(text blocks)的使用
- *
- * @author shkstart Email:shkstart@126.com
- * @create 下午 7:13
  */
 public class Feature05 {
 
@@ -104,10 +101,8 @@ public class Feature05 {
                 WHERE id > 4
                 ORDER BY email DESC
                 """;
-
-
-
     }
+
     //jdk14新特性
     @Test
     public void test5(){

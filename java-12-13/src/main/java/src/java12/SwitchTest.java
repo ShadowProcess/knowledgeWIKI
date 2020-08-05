@@ -1,6 +1,9 @@
 package src.java12;
 
 
+/**
+ * 传统switch
+ */
 public class SwitchTest {
     public static void main(String[] args) {
         int numberOfLetters;

@@ -8,7 +8,7 @@ module java9 {
     requires junit;
     requires java.logging;
     requires multijar;
-    requires jdk.incubator.httpclient;
+    //requires jdk.incubator.httpclient;
 
     //导出你指定的包，别的模块可以引入
     //exports com.review_java8;

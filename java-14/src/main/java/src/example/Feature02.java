@@ -3,10 +3,6 @@ package src.example;
 /**
  * 使用的NullPointerException的提示
  *  -XX:+ShowCodeDetailsInExceptionMessages
- *
- *
- * @author shkstart Email:shkstart@126.com
- * @create 下午 11:14
  */
 public class Feature02 {
     public static void main(String[] args) {

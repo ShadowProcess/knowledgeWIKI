@@ -1,9 +1,6 @@
 package src.example;
 
-/**
- * @author shkstart Email:shkstart@126.com
- * @create 下午 6:20
- */
+
 public record Person(String name,Person partner) {
 
     //还可以声明静态的属性、静态的方法、构造器、实例方法

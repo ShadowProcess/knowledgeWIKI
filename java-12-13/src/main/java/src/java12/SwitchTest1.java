@@ -4,7 +4,9 @@ import org.junit.Test;
 
 
 public class SwitchTest1 {
+
     //java 12的新特性
+    //一个case可以多个，还有lambda表达式
     @Test
     public void testSwitch1(){
         Fruit fruit = Fruit.APPLE;
@@ -16,6 +18,10 @@ public class SwitchTest1 {
         }
     }
 
+    /**
+     * java 12的新特性
+     * switch 可以有返回值
+     */
     @Test
     public void testSwitch2(){
         int numberOfLetters;
