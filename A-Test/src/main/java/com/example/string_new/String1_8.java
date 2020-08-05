@@ -1,4 +1,4 @@
-package com.example.string_8;
+package com.example.string_new;
 
 import org.junit.Test;
 

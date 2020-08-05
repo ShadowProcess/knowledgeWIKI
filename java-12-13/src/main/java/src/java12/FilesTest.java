@@ -15,19 +15,19 @@ public class FilesTest {
     //NIO 2 : Files操作本地文件的工具类  ； Path:替换原有的File ; Paths :实例化Path
     @Test
     public void testFilesMismatch() throws IOException {
-        FileWriter fileWriter = new FileWriter("tmp\\a.txt");
-        fileWriter.write("a");
-        fileWriter.write("b");
-        fileWriter.write("c");
+        FileWriter fileWriter = new FileWriter("a.txt");
+        fileWriter.write("x");
+        fileWriter.write("y");
+        fileWriter.write("z");
         fileWriter.close();
 
-        FileWriter fileWriterB = new FileWriter("tmp\\b.txt");
-        fileWriterB.write("a");
-        fileWriterB.write("b");
-        fileWriterB.write("c");
+        FileWriter fileWriterB = new FileWriter("b.txt");
+        fileWriterB.write("x");
+        fileWriterB.write("y");
+        fileWriterB.write("z");
         fileWriterB.close();
 
-        System.out.println(Files.mismatch(Path.of("tmp/a.txt"),Path.of("tmp/b.txt")));
+        System.out.println(Files.mismatch(Path.of("a.txt"),Path.of("b.txt")));
     }
 
 }

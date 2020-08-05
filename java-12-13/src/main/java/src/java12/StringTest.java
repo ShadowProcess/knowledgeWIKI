@@ -8,11 +8,14 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StringTest {
+
     @Test
     public void testTransform(){
         String info1 = "  hello".transform(info -> info + "world  ");
         System.out.println(info1);
     }
+
+
     //   hello --> helloworld   -->   HELLOWORLD   --> HELLOWORLD
     //映射：java 8 中 Stream API :map() \reduce()
     @Test
