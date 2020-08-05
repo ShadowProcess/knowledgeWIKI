@@ -1,9 +1,9 @@
-package src.example;
+package src.example.gc_new;
 
 import java.util.ArrayList;
 
 /**
- *  垃圾收集器的更新：① 弃用ParallelScavenge和SerialOld GC组合
+ *  垃圾收集器的更新：  ① 弃用ParallelScavenge和SerialOld GC组合
  *                  ② 删除CMS垃圾回收器
  *                  ③ ZGC 可以在macOS和Windows上使用
  *  -XX:+UseParallelGC -XX:-UseParallelOldGC
@@ -24,5 +24,4 @@ public class Feature06 {
             list.add(arr);
         }
     }
-
 }

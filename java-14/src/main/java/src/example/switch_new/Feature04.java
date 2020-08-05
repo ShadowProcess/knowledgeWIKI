@@ -1,10 +1,9 @@
-package src.example;
+package src.example.switch_new;
 
 import org.junit.Test;
 
 /**
  *  switch的新特性
- *
  */
 public class Feature04 {
     //jdk12之前的用法
@@ -31,7 +30,6 @@ public class Feature04 {
             default:
                 throw new IllegalStateException("What day is today?" + day);
         }
-
     }
 
     //jdk12新特性：引用switch表达式
@@ -57,7 +55,6 @@ public class Feature04 {
         };
 
         System.out.println(num);
-
     }
 
     //jdk13新特性：引用了yield关键字，用于返回指定的数据，结束switch结构
@@ -88,8 +85,6 @@ public class Feature04 {
         };
         System.out.println(num);
     }
-
-
 }
 
 enum Week {

@@ -1,4 +1,4 @@
-package src.example;
+package src.example.text_blocks;
 
 import org.junit.Test;
 
@@ -6,7 +6,6 @@ import org.junit.Test;
  * 文本块(text blocks)的使用
  */
 public class Feature05 {
-
 
     @Test
     public void test1(){

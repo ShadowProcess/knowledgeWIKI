@@ -1,4 +1,4 @@
-package src.java12;
+package src.java12.string_new;
 
 import org.junit.Test;
 
@@ -14,7 +14,6 @@ public class StringTest {
         String info1 = "  hello".transform(info -> info + "world  ");
         System.out.println(info1);
     }
-
 
     //   hello --> helloworld   -->   HELLOWORLD   --> HELLOWORLD
     //映射：java 8 中 Stream API :map() \reduce()

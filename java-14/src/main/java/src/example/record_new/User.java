@@ -1,4 +1,4 @@
-package src.example;
+package src.example.record_new;
 
 import java.util.Objects;
 

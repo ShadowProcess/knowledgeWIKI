@@ -1,4 +1,4 @@
-package src.java12;
+package src.java12.io_new;
 
 import org.junit.Test;
 

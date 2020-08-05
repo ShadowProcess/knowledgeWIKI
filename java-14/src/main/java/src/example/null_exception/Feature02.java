@@ -1,8 +1,9 @@
-package src.example;
+package src.example.null_exception;
 
 /**
  * 使用的NullPointerException的提示
  *  -XX:+ShowCodeDetailsInExceptionMessages
+ *  可以告诉我们具体是哪里出现的空指针异常，可以更准确定位
  */
 public class Feature02 {
     public static void main(String[] args) {
@@ -16,7 +17,6 @@ public class Feature02 {
 
         bank.getCustomer().getAccount().withdraw(200);
     }
-
 }
 
 class Bank {

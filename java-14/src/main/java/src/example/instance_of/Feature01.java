@@ -1,4 +1,4 @@
-package src.example;
+package src.example.instance_of;
 
 import org.junit.Test;
 
@@ -28,7 +28,6 @@ public class Feature01 {
 
 // 举例2
 class InstanceOf{
-
     String str = "abc";
 
     public void test(Object obj){
@@ -38,9 +37,7 @@ class InstanceOf{
         }else{
             System.out.println(str.toLowerCase());
         }
-
     }
-
 }
 
 //举例3：
@@ -61,5 +58,4 @@ class Monitor{
     public boolean equals(Object o){
         return o instanceof Monitor other && model.equals(other.model) && price == other.price;
     }
-
 }
