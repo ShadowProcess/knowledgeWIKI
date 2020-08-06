@@ -7,6 +7,19 @@ import java.util.Date;
 import java.util.Locale;
 
 /**
+ * String b = String.format("id:%d, name:%s", 1, "fen");
+ * 附带说下，其实我们经常输出的log日志，也有类似的用法。
+ * logger.info("id:{}, name:{}", 1, "fen");
+ * 只不过不用指定具体类型，更省事了~
+ *
+ *
+ * 这样用真的好吗，对于一般要求不高的系统，其实这样用比字符串拼接看起来还更加清晰一点
+ * 其实String.format性能差好多。用结果说话，String的format性能真的没有字符串拼接性能好，而且是差太多，更别说StringBuilder了。
+ *
+ * 原因是在当前的实现中 String.format 首先使用正则表达式解析输入，然后填写参数。
+ * 另一方面，与添加的串联由javac（而不是JIT）优化，并直接使用 StringBuilder.append
+ *
+ *
  * 回顾字符串格式化
  * <p>
  * String类的format()方法用于创建格式化的字符串以及连接多个字符串对象。熟悉C语言的同学应该记得C语言的printf()方法，
