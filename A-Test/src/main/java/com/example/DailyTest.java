@@ -73,4 +73,11 @@ public class DailyTest {
             System.out.println(openStart.plusDays(i).toString());
         }
     }
+
+    @Test
+    public void q(){
+        String s = "123";
+        String substring = s.substring(s.length()-1);
+        System.out.println(substring);
+    }
 }
