@@ -33,9 +33,7 @@ public class RequestController {
     @RequestMapping("/test")
     @ResponseBody
     public String test(){
-        System.out.println(request.toString());
+        System.out.println(request.hashCode());
         return request.getHeader("uid");
     }
-
-
 }

@@ -13,6 +13,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAccessor;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,7 +43,6 @@ public class DailyTest {
     }
 
 
-
     //仅显示姓名最后一位，其余用*代替
     @Test
     public void _() {
@@ -56,14 +58,14 @@ public class DailyTest {
     }
 
     @Test
-    public void ii(){
+    public void ii() {
         int monthValue = LocalDate.now().getMonthValue();
         int day = LocalDate.now().getDayOfMonth();
-        System.out.println(String.format("%d月%d日",monthValue,day));
+        System.out.println(String.format("%d月%d日", monthValue, day));
     }
 
     @Test
-    public void OO(){
+    public void OO() {
         LocalDateTime openStart = LocalDateTime.of(2020, 8, 6, 0, 0, 0);
         LocalDateTime openEnd = LocalDateTime.of(2020, 8, 8, 0, 0, 0);
         Duration between = Duration.between(openStart, openEnd);
@@ -75,9 +77,33 @@ public class DailyTest {
     }
 
     @Test
-    public void q(){
+    public void q() {
         String s = "123";
-        String substring = s.substring(s.length()-1);
+        String substring = s.substring(s.length() - 1);
         System.out.println(substring);
+    }
+
+
+    /**
+     * @param luckyDay 开奖日 1-31
+     * @return 距离开奖还有几天
+     */
+    public static int lucky(int luckyDay) {
+        if (luckyDay < 1 || luckyDay > 31)
+            throw new IllegalArgumentException("illegal argument " + luckyDay + "; closed interval:[1,31]");
+        LocalDate now = LocalDate.now();
+        int intervalDays = luckyDay - now.getDayOfMonth();
+        if (intervalDays >= 0) return intervalDays;
+
+        int intervalLastDayOfMonth = now.with(TemporalAdjusters.lastDayOfMonth())
+                .minusDays(now.getDayOfMonth())
+                .getDayOfMonth();
+        return intervalLastDayOfMonth + luckyDay;
+    }
+
+    @Test
+    public void TT() {
+        int qq = lucky(8);
+        System.out.println(qq);
     }
 }
