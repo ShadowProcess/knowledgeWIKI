@@ -1,52 +1,29 @@
+###
+两者的数据是不共通的；也就是说StringRedisTemplate只能管理StringRedisTemplate里面的数据，
+RedisTemplate只能管理RedisTemplate中的数据。
+
+其实他们两者之间的区别主要在于他们使用的序列化类:
+ RedisTemplate使用的是JdkSerializationRedisSerializer   
+ （存入数据会将数据先序列化成字节数组然后在存入Redis数据库。） 
+
+ StringRedisTemplate使用的是StringRedisSerializer
+
+使用时注意事项：
+　　　当你的redis数据库里面本来存的是字符串数据或者你要存取的数据就是字符串类型数据的时候，
+     那么你就使用StringRedisTemplate即可。
+　　　但是如果你的数据是复杂的对象类型，而取出的时候又不想做任何的数据转换，
+     直接从Redis里面取出一个对象，那么使用RedisTemplate是更好的选择。
+
+RedisTemplate使用时常见问题：
+　　　　redisTemplate 中存取数据都是字节数组。当redis中存入的数据是可读形式而非字节数组时，
+      使用redisTemplate取值的时候会无法获取导出数据，获得的值为null。
+      可以使用 StringRedisTemplate 试试。
+
+###
+
+
 # Jedis和RedisTemplate有何区别？
 
-```
-# 单机版
-public class JedisTest {
-	public static void main(String[] args) {
-		Jedis jedis = new Jedis("localhost");
-		jedis.set("foo", "bar");
-		String value = jedis.get("foo");
-		System.out.println("foo is:"+value);
-	}
-}
-
-# 连接池方式
-public class JedisPoolTest {
-	static JedisPoolConfig config;
-	static JedisPool jedisPool;
-	static {
-		// 初始化连接池配置对象
-		config = new JedisPoolConfig();
-		config.setMaxIdle(10);
-		config.setMaxTotal(30);
-		config.setMaxWaitMillis(3*1000);
-		// 实例化连接池
-		jedisPool=new JedisPool(config, "localhost", 6379);
-	}
-	
-	public static void main(String[] args) {
-		// 从连接池获取Jedis连接
-		Jedis jedisConn = jedisPool.getResource();
-		jedisConn.del("cities"); 
-		jedisConn.lpush("cities","北京"); 
-		jedisConn.lpush("cities","上海"); 
-		jedisConn.lpush("cities","广州"); 
-		System.out.println(jedisConn.lrange("cities",0,-1)); 
-		// 释放连接
-		close(jedisConn, jedisPool);
-	}
-	
-	private static void close(Jedis jedisConn,JedisPool pool){
-		if(jedisConn!=null && pool!=null){
-			pool.returnResource(jedisConn);
-		}
-		if(pool!=null){
-			jedisPool.destroy();
-		}
-	}
-}
-```
 Jedis是Redis官方推荐的面向Java的操作Redis的客户端，
 而RedisTemplate是SpringDataRedis中对JedisApi的高度封装。
 SpringDataRedis相对于Jedis来说可以方便地更换Redis的Java客户端，
@@ -74,4 +51,3 @@ RedisTemplate使用的序列类在在操作数据的时候，比如说存入数�
 当你的redis数据库里面本来存的是字符串数据或者你要存取的数据就是字符串类型数据的时候，
 那么你就使用StringRedisTemplate即可，但是如果你的数据是复杂的对象类型，而取出的时候又不想做任何的数据转换，
 直接从Redis里面取出一个对象，那么使用RedisTemplate是更好的选择。
-

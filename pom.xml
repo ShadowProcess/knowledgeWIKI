@@ -63,5 +63,6 @@
         <module>java-11</module>
         <module>java-12-13</module>
         <module>java-14</module>
+        <module>rabbitmq-college</module>
     </modules>
 </project>

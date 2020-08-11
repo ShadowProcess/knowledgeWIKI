@@ -8,10 +8,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.sql.Date;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAccessor;
 import java.time.temporal.TemporalAdjuster;
@@ -105,5 +102,13 @@ public class DailyTest {
     public void TT() {
         int qq = lucky(8);
         System.out.println(qq);
+    }
+
+
+    @Test
+    public void TT1() {
+        System.out.println(YearMonth.now());
+        System.out.println(Year.now());
+        System.out.println(Month.APRIL);
     }
 }
