@@ -1,0 +1,101 @@
+
+Problem Statement
+问题陈述
+
+
+You are playing a card game, and in your hand, you are holding several cards. Each card has a suit, 'S', 'H', 'D', or 'C', and a value between 1 and 10, inclusive. You may play cards as part of a set, which is three or more cards of the same value, or as part of a run, which is three or more cards of the same suit, in sequential order. (Runs may not wrap, thus, 9-10-1 is not a valid run.) Each card may be played only once.
+For example, "1 S", "1 H" and "1 D" would be a valid set. "2 S", "3 S", and "4 S" would be a valid run.
+你要玩一个卡片游戏，在你的手中，你拿到许多张牌，每一张牌有一种花色，'S', 'H', 'D', or 'C'，每张牌的价值从 1-10，你可以拿三张或更多的同样点数的牌游戏，或者是三张或更多的同样花色的牌按照顺序排列，每一张牌仅可以使用一次。
+举例, "1 S" , "1 H",  和 "1 D" 可以组成一组，"2 S", "3 S", 和"4 S" 可以组成一组
+
+You want to play as many cards as possible, maybe in several plays (see example 4). Given a String[] cards representing the cards held in your hand, you are to return an int indicating the maximum number of cards you can play. Each card will be given in the form "value suit" (quotes added for clarity).
+你要组成尽可能多的牌，可能有多种方法，给定一个字符串的数组表示你手中的牌，你要返回一个整数表示你可以组成的最大数字，每一张牌用一组字符来表示。
+
+Definition
+定义
+
+Class:
+类名
+PlayCards
+
+Method:
+方法
+maxCards
+
+Parameters:
+参数
+String[]
+
+Returns:
+返回值
+int
+
+Method signature:
+方法签名
+int maxCards(String[] cards)
+
+(be sure your method is public) 一定要 public
+
+
+Constraints
+约束条件
+-
+cards will contain between 0 and 20 elements, inclusive.
+有 0 - 20 张牌
+-
+No two elements of cards will be the same.
+没有两张牌是一样的
+-
+Each element of cards will be of the form "value suit" (quotes added for clarity).
+每一张牌用一对字符表示
+-
+Each number represented will be between 1 and 10, inclusive, with no leading zeroes.
+数字从 0 - 10 ，不包含前导 0
+-
+Each suit represented will be 'S', 'H', 'D', or 'C'.
+花色有四种'S', 'H', 'D', 和 'C'
+
+Examples
+举例
+0)
+
+{"1 S", "2 S", "3 S"}
+Returns: 3
+返回 3
+We have a run of three cards, which we can play. 
+三张牌是同一花色
+1)
+
+
+{"4 C", "4 D", "4 S", "3 S", "2 S"}
+Returns: 3
+返回 3
+We can take the 4's as a set, or we can take the 2-3-4 run. Either way, we play 3 cards.
+2s, 3s, 4s 是一组
+2)
+
+
+{"1 S", "2 S", "2 H", "3 H", "3 D", "4 D", "4 C", "5 C", "5 S"}
+Returns: 0
+返回 0
+We've got lots of cards, but no way to put three together.
+没有三张可以组在一起
+3)
+
+
+{"1 S", "2 S"}
+Returns: 0
+返回 0
+Since we have to play at least three cards at a time, there's nothing to do here.
+至少三张，只有两张
+4)
+
+
+{"1 S", "2 S", "10 S", "5 S", "8 S",
+ "3 H", "9 H", "6 H", "5 H", "4 H",
+ "10 D", "5 D", "7 D", "4 D", "1 D",
+ "2 C", "4 C", "5 C", "6 C", "7 C"}
+Returns: 9
+返回 9
+The best we can do is to take the set of 4s, the 5-6-7 C, and the remaining three 5s. We could have taken the 4-5-6-7 of C, or all four 5s, but we would not end up playing as many cards.
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

@@ -1,0 +1,103 @@
+
+Problem Statement
+????
+You are given a String[] cityMap representing the layout of a city. The city consists of blocks. The first element of cityMap represents the first row of blocks, etc. A 'B' character indicates a location where there is a bus stop. There will be exactly one 'X' character, indicating your location. All other characters will be '.'. You are also given an int walkingDistance, which is the maximum distance you are willing to walk to a bus stop. The distance should be calculated as the number of blocks vertically plus the number of blocks horizontally. Return the number of bus stops that are within walking distance of your current location.
+给定一个String[]cityMap代表城市布局,城市包括街区.cityMap的一个元素代表街区的第一行,等等.A 'B'字符表示公交车站所在的位置.用单个的'X'代表你所在的位置.所有其他的字符是'.'给定一个int型的walkingDistance,代表你去公交站的最远距离。距离的计算是按照垂直经过的街区的数量加上水平经过的街区的数量。返回从你当前位置走过的距离的公交车站的数量
+Definition
+定义：
+????
+Class:
+类名：
+BusStops
+
+Method:
+方法：
+countStops
+
+Parameters:
+参数
+String[], int
+
+Returns:
+返回值：
+int
+Method signature:
+方法签名：
+int countStops(String[] cityMap, int walkingDistance)
+(be sure your method is public)
+注意方法是public
+????
+
+Constraints
+条件：
+-
+cityMap will contain between 1 and 50 elements, inclusive.
+cityMap包含1到50个元素
+-
+Each element of cityMap will contain between 1 and 50 characters, inclusive.
+每个元素包含1到50个字符
+-
+Each element of cityMap will contain the same number of characters.
+cityMap的每个元素包含相同数目的字符
+-
+Each character of each element of cityMap will be 'B', 'X', or '.'.
+cityMap的每个元素的字符是'B', 'X', or '.'
+-
+There will be exactly one 'X' character in cityMap.
+在cityMap中只有一个'X'
+-
+walkingDistance will be between 1 and 100, inclusive.
+walkingDistance在1到100之间
+Examples
+0)
+
+????
+{"...B.",
+ ".....",
+ "..X.B",
+ ".....",
+ "B...."}
+3
+Returns: 2
+返回：2
+You can reach the bus stop at the top (3 units away), or on the right (2 units away). The one in the lower left is 4 units away, which is too far.
+你可以到顶端公交站（3个单元的距离），或者右边的（2个位单元的距离）。最远的是在左下方的距离4个单元
+1)
+
+????
+{"B.B..",
+ ".....",
+ "B....",
+ ".....",
+ "....X"}
+8
+Returns: 3
+返回：3
+A distance of 8 can get us anywhere on the map, so we can reach all 3 bus stops.
+距离8可以让我们到达地图上的任意位置，因此我们可以到达所列出的3个公交站
+2)
+
+????
+{"BBBBB",
+ "BB.BB",
+ "B.X.B",
+ "BB.BB",
+ "BBBBB"}
+1
+Returns: 0
+返回：0
+Plenty of bus stops, but unfortunately we cannot reach any of them.
+很多公交站，但是我们哪里也不能到达
+3)
+
+????
+{"B..B..",
+ ".B...B",
+ "..B...",
+ "..B.X.",
+ "B.B.B.",
+ ".B.B.B"}
+3
+Returns: 7
+返回：7
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

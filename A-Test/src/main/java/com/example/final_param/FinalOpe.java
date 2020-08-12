@@ -2,6 +2,11 @@ package com.example.final_param;
 
 import org.junit.Test;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+
 public class FinalOpe {
 
     /**
@@ -22,8 +27,51 @@ public class FinalOpe {
      *     }
      *
      */
+//    @Test
+//    public void _00(final String s){
+//        System.out.println(s);
+//    }
+
+    //final修饰的int和integer比较
     @Test
-    public void _00(final String s){
-        System.out.println(s);
+    public void i(){
+        final int i = 1;
+        Integer s = 1;
+        System.out.println(i == s); //true
+        System.out.println(Objects.equals(i,s)); //true
     }
+    //final修饰的integer比较 int
+    @Test
+    public void it(){
+        final Integer i = 1;
+        int s = 1;
+        System.out.println(s == i); //true
+        System.out.println(Objects.equals(s,i)); //true
+    }
+
+
+    @Test
+    public void f(){
+        final double a = Math.random();
+        System.out.println(a);
+    }
+
+
+    @Test
+    public void f1(){
+        final int i = 1;
+        Set<Integer> s = new HashSet<Integer>(){};
+        s.add(1);
+        s.add(2);
+        System.out.println(s.contains(i));
+    }
+
+    @Test
+    public void f2(){
+        List list = null;
+        for (Object o : list) {
+            System.out.println(o);
+        }
+    }
+
 }

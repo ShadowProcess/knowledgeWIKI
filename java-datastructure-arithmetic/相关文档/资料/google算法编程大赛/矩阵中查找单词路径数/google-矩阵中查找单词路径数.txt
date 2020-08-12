@@ -1,0 +1,131 @@
+
+Problem Statement
+问题陈述
+
+You are given a String[] grid representing a rectangular grid of letters. You are also given a String find, a word you are to find within the grid. The starting point may be anywhere in the grid. The path may move up, down, left, right, or diagonally from one letter to the next, and may use letters in the grid more than once, but you may not stay on the same cell twice in a row (see example 6 for clarification).
+你会得到一个字符串的数组，表示一个字符的矩阵，你还会得到一个字符串查找，需要在矩阵中查找这个单词，单词的开始点可能在矩阵的任意位置，方向可以是上，下，左，右，或者对角，也可能多次使用矩阵中的字符，但是你不可以在同一行的相同单元中两次。见例6
+
+You are to return an int indicating the number of ways find can be found within the grid. If the result is more than 1,000,000,000, return -1.
+你需要返回一个整数，表示在矩阵中发现的路径个数，如果返回的路径超过 1,000,000,000，就返回 -1。
+
+Definition
+定义
+
+Class:
+类名
+WordPath
+
+Method:
+方法
+countPaths
+
+Parameters:
+参数
+String[], String
+
+Returns:
+返回值
+int
+
+Method signature:
+方法签名
+int countPaths(String[] grid, String find)
+
+(be sure your method is public)一定要 public 
+
+
+Constraints
+约束条件
+-
+grid will contain between 1 and 50 elements, inclusive.
+矩阵包含 1-50 个元素
+-
+Each element of grid will contain between 1 and 50 uppercase ('A'-'Z') letters, inclusive.
+每一个元素包含 1-50 个大写字母 'A'-'Z'
+-
+Each element of grid will contain the same number of characters.
+每一个元素包含相同数目的字符
+-
+find will contain between 1 and 50 uppercase ('A'-'Z') letters, inclusive.
+查找的单词包含 1-50 个字符
+
+Examples
+举例
+0)
+
+{"ABC",
+ "FED",
+ "GHI"}
+"ABCDEFGHI"
+Returns: 1
+返回 1
+There is only one way to trace this path. Each letter is used exactly once.
+只有一个路径可以查到
+
+1)
+
+
+{"ABC",
+ "FED",
+ "GAI"}
+"ABCDEA"
+Returns: 2
+返回 2
+Once we get to the 'E', we can choose one of two directions for the final 'A'.
+
+2)
+
+
+{"ABC",
+ "DEF",
+ "GHI"}
+"ABCD"
+Returns: 0
+返回 0
+We can trace a path for "ABC", but there's no way to complete a path to the letter 'D'.
+3)
+
+
+{"AA",
+ "AA"}
+"AAAA"
+Returns: 108
+返回 108
+
+We can start from any of the four locations. From each location, we can then move in any of the three possible directions for our second letter, and again for the third and fourth letter. 4 * 3 * 3 * 3 = 108.
+4)
+
+
+{"ABABA",
+ "BABAB",
+ "ABABA",
+ "BABAB",
+ "ABABA"}
+"ABABABBA"
+Returns: 56448
+返回 56448
+There are a lot of ways to trace this path.
+5)
+
+
+{"AAAAA",
+ "AAAAA",
+ "AAAAA",
+ "AAAAA",
+ "AAAAA"}
+"AAAAAAAAAAA"
+Returns: -1
+返回 -1
+
+There are well over 1,000,000,000 paths that can be traced.
+这个将超过 1,000,000,000 种路径，返回 -1
+6)
+
+????
+{"AB",
+ "CD"}
+"AA"
+Returns: 0
+返回 0
+Since we can't stay on the same cell, we can't trace the path at all.
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

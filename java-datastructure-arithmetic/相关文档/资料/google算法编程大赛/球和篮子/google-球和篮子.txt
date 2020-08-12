@@ -1,0 +1,87 @@
+
+Problem Statement
+问题描述
+????
+You have several identical balls that you wish to place in several baskets. Each basket has the same maximum capacity. You are given an int baskets, the number of baskets you have. You are given an int capacity, the maximum capacity of each basket. Finally you are given an int balls, the number of balls to sort into baskets. Return the number of ways you can divide the balls into baskets. If this cannot be done without exceeding the capacity of the baskets, return 0.
+Each basket is distinct, but all balls are identical. Thus, if you have two balls to place into two baskets, you could have (0, 2), (1, 1), or (2, 0), so there would be three ways to do this.
+你有几个同样的球，你希望把它放到几个篮子里。每个篮子有相同的容量。给出int 型的baskets,代表篮子的数量。给出int型的 capacity，代表每个篮子的最大容量。给出int型的balls,表示归类到篮子里的球的数量。返回值是把球归类到篮子里的方式的数量。如果不能完全存放到篮子中，无法划分，返回0。
+篮子互不同，所有的球相同。因此，如果2个球放到2个篮子里，你可以采用3种方式，即(0, 2), (1, 1), 或 (2, 0)
+
+
+Method:
+方法：
+countWays
+
+Parameters:
+参数：
+int, int, int
+
+Returns:
+返回值：
+int
+
+Method signature:
+方法原型：
+int countWays(int baskets, int capacity, int balls)
+(be sure your method is public)
+注意方法是public
+
+
+Constraints
+条件：
+-
+baskets will be between 1 and 5, inclusive.
+篮子数量在1到5之间
+-
+capacity will be between 1 and 20, inclusive.
+容量在1到20之间
+-
+balls will be between 1 and 100, inclusive.
+球在1到100之间
+Examples
+例子：
+0)
+
+????
+2
+20
+2
+Returns: 3
+The example from the problem statement.
+该例子同问题描述。
+1)
+
+????
+3
+20
+1
+Returns: 3
+We have only 1 ball, so we must choose which of the three baskets to place it in.
+只有1个球，我们必须3选一
+2)
+
+????
+3
+20
+2
+Returns: 6
+We can place both balls in the same basket (3 ways to do this), or one ball in each of two baskets (3 ways to do this).
+可以把两个球放在相同的篮子里（有三种方式），或者两个篮子里各放1球（有三种方法）
+3)
+
+????
+1
+5
+10
+Returns: 0
+We have more balls than our basket can hold.
+球的数量大于篮子的容量
+4)
+
+????
+4
+5
+10
+Returns: 146
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

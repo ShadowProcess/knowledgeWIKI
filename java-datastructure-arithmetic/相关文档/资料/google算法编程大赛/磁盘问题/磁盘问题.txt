@@ -1,0 +1,90 @@
+Problem Statement
+问题陈述
+
+You are given a String disk representing the clusters on a disk. An 'X' represents a used cluster, and a '.' represents an available cluster. You are also given an int size representing the size, in clusters, of a file waiting to be written to disk. A file can only be stored in clusters not already being used.
+你会得到一个字符串表示磁盘的簇，一个 'X'表示用过的簇，一个 '.' 表示一个可以使用的簇，你还会得到一个整数表示准备存入磁盘的文件大小，文件仅可以存在没有使用过的簇中。
+
+Return the minimum number of groups of consecutive clusters needed to store the file on the disk. (The disk does not wrap around at the end.) Return -1 if the disk does not have enough space available to store the file.
+返回一个连续的最小簇数来保存文件，如果磁盘没有足够的空间，就返回 -1。
+
+Definition
+定义
+
+Class:
+类名
+DiskClusters
+
+Method:
+方法
+minimumFragmentation
+
+Parameters:
+参数
+String, int
+
+Returns:
+返回
+int
+
+Method signature:
+方法签名
+int minimumFragmentation(String disk, int size)
+
+(be sure your method is public) 一定要 public
+
+
+Constraints
+约束
+-
+disk will contain between 1 and 50 characters, inclusive.
+磁盘为 1 - 50 个字符来表示
+-
+Each character of disk will be 'X' or '.'.
+每一个字符只能是  'X' 和 '.'
+-
+size will be between 1 and 50, inclusive.
+文件大小 1 - 50
+
+Examples
+举例
+
+0)
+
+
+"."
+2
+Returns: -1
+We can't fit the file on the disk.
+磁盘空间不够
+
+1)
+
+
+".XXXXXXXX.XXXXXX.XX.X.X."
+6
+Returns: 6
+There is only ever one cluster together, so all six clusters are separated.
+6 个簇是分开的
+2)
+
+????
+"XX..XX....X.XX........X...X.XX...XXXX..XX...XXXXX."
+12
+Returns: 2
+We fit eight clusters together, and four clusters together.
+有 8 个簇是连续的，还有 4 个簇是连续的。
+3)
+
+????
+".X.XXXX.......XX....X.....X............XX.X.....X."
+20
+Returns: 3
+
+4)
+
+????
+"....X...X..X"
+11
+Returns: -1
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

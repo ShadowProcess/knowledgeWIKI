@@ -1,0 +1,92 @@
+Problem Statement
+问题陈述
+
+When a stone is thrown across water, sometimes it will land on the water and bounce rather than falling in right away. Suppose that a stone is thrown a distance of n. On each successive bounce it will travel half the distance as the previous bounce (rounded down to the nearest integer). When it can not travel any further, it falls into the water. If, at any point, the stone lands on an obstruction rather than water, it will not bounce, but will simply deflect and fall into the water. Please look at the figure for further clarification (with black, red and green cells representing banks, obstructions and free water respectively). So, if the stone is thrown a distance 7, it will bounce and travel a distance of 3, then finally a distance of 1, having travelled a total distance of 11 (the green path in the figure). If a stone is thrown a distance of 8, it will reach the opposite bank, and if thrown at distances of 2 or 6 it will hit an obstruction during its travel. These are the three red paths in the figure.
+
+当石头掉进水中的时候，有时候它会从水面弹起来，假设石头抛出的距离是 n, 每一个后继弹起的距离是前一个距离的一半。（四舍五入到最近的整数）当石头不能再前进时，石头掉进水中，所以石头抛出的距离是7，下一次弹出距离为3，最后一次为1。总共的距离为 11。如果石头抛出的距离是8，
+ 
+You are given a String water. An 'X' represents an obstruction, while a '.' represents water free from obstruction. You are to return an int representing the maximum distance a stone can travel and finally fall in the water, without hitting any obstructions, and without reaching the opposite bank (going beyond the end of the string). You may choose any initial distance for the throw, which starts from the left side of the string. A distance of 1 is the first character of the string, etc. If no initial throw will result in the stone landing in the water without hitting an obstruction, return 0.
+你被给定一个字符串表示水，一个 'X' 表示一个障碍物，一个 '.'表示水面，你需要返回一个整数，表示石头弹出的最远距离。不可以遇到任何障碍物，也不可以到达对岸。你可以选择一个任意的抛出距离，将从字符串的左端开始，距离 1 表示字符串的第一个字符，等等，如果没有初始抛出，返回 0。
+
+
+Definition
+定义
+
+Class:
+类名
+SkipStones
+
+Method:
+方法
+maxDistance
+
+Parameters:
+参数
+String
+
+Returns:
+返回值
+int
+
+Method signature:
+方法签名
+int maxDistance(String water)
+
+(be sure your method is public) 一定要为 public
+
+
+Notes
+注意
+-
+Obstructions are at water level, so the stone will not hit any obstructions while it's in the air.
+障碍物在水面上，所以如果石头在空气中飞行，就不会碰到障碍物
+
+Constraints
+约束
+-
+water will contain between 1 and 50 elements, inclusive.
+水面将包含 1 - 50 个元素。
+-
+Each element of water will contain between 1 and 50 characters, inclusive.
+
+-
+Each character of each element of water will be 'X' or '.'.
+每一个元素仅仅包含 'X', '.'
+
+Examples
+距离
+0)
+
+
+"..X.....X..."
+Returns: 11
+返回 11
+This is the example from the problem statement.
+这是上面举例的内容
+1)
+
+
+"...X..."
+Returns: 3
+返回 3
+If it weren't for the obstruction, we could start with a throw of distance 4, and go a total of 7. But, the best we can do is to throw the stone a distance of 2, and have it skip a distance of 1.
+如果没有障碍物，我们可以抛出距离 4，然后最远可以是 7，但是，实际我们只可以抛到 2，然后再弹出 1
+
+2)
+
+
+"....X....X...XXXX.X....."
+Returns: 22
+返回 22
+
+12 + 6 + 3 + 1 = 22, is the best case.
+3)
+
+
+"XXXXXXX.XXX.X.."
+Returns: 15
+Here, an initial throw of 8 is the only way to avoid hitting an obstruction. Notice that the stone finally falls in the water just before reaching the opposite bank.
+这种情况下，只能抛出 8 来避开障碍物，注意，石头在到达对岸前掉入水中
+
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.

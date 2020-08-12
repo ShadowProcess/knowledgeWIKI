@@ -1,0 +1,407 @@
+Problem Statement	250
+问题陈述
+
+A simple line drawing program uses a blank 20 x 20 pixel canvas and a directional cursor that starts at the upper left corner pointing straight down. The upper left corner of the canvas is at (0, 0) and the lower right corner is at (19, 19). You are given a String[], commands, each element of which contains one of two possible commands. A command of the form "FORWARD x" means that the cursor should move forward by x pixels. Each pixel on its path, including the start and end points, is painted black. The only other command is "LEFT", which means that the cursor should change its direction by 90 degrees counterclockwise. So, if the cursor is initially pointing straight down and it receives a single "LEFT" command, it will end up pointing straight to the right. Execute all the commands in order and return the resulting 20 x 20 pixel canvas as a String[] where character j of element i represents the pixel at (i, j). Black pixels should be represented as uppercase 'X' characters and blank pixels should be represented as '.' characters.
+
+这是一个简单的画图软件，画布为 20*20 的像素，初始时光标位置处于画布的左上角，方向垂直向下，左上角的坐标为 （0，0），右下角坐标为 （19，19），你会得到一个字符串数组组成的命令，每一个元素包含一个控制命令，命令有两种类型，一个命令是：FORWARD X， 向前走，走的像素由 X 确定。仅有的另一个命令是：LEFT ，用来控制光标向左转，例如：初始时光标垂直向下，向左转后，方向变为向右，执行完所有的命令后，返回一个用字符串数组组成的画布，此字符串数组的第 I 个元素的第 J 个字符表示画布的（X,Y ) 内容，走过的像素用 “X" 表示，空白的像素用 “." 表示。
+
+Definition
+定义
+
+Class:
+类名
+DrawLines
+
+Method:
+方法
+execute
+
+Parameters:
+参数
+String[]
+
+Returns:
+返回值
+String[]
+
+Method signature:
+方法的签名
+String[] execute(String[] commands)
+
+(be sure your method is public) 你的方法一定要为  public 
+
+Notes
+注意：
+-
+The cursor only paints the canvas if it moves (see example 1).
+光标只能在画布上移动
+
+Constraints
+约束条件
+-
+commands will contain between 1 and 50 elements, inclusive.
+命令将包含  1-50 个元素
+
+-
+Each element of commands will be formatted as either "LEFT" or "FORWARD x" (quotes for clarity only), where x is an integer between 1 and 19, inclusive, with no extra leading zeros.
+每一个命令将格式化为 “LEFT"， 或“FORWARD x " (不包含引号），x 为 1-19 之间的整数，数字没有前导 0
+
+-
+When executing the commands in order, the cursor will never leave the 20 x 20 pixel canvas.
+在执行命令时，光标不可以移出画布
+Examples
+示例 0)
+
+命令：
+{"FORWARD 19", "LEFT", "FORWARD 19", "LEFT", "FORWARD 19", "LEFT", "FORWARD 19"}
+
+Returns: 
+返回结果
+
+{"XXXXXXXXXXXXXXXXXXXX",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "X..................X",
+ "XXXXXXXXXXXXXXXXXXXX" }
+This sequence of commands draws a 20 x 20 outline of a square. The cursor is initially at (0, 0) pointing straight down. It then travels to (0, 19) after the first FORWARD command, painting each pixel along its path with a '*'. It then rotates 90 degrees left, travels to (19, 19), rotates 90 degrees left, travels to (19, 0), rotates 90 degrees left, and finally travels back to (0, 0).
+
+1)
+
+命令：
+{"LEFT", "LEFT", "LEFT", "LEFT", "LEFT", "LEFT", "LEFT", "LEFT"}
+
+Returns: 
+返回结果
+
+{"....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "...................." }
+The cursor spins round and round, but never actually paints any pixels. The result is an empty canvas.
+2)
+
+命令
+{"FORWARD 1"}
+
+Returns: 
+返回结果
+
+{"X...................",
+ "X...................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "....................",
+ "...................." }
+Going forward by one pixel creates a line that is 2 pixels long because both the start and end points are painted.
+3)
+
+命令：
+{"LEFT", "FORWARD 19", "LEFT", "LEFT", "LEFT",
+ "FORWARD 18", "LEFT", "LEFT", "LEFT", "FORWARD 17",
+ "LEFT", "LEFT", "LEFT", "FORWARD 16", "LEFT",
+ "LEFT", "LEFT", "FORWARD 15", "LEFT", "LEFT", "LEFT",
+ "FORWARD 14", "LEFT", "LEFT", "LEFT", "FORWARD 13",
+ "LEFT", "LEFT", "LEFT", "FORWARD 12", "LEFT", "LEFT",
+ "LEFT", "FORWARD 11", "LEFT", "LEFT", "LEFT", "FORWARD 10",
+ "LEFT", "LEFT", "LEFT", "FORWARD 9", "LEFT", "LEFT",
+ "LEFT", "FORWARD 8", "LEFT", "LEFT", "LEFT", "FORWARD 7"}
+
+Returns: 
+返回结果
+
+{"XXXXXXXXXXXXXXXXXXXX",
+ "...................X",
+ "..XXXXXXXXXXXXXXXX.X",
+ "..X..............X.X",
+ "..X.XXXXXXXXXXXX.X.X",
+ "..X.X..........X.X.X",
+ "..X.X.XXXXXXXX.X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.X........X.X.X",
+ "..X.X.XXXXXXXXXX.X.X",
+ "..X.X............X.X",
+ "..X.XXXXXXXXXXXXXX.X",
+ "..X................X",
+ "..XXXXXXXXXXXXXXXXXX",
+ "...................." }
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
+
+Problem Statement	500
+问题陈述
+
+A square matrix is a grid of NxN numbers. For example, the following is a 3x3 matrix:
+一个由 N * N 的数字矩阵，例如，下面是一个 3 * 3 的矩阵
+ 4 3 5
+ 2 4 5
+ 0 1 9
+
+One way to represent a matrix of numbers, each of which is between 0 and 9 inclusive, is as a row-major String. To generate the String, simply concatenate all of the elements from the first row followed by the second row and so on, without any spaces. For example, the above matrix would be represented as "435245019".  You will be given a square matrix as a row-major String. Your task is to convert it into a String[], where each element represents one row of the original matrix. Element i of the String[] represents row i of the matrix. You should not include any spaces in your return. Hence, for the above String, you would return {"435","245","019"}. If the input does not represent a square matrix because the number of characters is not a perfect square, return an empty String[], {}.
+
+有一种方法表示矩阵的数字，用行主导的字符串来进行表示，每一个元素是 0-9 的数字。要生成这个字符串，简单的从第一行开始一个一个的连接矩阵的元素，然后是第二行，以此类推，不包括空格。例如，上面的矩阵返回的结果是：“435245019”，你会得到一个表示矩阵的字符串，你的任务是将它转换为一个字符串数组，每一个元素表示原始矩阵的一行，字符串中的每一个元素表示矩阵中的元素，再你的返回中不可以包含空格，对于以上的字符串，你应该返回{"435","245","019"}，如果因为输入的字符不正好表示一个矩阵，你应该返回一个空的字符串数组。
+
+
+Definition
+定义：
+
+Class:
+类名
+MatrixTool
+
+Method:
+方法
+convert
+
+Parameters:
+参数
+String
+
+Returns:
+返回值
+String[]
+
+Method signature:
+方法签名
+String[] convert(String s)
+
+(be sure your method is public)
+
+
+Constraints
+约束
+-
+s will contain between 1 and 50 digits, inclusive.
+s 将包含  1-50 个数字
+
+Examples
+示例
+0)
+
+输入
+"435245019"
+
+Returns: {"435", "245", "019" }
+The example above.
+1)
+
+输入
+"9"
+Returns: {"9" }
+
+2)
+
+输入
+"0123456789"
+Returns: { }
+This input has 10 digits, and 10 is not a perfect square.
+3)
+
+输入
+"3357002966366183191503444273807479559869883303524"
+Returns: {"3357002", "9663661", "8319150", "3444273", "8074795", "5986988", "3303524" }
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
+
+import java.math.*;
+
+public class AAA{
+	
+	
+	
+	
+	
+	
+	private String[] S=null;
+
+	public String[] AA(String SS){
+		int n= SS.length();
+		Integer iii = new Integer (n);
+		double d = iii.doubleValue();
+		String   Z = new String(); 
+		d=Math.sqrt(d);
+		n=(int)d;
+		if(n*n==SS.length()){
+			char[] cc=SS.toCharArray();
+			for ( int i =0 ;i<SS.length();i++){
+				Z=Z+cc[i];
+				if (n%(i+1)==0&&i!=0)Z=Z+"%";
+				
+				}
+			 System.out.println (Z);
+			
+			S=Z.split("%");
+		}
+		
+		
+		return S;
+		
+
+	}
+		
+		public static void main(String args[]){
+			AAA aa = new AAA();
+			String SS [] = aa.AA("0123");
+			System.out.println(SS[0]);
+			}
+	
+	}
+
+
+
+
+Problem Statement	1000
+问题陈述
+
+When editing a single line of text, there are four keys that can be used to move the cursor: end, home, left-arrow and right-arrow. As you would expect, left-arrow and right-arrow move the cursor one character left or one character right, unless the cursor is at the beginning of the line or the end of the line, respectively, in which case the keystrokes do nothing (the cursor does not wrap to the previous or next line). The home key moves the cursor to the beginning of the line, and the end key moves the cursor to the end of the line.  You will be given a int, N, representing the number of character in a line of text. The cursor is always between two adjacent characters, at the beginning of the line, or at the end of the line. It starts before the first character, at position 0. The position after the last character on the line is position N. You should simulate a series of keystrokes and return the final position of the cursor. You will be given a String where characters of the String represent the keystrokes made, in order. 'L' and 'R' represent left and right, while 'H' and 'E' represent home and end.
+
+当你编辑一个单行的文本时，你有四个光标键可以用来控制光标，home, end, left, right ，左右光标键用来向左右移动一个光标，除非光标已经在行的头或尾部，这种情况下，光标没有动作，光标不会从前一行到下一行。home 键直接导行首，end 键直接到行尾。你会得到一个整数 n, 这是光标在一行中的起始位置，光标总是在两个字符之间，在所有字符之前，位置为 0，所有字符之后，位置为 N，你要模拟一系列击键，然后返回光标的最终位置，你会接受一个表示击键动作的字符串，在字符串中 L R 表示左右，H E表示行首，行尾。
+
+Definition
+问题定义
+
+Class:
+类名
+CursorPosition
+
+Method:
+方法
+getPosition
+
+Parameters:
+参数
+String, int
+
+Returns:
+返回值
+int
+
+Method signature:
+方法签名
+int getPosition(String keystrokes, int N)
+
+(be sure your method is public)
+????
+
+Constraints
+约束
+-
+keystrokes will be contain between 1 and 50 'L', 'R', 'H', and 'E' characters, inclusive.
+击键动作由 1- 50 个由  'L', 'R', 'H', and 'E' 组成的字符串组成
+-
+N will be between 1 and 100, inclusive.
+N 范围为 1- 100
+
+Examples
+示例
+0)
+
+"ERLLL"
+10
+Returns: 7
+First, we go to the end of the line at position 10. Then, the right-arrow does nothing because we are already at the end of the line. Finally, three left-arrows brings us to position 7.
+1)
+
+示例
+"EHHEEHLLLLRRRRRR"
+2
+Returns: 2
+All the right-arrows at the end ensure that we end up at the end of the line.
+2)
+
+示例
+"ELLLELLRRRRLRLRLLLRLLLRLLLLRLLRRRL"
+10
+Returns: 3
+
+3)
+
+示例
+"RRLEERLLLLRLLRLRRRLRLRLRLRLLLLL"
+19
+Returns: 12
+
+
+This problem statement is the exclusive and proprietary property of TopCoder, Inc. Any unauthorized use or reproduction of this information without the prior written consent of TopCoder, Inc. is strictly prohibited. (c)2003, TopCoder, Inc. All rights reserved.
+
+
+
+
+
+public class AAA{
+	
+	
+	private int n = 0;
+	public int  AA(String SS ,int NN ){
+		String aa = SS;
+		for (int i=0;i<SS.length();i++){
+		char c= aa.charAt(i);
+		if (c=='E') n=NN;
+		if (c=='L') n=n-1;
+		if (c=='R') n=n+1;
+		if (c=='H') n=0;
+		if (n<0) n=0;
+		if (n>NN) n=NN;
+		}
+		return this.n;
+		}
+		
+		
+		public static void main(String args[]){
+			AAA aa = new AAA ();
+			int n=10;
+			System.out.println(aa.AA("ELLLELLRRRRLRLRLLLRLLLRLLLLRLLRRRL",n));
+			
+			
+			
+			}
+}
