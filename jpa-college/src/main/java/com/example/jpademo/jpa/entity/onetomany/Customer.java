@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Cacheable //开启二级缓存，需要相对应的配置, 本类加载设置不能有EAGER，否则二级不生效
 @Entity
-@Table(name = "JPA_CUSTOMER")
+@Table(name = "JPA_CUSTOMER") //JPA 默认会将实体中的 TABLE_NAME 转成小写如
 public class Customer {
     private Integer id;
     private String lastName;
