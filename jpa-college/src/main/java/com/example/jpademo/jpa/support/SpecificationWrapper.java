@@ -28,11 +28,9 @@ public class SpecificationWrapper<T extends Serializable> {
     @Getter
     private Sort sort;
 
-
     public Specification<T> toSpecification() {
         return specification;
     }
-
 
     public SpecificationWrapper<T> sort(Sort sort) {
         this.sort = sort;

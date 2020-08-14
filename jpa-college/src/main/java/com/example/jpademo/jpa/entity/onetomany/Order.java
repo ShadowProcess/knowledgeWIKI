@@ -37,6 +37,9 @@ public class Order implements Serializable {
     //使用@ManyToOne来映射多对一的关联关系
     //使用@JoinColumn来映射外键
     //可以使用@ManyToOne的fetch属性来修改默认的关联属性的加载策略
+    //
+    //如果级联关系的字段没有值，或者关联表中没有对应的数据，就会报EntityNotFoundException这个提示的错，需要加
+    //@NotFound(action=NotFoundAction.IGNORE)注解
     @JoinColumn(name = "CUSTOMER_ID")
     @ManyToOne(fetch = FetchType.LAZY) //懒加载
     @NotFound(action = NotFoundAction.IGNORE)

@@ -87,6 +87,9 @@ public class Customer {
 
     /**
      * 如果get方法没加注解，默认为@Basic
+     *
+     * @Basic 字段是个隐藏字段，一般都不用加他。因为@Entity里面的字段默认都相当于加上@Basic了，就是要在数据库生成。
+     * 但是如果有个字段不需要在数据库生成。那么加上@Transient即可.
      * @return
      */
     @Basic
