@@ -65,5 +65,6 @@
         <module>java-14</module>
         <module>rabbitmq-college</module>
         <module>java-datastructure-arithmetic</module>
+        <module>java-jvm</module>
     </modules>
 </project>
