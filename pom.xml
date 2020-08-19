@@ -59,7 +59,6 @@
         <module>A-Test</module>
         <module>java-8</module>
         <module>java-9</module>
-        <module>java9demo</module>
         <module>java-11</module>
         <module>java-12-13</module>
         <module>java-14</module>

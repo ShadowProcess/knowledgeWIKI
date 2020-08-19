@@ -1,6 +1,7 @@
 package com.example.jpademo.controller;
 
 import com.example.jpademo.jpa.entity.integer_type.IntegerDemo;
+import com.example.jpademo.jpa.entity.manytomany.Category;
 import com.example.jpademo.jpa.repo.IntRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.persistence.criteria.*;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -34,9 +36,9 @@ public class JpaSpecificationController {
     @GetMapping("/1")
     @ResponseBody
     public IntegerDemo testEqual() {
-        Optional<IntegerDemo> one = intRepository.findOne((Specification<IntegerDemo>) (root, query, criteriaBuilder) -> {
+        Optional<IntegerDemo> one = intRepository.findOne((Specification<IntegerDemo>) (root, query, cb) -> {
             Path<Object> id = root.get("id"); //查询的是属性名，不是表的字段名
-            return criteriaBuilder.equal(id, 3);
+            return cb.equal(id, 3);
         });
         return one.orElseGet(null);
     }
@@ -117,7 +119,7 @@ public class JpaSpecificationController {
             Path<Object> a = root.get("a");
             Predicate p1 = cb.equal(id, 3);
             Predicate p2 = cb.equal(a, 1);
-            return cb.and(p1,p2);
+            return cb.and(p1, p2);
         };
         return intRepository.findAll(s);
     }
@@ -130,16 +132,17 @@ public class JpaSpecificationController {
             Path<Object> a = root.get("a");
             Predicate p1 = cb.equal(id, 3);
             Predicate p2 = cb.equal(a, 1);
-            return cb.or(p1,p2);
+            return cb.or(p1, p2);
         };
         Specification<IntegerDemo> s2 = (root, query, cb) -> {
             Path<Object> id = root.get("id");
             Path<Object> a = root.get("a");
             Predicate p1 = cb.equal(id, 4);
             Predicate p2 = cb.equal(a, 1);
-            return cb.or(p1,p2);
+            return cb.or(p1, p2);
         };
         return intRepository.findAll(Specification.where(s1).and(s2));
     }
+
 
 }
