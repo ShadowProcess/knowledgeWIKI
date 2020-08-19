@@ -46,8 +46,8 @@ public class LocalDateTimeCollege {
     private LocalDate localDate;        //对应数据库类型 datetime
     private LocalTime localTime;        //对应数据库类型 time
 
-    private YearMonth ym;   //对应数据库类型 tinyblob
-    private Year y;         //对应数据库类型 tinyblob
+    private YearMonth ym;   //对应数据库类型 tinyblob 不要使用这种类型 可以使用LocalDate日期使用每月第一天
+    private Year y;         //对应数据库类型 tinyblob 不要使用这种类型 可以使用LocalDate日期使用1月并且第一天
     private Month m;        //对应数据库类型 int
 
     public Integer getId() {

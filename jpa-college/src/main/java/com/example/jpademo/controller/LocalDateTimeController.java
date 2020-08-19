@@ -11,7 +11,7 @@ import java.time.*;
 import java.util.List;
 
 @Controller
-public class TestController {
+public class LocalDateTimeController {
 
     @Autowired
     private LocalDateTimeRepository repository;
