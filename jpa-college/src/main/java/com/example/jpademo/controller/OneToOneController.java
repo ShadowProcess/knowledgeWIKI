@@ -32,6 +32,8 @@ public class OneToOneController {
         mgr.setMgrName("哈哈");
 
         department.setMgr(mgr);
+
+        //先保存没有维护关联关系的一方，再保存另外一方
         managerRepository.save(mgr);
         departmentRepository.save(department);
         return "ok";
@@ -54,5 +56,4 @@ public class OneToOneController {
         Optional<Department> one = departmentRepository.findOne(sp);
         return one.orElse(null);
     }
-
 }
