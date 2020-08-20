@@ -4,11 +4,14 @@ import com.example.basic.static_proxy.User;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
- * 自调用问题
+ * 自调用问题(方法一)
  */
-public class UserServiceImpl implements UserService, ApplicationContextAware {
+@Service
+public class UserServiceImpl0 implements UserService, ApplicationContextAware {
 
     ApplicationContext applicationContext;
     @Override
@@ -16,6 +19,7 @@ public class UserServiceImpl implements UserService, ApplicationContextAware {
         this.applicationContext = applicationContext;
     }
 
+    @Transactional
     @Override
     public void login(String user, String pass) {
         System.out.println("UserServiceImpl...login");
@@ -26,6 +30,7 @@ public class UserServiceImpl implements UserService, ApplicationContextAware {
     }
 
     //this.register(new User()); 不是用代理对象进行调用的，而是使用原始对象
+    @Transactional
     @Override
     public void register(User user) {
         System.out.println("UserServiceImpl..register");
