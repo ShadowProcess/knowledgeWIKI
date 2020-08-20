@@ -26,8 +26,6 @@
 
 ## 3、环境准备
 
-http://www.gulixueyuan.com/ 谷粒学院
-
 环境约束
 
 –jdk1.8：Spring Boot 推荐jdk1.7及以上；java version "1.8.0_112"
