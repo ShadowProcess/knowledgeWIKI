@@ -1,5 +1,0 @@
-int * pArr;
-
-pArr指向一块内存
-
-realloc(pArr,100);   将pArr指向的内存 改变为100字节

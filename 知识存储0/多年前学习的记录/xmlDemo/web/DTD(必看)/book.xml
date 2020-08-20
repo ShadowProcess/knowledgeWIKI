@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE 书架 SYSTEM "C:\Users\Alex\IdeaProjects\XML\web\DTD\book.dtd">
-<书架>
-    <书>
-        <书名>java文本</书名>
-        <作者>班长</作者>
-        <售价>123元</售价>
-    </书>
-</书架>

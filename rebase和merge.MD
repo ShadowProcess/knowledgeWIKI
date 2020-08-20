@@ -1,13 +1,13 @@
 ##
 最初：
-![avatar](知识存储0/images/起初.png)
+![avatar](Z-daily/images/起初.png)
 
 如果使用merge命令：
-![avatar](知识存储0/images/merge.png)
+![avatar](Z-daily/images/merge.png)
 
 如果使用rebase命令：
-![avatar](知识存储0/images/rebase1.png)
-![avatar](知识存储0/images/rebase2.png)
+![avatar](Z-daily/images/rebase1.png)
+![avatar](Z-daily/images/rebase2.png)
 
 --------------------------------------------------------
 #补充git rebase interactive 交互用法

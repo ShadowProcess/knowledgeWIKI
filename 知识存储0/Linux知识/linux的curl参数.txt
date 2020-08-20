@@ -1,9 +1,0 @@
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-
-
- -f/--fail             	 Fail silently (no output at all) on HTTP errors (H)
- -s/--silent          	 Silent mode. Don't output anything
- -S/--show-error    	 Show error. With -s, make curl show errors when they occur
- -L/--location      	 Follow Location: hints (H)
-    --location-trusted Follow Location: and send auth to other hosts (H)
-

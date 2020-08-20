@@ -1,5 +1,0 @@
-Plain Ordinary Java Object
-
-plain:平的，简单的
-
-ordinary:平凡的，普通的
