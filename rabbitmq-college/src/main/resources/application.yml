@@ -1,0 +1,15 @@
+spring:
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
+
+#spring.rabbitmq.host	RabbitMQ的主机地址
+#spring.rabbitmq.port	RabbitMQ的端口号
+#  端口 15672 网页管理
+#  端口 5672 AMQP端口
+#  然后访问http://localhost:15672即可
+
+
+
