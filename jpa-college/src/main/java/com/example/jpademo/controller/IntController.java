@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class IntController {
 
@@ -23,5 +25,12 @@ public class IntController {
         integerDemo.setE(1);
         intRepository.save(integerDemo);
         return "ok";
+    }
+
+    @GetMapping("find")
+    @ResponseBody
+    public List<IntegerDemo> find(){
+        List<IntegerDemo> all = intRepository.findAll();
+        return all;
     }
 }

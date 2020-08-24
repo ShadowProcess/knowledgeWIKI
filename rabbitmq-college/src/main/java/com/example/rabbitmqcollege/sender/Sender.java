@@ -18,6 +18,11 @@ import java.util.Date;
  * @author Alex
  * <p>
  * 演示RabbitMQ发送端
+ *
+ * RabbitMQ】三种Exchange模式——订阅、路由、通配符模式
+ * .direct 默认的(一对一)
+ * .topic  模糊匹配
+ * .fanout 发布订阅模式
  */
 
 @Component
@@ -58,9 +63,10 @@ public class Sender {
 
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType(MessageProperties.CONTENT_TYPE_BYTES);
-        messageProperties.setDeliveryMode(MessageProperties.DEFAULT_DELIVERY_MODE);
+        messageProperties.setDeliveryMode(MessageProperties.DEFAULT_DELIVERY_MODE); //设置消息持久化
         Message message = new Message(content.getBytes(), messageProperties);
 
+        //三个参数依次是交换机，路由key,内容
         this.rabbitmqTemplate.send(exchange, routingKey, message);
     }
 }

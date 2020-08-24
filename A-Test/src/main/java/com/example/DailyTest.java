@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
 
 public class DailyTest {
 
@@ -112,5 +113,10 @@ public class DailyTest {
         System.out.println(Month.APRIL);
         System.out.println("Don`t match");
         System.out.println(LocalDate.now().with(TemporalAdjusters.firstDayOfMonth()));
+    }
+
+    @Test
+    public void WW(){
+        Stream.of(1,2).limit(3).forEach(System.out::println);
     }
 }
