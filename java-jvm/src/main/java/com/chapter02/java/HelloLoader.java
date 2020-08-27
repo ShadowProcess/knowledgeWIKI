@@ -1,6 +1,10 @@
 package com.chapter02.java;
 
-
+/**
+ *
+ *
+ * 演示类加载器
+ */
 public class HelloLoader {
 
     public static void main(String[] args) {

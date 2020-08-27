@@ -1,9 +1,6 @@
 package com.chapter02.java;
 
-/**
- * @author shkstart
- * @create 2020 下午 6:01
- */
+
 public class ClassInitTest {
    private static int num = 1;
 
@@ -11,7 +8,7 @@ public class ClassInitTest {
        num = 2;
        number = 20;
        System.out.println(num);
-       //System.out.println(number);//报错：非法的前向引用。
+       //System.out.println(number);//报错：非法的前向引用。 因为你声明的在下边，这里值可以赋值，不可以引用
    }
 
    private static int number = 10;  //linking之prepare: number = 0 --> initial: 20 --> 10

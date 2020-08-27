@@ -116,7 +116,54 @@ public class DailyTest {
     }
 
     @Test
-    public void WW(){
-        Stream.of(1,2).limit(3).forEach(System.out::println);
+    public void WW() {
+        Stream.of(1, 2).limit(3).forEach(System.out::println);
     }
+
+    @Test
+    public void ff() {
+        //0.1*3的结果是浮点型，也就是0.30000000000000004，
+        //但是有的计算结果不是的，比如4*0.1结果就是0.4；这个是《二进制浮点数算法》的计算 原因，不深究，记一下就行
+        System.out.println(0.1 * 3 == 0.3); //false
+    }
+
+    @Test
+    public void stringTest() {
+        String a = "a", b = "a";
+        System.out.println(a == b); //true   String比较尽量用equals不要用==
+    }
+
+    @Test
+    public void math() {
+        long round = Math.round(-1.5);
+        System.out.println(round); // -1
+    }
+
+    //可以声明volatile数组
+    volatile int[] i;
+
+
+    //public boolean equals(Object obj) {
+    //    return (this == obj);
+    //}
+    // == 比较的是内存地址
+
+    //public native int hashCode();
+
+//    HashCode 是为了集合操作快速，而根据一定规则而设计的散列码(根据内存地址生成的，为了方便比较和插入数据)，用于 HashMap,HashSet,HashTable.
+//    hashCode()方法返回的就是一个数值，从方法的名称上就可以看出，其目的是生成一个hash码。hash码的主要用途就是在对对象进行散列的时候作为key输入，
+//    据此很容易推断出，我们需要每个对象的hash码尽可能不同，这样才能保证散列的存取性能。事实上，Object类提供的默认实现确实保证每个对象的hash码不同
+//    （在对象的内存地址基础上经过特定算法返回一个hash码）。Java采用了哈希表的原理。哈希（Hash）实际上是个人名，由于他提出一哈希算法的概念，
+//    所以就以他的名字命名了。 哈希算法也称为散列算法，是将数据依特定算法直接指定到一个地址上。初学者可以这样理解，
+//    hashCode方法实际上返回的就是对象存储的物理地址（实际可能并不是）。
+//
+//    散列函数,散列算法,哈希函数。
+//    是一种从任何一种数据中创建小的数字“指纹”的方法。
+//    散列函数将任意长度的二进制值映射为较短的固定长度的二进制值，这个小的二进制值称为哈希值。
+//    好的散列函数在输入域中很少出现散列冲突。
+
+//    1、如果两个对象equals，Java运行时环境会认为他们的hashcode一定相等。
+//    2、如果两个对象不equals，他们的hashcode有可能相等。
+//    3、如果两个对象hashcode相等，他们不一定equals。
+//    4、如果两个对象hashcode不相等，他们一定不equals。
 }

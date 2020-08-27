@@ -2,6 +2,13 @@ package com.chapter02.java1;
 
 import java.io.FileNotFoundException;
 
+//自定义类加载器
+
+//为什么要自定义类加载器？
+//隔离加载类
+//修改类加载的方式
+//扩展加载源
+//防止源码泄漏
 
 public class CustomClassLoader extends ClassLoader {
     @Override

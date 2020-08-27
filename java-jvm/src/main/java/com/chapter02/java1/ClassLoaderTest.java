@@ -14,7 +14,7 @@ public class ClassLoaderTest {
 
         //获取其上层：获取不到引导类加载器
         ClassLoader bootstrapClassLoader = extClassLoader.getParent();
-        System.out.println(bootstrapClassLoader);//null
+        System.out.println(bootstrapClassLoader);//null 引导类加载器是C写的
 
         //对于用户自定义类来说：默认使用系统类加载器进行加载
         ClassLoader classLoader = ClassLoaderTest.class.getClassLoader();

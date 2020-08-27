@@ -17,7 +17,7 @@ public class ClassLoaderTest1 {
         }
         //从上面的路径中随意选择一个类,来看看他的类加载器是什么:引导类加载器
         ClassLoader classLoader = Provider.class.getClassLoader();
-        System.out.println(classLoader);
+        System.out.println(classLoader); //引导类加载器获取不到，是用C写的
 
         System.out.println("***********扩展类加载器*************");
         String extDirs = System.getProperty("java.ext.dirs");
@@ -28,6 +28,5 @@ public class ClassLoaderTest1 {
         //从上面的路径中随意选择一个类,来看看他的类加载器是什么:扩展类加载器
         ClassLoader classLoader1 = CurveDB.class.getClassLoader();
         System.out.println(classLoader1);//sun.misc.Launcher$ExtClassLoader@1540e19d
-
     }
 }
