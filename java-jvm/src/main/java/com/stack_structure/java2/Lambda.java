@@ -2,8 +2,6 @@ package com.stack_structure.java2;
 
 /**
  * 体会invokedynamic指令
- * @author shkstart
- * @create 2020 下午 3:09
  */
 @FunctionalInterface
 interface Func {
@@ -19,6 +17,7 @@ public class Lambda {
         Lambda lambda = new Lambda();
 
         Func func = s -> {
+            System.out.println(s);
             return true;
         };
 

@@ -1,12 +1,10 @@
-package com.chapter08.java1;
+package com.heap_college.java1;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * -Xms600m -Xmx600m
- * @author shkstart  shkstart@126.com
- * @create 2020  17:51
  */
 public class HeapInstanceTest {
     byte[] buffer = new byte[new Random().nextInt(1024 * 200)];

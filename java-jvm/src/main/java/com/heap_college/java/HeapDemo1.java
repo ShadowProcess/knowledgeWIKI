@@ -1,9 +1,7 @@
-package com.chapter08.java;
+package com.heap_college.java;
 
 /**
  * -Xms20m -Xmx20m
- * @author shkstart  shkstart@126.com
- * @create 2020  16:42
  */
 public class HeapDemo1 {
     public static void main(String[] args) {

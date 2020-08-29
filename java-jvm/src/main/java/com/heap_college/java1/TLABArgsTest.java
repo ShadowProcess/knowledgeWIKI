@@ -1,10 +1,8 @@
-package com.chapter08.java1;
+package com.heap_college.java1;
 
 /**
  * 测试-XX:UseTLAB参数是否开启的情况:默认情况是开启的
  *
- * @author shkstart  shkstart@126.com
- * @create 2020  16:16
  */
 public class TLABArgsTest {
     public static void main(String[] args) {

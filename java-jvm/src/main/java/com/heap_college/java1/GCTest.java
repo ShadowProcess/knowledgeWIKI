@@ -1,4 +1,4 @@
-package com.chapter08.java1;
+package com.heap_college.java1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,6 @@ import java.util.List;
 /**
  * 测试MinorGC 、 MajorGC、FullGC
  * -Xms9m -Xmx9m -XX:+PrintGCDetails
- * @author shkstart  shkstart@126.com
- * @create 2020  14:19
  */
 public class GCTest {
     public static void main(String[] args) {

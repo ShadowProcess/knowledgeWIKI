@@ -4,8 +4,6 @@ package com.stack_structure.java2;
  * 解析调用中非虚方法、虚方法的测试
  *
  * invokestatic指令和invokespecial指令调用的方法称为非虚方法
- * @author shkstart
- * @create 2020 下午 12:07
  */
 class Father {
     public Father() {
@@ -38,6 +36,7 @@ public class Son extends Father {
     public static void showStatic(String str) {
         System.out.println("son " + str);
     }
+
     private void showPrivate(String str) {
         System.out.println("son private" + str);
     }

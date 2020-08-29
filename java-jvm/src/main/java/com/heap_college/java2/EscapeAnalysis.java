@@ -1,11 +1,9 @@
-package com.chapter08.java2;
+package com.heap_college.java2;
 
 /**
  * 逃逸分析
  *
  *  如何快速的判断是否发生了逃逸分析，大家就看new的对象实体是否有可能在方法外被调用。
- * @author shkstart
- * @create 2020 下午 4:00
  */
 public class EscapeAnalysis {
 

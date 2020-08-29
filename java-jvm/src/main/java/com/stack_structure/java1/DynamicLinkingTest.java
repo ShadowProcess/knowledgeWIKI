@@ -1,6 +1,8 @@
 package com.stack_structure.java1;
 
 
+//动态链接（或指向运行时常量池的方法引用）
+
 public class DynamicLinkingTest {
 
     int num = 10;

@@ -1,10 +1,7 @@
-package com.chapter08.java;
+package com.heap_college.java;
 
 /**
  * -Xms10m -Xmx10m
- *
- * @author shkstart  shkstart@126.com
- * @create 2020  16:41
  */
 public class HeapDemo {
     public static void main(String[] args) {

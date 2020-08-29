@@ -1,4 +1,4 @@
-package com.chapter08.java;
+package com.heap_college.java;
 
 /**
  * 1. 设置堆空间大小的参数
@@ -15,8 +15,6 @@ package com.chapter08.java;
  *
  * 4. 查看设置的参数：方式一： jps   /  jstat -gc 进程id
  *                  方式二：-XX:+PrintGCDetails
- * @author shkstart  shkstart@126.com
- * @create 2020  20:15
  */
 public class HeapSpaceInitial {
     public static void main(String[] args) {

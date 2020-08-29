@@ -1,12 +1,10 @@
-package com.chapter08.java;
+package com.heap_college.java;
 
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
  * -Xms600m -Xmx600m
- * @author shkstart  shkstart@126.com
- * @create 2020  21:12
  */
 public class OOMTest {
     public static void main(String[] args) {

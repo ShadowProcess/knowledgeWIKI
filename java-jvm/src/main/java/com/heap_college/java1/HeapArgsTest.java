@@ -1,4 +1,4 @@
-package com.chapter08.java1;
+package com.heap_college.java1;
 
 /**
  * 测试堆空间常用的jvm参数：
@@ -16,9 +16,6 @@ package com.chapter08.java1;
  * -XX:+PrintGCDetails：输出详细的GC处理日志
  * 打印gc简要信息：① -XX:+PrintGC   ② -verbose:gc
  * -XX:HandlePromotionFailure：是否设置空间分配担保
- *
- * @author shkstart  shkstart@126.com
- * @create 2020  17:18
  */
 public class HeapArgsTest {
     public static void main(String[] args) {

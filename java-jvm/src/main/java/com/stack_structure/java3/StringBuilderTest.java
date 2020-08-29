@@ -7,8 +7,6 @@ package com.stack_structure.java3;
  *   何为线程安全？
  *      如果只有一个线程才可以操作此数据，则必是线程安全的。
  *      如果有多个线程操作此数据，则此数据是共享数据。如果不考虑同步机制的话，会存在线程安全问题。
- * @author shkstart
- * @create 2020 下午 7:48
  */
 public class StringBuilderTest {
 
@@ -45,7 +43,6 @@ public class StringBuilderTest {
 
     public static void main(String[] args) {
         StringBuilder s = new StringBuilder();
-
 
         new Thread(() -> {
             s.append("a");

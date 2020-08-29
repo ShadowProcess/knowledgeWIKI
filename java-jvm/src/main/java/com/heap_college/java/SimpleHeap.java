@@ -1,8 +1,7 @@
-package com.chapter08.java;
+package com.heap_college.java;
 
 /**
- * @author shkstart  shkstart@126.com
- * @create 2020  17:28
+ *
  */
 public class SimpleHeap {
     private int id;//属性、成员变量
