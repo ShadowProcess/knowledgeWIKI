@@ -149,6 +149,21 @@ public class TestStreamaAPI {
         for (char c : str.toCharArray()) {
             list.add(c);
         }
+
         return list.stream();
+    }
+
+    @Test
+    public void test9() {
+        //串行流
+        boolean parallel1 = Stream.of(1, 2, 3)
+                .isParallel();
+        System.out.println(parallel1); //返回false
+
+        //并行流
+        boolean parallel2 = Stream.of(1, 2, 3)
+                .parallel()
+                .isParallel();
+        System.out.println(parallel2); //返回true
     }
 }
