@@ -1,7 +1,10 @@
 package com.heap_college.java;
 
 /**
+ * 堆里边才有GC，而栈是没有GC的，因为它只需要入栈出栈
  *
+ * 打印堆空间信息
+ * -XX:+PrintGCDetails
  */
 public class SimpleHeap {
     private int id;//属性、成员变量

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 测试MinorGC 、 MajorGC、FullGC
+ * 测试MinorGC 、 MajorGC 、 FullGC
  * -Xms9m -Xmx9m -XX:+PrintGCDetails
  */
 public class GCTest {
@@ -12,7 +12,7 @@ public class GCTest {
         int i = 0;
         try {
             List<String> list = new ArrayList<>();
-            String a = "atguigu.com";
+            String a = "atguigu.com"; //jdk1.8字符串常量池存在于堆中
             while (true) {
                 list.add(a);
                 a = a + a;

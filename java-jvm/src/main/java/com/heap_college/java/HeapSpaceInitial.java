@@ -8,13 +8,15 @@ package com.heap_college.java;
  * -Xmx 用来设置堆空间（年轻代+老年代）的最大内存大小
  *
  * 2. 默认堆空间的大小
- *    初始内存大小：物理电脑内存大小 / 64
- *             最大内存大小：物理电脑内存大小 / 4
- * 3. 手动设置：-Xms600m -Xmx600m
- *     开发中建议将初始堆内存和最大的堆内存设置成相同的值。
+ *          初始内存大小：物理电脑内存大小 / 64
+ *          最大内存大小：物理电脑内存大小 / 4
  *
- * 4. 查看设置的参数：方式一： jps   /  jstat -gc 进程id
- *                  方式二：-XX:+PrintGCDetails
+ * 3. 手动设置：-Xms600m -Xmx600m
+ *     开发中建议将初始堆内存和最大的堆内存设置成相同的值。 （GC- 防止堆空间频繁的扩容和释放，造成不必要的垃圾）
+ *
+ * 4. 查看设置的参数：
+ *     方式一： jps   /  jstat -gc 进程id
+ *     方式二：-XX:+PrintGCDetails
  */
 public class HeapSpaceInitial {
     public static void main(String[] args) {
@@ -27,8 +29,8 @@ public class HeapSpaceInitial {
         System.out.println("-Xms : " + initialMemory + "M");
         System.out.println("-Xmx : " + maxMemory + "M");
 
-//        System.out.println("系统内存大小为：" + initialMemory * 64.0 / 1024 + "G");
-//        System.out.println("系统内存大小为：" + maxMemory * 4.0 / 1024 + "G");
+        System.out.println("系统内存大小为：" + initialMemory * 64.0 / 1024 + "G");
+        System.out.println("系统内存大小为：" + maxMemory * 4.0 / 1024 + "G");
 
         try {
             Thread.sleep(1000000);

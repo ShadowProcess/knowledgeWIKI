@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
+ * 设置堆的初始空间，和最大空间
  * -Xms600m -Xmx600m
  */
 public class HeapInstanceTest {

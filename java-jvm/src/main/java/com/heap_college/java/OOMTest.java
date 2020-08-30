@@ -5,6 +5,8 @@ import java.util.Random;
 
 /**
  * -Xms600m -Xmx600m
+ *
+ * 模拟内存溢出
  */
 public class OOMTest {
     public static void main(String[] args) {
