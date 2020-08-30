@@ -1,4 +1,4 @@
-package com.chapter09.java1;
+package com.method_area_college.java1;
 
 /**
  * 结论：

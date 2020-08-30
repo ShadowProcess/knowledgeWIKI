@@ -2,7 +2,10 @@ package com.heap_college.java2;
 
 /**
  * 标量替换测试
- *  -Xmx100m -Xms100m -XX:+DoEscapeAnalysis -XX:+PrintGC -XX:-EliminateAllocations
+ *  -Xmx100m -Xms100m -XX:+DoEscapeAnalysis -XX:+PrintGC
+ *
+ *  是否开启标量替换
+ *  -XX:-EliminateAllocations
  */
 public class ScalarReplace {
     public static class User {

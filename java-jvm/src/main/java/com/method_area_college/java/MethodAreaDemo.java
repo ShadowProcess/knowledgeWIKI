@@ -1,4 +1,4 @@
-package com.chapter09.java;
+package com.method_area_college.java;
 
 /**
  *  测试设置方法区大小参数的默认值
@@ -8,17 +8,15 @@ package com.chapter09.java;
  *
  *  jdk8及以后：
  *  -XX:MetaspaceSize=100m  -XX:MaxMetaspaceSize=100m
- * @author shkstart  shkstart@126.com
- * @create 2020  12:16
  */
 public class MethodAreaDemo {
     public static void main(String[] args) {
         System.out.println("start...");
-//        try {
-//            Thread.sleep(1000000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+        try {
+            Thread.sleep(1000000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         System.out.println("end...");
     }

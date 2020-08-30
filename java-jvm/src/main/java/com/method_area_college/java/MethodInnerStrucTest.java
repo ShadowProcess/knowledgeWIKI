@@ -1,11 +1,10 @@
-package com.chapter09.java;
+package com.method_area_college.java;
 
 import java.io.Serializable;
 
 /**
- * 测试方法区的内部构成
- * @author shkstart  shkstart@126.com
- * @create 2020  23:39
+ * 测试方法区的内部构成  -p参数 表示私有的代码也会反编译
+ * javap -v -p xxx.Class
  */
 public class MethodInnerStrucTest extends Object implements Comparable<String>,Serializable {
     //属性

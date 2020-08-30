@@ -1,14 +1,12 @@
-package com.chapter09.java;
+package com.method_area_college.java;
 
 /**
  * non-final的类变量
- * @author shkstart  shkstart@126.com
- * @create 2020  20:37
  */
 public class MethodAreaTest {
     public static void main(String[] args) {
         Order order = null;
-        order.hello();
+        order.hello(); //不会报错
         System.out.println(order.count);
     }
 }

@@ -2,12 +2,13 @@ Classfile /D:/workspace_idea5/JVMDemo/out/production/chapter09/com/atguigu/java/
   Last modified 2020-4-22; size 1626 bytes
   MD5 checksum 69643a16925bb67a96f54050375c75d0
   Compiled from "MethodInnerStrucTest.java"
-  //类型信息
+  //类型信息 (类的全类名，类的父类，类实现的接口)
 public class com.atguigu.java.MethodInnerStrucTest extends java.lang.Object 
 implements java.lang.Comparable<java.lang.String>, java.io.Serializable
 
   minor version: 0
   major version: 51
+  //类的修饰符
   flags: ACC_PUBLIC, ACC_SUPER
 Constant pool:
    #1 = Methodref          #18.#52        // java/lang/Object."<init>":()V
@@ -95,7 +96,7 @@ Constant pool:
   #83 = Utf8               (Ljava/lang/String;)V
   #84 = Utf8               printStackTrace
 {
-  //域信息
+  //域信息 (属性信息)
   public int num;
     descriptor: I
     flags: ACC_PUBLIC
@@ -106,8 +107,8 @@ Constant pool:
 
   //方法信息
   public com.atguigu.java.MethodInnerStrucTest();
-    descriptor: ()V
-    flags: ACC_PUBLIC
+    descriptor: ()V    //V表示是一个方法，构造器也是一个方法
+    flags: ACC_PUBLIC  //访问级别
     Code:
       stack=2, locals=1, args_size=1
          0: aload_0
@@ -127,7 +128,7 @@ Constant pool:
     descriptor: ()V
     flags: ACC_PUBLIC
     Code:
-      stack=3, locals=2, args_size=1
+      stack=3, locals=2, args_size=1  //栈深度，局部变量表，参数为1是因为this引用参数
          0: bipush        20
          2: istore_1
          3: getstatic     #3                  // Field java/lang/System.out:Ljava/io/PrintStream;
@@ -154,7 +155,7 @@ Constant pool:
     descriptor: (I)I
     flags: ACC_PUBLIC, ACC_STATIC
     Code:
-      stack=2, locals=3, args_size=1
+      stack=2, locals=3, args_size=1 //栈深度，局部变量表，参数为1是int参数,因为是静态所以没有this引用
          0: iconst_0
          1: istore_1
          2: bipush        30
@@ -169,6 +170,8 @@ Constant pool:
         14: invokevirtual #12                 // Method java/lang/Exception.printStackTrace:()V
         17: iload_1
         18: ireturn
+
+      //异常表
       Exception table:
          from    to  target type
              2     9    12   Class java/lang/Exception
