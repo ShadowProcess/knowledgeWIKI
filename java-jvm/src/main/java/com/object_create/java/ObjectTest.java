@@ -1,8 +1,7 @@
-package com.chapter10.java;
+package com.object_create.java;
 
 /**
- * @author shkstart  shkstart@126.com
- * @create 2020  17:16
+ * 对象创建的字节码分析，创建过程
  */
 public class ObjectTest {
     public static void main(String[] args) {

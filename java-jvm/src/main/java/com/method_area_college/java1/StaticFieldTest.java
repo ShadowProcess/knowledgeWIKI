@@ -8,11 +8,16 @@ package com.method_area_college.java1;
  * -Xms200m -Xmx200m -XX:PermSize=300m -XX:MaxPermSize=300m -XX:+PrintGCDetails
  * jdk 8：
  * -Xms200m -Xmx200m -XX:MetaspaceSize=300m -XX:MaxMetaspaceSize=300m -XX:+PrintGCDetails
- * @author shkstart  shkstart@126.com
- * @create 2020  21:20
  */
 public class StaticFieldTest {
     private static byte[] arr = new byte[1024 * 1024 * 100];//100MB
+
+    /**
+     * 右边new出来的，jdk6,7,8都是在堆中存放
+     * 左边静态修饰的arr位置不一样
+     *
+     * @param args
+     */
 
     public static void main(String[] args) {
         System.out.println(StaticFieldTest.arr);
