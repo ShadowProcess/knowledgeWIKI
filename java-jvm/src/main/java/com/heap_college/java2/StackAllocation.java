@@ -1,7 +1,7 @@
 package com.heap_college.java2;
 
 /**
- * 栈上分配测试
+ * 栈上分配对象测试
  * -Xmx1G -Xms1G -XX:-DoEscapeAnalysis -XX:+PrintGCDetails
  */
 public class StackAllocation {
@@ -22,6 +22,7 @@ public class StackAllocation {
         }
     }
 
+    //方法里这个对象，是在栈上分配的
     private static void alloc() {
         User user = new User();//未发生逃逸
     }

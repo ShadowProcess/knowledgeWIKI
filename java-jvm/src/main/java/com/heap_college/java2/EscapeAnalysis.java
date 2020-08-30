@@ -4,6 +4,10 @@ package com.heap_college.java2;
  * 逃逸分析
  *
  *  如何快速的判断是否发生了逃逸分析，大家就看new的对象实体是否有可能在方法外被调用。
+ *
+ *  在jdk1.6之后，Hotspot中就默认开启了逃逸分析
+ *  如果使用的是较早版本，开发人员可以通过； -XX: +DoEscapeAnalysis 显式开启逃逸分析
+ *  通过选线 -XX: +PrintEscapeAnalysis查看逃逸分析的筛选结果
  */
 public class EscapeAnalysis {
 
