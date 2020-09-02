@@ -1,13 +1,13 @@
-package com.chapter11.java;
+package com.direct_memory.java;
 
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 
 /**
- * 本地内存的OOM:  OutOfMemoryError: Direct buffer memory
  *
- * @author shkstart  shkstart@126.com
- * @create 2020  0:09
+ * 直接内存也会OOM
+ *
+ * 本地内存的OOM:  OutOfMemoryError: Direct buffer memory
  */
 public class BufferTest2 {
     private static final int BUFFER = 1024 * 1024 * 20;//20MB
@@ -30,7 +30,5 @@ public class BufferTest2 {
         } finally {
             System.out.println(count);
         }
-
-
     }
 }

@@ -1,4 +1,4 @@
-package com.chapter11.java;
+package com.direct_memory.java;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -7,13 +7,13 @@ import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
 /**
- * @author shkstart  shkstart@126.com
- * @create 2020  0:04
+ * 演示nio操作文件
  */
+
 public class BufferTest1 {
 
     private static final String TO = "F:\\test\\异界BD中字.mp4";
-    private static final int _100Mb = 1024 * 1024 * 100;
+    private static final int _100Mb = 1024 * 1024 * 100; //缓冲区
 
     public static void main(String[] args) {
         long sum = 0;

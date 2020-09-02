@@ -1,16 +1,17 @@
-package com.chapter11.java;
+package com.direct_memory.java;
 
 import java.nio.ByteBuffer;
 import java.util.Scanner;
 
 /**
+ * BIO 同步阻塞
+ * NIO 同步非阻塞
+ *
  *  IO                  NIO (New IO / Non-Blocking IO)
  *  byte[] / char[]     Buffer
  *  Stream              Channel
  *
  * 查看直接内存的占用与释放
- * @author shkstart  shkstart@126.com
- * @create 2020  0:22
  */
 public class BufferTest {
     private static final int BUFFER = 1024 * 1024 * 1024;//1GB

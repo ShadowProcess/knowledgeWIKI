@@ -1,12 +1,10 @@
-package com.chapter12.java;
+package com.execution_engine.java;
 
 /**
  * 测试解释器模式和JIT编译模式
  *  -Xint  : 6520ms
  *  -Xcomp : 950ms
  *  -Xmixed : 936ms
- * @author shkstart  shkstart@126.com
- * @create 2020  12:40
  */
 public class IntCompTest {
     public static void main(String[] args) {
@@ -18,7 +16,6 @@ public class IntCompTest {
         long end = System.currentTimeMillis();
 
         System.out.println("花费的时间为：" + (end - start));
-
     }
 
     public static void testPrimeNumber(int count){
