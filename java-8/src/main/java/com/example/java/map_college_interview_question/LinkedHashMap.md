@@ -1,0 +1,4 @@
+LinkedHashMap基于HashMap的实现，只不过在table之外，额外维护了一个双向链表。
+实现newNode，afterNodeRemoval等方法方法，put及remove时候维护链表的增减
+其内部子类实现Iterator接口，返回链表数据
+内部逻辑图如下
