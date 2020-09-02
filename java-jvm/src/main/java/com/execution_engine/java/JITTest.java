@@ -3,7 +3,7 @@ package com.execution_engine.java;
 import java.util.ArrayList;
 
 /**
- *
+ * JIT编译器演示；要通过jvisualVm或jconsole看编译时间
  */
 public class JITTest {
     public static void main(String[] args) {
