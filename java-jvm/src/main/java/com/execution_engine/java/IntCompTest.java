@@ -2,9 +2,9 @@ package com.execution_engine.java;
 
 /**
  * 测试解释器模式和JIT编译模式
- *  -Xint  : 6520ms
- *  -Xcomp : 950ms
- *  -Xmixed : 936ms
+ *  -Xint   : 6520ms  //仅仅开启解释器模式
+ *  -Xcomp  : 950ms   //仅仅开启编译模式
+ *  -Xmixed : 936ms   //开启二者混合模式
  */
 public class IntCompTest {
     public static void main(String[] args) {
