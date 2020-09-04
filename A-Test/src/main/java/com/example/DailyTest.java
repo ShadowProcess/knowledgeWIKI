@@ -5,7 +5,10 @@ import org.junit.Test;
 
 import java.time.*;
 import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
+import java.util.Vector;
 import java.util.stream.Stream;
 
 public class DailyTest {
@@ -162,5 +165,16 @@ public class DailyTest {
         String s = new String("s"); //s指向堆
         String s1 = s.intern();            //s1指向常量池
         System.out.println(s == s1);
+        List list1 = new ArrayList();
+        List list = new Vector();
+        list.add(1);
+        list.add(2);
+        System.out.println(list);
+
+//        关于ArrayList和Vector区别如下：
+//
+//        ArrayList在内存不够时默认是扩展1.5倍，Vector是默认扩展1倍。
+//        Vector提供indexOf(obj, start)接口，ArrayList没有。
+//        Vector属于线程安全级别的，但是大多数情况下不使用Vector，因为线程安全需要更大的系统开销
     }
 }
