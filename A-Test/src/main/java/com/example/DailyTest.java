@@ -156,4 +156,11 @@ public class DailyTest {
 //    3、如果两个对象hashcode相等，他们不一定equals。
 //    4、如果两个对象hashcode不相等，他们一定不equals。
 
+
+    @Test
+    public void StringS(){
+        String s = new String("s"); //s指向堆
+        String s1 = s.intern();            //s1指向常量池
+        System.out.println(s == s1);
+    }
 }
