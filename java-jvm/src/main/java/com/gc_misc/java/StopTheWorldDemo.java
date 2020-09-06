@@ -1,11 +1,11 @@
-package com.chapter16_misc.java;
+package com.gc_misc.java;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author shkstart  shkstart@126.com
- * @create 2020  15:50
+ *
+ * 演示Stop The World
  */
 public class StopTheWorldDemo {
     public static class WorkThread extends Thread {

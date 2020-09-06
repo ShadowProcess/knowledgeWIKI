@@ -1,4 +1,4 @@
-package com.chapter17.java;
+package com.garbage_collector.java;
 
 import java.util.ArrayList;
 

@@ -1,12 +1,9 @@
-package com.chapter16_misc.java1;
+package com.gc_misc.java1;
 
 import java.lang.ref.SoftReference;
 
 /**
  * 软引用的测试：内存不足即回收
- *
- * @author shkstart  shkstart@126.com
- * @create 2020  16:06
  */
 public class SoftReferenceTest {
     public static class User {
@@ -39,7 +36,7 @@ public class SoftReferenceTest {
         System.gc();
         System.out.println("After GC:");
 //        //垃圾回收之后获得软引用中的对象
-        System.out.println(userSoftRef.get());//由于堆空间内存足够，所有不会回收软引用的可达对象。
+        System.out.println(userSoftRef.get());//由于堆空间内存足够，所以不会回收软引用的可达对象。
 //
         try {
             //让系统认为内存资源紧张、不够

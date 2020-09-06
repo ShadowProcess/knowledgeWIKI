@@ -1,18 +1,15 @@
-package com.chapter16_misc.java1;
+package com.gc_misc.java1;
 
 /**
  *  强引用的测试
- *
- * @author shkstart  shkstart@126.com
- * @create 2020  16:05
  */
 public class StrongReferenceTest {
     public static void main(String[] args) {
         StringBuffer str = new StringBuffer ("Hello,尚硅谷");
         StringBuffer str1 = str;
 
-        str = null;
-        System.gc();
+        str = null;  //断开str的强引用
+        System.gc(); //str1不会被回收
 
         try {
             Thread.sleep(3000);

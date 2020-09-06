@@ -1,12 +1,11 @@
-package com.chapter16_misc.java1;
+package com.gc_misc.java1;
 
 import java.lang.ref.WeakReference;
 
 /**
- * 弱引用的测试
+ * 弱引用的测试   （WeakHashMap可以用来做缓存，当内存不足时，可以被回收）
  *
- * @author shkstart  shkstart@126.com
- * @create 2020  16:06
+ * 只要Gc就回收
  */
 public class WeakReferenceTest {
     public static class User {

@@ -1,4 +1,4 @@
-package com.chapter17.java;
+package com.garbage_collector.java;
 
 /**
  * 在jdk7 和 jdk8中分别执行

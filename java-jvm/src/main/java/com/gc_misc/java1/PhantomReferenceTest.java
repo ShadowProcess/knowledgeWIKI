@@ -1,13 +1,11 @@
-package com.chapter16_misc.java1;
+package com.gc_misc.java1;
 
 import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 
 /**
  * 虚引用的测试
- *
- * @author shkstart  shkstart@126.com
- * @create 2020  16:07
+ * 虚拟用用来为一个对象设置虚引用关联的唯一目的在于跟踪垃圾回收过程；比如：能在这个对象被收集器回收时收到一个系统通知
  */
 public class PhantomReferenceTest {
     public static PhantomReferenceTest obj;//当前类对象的声明
@@ -36,7 +34,7 @@ public class PhantomReferenceTest {
     protected void finalize() throws Throwable { //finalize()方法只能被调用一次！
         super.finalize();
         System.out.println("调用当前类的finalize()方法");
-        obj = this;
+        obj = this; //复活当前对象
     }
 
     public static void main(String[] args) {
