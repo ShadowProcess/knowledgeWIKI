@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.ArrayList;
 import java.util.List;
@@ -176,5 +177,20 @@ public class DailyTest {
 //        ArrayList在内存不够时默认是扩展1.5倍，Vector是默认扩展1倍。
 //        Vector提供indexOf(obj, start)接口，ArrayList没有。
 //        Vector属于线程安全级别的，但是大多数情况下不使用Vector，因为线程安全需要更大的系统开销
+    }
+
+    @Test
+    public void lo(){
+        LocalDateTime effect = LocalDateTime.parse("2020-09-08 07:00:47.0", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
+        System.out.println(effect);
+
+        YearMonth yearMonth = YearMonth.now();
+        YearMonth effect1 = YearMonth.from(LocalDateTime.now());
+        System.out.println(effect1);
+
+        LocalDateTime start = LocalDate.of(2020, 9, 11).atTime(LocalTime.MIN);
+        LocalDateTime end = LocalDate.of(2020, 9, 20).atTime(LocalTime.MAX);
+        System.out.println(start);
+        System.out.println(end);
     }
 }
