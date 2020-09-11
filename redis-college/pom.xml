@@ -46,6 +46,14 @@
             <version>3.1.0</version>
         </dependency>
 
+        <!-- 在redis官网推荐的三大框架就是：jedis  redission  lettuce -->
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>3.10.4</version>
+        </dependency>
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
