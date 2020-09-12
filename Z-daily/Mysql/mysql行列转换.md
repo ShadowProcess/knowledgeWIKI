@@ -8,4 +8,3 @@
 ![avatar](mysql行-列/8.png)
 ![avatar](mysql行-列/a.png)
 ![avatar](mysql行-列/b.png)
-![avatar](mysql行-列/c.png)
