@@ -7,7 +7,7 @@ InheritableThreadLocal inheritableThreadLocal = new InheritableThreadLocal();
 
 
 #原理
-Thread源码中有写，当创建子线程时，如何父线程有inheritThreadLocals，那么复制一份到子线程
+Thread源码中有写，当创建子线程时，如果父线程有inheritThreadLocals，那么复制一份到子线程
 ```
 /**
  * 初始化一个线程.

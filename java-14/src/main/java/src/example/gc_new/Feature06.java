@@ -7,11 +7,8 @@ import java.util.ArrayList;
  *                  ② 删除CMS垃圾回收器
  *                  ③ ZGC 可以在macOS和Windows上使用
  *  -XX:+UseParallelGC -XX:-UseParallelOldGC
- *
  *  -XX:-UseParallelOldGC
- *
  *  -XX:+UseConcMarkSweepGC
- *
  *  -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
  */
 public class Feature06 {
