@@ -40,10 +40,10 @@ ObjectMonitor() {
 ```
 结构中几个重要的字段要关注：_count、_owner、_EntryList、_WaitSet。
 
-1.count用来记录线程进入加锁代码的次数。
-2.owner记录当前持有锁的线程,即持有ObjectMonitor对象的线程。
-3.EntryList是想要持有锁的线程的集合。
-4.WaitSet 是加锁对象调用wait（）方法后，等待被唤醒的线程的集合。
+- 1.count用来记录线程进入加锁代码的次数。
+- 2.owner记录当前持有锁的线程,即持有ObjectMonitor对象的线程。
+- 3.EntryList是想要持有锁的线程的集合。
+- 4.WaitSet 是加锁对象调用wait（）方法后，等待被唤醒的线程的集合。
 
 每个等待锁的线程都会被封装成ObjectWaiter对象，当多个线程同时访问一段同步代码（临界区）时，首先会进入 _EntryList 集合，
 当线程获取到对象的monitor 后进入 _Owner 区域并把monitor中的owner变量设置为当前线程，_owner指向持有ObjectMonitor对象的线程。同时monitor中的计数器count加1。
@@ -178,7 +178,7 @@ class ThreadDemo3 implements Runnable {
 # JDK6对Synchronized的优化
 在JDK6以前synchronized的性能并不高，但在之后进行了优化，我们在之前的Mark Word的结构中可以看到，
 锁的状态总共有四种，无锁状态、偏向锁、轻量级锁和重量级锁。随着锁的竞争，锁可以从偏向锁升级到轻量级锁，
-再升级的重量级锁，[但是锁的升级是单向的，也就是说只能从低到高升级，不会出现锁的降级。]
+再升级的重量级锁，[锁可以升级，也可以降级]
 
 >偏向锁
 
