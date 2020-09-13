@@ -1,16 +1,14 @@
 jinfo是用来查看JVM参数和动态修改部分JVM参数的命令
 
 命令格式：
-
 jinfo [option] <pid>
 
 options参数解释：
-
--flag <name> 打印指定名称的参数
--flag [+|-]<name> 打开或关闭参数
--flag <name>=<value> 设置参数
--flags 打印所有参数
--sysprops 打印系统配置
+- flag <name> 打印指定名称的参数
+- flag [+|-]<name> 打开或关闭参数
+- flag <name>=<value> 设置参数
+- flags 打印所有参数
+- sysprops 打印系统配置
 <no option> 打印上面两个选项
 
 最常用示例：

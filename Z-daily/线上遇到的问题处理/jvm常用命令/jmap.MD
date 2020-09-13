@@ -6,27 +6,21 @@ jmap -heap [pid]
 
 
 jmap是用来生成堆dump文件和查看堆相关的各类信息的命令，例如查看finalize执行队列，heap的详细信息和使用情况。
-
 命令格式：
-
-jmap [option] <pid> (连接正在执行的进程)
-jmap [option] <executable <core> (连接一个core文件)
-jmap [option] [server_id@]<remote server IP or hostname> (链接远程服务器)
+- jmap [option] <pid> (连接正在执行的进程)
+- jmap [option] <executable <core> (连接一个core文件)
+- jmap [option] [server_id@]<remote server IP or hostname> (链接远程服务器)
 
 option参数解释：
-
-<none> to print same info as Solaris pmap
--heap 打印java heap摘要
--histo[:live] 打印堆中的java对象统计信息
--clstats 打印类加载器统计信息
--finalizerinfo 打印在f-queue中等待执行finalizer方法的对象
--dump:<dump-options> 生成java堆的dump文件
+ <none> to print same info as Solaris pmap
+- heap 打印java heap摘要
+- histo[:live] 打印堆中的java对象统计信息
+- clstats 打印类加载器统计信息
+- finalizerinfo 打印在f-queue中等待执行finalizer方法的对象
+- dump:<dump-options> 生成java堆的dump文件
 　　　　　　dump-options:
-
 　　　　　　live 只转储存活的对象，如果没有指定则转储所有对象
-
 　　　　　　format=b 二进制格式
-
 　　　　　　file=<file> 转储文件到 <file>
 
 -F 强制选项

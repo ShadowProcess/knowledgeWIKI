@@ -1,13 +1,11 @@
 jstat命令是使用频率比较高的命令，主要用来查看JVM运行时的状态信息，包括内存状态、垃圾回收等。
 
 命令格式：
-
 jstat [option] LVMID [interval] [count]
 
 其中LVMID是进程id，interval是打印间隔时间（毫秒），count是打印次数（默认一直打印）
 
 option参数解释：
-
 -class class loader的行为统计
 -compiler HotSpt JIT编译器行为统计
 -gc 垃圾回收堆的行为统计
