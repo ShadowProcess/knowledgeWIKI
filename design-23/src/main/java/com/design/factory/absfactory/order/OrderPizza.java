@@ -6,7 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//订单中心
 public class OrderPizza {
 
     AbsFactory absFactory;

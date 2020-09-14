@@ -4,7 +4,6 @@ package com.design.factory.simplefactory;
  * 简单工厂模式演示
  */
 
-
 //首先，创建二者的共同接口：
 public interface Sender {
     public void send();
@@ -14,7 +13,7 @@ public interface Sender {
 class MailSender implements Sender {
     @Override
     public void send() {
-        System.out.println("this is mailsender!");
+        System.out.println("this is mail sender!");
     }
 }
 
