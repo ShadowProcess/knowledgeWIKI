@@ -29,7 +29,6 @@ public class TestCountDownLatch {
 
 		System.out.println("耗费时间为：" + (end - start));
 	}
-
 }
 
 
@@ -46,7 +45,6 @@ class LatchDemo implements Runnable {
 
 	@Override
 	public void run() {
-
 		try {
 			for (int i = 0; i < 50000; i++) {
 				if (i % 2 == 0) {
@@ -57,7 +55,5 @@ class LatchDemo implements Runnable {
 			//让CountDownLatch维护的计数器减一
 			latch.countDown();
 		}
-
 	}
-
 }

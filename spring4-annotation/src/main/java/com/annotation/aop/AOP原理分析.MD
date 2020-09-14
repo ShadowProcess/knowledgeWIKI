@@ -6,16 +6,16 @@
  * 2、定义一个业务逻辑类（MathCalculator）；在业务逻辑运行的时候将日志进行打印（方法运行之前，方法运行结束）
  * 3、定义一个日志切面类（LogAspects），切面类的方法需要动态感知 MathCalculator.div 运行到哪里
  *  通知方法：
- *      前置通知(@Before)           logStart:在目标方法(div)运行之前运行
- *      后置通知(@After)            logEnd:在目标方法(div)运行之后运行[无论方法正常结束，还是异常结束都调用]
+ *      前置通知(@Before)            logStart:在目标方法(div)运行之前运行
+ *      后置通知(@After)             logEnd:在目标方法(div)运行之后运行[无论方法正常结束，还是异常结束都调用]
  *      返回通知(@AfterReturning)    logReturn:在目标方法(div)运行之后运行
- *      异常通知(@AfterThrowing)    logException:在目标方法(div)运行出现异常运行
- *      环绕通知(@Around)           动态代理，手动推动目标方法运行（joinPoint.procced()）
+ *      异常通知(@AfterThrowing)     logException:在目标方法(div)运行出现异常运行
+ *      环绕通知(@Around)            动态代理，手动推动目标方法运行（joinPoint.procced()）
  * 4、给切面类的目标方法标注何时何地运行（通知注解）；
  *
  * 5、将切面类和业务逻辑类（目标方法所在类）都加入到容器中；
  * 6、必须告诉spring，那个类是切面类（给切面类添加一个注解@Aspect）
- * [7]、需要给配置类中加@EnableAspectJAutoProxy 【开启基于注解的aop模式】
+ * 7、需要给配置类中加@EnableAspectJAutoProxy 【开启基于注解的aop模式】
  *      在Spring中很多的@EnableXXX
  *
  * 三步：

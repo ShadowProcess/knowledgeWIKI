@@ -81,7 +81,7 @@ Spring容器的refresh()【创建刷新】
     1.获取BeanFactory
     2.从BeanFactory中获取applicationEventMulticaster的ApplicationEventMulticaster;
     3.如果上一步没有配置；创建一个new SimpleApplicationEventMulticaster(beanFactory)
-    4、创建的ApplicationEventMulticaster添加到BeanFactory中，其它组件要使用直接自动注入
+    4.创建的ApplicationEventMulticaster添加到BeanFactory中，其它组件要使用直接自动注入
 
 9.onRefresh();留给子容器（子类）
         1.子类重写这个方法，在容器刷新时候可以指定自定义逻辑

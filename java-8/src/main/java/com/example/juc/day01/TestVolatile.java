@@ -30,7 +30,7 @@ public class TestVolatile {
 ///写一个线程
 class ThreadDemo implements Runnable {
 
-	private volatile boolean flag = false; //TODO 保证多线程之间内存可见性[调用CPU的底层操作-内存栅栏]
+	private volatile boolean flag = false;
 
 	@Override
 	public void run() {

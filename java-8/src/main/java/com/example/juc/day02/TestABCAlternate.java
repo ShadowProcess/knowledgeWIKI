@@ -20,7 +20,6 @@ public class TestABCAlternate {
 				for (int i = 1; i <= 20; i++) {
 					ad.loopA(i);
 				}
-				
 			}
 		}, "A").start();
 		
@@ -31,7 +30,6 @@ public class TestABCAlternate {
 				for (int i = 1; i <= 20; i++) {
 					ad.loopB(i);
 				}
-				
 			}
 		}, "B").start();
 		
@@ -44,7 +42,6 @@ public class TestABCAlternate {
 					
 					System.out.println("-----------------------------------");
 				}
-				
 			}
 		}, "C").start();
 	}

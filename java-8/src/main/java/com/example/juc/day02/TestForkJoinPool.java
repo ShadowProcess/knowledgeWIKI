@@ -20,7 +20,6 @@ import org.junit.Test;
  * 		0      0      0      0
  *
  * 先执行完任务的线程，会去偷取其它没有执行完的线程的任务
- *
  */
 
 public class TestForkJoinPool {
@@ -75,7 +74,6 @@ public class TestForkJoinPool {
 		
 		System.out.println("耗费时间为：" + Duration.between(start, end).toMillis());//1536-8118
 	}
-
 }
 
 
@@ -123,5 +121,4 @@ class ForkJoinSumCalculate extends RecursiveTask<Long>{
 			return left.join() + right.join();
 		}
 	}
-	
 }
