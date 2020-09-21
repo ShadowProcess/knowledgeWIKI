@@ -1,6 +1,6 @@
 CREATE TABLE `pre_request_logs_20180524`
 (
-    `id`          int(11)          NOT NULL AUTO_INCREMENT,
+    `id`          bigint           NOT NULL AUTO_INCREMENT,
     `ip`          char(16)         NOT NULL COMMENT '代理IP',
     `port`        int(8)           NOT NULL COMMENT '端口号',
     `status`      enum ('成功','失败') NOT NULL COMMENT '状态',

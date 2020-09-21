@@ -193,4 +193,12 @@ public class DailyTest {
         System.out.println(start);
         System.out.println(end);
     }
+
+
+    @Test
+    public void settt(){
+        final List list = new ArrayList();
+        list.add("123");
+        System.out.println(list);
+    }
 }
