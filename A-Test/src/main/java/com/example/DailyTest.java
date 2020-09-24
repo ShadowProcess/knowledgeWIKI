@@ -197,8 +197,15 @@ public class DailyTest {
 
     @Test
     public void settt(){
-        final List list = new ArrayList();
-        list.add("123");
-        System.out.println(list);
+        final ZoneId zoneId = ZoneId.systemDefault();
+        final Clock secondClock = Clock.tickSeconds(zoneId);
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
+        final String today = LocalDateTime.now(secondClock).format(formatter);
+        System.out.println(today);
+    }
+
+    @Test
+    public void ss(){
+        System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
     }
 }
