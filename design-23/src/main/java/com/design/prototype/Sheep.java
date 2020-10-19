@@ -1,5 +1,6 @@
 package com.design.prototype;
 
+//羊
 public class Sheep {
     private String name;
     private int age;
@@ -33,5 +34,14 @@ public class Sheep {
 
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Sheep{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", color='" + color + '\'' +
+                '}';
     }
 }

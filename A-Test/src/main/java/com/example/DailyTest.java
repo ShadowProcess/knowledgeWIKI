@@ -208,4 +208,5 @@ public class DailyTest {
     public void ss(){
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
     }
+
 }
