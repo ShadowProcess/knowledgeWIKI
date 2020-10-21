@@ -1,5 +1,9 @@
 package com.design.adapter.objectadapter;
 
+/**
+ * 对象适配器模式和类适配器模式只有一点区别
+ * 一个采用继承，一个采用聚合
+ */
 
 //适配器类
 public class VoltageAdapter implements IVoltage5V {
