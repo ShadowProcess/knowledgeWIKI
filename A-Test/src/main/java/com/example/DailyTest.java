@@ -19,6 +19,14 @@ public class DailyTest {
         System.out.println(Arrays.asList(s));
     }
 
+    @Test
+    public void arr1(){
+        //如果s不初始化，将抛出空指针
+        for (String s1 : s) {
+            System.out.println(s1.toUpperCase());
+        }
+    }
+
 
     @Test
     public void _0() {
