@@ -6,13 +6,19 @@ import org.junit.Test;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Vector;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class DailyTest {
+
+    String[] s = new String[]{};
+
+    @Test
+    public void arr(){
+        //如果s不初始化，将抛出空指针
+        System.out.println(Arrays.asList(s));
+    }
+
 
     @Test
     public void _0() {
