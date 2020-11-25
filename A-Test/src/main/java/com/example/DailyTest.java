@@ -11,6 +11,15 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+
+    @Test
+    public void hashSet(){
+        Set<String> set = new HashSet();
+        set.add("12");
+        set.add(null);
+        set.forEach(System.out::println);
+    }
+
     String[] s = new String[]{};
 
     @Test
