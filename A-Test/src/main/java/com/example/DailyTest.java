@@ -13,6 +13,13 @@ public class DailyTest {
 
 
     @Test
+    public void jhj(){
+        String yyyyMMddHHmm = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
+        long l = Long.parseLong(yyyyMMddHHmm);
+        System.out.println(l);
+    }
+
+    @Test
     public void hashSet(){
         Set<String> set = new HashSet();
         set.add("12");
