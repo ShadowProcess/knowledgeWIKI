@@ -1,5 +1,6 @@
 package com.example;
 
+import com.google.common.base.Splitter;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -12,15 +13,113 @@ import java.util.stream.Stream;
 public class DailyTest {
 
 
+    /**
+     * 可以用来处理前端分页排序问题
+     */
     @Test
-    public void jhj(){
+    public void stream() {
+        int pageNum = 0, pageSize = 0;
+        Stream.of(1, 2, 3, 4, 5)
+                .skip(pageNum * pageSize)
+                .limit(pageSize).forEach(
+                System.out::println
+        );
+    }
+
+
+    /**
+     * （1）总页数公式：totalRecord是总记录数；pageSize是一页分多少条记录
+     * int totalPageNum = (totalRecord +pageSize - 1) / pageSize;
+     * <p>
+     * 特殊情况：总记录数 和 每页条数一样
+     */
+    @Test
+    public void page() {
+        int totalCount = 1; //数据总量
+        int pageSize = 1;   //每页条数
+
+//        if (totalCount == pageSize) {
+//            System.out.println("总页数:1");
+//            return;
+//        }
+        int pageCount = ((totalCount - 1) / pageSize) + 1; //总页数 (固定分页公式)
+        System.out.println("总页数：" + pageCount);
+    }
+
+
+    @Test
+    public void digest() {
+        System.out.println(1 / 3);
+        //System.out.println(5%3); 2
+    }
+
+
+    @Test
+    public void test() {
+        String unicode = "\\u4f73\\u3002";
+        String[] split = unicode.split("\\\\u");
+        for (String s1 : split) {
+            System.out.println(s1);
+        }
+        System.out.println(Arrays.toString(split));
+        StringBuilder chinese = new StringBuilder();
+        for (String s : split) {
+            if (StringUtils.isBlank(s)) continue;
+            chinese.append((char) Integer.valueOf(s, 16).intValue());
+        }
+        System.out.println(chinese.toString());
+    }
+
+    @Test
+    public void te() {
+        String str2 = "";
+        String[] split2 = str2.split(",");
+        for (String s1 : split2) {
+            boolean blank = StringUtils.isBlank(s1);
+            System.out.println(blank);
+            System.out.println(s1);
+        }
+        System.out.println(split2.length); //返回结果1；值得思考
+    }
+
+    @Test
+    public void tt() {
+        String str3 = ",";
+        String[] split3 = str3.split(",");
+        for (String s1 : split3) {
+            System.out.println(s1);
+        }
+        System.out.println(split3.length);
+        //这个结果是0,但部分人会认为结果是1,部分人会认为结果是2.
+        //这个又为什么是0,我也会在后面说
+    }
+
+    @Test
+    public void kjl() {
+        String unicode = "\"\\u4f73\\u3002\"";
+        String s = unicode.replaceAll("\"", "");
+        System.out.println(s);
+    }
+
+
+    @Test
+    public void split() {
+        String line = "\\u4f73\\u3002";
+        List<String> split2 = Splitter.on("\\u").splitToList(line);
+        for (String s1 : split2) {
+            System.out.println(s1);
+        }
+    }
+
+    @Test
+    public void jhj() {
         String yyyyMMddHHmm = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
         long l = Long.parseLong(yyyyMMddHHmm);
         System.out.println(l);
     }
 
     @Test
-    public void hashSet(){
+    public void hashSet() {
         Set<String> set = new HashSet();
         set.add("12");
         set.add(null);
@@ -30,13 +129,13 @@ public class DailyTest {
     String[] s = new String[]{};
 
     @Test
-    public void arr(){
+    public void arr() {
         //如果s不初始化，将抛出空指针
         System.out.println(Arrays.asList(s));
     }
 
     @Test
-    public void arr1(){
+    public void arr1() {
         //如果s不初始化，将抛出空指针
         for (String s1 : s) {
             System.out.println(s1.toUpperCase());
@@ -66,7 +165,7 @@ public class DailyTest {
 
     //仅显示姓名最后一位，其余用*代替
     @Test
-    public void _() {
+    public void GFDS() {
         String name = "字";
 
         int i = name.length() - 1;
@@ -192,7 +291,7 @@ public class DailyTest {
 
 
     @Test
-    public void StringS(){
+    public void StringS() {
         String s = new String("s"); //s指向堆
         String s1 = s.intern();            //s1指向常量池
         System.out.println(s == s1);
@@ -210,7 +309,7 @@ public class DailyTest {
     }
 
     @Test
-    public void lo(){
+    public void lo() {
         LocalDateTime effect = LocalDateTime.parse("2020-09-08 07:00:47.0", DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S"));
         System.out.println(effect);
 
@@ -226,7 +325,7 @@ public class DailyTest {
 
 
     @Test
-    public void settt(){
+    public void settt() {
         final ZoneId zoneId = ZoneId.systemDefault();
         final Clock secondClock = Clock.tickSeconds(zoneId);
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
@@ -235,7 +334,7 @@ public class DailyTest {
     }
 
     @Test
-    public void ss(){
+    public void ss() {
         System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss")));
     }
 
