@@ -8,9 +8,38 @@ import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
 
 public class DailyTest {
+
+    @Test
+    public void lop() {
+        String character = "";
+        Stream.iterate(1, x -> x + 1)
+                .limit(4)
+                .forEach(y ->
+                        sss(character, y)
+                );
+        System.out.println(character);
+    }
+
+    public void sss(String s, int i) {
+        s = s += i;
+        System.out.println(s);
+    }
+
+    @Test
+    public void wer() {
+        Person s = new Person();
+        Stream.iterate(0, x -> x + 1).limit(4)
+                .forEach(
+                        x-> {
+                            s.setName(x.toString());
+                        }
+                );
+        System.out.println(s);
+    }
 
 
     /**
