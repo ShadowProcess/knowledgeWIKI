@@ -13,7 +13,7 @@ public class StreamOpe {
     @Test
     public void _2() {
         List<String> list = new ArrayList<>();
-
+        
         boolean anyMatch = list.stream().anyMatch(it -> it.equals("1"));
         System.out.println(anyMatch); //TODO false
 
@@ -21,7 +21,7 @@ public class StreamOpe {
         System.out.println(noneMatch);//TODO true
 
         boolean allMatch = list.stream().allMatch(it -> it.equals("1"));
-        System.out.println(allMatch); //TODO true
+        System.out.println(allMatch); //TODO true (特殊)
     }
 
 
