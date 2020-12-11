@@ -41,7 +41,12 @@ public class InstallCert {
 
 
     public static void main(String[] args) throws Exception {
-        getCert(new String[]{"maven.aliyun.com"});
+        //域名只能一个个的执行，它会以增加的方式添加到文件；
+        //dl.google.com
+        //storage.flutter-io.cn
+        //jcenter.bintray.com
+        String[] domains = new String[]{"jcenter.bintray.com"};
+        getCert(domains);
     }
 
 
@@ -101,6 +106,9 @@ public class InstallCert {
         if (passphrase == null) { passphrase = "changeit".toCharArray(); }
 
         File file = new File("jssecacerts");
+//        if (file.exists() == false){
+//            file.createNewFile();
+//        }
         if (file.isFile() == false) {
             char SEP = File.separatorChar;
             File dir = new File(System.getProperty("java.home") + SEP + "lib" + SEP + "security");
