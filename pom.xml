@@ -27,7 +27,7 @@
         <module>javassist</module>
         <module>function-expression-college</module>
         <module>guava-college</module>
-        <module>secret-util</module>
+        <module>java-secret-util</module>
         <module>nginx-college</module>
         <module>stream-college</module>
         <module>httpclient-college</module>

@@ -13,6 +13,12 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+
+    @Test
+    public void getDay(){
+        System.out.println(LocalDate.now().getDayOfMonth());
+    }
+
     @Test
     public void lop() {
         String character = "";
