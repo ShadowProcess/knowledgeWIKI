@@ -1,0 +1,46 @@
+    /**
+     * 串行或者并行的一个流中，如果在流式处理元素时，如果有一个元素不合法会怎样？
+     *
+     * 1.不做try,catch处理，那么不管是串行流，还是并行流，都将报错，程序终止
+     * 2.做try,catch处理，那么不管是串行流还是并行流，都将正常进行
+     */
+    @Test
+    public void _3Serial() {
+        List<Integer> collect = Stream.of("1", "2", "3", "4", "pp")
+                .map(x -> {
+                    Integer y = null;
+                    try {
+                        y = Integer.parseInt(x);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    return y;
+                })
+                .collect(Collectors.toList());
+        System.out.println(collect);
+
+        //结果：
+        //java.lang.NumberFormatException: For input string: "pp"
+        //[1, 2, 3, 4, null]
+    }
+
+    @Test
+    public void _3Parallel() {
+        List<Integer> collect = Stream.of("1", "2", "3", "4", "pp")
+                .parallel()
+                .map(x -> {
+                    Integer y = null;
+                    try {
+                        y = Integer.parseInt(x);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    return y;
+                })
+                .collect(Collectors.toList());
+        System.out.println(collect);
+
+        //结果：
+        //java.lang.NumberFormatException: For input string: "pp"
+        //[1, 2, 3, 4, null]
+    }

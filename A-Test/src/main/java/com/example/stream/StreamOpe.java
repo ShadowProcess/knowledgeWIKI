@@ -10,10 +10,51 @@ import java.util.stream.Stream;
 
 public class StreamOpe {
 
+
+    /**
+     * 串行或者并行的一个流中，如果在流式处理元素时，如果有一个元素不合法会怎样？
+     *
+     * 1.不做try,catch处理，那么不管是串行流，还是并行流，都将报错，程序终止
+     * 2.做try,catch处理，那么不管是串行流还是并行流，都将正常进行
+     */
+    @Test
+    public void _3Serial() {
+        List<Integer> collect = Stream.of("1", "2", "3", "4", "pp")
+                .map(x -> {
+                    Integer y = null;
+                    try {
+                        y = Integer.parseInt(x);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    return y;
+                })
+                .collect(Collectors.toList());
+        System.out.println(collect);
+    }
+
+    @Test
+    public void _3Parallel() {
+        List<Integer> collect = Stream.of("1", "2", "3", "4", "pp")
+                .parallel()
+                .map(x -> {
+                    Integer y = null;
+                    try {
+                        y = Integer.parseInt(x);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                    return y;
+                })
+                .collect(Collectors.toList());
+        System.out.println(collect);
+    }
+
+
     @Test
     public void _2() {
         List<String> list = new ArrayList<>();
-        
+
         boolean anyMatch = list.stream().anyMatch(it -> it.equals("1"));
         System.out.println(anyMatch); //TODO false
 
@@ -26,7 +67,7 @@ public class StreamOpe {
 
 
     @Test
-    public void _0(){
+    public void _0() {
         List<Long> collect = Arrays.asList("1", "2", "3")
                 .stream()
                 .map(Integer::new)
@@ -37,8 +78,8 @@ public class StreamOpe {
 
     //流复用
     @Test
-    public void _1(){
-        Stream stream = Arrays.asList(1,23,45).stream();
+    public void _1() {
+        Stream stream = Arrays.asList(1, 23, 45).stream();
         stream.forEach(
                 System.out::println
         );
