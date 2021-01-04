@@ -15,6 +15,18 @@ public class DailyTest {
 
 
     @Test
+    public void sTol(){
+        String g5SpecialProductRecommend = "2021-01-04T00:00:00";
+        LocalDateTime parse = LocalDateTime.parse(g5SpecialProductRecommend);
+        System.out.println(parse);
+    }
+
+    @Test
+    public void getLocalDateTime(){
+        System.out.println(LocalDateTime.now());
+    }
+
+    @Test
     public void getDay(){
         System.out.println(LocalDate.now().getDayOfMonth());
     }
