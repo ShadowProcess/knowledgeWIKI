@@ -23,3 +23,18 @@ public ModelAndView theUserApproval() {
 
 第二次请求：
 客户端带着SessionID来请求服务器，所以第11行代码响应提交之后，第15行重新创建会话是可以的，因为有SessionID，所以可以继续响应给客户端
+
+
+
+
+###linux文件重命名命令
+
+rename 原字符串 目标字符串 文件
+
+原字符串：将文件名需要替换的字符串；
+目标字符串：将文件名中含有的原字符替换成目标字符串；
+文件：指定要改变文件名的文件列表。
+
+二、示列
+# 将main1.c重命名为main.c
+rename main1.c main.c main1.c
