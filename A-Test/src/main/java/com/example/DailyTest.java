@@ -15,6 +15,21 @@ public class DailyTest {
 
 
     @Test
+    public void arrList(){
+        List list = new ArrayList();
+        System.out.println(list.size());
+        //((ArrayList) list).elementData.length === 10   默认容量是10
+
+        Stream.of(1,2,3,4,5,6,7,8,9,10,11).forEach(x->
+                list.add(x)
+        );
+        //((ArrayList) list).elementData.length === 15   扩容后为15
+        System.out.println(list.size());
+    }
+
+
+
+    @Test
     public void sTol(){
         String g5SpecialProductRecommend = "2021-01-04T00:00:00";
         LocalDateTime parse = LocalDateTime.parse(g5SpecialProductRecommend);
