@@ -34,6 +34,9 @@ public class DailyTest {
          *
          *   查阅后得知，java.lang.Integer（since 1.5）中做了缓存： 在Integer类中有一个私有静态类IntegerCache，
          *   默认缓存-128-127，可以通过java.lang.Integer.IntegerCache.high进行设置。
+         *
+         *   java对于-128到127之间的数，会进行缓存，Integer i = 127时，会将127进行缓存，
+         *   下次再写Integer j = 127时，就会直接从缓存中取，就不会new了
          */
         System.out.println(i3 == i4); // true
     }
