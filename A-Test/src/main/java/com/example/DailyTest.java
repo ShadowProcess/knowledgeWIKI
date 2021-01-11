@@ -13,14 +13,39 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+    @Test
+    public void testInt() {
+        Integer i1 = 128;
+        Integer i2 = 128;
+        /**
+         由于自动装箱是编译器阶段，所以以上代码会在编译器变成
+         Integer i1 = new Integer(128);
+         Integer i2 = new Integer(128);
+         由于i1和i2指向堆中创建的两个对象所以 i1==i2会输出false
+         */
+        System.out.println(i1 == i2); // false
+
+        Integer i3 = 127;
+        Integer i4 = 127;
+        /**
+         *  结果却输出了true，这是由于java.lang.Integer中做了缓存，其默认范围是-128~127，
+         *   所以如果Integer指向这个范围内的数字在编译的时候会直接定位到该缓存中的数字，而不会创
+         *   建新的对象，所以输出为true
+         *
+         *   查阅后得知，java.lang.Integer（since 1.5）中做了缓存： 在Integer类中有一个私有静态类IntegerCache，
+         *   默认缓存-128-127，可以通过java.lang.Integer.IntegerCache.high进行设置。
+         */
+        System.out.println(i3 == i4); // true
+    }
+
 
     @Test
-    public void arrList(){
+    public void arrList() {
         List list = new ArrayList();
         System.out.println(list.size());
         //((ArrayList) list).elementData.length === 10   默认容量是10
 
-        Stream.of(1,2,3,4,5,6,7,8,9,10,11).forEach(x->
+        Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11).forEach(x ->
                 list.add(x)
         );
         //((ArrayList) list).elementData.length === 15   扩容后为15
@@ -28,21 +53,20 @@ public class DailyTest {
     }
 
 
-
     @Test
-    public void sTol(){
+    public void sTol() {
         String g5SpecialProductRecommend = "2021-01-04T00:00:00";
         LocalDateTime parse = LocalDateTime.parse(g5SpecialProductRecommend);
         System.out.println(parse);
     }
 
     @Test
-    public void getLocalDateTime(){
+    public void getLocalDateTime() {
         System.out.println(LocalDateTime.now());
     }
 
     @Test
-    public void getDay(){
+    public void getDay() {
         System.out.println(LocalDate.now().getDayOfMonth());
     }
 
@@ -67,7 +91,7 @@ public class DailyTest {
         Person s = new Person();
         Stream.iterate(0, x -> x + 1).limit(4)
                 .forEach(
-                        x-> {
+                        x -> {
                             s.setName(x.toString());
                         }
                 );
