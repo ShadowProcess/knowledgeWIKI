@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import com.alibaba.fastjson.JSON;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -37,4 +40,32 @@ public class AController {
         return null;
     }
 
+
+    @GetMapping("pp1")
+    @ResponseBody //返回的是JSON字符串
+    public Person pp(){
+        return new Person("1", new Dog("al"), "3");
+    }
+
+    @GetMapping("pp2")
+    @ResponseBody //返回的是JSON字符串
+    public String pp1(){
+        return JSON.toJSONString(new Person("1", new Dog("al"), "3"));
+    }
+
+
+    @Data
+    @AllArgsConstructor
+    static
+    class Person{
+        String code;
+        Dog dog;
+        String desc;
+    }
+
+    @Data
+    @AllArgsConstructor
+    class Dog{
+        String name;
+    }
 }
