@@ -1,10 +1,10 @@
-package com.example.redisdemo.controller.thread_poll_study;
+package com.example.multithread.lock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
- * 可重置闭锁
+ * 可重置的闭锁
  * Add reset feature for @see java.util.concurrent.CountDownLatch
  */
 public class CountDownLatch2 {

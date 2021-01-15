@@ -71,7 +71,7 @@ public class RedisTransactional {
          * Redis 都会去取消执行事务前的 watch 命令，。
          */
         log.info("事务-1");
-        redis.multi();  //TODO  多线程调用该方法，这里假死，why?
+        redis.multi();  //TODO  多线程调用该方法，这里假死，why? 因为Jedis线程池数量默认是8，当你的线程池中线程的数量等于jedis默认的8个时，再去拿redis连接就拿不到，一直卡着
         log.info("事务-2");
         redis.delete(FLAG_ID_PREFIX);
         log.info("事务-3");
@@ -87,10 +87,11 @@ public class RedisTransactional {
     }
 
 
-    //TODO 多线程调用该方法会卡死 WHY?
+    //TODO 多线程调用该方法会卡死 WHY?  因为Jedis线程池数量默认是8，当你的线程池中线程的数量等于jedis默认的8个时，再去拿redis连接就拿不到，一直卡着
     private void saveDeath1(Long id) {
 
         //通过RedisTemplate直接调用multi，exec，discard，不能保证在同一个连接中进行。
+        //--开启了enableTransactionSupport选项，则会将获取到的连接绑定到当前线程
 
         log.info("事务-0");
         redis.setEnableTransactionSupport(true);
@@ -102,7 +103,7 @@ public class RedisTransactional {
         redis.unwatch();
 
         log.info("事务-1");
-        redis.multi();  //TODO  多线程使用这里，假死，why?
+        redis.multi();  //TODO  多线程使用这里，假死，why?  因为Jedis线程池数量默认是8，当你的线程池中线程的数量等于jedis默认的8个时，再去拿redis连接就拿不到，一直卡着
         log.info("事务-2");
         redis.delete(FLAG_ID_PREFIX);
         log.info("事务-3");
@@ -112,7 +113,7 @@ public class RedisTransactional {
         log.info("事务-5");
     }
 
-    //TODO 多线程调用该方法不会卡死 WHY?
+    //TODO 多线程调用该方法不会卡死 WHY?  因为这种方式调用后会把redis连接返回给jedis池中，而不是像上面那种线程一直持有连接，而不返还
     @SuppressWarnings("unchecked")
     private void saveDeath2(Long id) {
         // RedisTemplate直接调用ops..来操作redis数据库，每执行一条命令是要重新拿一个连接，因此很耗资源，让一个连接直接执行多条语句的方法就是使用SessionCallback，
@@ -140,11 +141,4 @@ public class RedisTransactional {
         //事务结束:[1]
     }
 
-
-//    private void saveDeath3(Long id) {
-//       redis.execute((RedisOperations ops) -> {
-//           ops.multi();
-//           ops.exec();
-//       });
-//    }
 }
