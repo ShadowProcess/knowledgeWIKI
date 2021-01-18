@@ -6,12 +6,10 @@ import org.springframework.data.repository.NoRepositoryBean;
 
 import java.io.Serializable;
 
-
 @NoRepositoryBean
-public interface StandardRepository<T extends Serializable, P>
-        extends JpaRepository<T, P>, JpaSpecificationExecutor {
+public interface StandardRepository<T extends Serializable> extends JpaRepository<T, Long>, JpaSpecificationExecutor<T> {
 
-    default SpecificationWrapper<T> spec() {
+    public default SpecificationWrapper<T> spec() {
         return new SpecificationWrapper<>(this);
     }
 

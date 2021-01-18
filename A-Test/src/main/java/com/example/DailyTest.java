@@ -16,6 +16,8 @@ public class DailyTest {
 
     @Test
     public void ym(){
+        val from = Date.from(Instant.from(LocalDateTime.now().plusMonths(1)));
+        System.out.println(from);
         val now = YearMonth.now();
         System.out.println(now);
     }
