@@ -1,6 +1,7 @@
 package com.example;
 
 import com.google.common.base.Splitter;
+import lombok.val;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
@@ -12,6 +13,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.stream.Stream;
 
 public class DailyTest {
+
+    @Test
+    public void ym(){
+        val now = YearMonth.now();
+        System.out.println(now);
+    }
+
 
     @Test
     public void testInt() {
