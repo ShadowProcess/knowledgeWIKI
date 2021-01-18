@@ -86,9 +86,11 @@ public class CollectPersonalDetails {
         }
     }
 
+
     private void doLoop() {
         val start = System.currentTimeMillis();
         for (int i = 0; i < threadCount; i++) {
+            //任务中对共享变量的操作要注意线程 安全哦
             Runnable task = () -> {
                 while (true) {
                     try {
