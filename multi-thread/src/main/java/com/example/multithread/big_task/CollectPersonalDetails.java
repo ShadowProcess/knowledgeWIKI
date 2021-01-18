@@ -2,6 +2,7 @@ package com.example.multithread.big_task;
 
 
 import com.example.multithread.lock.CountDownLatch2;
+import com.example.multithread.threadpoll.ThreadPoolUse;
 import com.google.common.collect.Sets;
 import lombok.extern.slf4j.Slf4j;
 import lombok.val;
@@ -67,23 +68,7 @@ public class CollectPersonalDetails {
         latch.reset();
         doLoop();
         log.info("本轮次任务结束");
-        printExecutorState();
         return true;
-    }
-
-    private void printExecutorState() {
-        try {
-            ThreadPoolExecutor pool = ((ThreadPoolExecutor) executor);
-            int queueSize = pool.getQueue().size();
-            log.info("当前排队线程数：" + queueSize);
-            int activeCount = pool.getActiveCount();
-            log.info("当前活动线程数：" + activeCount);
-            long completedTaskCount = pool.getCompletedTaskCount();
-            log.info("执行完成线程数：" + completedTaskCount);
-            long taskCount = pool.getTaskCount();
-            log.info("总线程数：" + taskCount);
-        } catch (Exception ignored) {
-        }
     }
 
 

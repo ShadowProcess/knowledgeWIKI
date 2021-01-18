@@ -5,11 +5,14 @@ package com.example.multithread.threadpoll;
 //3、当阻塞任务队列也满了的时候，也就是排队也没地儿排队了的时候，线程池会新建线程来执行任务
 //4、当线程池的线程数达到最大线程数（maximumPoolSize）时，再来任务也接不了了，会按照拒绝任务策略来处理剩下的事情。
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.*;
 
 //TODO 提交到线程池的中的线程状态是什么?
 //TODO 当总忙碌线程个数不超过coreSize时，闲暇线程休息keepAliveTime过后会被销毁。
 //TODO 而池中一直保留coreSize个线程存活。
+@Slf4j
 public class ThreadPoolUse {
 
     private final ExecutorService service = new ThreadPoolExecutor(
@@ -41,5 +44,20 @@ public class ThreadPoolUse {
 //    shutdown()：   执行这个方法后，线程池不再接受新的任务，当执行完手里的任务（包括阻塞队列里的任务）后，线程池关闭【这个就相当于要离职了，也要处理好手里的事情】
 //    shutdownNow()：执行这个方法后，线程池不再接受新的任务，并且会尝试中断手里的任务，然后线程池关闭【这个就是要离职的时候，马上什么都不干了，拍屁股走人】
 
+
+    public void printThreadPoolState() {
+        try {
+            ThreadPoolExecutor pool = (ThreadPoolExecutor) service;
+            int queueSize = pool.getQueue().size();
+            log.info("当前排队线程数：" + queueSize);
+            int activeCount = pool.getActiveCount();
+            log.info("当前活动线程数：" + activeCount);
+            long completedTaskCount = pool.getCompletedTaskCount();
+            log.info("执行完成线程数：" + completedTaskCount);
+            long taskCount = pool.getTaskCount();
+            log.info("总线程数：" + taskCount);
+        } catch (Exception ignored) {
+        }
+    }
 
 }
