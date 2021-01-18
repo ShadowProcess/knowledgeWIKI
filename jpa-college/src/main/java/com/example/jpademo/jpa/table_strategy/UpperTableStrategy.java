@@ -15,7 +15,7 @@ import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
  *     show-sql: true
  *     hibernate:
  *       naming:
- *         physical-strategy: com.example.jpa.table_strategy.UpperTableStrategy
+ *         physical-strategy: com.example.multithread.jpa.table_strategy.UpperTableStrategy
  *   datasource:
  *     driver-class-name: com.mysql.jdbc.Driver
  *     url: jdbc:mysql://172.17.127.53:3306/mysql?Unicode=true&characterEncoding=UTF-8
