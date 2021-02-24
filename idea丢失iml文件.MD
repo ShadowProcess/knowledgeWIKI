@@ -8,7 +8,7 @@ Please correct the file content
 
 
 
-#mvn -U 和 -N 参数：
+# mvn -U 和 -N 参数：
 
 >关于-N
 
