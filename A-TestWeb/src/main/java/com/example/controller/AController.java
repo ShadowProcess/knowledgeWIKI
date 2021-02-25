@@ -1,6 +1,8 @@
 package com.example.controller;
 
 import com.alibaba.fastjson.JSON;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+@Api(value = "测试swagger",tags = "测试")
 @Controller
 public class AController {
 
@@ -19,12 +22,14 @@ public class AController {
     @Value("${aw.g:464}")
     private long i = 444;
 
+
+
+    @ApiOperation(value = "获取用户对象", httpMethod = "GET", response = String.class, notes = "根据用户名获取用户对象")
     @GetMapping("testV")
     @ResponseBody
     public String value(){
         return String.valueOf(i);
     }
-
 
     @GetMapping("/def")
     @ResponseBody
