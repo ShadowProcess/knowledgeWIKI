@@ -1,0 +1,14 @@
+优缺点分析：了解了CopyOnWriteArrayList的实现原理，分析它的优缺点及使用场景就很容易了。
+
+#优点：
+读操作性能很高，因为无需任何同步措施，比较适用于读多写少的并发场景。Java的list在遍历时，
+若中途有别的线程对list容器进行修改，则会抛出ConcurrentModificationException异常。
+而CopyOnWriteArrayList由于其"读写分离"的思想，遍历和修改操作分别作用在不同的list容器，
+所以在使用迭代器进行遍历时候，也就不会抛出ConcurrentModificationException异常了
+
+#缺点：
+缺点也很明显，
+一是内存占用问题，毕竟每次执行写操作都要将原容器拷贝一份，数据量大时，对内存压力较大，可能会引起频繁GC；
+二是无法保证实时性，Vector对于读写操作均加锁同步，可以保证读和写的强一致性。
+而CopyOnWriteArrayList由于其实现策略的原因，写和读分别作用在新老不同容器上，
+>在写操作执行过程中，读不会阻塞但读取到的却是老容器的数据。
