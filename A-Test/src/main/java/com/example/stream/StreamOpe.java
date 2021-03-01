@@ -68,8 +68,7 @@ public class StreamOpe {
 
     @Test
     public void _0() {
-        List<Long> collect = Arrays.asList("1", "2", "3")
-                .stream()
+        List<Long> collect = Stream.of("1", "2", "3")
                 .map(Integer::new)
                 .map(Long::new)
                 .collect(Collectors.toList());
