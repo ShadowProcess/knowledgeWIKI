@@ -20,6 +20,7 @@ public class StreamOpe {
     @Test
     public void _3Serial() {
         List<Integer> collect = Stream.of("1", "2", "3", "4", "pp")
+                .peek(System.out::println) //串行流可以保证元素顺序
                 .map(x -> {
                     Integer y = null;
                     try {
@@ -33,10 +34,12 @@ public class StreamOpe {
         System.out.println(collect);
     }
 
+
     @Test
     public void _3Parallel() {
         List<Integer> collect = Stream.of("1", "2", "3", "4", "pp")
                 .parallel()
+                .peek(System.out::println) //并行流中无法保证元素顺序
                 .map(x -> {
                     Integer y = null;
                     try {
