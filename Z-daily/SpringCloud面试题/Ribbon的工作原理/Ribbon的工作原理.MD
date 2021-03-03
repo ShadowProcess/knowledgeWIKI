@@ -1,0 +1,5 @@
+![avatar](img/ribbon-1=介绍.PNG)
+![avatar](img/ribbon-2=单个服务多实例的处理.PNG)
+![avatar](img/ribbon-3=内置轮训算法.PNG)
+![avatar](img/ribbon-4=请求超时配置.PNG)
+![avatar](img/ribbon-5=饥饿加载.PNG)

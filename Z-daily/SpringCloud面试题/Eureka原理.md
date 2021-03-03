@@ -2,7 +2,7 @@ Eureka包含两个组件:Eureka Service和Eureka Client
 
 1.ZooKeeper保证的是CP(Consistency)，Eureka保证的是AP(Availability)
 ZooKeeper在选举期间注册服务瘫痪,虽然服务最终会恢复,但是选举期间整个集群不可用的；
-Eureka各个节点是平等关系,只要有一台Eureka就可以保证服务可用,但查询到的数据可能并不是最新的自我保护机制会导致
+Eureka各个节点是平等关系,只要有一台Eureka就可以保证服务可用,但查询到的数据可能并不是最新的,自我保护机制会导致
 [
 Eureka Server自我保护机制是什么？
 在运行期间会去统计心跳失败比例在15分钟之内是否低于85%，如果低于85%，Eureka Server会将这些实例保护起来，如果高于85%，那么该服务就会被剔除；

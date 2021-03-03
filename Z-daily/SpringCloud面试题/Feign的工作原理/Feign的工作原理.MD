@@ -1,0 +1,6 @@
+![avatar](img/feign-1=介绍.PNG)
+![avatar](img/feign-2=工作机制.PNG)
+![avatar](img/feign-3=参数配置.PNG)
+![avatar](img/feign-4=集成熔断器.PNG)
+![avatar](img/feign-5=开启日志调试.PNG)
+![avatar](img/feign-6=日志打印级别.PNG)
