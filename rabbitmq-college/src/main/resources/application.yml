@@ -4,6 +4,12 @@ spring:
     password: guest
     host: localhost
     port: 5672
+#    listener:
+#      simple:
+#        #手动确认消息(MQ默认是自动的)
+#        acknowledge-mode: manual
+#        #拒绝消息是否重回队列
+#        default-requeue-rejected: true
 
 #spring.rabbitmq.host	RabbitMQ的主机地址
 #spring.rabbitmq.port	RabbitMQ的端口号
