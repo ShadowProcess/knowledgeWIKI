@@ -1,4 +1,4 @@
-##启动项目，刷新http://localhost:15672/   进入RabbitMQ后台
+##启动RabbitMq软件，刷新http://localhost:15672/   进入RabbitMQ后台
 
 #  RabbitMq占用两个端口
 #  端口 15672 网页管理

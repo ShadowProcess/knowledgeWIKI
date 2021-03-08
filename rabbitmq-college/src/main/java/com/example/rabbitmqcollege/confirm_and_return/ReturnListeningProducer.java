@@ -4,6 +4,10 @@ import com.rabbitmq.client.*;
 
 import java.io.IOException;
 
+/**
+ * 但是在某些情况下，如果我们在发送消息的时候，当前的 exchange不存在或者指定的路由 key路由不到，
+ * 这个时候如果我们需要监听这种不可达的消息, Confirm监听不到, 就要使用 ReturnListener !
+ */
 public class ReturnListeningProducer {
 
     public static void main(String[] args) throws Exception {
