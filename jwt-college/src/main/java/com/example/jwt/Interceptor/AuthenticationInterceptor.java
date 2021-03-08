@@ -41,7 +41,7 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
             throw new RuntimeException("401");
         }
         // 验证 token
-        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(ConstantKey.PICEA_JWT_KEY)).build();
+        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(ConstantKey.PREFIX_JWT_KEY)).build();
         try {
             jwtVerifier.verify(token);
         } catch (JWTVerificationException e) {
