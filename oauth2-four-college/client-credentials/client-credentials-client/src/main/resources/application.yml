@@ -1,0 +1,9 @@
+server:
+  port: 9001
+feign:
+  okhttp:
+    enabled: true
+uaa:
+  clientId: user-center
+  clientSecret: 12345
+  tokenEndpoint: http://localhost:8080/oauth/token
