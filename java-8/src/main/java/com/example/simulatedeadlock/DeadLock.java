@@ -1,11 +1,11 @@
-package com.example.rabbitmqcollege.sender.simulatedeadlock;
+package com.example.simulatedeadlock;
 
-public class DeadLock implements Runnable{
+public class DeadLock implements Runnable {
 
     private Object obj1;
     private Object obj2;
 
-    public DeadLock(Object obj1,Object obj2){
+    public DeadLock(Object obj1, Object obj2) {
         this.obj1 = obj1;
         this.obj2 = obj2;
     }

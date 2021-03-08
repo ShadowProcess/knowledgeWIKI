@@ -1,4 +1,4 @@
-package com.example.rabbitmqcollege.sender;
+package com.example.rabbitmqcollege.simple_send_receive.sender;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

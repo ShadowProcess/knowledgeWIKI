@@ -1,4 +1,4 @@
-package com.example.rabbitmqcollege.sender.simulatedeadlock;
+package com.example.simulatedeadlock;
 
 public class Main {
     public static void main(String[] args) {
