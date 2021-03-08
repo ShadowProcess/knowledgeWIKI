@@ -63,7 +63,7 @@ public class ProducerShiWu {
         } finally {
             try {
                 if (channel != null) {
-                    //TODO 回滚。如果未异常会提交事务，此时回滚无影响
+                    //TODO 回滚。如果没有异常会提交事务，此时回滚无影响
                     channel.txRollback();
                     channel.close();
                 }
