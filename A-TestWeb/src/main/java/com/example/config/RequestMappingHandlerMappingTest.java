@@ -17,6 +17,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+
+/**
+ * 获取该项目所有接口信息
+ */
 @Slf4j
 @Service
 public class RequestMappingHandlerMappingTest implements ApplicationContextAware {
