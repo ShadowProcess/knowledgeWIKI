@@ -1,0 +1,1 @@
+alter table `t_5g_activity` add column `button_hover_text` varchar(255) default '' comment '悬浮文案';

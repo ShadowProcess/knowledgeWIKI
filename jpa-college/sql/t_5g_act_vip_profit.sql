@@ -1,0 +1,1 @@
+alter table `t_5g_act_vip_profit` add `cond_fetch` int default 1;

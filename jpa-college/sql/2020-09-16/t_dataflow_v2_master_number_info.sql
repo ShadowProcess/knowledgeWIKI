@@ -1,0 +1,1 @@
+create index `device_num_index` on `t_dataflow_v2_master_number_info` (`device_num`);
