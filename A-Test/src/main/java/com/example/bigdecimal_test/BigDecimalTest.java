@@ -8,7 +8,31 @@ import java.math.BigDecimal;
 public class BigDecimalTest {
 
     @Test
-    public void fd(){
+    public void ss() {
+        float a = 0.1f;
+        float b = 0.2f;
+        System.out.println(a + b == 0.3);    //false
+        System.out.println(a + b == 0.3f);   //true
+        System.out.println(0.1 + 0.2 == 0.3);//false
+        System.out.println(0.1d + 0.2d == 0.3); //false
+        System.out.println(0.1d + 0.2d == 0.3d);//false
+        /**
+         * 4、为什么 0.1f+0.2f == 0.3f 成立
+         * 上面分析的是0.1+0.2都是浮点数表达，即0.1f+0.2f，结果是3E99 999A，直接用浮点数表达0.3f，
+         * 也会得到结果3E99 999A，所以Java代码中第一个双等号的结果是true。
+         * 因此，这个 true 的产生是二者截断后恰好都有进位的原因，并不是精确意义上的相等。
+         *
+         * 5、为什么0.1+0.2 == 0.3 不成立
+         *
+         * 用同样的方式分析double，给double型变量直接赋值 0.3 和赋值 0.1+0.2 会得到不一样的结果，
+         * 具体原因是 0.1 + 0.2的时候尾数截断产生了进位，而直接表达 0.3 的时候没有，详细流程可以自己分析一下，这里不赘述。
+         * ————————————————
+         */
+    }
+
+
+    @Test
+    public void fd() {
         System.out.println(0.05 + 0.01);
         System.out.println(1.0 - 0.42);
         System.out.println(4.015 * 100);
@@ -32,19 +56,17 @@ public class BigDecimalTest {
     }
 
 
-
-
     /**
      * BigDecimal精度也丢失
      * 我们在使用BigDecimal时，使用它的BigDecimal(String)构造器创建对象才有意义。
      * 其他的如BigDecimal b = new BigDecimal(1)这种，还是会发生精度丢失的问题。
-     *
+     * <p>
      * BigDecimal一定不会丢失精度吗？
      * 1.何使用非String构造器，和float和double一样，会丢失精度
      * 2.如果使用String构造器，那么不会丢失精度，可以保证计算完全正确
      */
     @Test
-    public void t(){
+    public void t() {
         BigDecimal a = new BigDecimal(1.01);
         BigDecimal b = new BigDecimal(1.02);
         BigDecimal c = new BigDecimal("1.01");
