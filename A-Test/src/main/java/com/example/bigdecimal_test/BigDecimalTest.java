@@ -5,7 +5,21 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
+/**
+ * Java和C语言都一样：
+ * 小数默认是double类型；
+ * 如果想要float类型，需要声明加f
+ *
+ * 不是所有小数都不能精确保存，有些是可以的 例如：0.5 0.125
+ */
+
 public class BigDecimalTest {
+
+    @Test
+    public void binary() {
+        String s = Integer.toBinaryString(8);
+        System.out.println(s);
+    }
 
     @Test
     public void ss() {
@@ -16,6 +30,7 @@ public class BigDecimalTest {
         System.out.println(0.1 + 0.2 == 0.3);//false
         System.out.println(0.1d + 0.2d == 0.3); //false
         System.out.println(0.1d + 0.2d == 0.3d);//false
+        System.out.println(0.5 + 0.5 == 1.0);   //true
         /**
          * 4、为什么 0.1f+0.2f == 0.3f 成立
          * 上面分析的是0.1+0.2都是浮点数表达，即0.1f+0.2f，结果是3E99 999A，直接用浮点数表达0.3f，
