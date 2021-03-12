@@ -15,6 +15,8 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+
+
     @Test
     public void ssss(){
         LocalDateTime end = LocalDate.now().atTime(LocalTime.MAX);
@@ -27,9 +29,13 @@ public class DailyTest {
 
 
     public static void main(String[] args) {
-        SecureRandom secureRandom = new SecureRandom();
-        int i = secureRandom.nextInt(1000);
-        System.out.println(Integer.toString(i)+"8");
+//        SecureRandom secureRandom = new SecureRandom();
+//        int i = secureRandom.nextInt(1000);
+//        System.out.println(Integer.toString(i)+"8");
+        LocalDateTime dailyStart = LocalDate.now().atTime(9, 0, 0);
+        LocalDateTime dailyEnd = LocalDate.now().atTime(18, 0, 0);
+        val now = LocalDateTime.now();
+        System.out.println(now.isAfter(dailyStart) && now.isBefore(dailyEnd)) ;
     }
 
     @Test
