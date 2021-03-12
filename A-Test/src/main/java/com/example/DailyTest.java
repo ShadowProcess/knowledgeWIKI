@@ -5,6 +5,7 @@ import lombok.val;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
+import java.security.SecureRandom;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.TemporalAdjusters;
@@ -15,7 +16,24 @@ import java.util.stream.Stream;
 public class DailyTest {
 
     @Test
-    public void ym(){
+    public void ssss(){
+        LocalDateTime end = LocalDate.now().atTime(LocalTime.MAX);
+        val start = LocalDateTime.now();
+        long l = end.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        long k = start.toInstant(ZoneOffset.of("+8")).toEpochMilli();
+        long l1 = (l - k) / (1000 * 60 * 60);
+        System.out.println(l1);
+    }
+
+
+    public static void main(String[] args) {
+        SecureRandom secureRandom = new SecureRandom();
+        int i = secureRandom.nextInt(1000);
+        System.out.println(Integer.toString(i)+"8");
+    }
+
+    @Test
+    public void ym() {
         val from = Date.from(Instant.from(LocalDateTime.now().plusMonths(1)));
         System.out.println(from);
         val now = YearMonth.now();
