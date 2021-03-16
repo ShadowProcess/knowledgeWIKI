@@ -1,5 +1,10 @@
 package com.example;
 
+import java.time.Instant;
+import java.util.Date;
+
+import static java.time.temporal.ChronoUnit.DAYS;
+
 public class Person {
     String name;
     String s;
@@ -26,5 +31,10 @@ public class Person {
                 "name='" + name + '\'' +
                 ", s='" + s + '\'' +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        Date from = Date.from(Instant.now().plus(30, DAYS));
+        System.out.println(from);
     }
 }

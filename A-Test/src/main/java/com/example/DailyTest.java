@@ -16,6 +16,16 @@ import java.util.stream.Stream;
 public class DailyTest {
 
 
+    public static void main(String[] args) {
+        LocalTime dailyStart1 = LocalTime.parse("10:00:00");
+        System.out.println(dailyStart1);
+        LocalTime dailyEnd1 = LocalTime.parse("13:00:00");
+        System.out.println(dailyEnd1);
+        LocalTime now = LocalTime.now();
+        System.out.println(now);
+        System.out.println(now.isAfter(dailyStart1) && now.isBefore(dailyEnd1));
+    }
+
 
     @Test
     public void ssss(){
@@ -28,7 +38,7 @@ public class DailyTest {
     }
 
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
 //        SecureRandom secureRandom = new SecureRandom();
 //        int i = secureRandom.nextInt(1000);
 //        System.out.println(Integer.toString(i)+"8");
