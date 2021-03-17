@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 public class OtherCommandController {
 
     private final StringRedisTemplate stringRedis;
-    private final RedisTemplate redis;
+    //private final RedisTemplate redis;
 //    @Autowired
 //    public OtherCommandController(StringRedisTemplate redisTemplate) {
 //        this.redis = redisTemplate;
@@ -64,19 +64,19 @@ public class OtherCommandController {
     }
 
 
-    @GetMapping("redisKV")
-    @ResponseBody
-    public String redisKV() {
-        /**
-         * 最后跟踪到是RedisTemplate中的属性keySerializer导致的，而通过打印keySerializer的class发现
-         * 默认使用的是org.springframework.data.redis.serializer.JdkSerializationRedisSerializer，
-         * 但它是如何进行初始化的呢，默认的构造函数中并没有对该属性进行初始化。
-         */
-        redis.opsForValue().set("key1", 1L);
-        redis.opsForValue().set("key2", "1L");
-        redis.opsForValue().set("key3", new Object());
-        return "ok";
-    }
+//    @GetMapping("redisKV")
+//    @ResponseBody
+//    public String redisKV() {
+//        /**
+//         * 最后跟踪到是RedisTemplate中的属性keySerializer导致的，而通过打印keySerializer的class发现
+//         * 默认使用的是org.springframework.data.redis.serializer.JdkSerializationRedisSerializer，
+//         * 但它是如何进行初始化的呢，默认的构造函数中并没有对该属性进行初始化。
+//         */
+//        redis.opsForValue().set("key1", 1L);
+//        redis.opsForValue().set("key2", "1L");
+//        redis.opsForValue().set("key3", new Object());
+//        return "ok";
+//    }
 
 
 }

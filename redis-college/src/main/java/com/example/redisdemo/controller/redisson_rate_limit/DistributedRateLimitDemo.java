@@ -1,4 +1,4 @@
-package com.example.redisdemo.controller.distributeds_rate_limit;
+package com.example.redisdemo.controller.redisson_rate_limit;
 
 import org.redisson.Redisson;
 import org.redisson.api.RRateLimiter;
