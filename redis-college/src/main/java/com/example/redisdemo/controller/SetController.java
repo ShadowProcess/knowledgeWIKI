@@ -24,6 +24,7 @@ public class SetController {
 
     @GetMapping(value = "opsSet1")
     public String opsSet1() {
+
         //集合添加元素,返回添加的个数
         long i = redisTemplate.opsForSet().add("opsSet1", "A", "B", "C", "D", "E");
         System.out.println("set添加了几个元素:" + i);

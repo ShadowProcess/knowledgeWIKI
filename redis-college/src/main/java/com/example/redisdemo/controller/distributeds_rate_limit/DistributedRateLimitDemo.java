@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * 分布式限流
+ * Redisson实现分布式限流
  */
 
 public class DistributedRateLimitDemo {

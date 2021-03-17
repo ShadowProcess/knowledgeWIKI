@@ -1,4 +1,4 @@
-package com.example.redisdemo.controller.redis_distributed_lock;
+package com.example.redisdemo.controller.redisson_distributed_lock;
 
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
@@ -29,7 +29,7 @@ import org.redisson.config.Config;
  * 可以认为是jedis的补充，不能替换jedis。
  */
 
-public class RedisDistributedLock {
+public class RedissonDistributedLock {
     public static void main(String[] args) {
         Config config = new Config();
         config.setLockWatchdogTimeout(10*1000); //TODO 可以设置锁自动续期的时间
