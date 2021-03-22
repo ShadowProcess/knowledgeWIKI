@@ -1,5 +1,6 @@
 package com.example;
 
+import com.example.circular_dependcy.A;
 import com.google.common.base.Splitter;
 import lombok.val;
 import org.apache.commons.lang3.StringUtils;
@@ -28,13 +29,32 @@ public class DailyTest {
 
 
     @Test
-    public void ssss(){
+    public void ssss() {
         LocalDateTime end = LocalDate.now().atTime(LocalTime.MAX);
         val start = LocalDateTime.now();
         long l = end.toInstant(ZoneOffset.of("+8")).toEpochMilli();
         long k = start.toInstant(ZoneOffset.of("+8")).toEpochMilli();
         long l1 = (l - k) / (1000 * 60 * 60);
         System.out.println(l1);
+
+
+        //TODO 方法中也可以写内部类
+        class AC {
+            private String s = "方法中的内部类";
+            public void s() {
+                System.out.println(s);
+            }
+        }
+
+        AC ac = new AC();
+        ac.s();
+
+        //(1)、方法内部类只能在定义该内部类的方法内实例化，不可以在此方法外对其实例化。
+        //(2)、方法内部类对象不能使用该内部类所在方法的非final局部变量。
+        // 因为方法的局部变量位于栈上，只存在于该方法的生命期内。当一个方法结束，其栈结构被删除，
+        // 局部变量成为历史。但是该方法结束之后，在方法内创建的内部类对象可能仍然存在于堆中！
+        // 例如，如果对它的引用被传递到其他某些代码，并存储在一个成员变量内。
+        // 正因为不能保证局部变量的存活期和方法内部类对象的一样长，所以内部类对象不能使用它们。
     }
 
 
@@ -45,7 +65,7 @@ public class DailyTest {
         LocalDateTime dailyStart = LocalDate.now().atTime(9, 0, 0);
         LocalDateTime dailyEnd = LocalDate.now().atTime(18, 0, 0);
         val now = LocalDateTime.now();
-        System.out.println(now.isAfter(dailyStart) && now.isBefore(dailyEnd)) ;
+        System.out.println(now.isAfter(dailyStart) && now.isBefore(dailyEnd));
     }
 
     @Test
