@@ -36,5 +36,11 @@ public class Person {
     public static void main(String[] args) {
         Date from = Date.from(Instant.now().plus(30, DAYS));
         System.out.println(from);
+        Person person = null;
+        person.ss();//可以正常调用
+    }
+
+    static void ss(){
+        System.out.println("ss");
     }
 }
