@@ -42,6 +42,8 @@ public class OtherCommandController {
         log.info("设置指定时间过期");
         stringRedis.expireAt(key, Date.from(Instant.from(LocalDate.now().plusDays(10))));
 
+        Boolean delete = stringRedis.delete(key);
+
         return "ok";
     }
 
