@@ -1,5 +1,6 @@
 # [锁对象]和[锁Class]实现原理是一样的；都是monitor，
 # 二者的区别就是对象可以有多份，而Class只有一份
+![avatar](Synchronized/synchronized的三种用法.PNG)
 
 
 Java 虚拟机中的同步(Synchronization)基于进入和退出管程(Monitor)对象实现，
@@ -8,53 +9,71 @@ Java 虚拟机中的同步(Synchronization)基于进入和退出管程(Monitor)�
 而是由方法调用指令读取运行时常量池中方法的 ACC_SYNCHRONIZED 标志来隐式实现的。
 
 锁是加在对象上的，无论是类对象还是实例对象。每个对象主要由一个对象头、实例变量、填充数据三部分组成，结构如图：
-![avatar](堆中对象结构.png)
+![avatar](Synchronized/堆中对象结构.png)
 
 synchronized使用的锁对象是存储在Java对象头里的,
 jvm中采用2个字来存储对象头(如果对象是数组则会分配3个字，多出来的1个字记录的是数组长度)，
 其主要结构是由Mark Word 和 Class Metadata Address 组成，其结构说明如下：
-![avatar](MarkWord32位.png)
+![avatar](Synchronized/MarkWord32位.png)
 由于对象头的信息是与对象自身定义的数据没有关系的额外存储成本，因此考虑到JVM的空间效率，Mark Word 被设计成为一个非固定的数据结构，
 以便存储更多有效的数据，它会根据对象本身的状态复用自己的存储空间，如32位JVM下，除了上述列出的Mark Word默认存储结构外，还有如下可能变化的结构：
 
-![avatar](MarkWord64位.png)
+![avatar](Synchronized/MarkWord64位.png)
 synchronized属于结构中的重量级锁，锁标识位为10，其中指针指向的是monitor对象的起始地址。
 每个对象都存在着一个 monitor 与之关联，对象与其 monitor 之间的关系有存在多种实现方式，
 如monitor可以与对象一起创建销毁或当线程试图获取对象锁时自动生成，但当一个 monitor 被某个线程持有后，它便处于锁定状态。
 在Java虚拟机(HotSpot)中，monitor是由ObjectMonitor实现的，其主要数据结构如下（位于HotSpot虚拟机源码ObjectMonitor.hpp文件，C++实现的）。
+
+这边也就主要分析一下重量级锁，标志位为10，指针指向monitor对象的起始地址，
+而每一个对象都存在着一个monitor与之关联。在Hot Spot中，monitor是由ObjectMonitor类来实现的。
+先来看一下ObjectMonitor的数据结构。
 ```C
 ObjectMonitor() {
-    _header       = NULL;
-    _count        = 0;    //记录个数
-    _waiters      = 0,
-    _recursions   = 0;
-    _object       = NULL;
-    _owner        = NULL;
-    _WaitSet      = NULL; //处于wait状态的线程，会被加入到_WaitSet
-    _WaitSetLock  = 0 ;
-    _Responsible  = NULL ;
-    _succ         = NULL ;
-    _cxq          = NULL ;
-    FreeNext      = NULL ;
-    _EntryList    = NULL ; //处于等待锁block状态的线程，会被加入到该列表
-    _SpinFreq     = 0 ;
-    _SpinClock    = 0 ;
-    OwnerIsThread = 0 ;
+    _header       = NULL;//markOop对象头
+    _count        = 0;
+    _waiters      = 0,//等待线程数
+    _recursions   = 0;//重入次数
+    _object       = NULL;//监视器锁寄生的对象。锁不是平白出现的，而是寄托存储于对象中。
+    _owner        = NULL;//指向获得ObjectMonitor对象的线程或基础锁
+    _WaitSet      = NULL;//处于wait状态的线程，会被加入到waitSet；
+    _WaitSetLock  = 0;
+    _Responsible  = NULL;
+    _succ         = NULL;
+    _cxq          = NULL;
+    FreeNext      = NULL;
+    _EntryList    = NULL;//处于等待锁block状态的线程，会被加入到entryList；
+    _SpinFreq     = 0;
+    _SpinClock    = 0;
+    OwnerIsThread = 0;
+    _previous_owner_tid = 0;//监视器前一个拥有者线程的ID
 }
 ```
+![avatar](Synchronized/TheOwner.PNG)  
 结构中几个重要的字段要关注：_count、_owner、_EntryList、_WaitSet。
 
 - 1.count用来记录线程进入加锁代码的次数。
 - 2.owner记录当前持有锁的线程,即持有ObjectMonitor对象的线程。
 - 3.EntryList是想要持有锁的线程的集合。
 - 4.WaitSet 是加锁对象调用wait（）方法后，等待被唤醒的线程的集合。
+- 5._recursions是锁重入次数
+
+其中有两个队列 _EntryList和 _WaitSet，它们是用来保存ObjectMonitor对象列表， 
+_owner指向持有ObjectMonitor对象的线程。
+当多个线程访问同步代码时，线程会进入_EntryList区，
+当线程获取对象的monitor后(对于线程获得锁的优先级，还有待考究)
+进入 _Owner区并且将 _owner指向获得锁的线程(monitor对象被线程持有)，
+_count++，其他线程则继续在 _EntryList区等待。若线程调用wait方法，
+则该线程进入 _WaitSet区等待被唤醒。线程执行完后释放monitor锁并且对ObjectMonitor中的值进行复位。
+上面说到synchronized使用的锁都放在对象头里，大概指的就是Mark Word中指向互斥量的指针指向的monitor对象内存地址了。
+由以上可知为什么Java中每一个对象都可以作为锁对象了。
+
 
 每个等待锁的线程都会被封装成ObjectWaiter对象，当多个线程同时访问一段同步代码（临界区）时，首先会进入 _EntryList 集合，
 当线程获取到对象的monitor 后进入 _Owner 区域并把monitor中的owner变量设置为当前线程，_owner指向持有ObjectMonitor对象的线程。同时monitor中的计数器count加1。
 
 若线程调用 wait() 方法，将释放当前持有的monitor，owner变量恢复为null，count自减1，同时该线程进入 WaitSet集合中等待被唤醒。
 若当前线程执行完毕也将释放monitor并复位变量的值，以便其他线程进入获取monitor(锁)。
-![avatar](获取锁过程.png)
+![avatar](Synchronized/获取锁过程.png)
 
 #Synchronized与等待唤醒
 等待唤醒是指调用对象的wait、notify、notifyAll方法。调用这三个方法时，对象必须被synchronized修饰，因为这三个方法在执行时，
