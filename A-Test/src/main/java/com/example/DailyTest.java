@@ -16,8 +16,25 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+    @Test
+    public void sfg(){
+        List<String> list = new LinkedList();
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        /**
+         * LinkedList底层基于链表结构，是没有索引（角标）的，
+         * 那它的方法里面(get)怎么又通过索引来操作元素的呢？
+         * 从中我们可以发现，虽然参数是int型，但是其作用也只是提高查询的效率，
+         * 最终获取元素，还是从头部或者从尾部，一个一个遍历取得的。
+         */
+        String s = list.get(2);
+        System.out.println(s);
+    }
 
-    public static void main(String[] args) {
+
+    @Test
+    public void tts() {
         LocalTime dailyStart1 = LocalTime.parse("10:00:00");
         System.out.println(dailyStart1);
         LocalTime dailyEnd1 = LocalTime.parse("13:00:00");

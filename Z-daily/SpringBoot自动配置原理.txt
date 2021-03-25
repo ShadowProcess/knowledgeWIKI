@@ -1,0 +1,7 @@
+SpringBoot自动配置原理：
+
+@SpringBootApplication注解，点进去有一个@EnableAutoConfiguration
+
+@EnableAutoConfiguration注解，点击去有一个@Import(AutoConfigurationImportSelector.class)
+
+而AutoConfigurationImportSelector的getCandidateConfigurations()方法，会去META-INF/spring.factories加载你配置的类

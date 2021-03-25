@@ -66,5 +66,6 @@
         <module>java-jvm</module>
         <module>design-23</module>
         <module>oauth2-four-college</module>
+        <module>netty-io</module>
     </modules>
 </project>
