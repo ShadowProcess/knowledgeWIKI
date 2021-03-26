@@ -25,8 +25,9 @@ public class EchoServer {
 
     public void start() throws InterruptedException {
         final EchoServerHandler serverHandler = new EchoServerHandler();
-        //创建EventLoopGroup，处理事件
+        //bossGroup 处理网络请求的大管家（们）
         EventLoopGroup boss = new NioEventLoopGroup();
+        //网络连接就绪时，交给workGroup干活的工人（们）
         EventLoopGroup worker = new NioEventLoopGroup();
         try {
             ServerBootstrap b = new ServerBootstrap();

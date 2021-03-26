@@ -12,10 +12,24 @@
     <artifactId>netty-io</artifactId>
 
     <dependencies>
+        <!--netty的依赖集合，都整合在一个依赖里面了-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.50.Final</version>
+        </dependency>
+
+        <!--这里使用jackson反序列字节码-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.9.7</version>
+        </dependency>
+        <!--加入log4j 便于深入学习整合运行过程的一些细节-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
         </dependency>
     </dependencies>
 
