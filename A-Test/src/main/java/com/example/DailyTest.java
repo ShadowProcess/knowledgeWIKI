@@ -16,6 +16,11 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+    public final String s(){
+        return "final修饰方法";
+    }
+
+
     @Test
     public void sfg(){
         List<String> list = new LinkedList();
