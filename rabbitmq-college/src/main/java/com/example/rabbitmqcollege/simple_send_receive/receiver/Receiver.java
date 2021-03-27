@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author Alex
- * RabbitMQ】三种Exchange模式——订阅、路由、通配符模式
+ * RabbitMQ常用三种Exchange模式——订阅、路由、通配符模式
  * .direct 默认的(一对一)
  * .fanout 发布订阅模式
  * .topic  模糊匹配
@@ -37,7 +37,11 @@ public class Receiver {
             exchange = @Exchange(value = "myElectronics", durable = "true"),  //交换机默认就是持久化
             key = "computer",                                                 //声明路由key
             value = @Queue(value = "computerElectronics", durable = "true"),   //声明队列持久化
-            arguments = @Argument(name = "x-message-ttl", value = "6000")
+            arguments = {
+                    @Argument(name = "x-message-ttl", value = "6000"),
+                    @Argument(name = "x-dead-letter-exchange", value = "死信交换机"),
+                    @Argument(name = "x-dead-letter-routing-key",value = "死信路由")
+            }
             //这条消息如果在TTL设置的时间内没有被消费，则会成为“死信” [如果设置了队列的TTL属性，那么一旦消息过期，就会被队列丢弃]
     ))
     public void processComputer(String hello) {
@@ -77,6 +81,19 @@ public class Receiver {
      *    amqpTemplate.convertAndSend("myOrder","fruit","now "+new Date());
      * }
      * 将信息发送到不同的队列
-     *
      */
+
+
+    /**
+     * 死信队列处理死信
+     * @param hello
+     */
+    @RabbitListener(bindings = @QueueBinding(
+            exchange = @Exchange(value = "死信交换机", durable = "true"),
+            key = "死信路由",
+            value = @Queue(value = "死信队列", durable = "true")
+    ))
+    public void processDeadLetter(String hello) {
+        System.out.println("死信队列处理死信:" + hello);
+    }
 }
