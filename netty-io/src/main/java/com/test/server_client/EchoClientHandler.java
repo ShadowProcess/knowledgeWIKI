@@ -1,4 +1,4 @@
-package com.test;
+package com.test.server_client;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

@@ -1,4 +1,4 @@
-package com.example.redisdemo.controller.redisson_distributed_lock;
+package com.example.redisdemo.controller.redisson_pessimistic_lock;
 
 import org.redisson.Redisson;
 import org.redisson.api.RLock;
