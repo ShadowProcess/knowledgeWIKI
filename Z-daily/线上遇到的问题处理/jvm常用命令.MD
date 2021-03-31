@@ -1,4 +1,5 @@
 ################################################################################################
+~~~
 jstat	JVM Statistics Monitoring Tool,jstat是用于监视虚拟各种运行状态信息的命令行工具，它可以显示本地或者远程虚拟机进程中的类装载、内存、垃圾收集、JIT编译等运行数据。
 jinfo	Configuration info for java，命令的作用是实时的查看和调整虚拟机的参数。
 jmap	Memory Map for java，生成虚拟机的内存转储快照(heapdump)
