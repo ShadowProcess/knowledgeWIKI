@@ -2,9 +2,10 @@ server:
   port: 8080
   servlet:
     context-path: /
+
 spring:
   application:
-    name: mp-generator
+    name: sharding-sphere-separation-database-table
   jackson:
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss

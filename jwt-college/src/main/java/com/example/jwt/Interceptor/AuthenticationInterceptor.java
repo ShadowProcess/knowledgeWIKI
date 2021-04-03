@@ -1,11 +1,7 @@
 package com.example.jwt.Interceptor;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.JWTVerifier;
-import com.auth0.jwt.algorithms.Algorithm;
-import com.auth0.jwt.exceptions.JWTDecodeException;
-import com.auth0.jwt.exceptions.JWTVerificationException;
-import com.example.jwt.constant.ConstantKey;
+import com.auth0.jwt.interfaces.DecodedJWT;
+import com.example.jwt.util.JWTUtil;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,13 +15,15 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
         String token = httpServletRequest.getHeader("token");// 从 http 请求头中取出 token
+        System.out.println("拦截器获取Token:"+token);
+
         // 如果不是映射到方法直接通过
         if(!(object instanceof HandlerMethod)){
             return true;
         }
         HandlerMethod handlerMethod=(HandlerMethod)object;
         Method method=handlerMethod.getMethod();
-        //检查方法名是否是“login”如果是则跳过，也可以加注解，用注解过滤不需要权限的方法
+        // 检查方法名是否是“login”如果是则跳过，也可以加注解，用注解过滤不需要权限的方法
         if ("login".equals(method.getName())) {
             return true;
         }
@@ -33,19 +31,12 @@ public class AuthenticationInterceptor implements HandlerInterceptor {
         if (token == null) {
             throw new RuntimeException("无token，请重新登录");
         }
-        // 获取 token 中的 name
-        String name;
-        try {
-            name = JWT.decode(token).getAudience().get(0);
-        } catch (JWTDecodeException j) {
-            throw new RuntimeException("401");
-        }
-        // 验证 token
-        JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(ConstantKey.PREFIX_JWT_KEY)).build();
-        try {
-            jwtVerifier.verify(token);
-        } catch (JWTVerificationException e) {
-            throw new RuntimeException("401");
+
+        DecodedJWT decodedJWT = JWTUtil.verifyToken(token);
+        if (decodedJWT == null) {
+            throw new RuntimeException("token无法解析，或者已过期");
+        } else {
+            //TODO 账户操作。。。
         }
         return true;
     }

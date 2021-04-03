@@ -1,5 +1,5 @@
 
--- ☆新建两个数据库shard_one和shard_two，然后两个数据库添加如下表user_info_0和user_info_1
+-- ☆先新建两个数据库shard_one和shard_two，然后两个数据库添加如下表user_info_0和user_info_1
 
 
 SET NAMES utf8mb4;
