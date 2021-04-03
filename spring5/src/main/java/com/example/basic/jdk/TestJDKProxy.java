@@ -39,7 +39,7 @@ public class TestJDKProxy {
         InvocationHandler invocationhandler = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                System.out.println("====log====");
+                System.out.println("====动态代理额外增加功能====");
                 //原始对象方法运行
                 Object res = method.invoke(userService, args);
                 return res;

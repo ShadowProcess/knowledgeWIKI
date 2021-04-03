@@ -54,7 +54,7 @@ ObjectMonitor() {
 - 1.count用来记录线程进入加锁代码的次数。
 - 2.owner记录当前持有锁的线程,即持有ObjectMonitor对象的线程。
 - 3.EntryList是想要持有锁的线程的集合。
-- 4.WaitSet 是加锁对象调用wait（）方法后，等待被唤醒的线程的集合。
+- 4.WaitSet 是加锁对象调用wait()方法后，等待被唤醒的线程的集合。
 - 5._recursions是锁重入次数
 
 其中有两个队列 _EntryList和 _WaitSet，它们是用来保存ObjectMonitor对象列表， 

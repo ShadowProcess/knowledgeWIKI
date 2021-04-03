@@ -1,0 +1,118 @@
+server:
+  port: 8085
+  servlet:
+    context-path: /test
+
+
+spring:
+  #redis集群
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    timeout: 20000
+    #    集群环境打开下面注释，单机不需要打开
+    #    cluster:
+    #      集群信息
+    #      nodes: xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx,xxx.xxx.xxx.xxx:xxxx
+    #      #默认值是5 一般当此值设置过大时，容易报：Too many Cluster redirections
+    #      maxRedirects: 3
+    password: 123456
+    application:
+      name: test
+    jedis:
+      pool:
+        max-active: 8
+        min-idle: 0
+        max-idle: 8
+        max-wait: -1
+    database: 0
+
+  autoconfigure:
+    exclude: com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure
+  datasource:
+    dynamic:
+      #设置默认的数据源或者数据源组,默认值即为master
+      primary: master
+      strict: false
+      datasource:
+        master:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          url: jdbc:mysql://127.0.0.1:3306/mybatisplus?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false
+          username: root
+          password: 123456
+    # 数据源配置
+    druid:
+      # druid连接池监控
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+        # 初始化时建立物理连接的个数
+        initial-size: 5
+        # 最大连接池数量
+        max-active: 30
+        # 最小连接池数量
+        min-idle: 5
+        # 获取连接时最大等待时间，单位毫秒
+        max-wait: 60000
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        time-between-eviction-runs-millis: 60000
+        # 连接保持空闲而不被驱逐的最小时间
+        min-evictable-idle-time-millis: 300000
+        # 用来检测连接是否有效的sql，要求是一个查询语句
+        validation-query: select count(*) from dual
+        # 建议配置为true，不影响性能，并且保证安全性。申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+        test-while-idle: true
+        # 申请连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+        test-on-borrow: false
+        # 归还连接时执行validationQuery检测连接是否有效，做了这个配置会降低性能。
+        test-on-return: false
+        # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle。在mysql下建议关闭。
+        pool-prepared-statements: false
+        # 要启用PSCache，必须配置大于0，当大于0时，poolPreparedStatements自动触发修改为true。
+        max-pool-prepared-statement-per-connection-size: 50
+        # 配置监控统计拦截的filters，去掉后监控界面sql无法统计
+        filters: stat,wall
+        # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
+        connection-properties:
+          druid.stat.mergeSql: true
+          druid.stat.slowSqlMillis: 500
+        # 合并多个DruidDataSource的监控数据
+        use-global-data-source-stat: true
+        filter:
+          stat:
+            log-slow-sql: true
+            slow-sql-millis: 1000
+            merge-sql: true
+          wall:
+            config:
+              multi-statement-allow: true
+  servlet:
+    multipart:
+      # 开启 multipart 上传功能
+      enabled: true
+      # 文件写入磁盘的阈值
+      file-size-threshold: 2KB
+      # 最大文件大小
+      max-file-size: 200MB
+      # 最大请求大小
+      max-request-size: 215MB
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
+logging:
+  level:
+    root: info
+    com.example: debug
