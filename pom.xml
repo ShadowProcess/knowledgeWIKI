@@ -21,6 +21,7 @@
     </properties>
 
     <modules>
+        <module>A-Test</module>
         <module>servlet3.0</module>
         <module>asm</module>
         <module>pkix-path-build-failed</module>
@@ -45,7 +46,7 @@
         <module>javafx-college</module>
         <module>jwt-college</module>
         <module>jpa-college</module>
-        <module>txmybatis-college</module>
+        <module>tkmybatis-college</module>
         <module>thymeleaf-college</module>
         <module>springboot-principle</module>
         <module>springboot-jpa</module>
