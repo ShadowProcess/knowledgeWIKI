@@ -1,6 +1,8 @@
 package com.example.config;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -21,9 +23,10 @@ import java.util.Set;
 /**
  * 获取该项目所有接口信息
  */
-@Slf4j
 @Service
 public class RequestMappingHandlerMappingTest implements ApplicationContextAware {
+
+    private static final Logger log = LoggerFactory.getLogger(GlobalException.class);
 
     ApplicationContext ctx;
     private Set<String> urlPatternsSet; //该项目的所有接口
