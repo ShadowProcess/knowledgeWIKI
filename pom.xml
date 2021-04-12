@@ -43,7 +43,6 @@
         <module>websocket-college</module>
         <module>springmvc-annotation</module>
         <module>spring5-mybatis</module>
-        <module>javafx-college</module>
         <module>jwt-college</module>
         <module>jpa-college</module>
         <module>tkmybatis-college</module>
@@ -56,7 +55,6 @@
         <module>aliyun-vue</module>
         <module>gitlab-college</module>
         <module>apache-commons-college</module>
-        <module>A-Test</module>
         <module>java-8</module>
         <module>java-9</module>
         <module>java-11</module>
