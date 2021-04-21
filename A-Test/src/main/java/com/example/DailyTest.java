@@ -1,5 +1,6 @@
 package com.example;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.circular_dependcy.A;
 import com.google.common.base.Splitter;
 import lombok.val;
@@ -16,13 +17,21 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
-    public final String s(){
+    public final String s() {
         return "final修饰方法";
     }
 
+    @Test
+    public void sfsd() {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("urlstr", "1111");
+        jsonObject.put("type", "2222");
+        String s = jsonObject.toJSONString();
+        System.out.println(s);
+    }
 
     @Test
-    public void sfg(){
+    public void sfg() {
         List<String> list = new LinkedList();
         list.add("1");
         list.add("2");
@@ -63,6 +72,7 @@ public class DailyTest {
         //TODO 方法中也可以写内部类
         class AC {
             private String s = "方法中的内部类";
+
             public void s() {
                 System.out.println(s);
             }

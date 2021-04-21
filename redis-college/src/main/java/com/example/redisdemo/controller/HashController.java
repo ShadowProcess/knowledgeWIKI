@@ -59,6 +59,7 @@ public class HashController {
         System.out.println(redisTemplate.opsForHash().delete("redisHash", "name"));
         //结果：1
 
+        Map 任务ID = redisTemplate.opsForHash().entries("任务ID");
         System.out.println(redisTemplate.opsForHash().entries("redisHash"));
         //结果：{class=6,age=26}
         return "ok";
