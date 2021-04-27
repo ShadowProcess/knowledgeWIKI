@@ -1,0 +1,10 @@
+{
+  "actionId": 1000,
+  "provider": "tencent",
+  "type": "url",
+  "urls": [
+    "http://vc.repair.dl.woniu.com/3test.txt",
+    "http://vc.repair.dl.woniu.com/1test.txt",
+    "http://vc.repair.dl.woniu.com/2test.txt"
+  ]
+}
