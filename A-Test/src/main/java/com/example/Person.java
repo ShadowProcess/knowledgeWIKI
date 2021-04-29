@@ -39,6 +39,9 @@ public class Person {
         System.out.println(from);
         Person person = null;
         person.ss();//可以正常调用
+
+        System.out.println(Integer.MAX_VALUE);
+        System.out.println(Long.MAX_VALUE);
     }
 
     static void ss(){
