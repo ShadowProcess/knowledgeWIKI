@@ -7,4 +7,4 @@ insert into testMfc values
 
 
 -- 注意： num = values(num) ，此处的格式，必须是 values(列名)，才能更新到对应的行。
--- 当产生主键或者唯一键冲突时，更新num的值
+-- 上面语句的意思是：当和表中记录产生：主键或者唯一键冲突时，更新num的值
