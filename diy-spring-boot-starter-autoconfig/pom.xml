@@ -13,7 +13,7 @@
     <artifactId>diy-spring-boot-starter-autoconfig</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>diy-spring-boot-starter-autoconfig</name>
-    <description>自定义Starter，演示自动配置原理</description>
+    <description>自定义Springboot的Starter，演示自动配置原理</description>
 
     <properties>
         <java.version>1.8</java.version>

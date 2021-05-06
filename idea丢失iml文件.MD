@@ -11,8 +11,8 @@ Please correct the file content
 # mvn -U 和 -N 参数：
 
 >关于-N
-
--N,--non-recursive Do not recurse into sub-projects
+```TEXT
+-N,--non-recursive (Do not recurse into sub-projects)
 
 意思是，不递归到子项目(子模块)。
 
@@ -26,11 +26,12 @@ Please correct the file content
 造成的问题是，如果你此时使用如下命令拷贝依赖包，则会报错：说找不到依赖包B.jar/C.jar
 
 mvn dependency:copy-dependencies -DoutputDirectory=$WORKSPACE/dependencies
+```
 
 
 >关于-U
-
--U,--update-snapshots Forces a check for missing releases
+```TEXT
+-U,--update-snapshots (Forces a check for missing releases)
 and updated snapshots on remote repositories
 
 意思是：强制刷新本地仓库不存在release版和所有的snapshots版本。
@@ -38,3 +39,4 @@ and updated snapshots on remote repositories
 对于release版本，本地已经存在，则不会重复下载
 对于snapshots版本，不管本地是否存在，都会强制刷新，但是刷新并不意味着把jar重新下载一遍。
 只下载几个比较小的文件，通过这几个小文件确定本地和远程仓库的版本是否一致，再决定是否下载
+```

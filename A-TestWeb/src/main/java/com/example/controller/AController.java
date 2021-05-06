@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.List;
+import java.util.Map;
+
 @Api(value = "测试swagger",tags = "测试")
 @Controller
 public class AController {
@@ -21,6 +24,11 @@ public class AController {
 
     @Value("${aw.g:464}")
     private long i = 444;
+
+    @Value("#{${data.map}}")
+    private Map<String,String> map;
+    @Value("#{'${data.list}'.split(',')}")
+    private List<String> list;
 
 
 
