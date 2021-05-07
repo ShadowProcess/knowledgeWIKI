@@ -12,20 +12,19 @@ import reactor.core.publisher.Mono;
  * Mono和Flux 这两种数据模型是WebFlux的核心，本片入门教程只是简单的展示了WebFlux项目的搭建编写，
  * 要学好WebFlux 还需要掌握Reactor(Mono、Flux)，其实Reactor 和 Stream 的很多操作都有类似功能，
  * 如果你对Java8Stream非常熟悉的话，学习Reactor应该是也是件容易的事情，如果还不掌握Stream 建议先去学好Stream。
- *
+ * <p>
  * Mono：实现发布者，并返回 0 或 1 个元素
  * Flux：实现发布者，并返回 N 个元素
- *
- *
+ * <p>
+ * <p>
  * Spring Webflux
- *
+ * <p>
  * Spring Boot Webflux 就是基于 Reactor 实现的。Spring Boot 2.0 包括一个新的 spring-webflux 模块。
  * 该模块包含对响应式 HTTP 和 WebSocket 客户端的支持，以及对 REST，HTML 和 WebSocket 交互等程序的支持。
  * 一般来说，Spring MVC 用于同步处理，Spring Webflux 用于异步处理。
- *
- 存储：Redis、MongoDB、Cassandra。不支持 MySQL
- 内嵌容器：Tomcat、Jetty、Undertow
-
+ * <p>
+ * 存储：Redis、MongoDB、Cassandra。不支持 MySQL
+ * 内嵌容器：Tomcat、Jetty、Undertow
  */
 
 @Slf4j
@@ -46,16 +45,20 @@ public class WebFluxController {
             monoSink.success("hello webflux");
         })
                 .doOnSubscribe(subscription -> { //当订阅者去订阅发布者的时候，该方法会调用
-                    log.info("{}", subscription);
+                    log.info("当订阅者去订阅发布者的时候，该方法会调用：{}", subscription);
                 }).doOnNext(o -> { //当订阅者收到数据时，改方法会调用
-                    log.info("{}", o);
+                    log.info("当订阅者收到数据时，改方法会调用：{}", o);
                 });
     }
 
 
+    /**
+     * Mono：返回 0 或 1 个元素，即单个对象。
+     * Flux：返回 N 个元素，即 List 列表对象。
+     */
     @GetMapping("flux")
     public Flux<String> flux() {
-        return Flux.just("hello","webflux","spring","boot");
+        return Flux.just("hello", "webflux", "spring", "boot");
     }
 
 }
