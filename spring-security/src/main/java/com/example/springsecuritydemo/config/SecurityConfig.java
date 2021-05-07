@@ -13,19 +13,18 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 
 /**
- *
- *Spring Security 命名空间的引入可以简化我们的开发，它涵盖了大部分 Spring Security 常用的功能。
- *它的设计是基于框架内大范围的依赖的，可以被划分为以下几块。
- *
+ * Spring Security 命名空间的引入可以简化我们的开发，它涵盖了大部分 Spring Security 常用的功能。
+ * 它的设计是基于框架内大范围的依赖的，可以被划分为以下几块。
+ * <p>
  * Web/Http 安全：这是最复杂的部分。通过建立 filter 和相关的 service bean 来实现框架的认证机制。
  * 当访问受保护的 URL 时会将用户引入登录界面或者是错误提示界面。业务对象或者方法的安全：控制方法访问权限的。
- *
+ * <p>
  * AuthenticationManager：处理来自于框架其他部分的认证请求。
- *
+ * <p>
  * AccessDecisionManager：为 Web 或方法的安全提供访问决策。会注册一个默认的，但是我们也可以通过普通 bean 注册的方式使用自定义的 AccessDecisionManager。
- *
+ * <p>
  * AuthenticationProvider：AuthenticationManager 是通过它来认证用户的。
- *
+ * <p>
  * UserDetailsService：跟 AuthenticationProvider 关系密切，用来获取用户信息的。
  */
 
@@ -38,14 +37,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     //定义用户信息服务（查询用户信息）
     @Override
     @Bean
-    public UserDetailsService userDetailsService(){
+    public UserDetailsService userDetailsService() {
         InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
         String passWord = "$2a$10$Tf7OLX1rNdIRTSfp8yAONudtinpKSoUTxkw6x/JrKWxo342J8oQjS";
         manager.createUser(User.withUsername("zs").password(passWord).authorities("p1").build()); //创建用户zs,具有权限p1
         manager.createUser(User.withUsername("ls").password(passWord).authorities("p2").build()); //创建用户zs,具有权限p2
         return manager;
     }
-
 
     //安全拦截机制(最重要)
     @Override
@@ -61,7 +59,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .logout()
-                .permitAll();
+                .permitAll()
+                //关闭CSRF
+                .and()
+                .csrf()
+                .disable();
     }
 
 //    @Override
@@ -75,11 +77,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     //密码过滤器
     @Bean
-    PasswordEncoder passwordEncoder() {
+    public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    
+
     public static void main(String[] args) {
         String password = new BCryptPasswordEncoder().encode("123456");
         System.out.println(password);
