@@ -9,3 +9,7 @@ select auto_increment from information_schema.tables where table_schema='数据�
 alter table '表名' auto_increment=数值;
 ```
 
+#3.删除MySQL主键id
+```sql
+alter TABLE test drop COLUMN `id`;
+```
