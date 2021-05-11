@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 import javax.sql.DataSource;
 
 @Configuration
-public class DataSourceProxyConf {
+public class DataSourceProxyConfig {
 
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")

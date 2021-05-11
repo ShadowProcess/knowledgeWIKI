@@ -16,6 +16,7 @@ store {
 数据库名: seata;
 数据库表: global_table，branch_table，lock_table;
 ```sql
+-- the table to store GlobalSession data
 CREATE TABLE IF NOT EXISTS `global_table`
 (
     `xid`                       VARCHAR(128) NOT NULL,
@@ -35,6 +36,7 @@ CREATE TABLE IF NOT EXISTS `global_table`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
+-- the table to store BranchSession data
 CREATE TABLE IF NOT EXISTS `branch_table`
 (
     `branch_id`         BIGINT       NOT NULL,
@@ -53,6 +55,7 @@ CREATE TABLE IF NOT EXISTS `branch_table`
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
 
+-- the table to store lock data
 CREATE TABLE IF NOT EXISTS `lock_table`
 (
     `row_key`        VARCHAR(128) NOT NULL,
