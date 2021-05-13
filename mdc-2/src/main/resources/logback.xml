@@ -1,0 +1,17 @@
+<configuration scan="true" scanPeriod="30 seconds" debug="true">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <encoder>
+            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{traceId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
+            </pattern>
+
+        </encoder>
+    </appender>
+
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+</configuration>
