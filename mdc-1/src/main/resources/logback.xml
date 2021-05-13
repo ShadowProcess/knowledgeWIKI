@@ -5,7 +5,6 @@
         <encoder>
             <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{traceId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
             </pattern>
-
         </encoder>
     </appender>
 
