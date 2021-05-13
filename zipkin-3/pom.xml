@@ -33,7 +33,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!--使用zipkin第二步，引入ZipKin依赖-->
+        <!--使用zipkin第二步，引入zipkin依赖和sleuth依赖，版本是通过下面dependencyManagement中配置确定的-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zipkin</artifactId>
@@ -44,8 +44,14 @@
         </dependency>
     </dependencies>
 
-    <!--使用zipkin第一步，引入SpringCloud依赖-->
+    <!--使用zipkin第一步-->
     <!--使用SpringCloud时，一定要注意和Springboot版本对应关系，在官网可以查到对应关系-->
+    <!--
+    在SpringBoot项目的POM文件中，我们可以通过在POM文件中继承 Spring-boot-starter-parent来引用SpringBoot默认依赖的jar包，
+    但是，通过parent继承的方法，只能继承一个 spring-boot-starter-parent。实际开发中，用户很可能需要继承自己公司的标准parent配置，
+    这个时候可以使用 scope=import 来实现多继承。
+    通过以下方式，就可以获取(spring-cloud-dependencies).(Hoxton.SR11).pom文件中dependencyManagement配置的jar包依赖
+    -->
     <dependencyManagement>
         <dependencies>
             <dependency>

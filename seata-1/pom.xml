@@ -34,14 +34,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <scope>runtime</scope>
         </dependency>
-
-        <!--分布式事务Seata，引入第一步-->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-        </dependency>
-        <!---->
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -52,9 +44,22 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--分布式事务Seata，引入第二步-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
+        <!---->
     </dependencies>
 
-    <!--分布式事务Seata，引入第二步-->
+    <!--分布式事务Seata，引入第一步-->
+    <!--
+    在SpringBoot项目的POM文件中，我们可以通过在POM文件中继承 Spring-boot-starter-parent来引用SpringBoot默认依赖的jar包，
+    但是，通过parent继承的方法，只能继承一个 spring-boot-starter-parent。实际开发中，用户很可能需要继承自己公司的标准parent配置，
+    这个时候可以使用 scope=import 来实现多继承。
+    通过以下方式，就可以获取(spring-cloud-alibaba-dependencies).(2.2.0.RELEASE).pom文件中dependencyManagement配置的jar包依赖
+    -->
     <dependencyManagement>
         <dependencies>
             <dependency>
