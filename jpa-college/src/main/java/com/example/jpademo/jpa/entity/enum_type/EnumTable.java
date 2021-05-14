@@ -11,7 +11,7 @@ public class EnumTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private AuditState auditState;
+    private AuditState auditState; //mysql为int类型
 
     public Long getId() {
         return id;
