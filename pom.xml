@@ -48,7 +48,6 @@
         <module>tkmybatis-college</module>
         <module>thymeleaf-college</module>
         <module>springboot-principle</module>
-        <module>springboot-jpa</module>
         <module>spring-security</module>
         <module>kubernetes-college</module>
         <module>elasticsearch-college</module>
