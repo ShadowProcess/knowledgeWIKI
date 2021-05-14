@@ -4,7 +4,7 @@
 public class Principle{
 
 public ConfigurableApplicationContext run(String... args) {
-        //启动一个监视器
+//启动一个监视器
 		StopWatch stopWatch = new StopWatch();
 		stopWatch.start();
 		ConfigurableApplicationContext context = null;
