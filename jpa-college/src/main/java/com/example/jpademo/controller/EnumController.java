@@ -3,6 +3,7 @@ package com.example.jpademo.controller;
 import com.example.jpademo.jpa.entity.enum_type.AuditState;
 import com.example.jpademo.jpa.entity.enum_type.EnumTable;
 import com.example.jpademo.jpa.repo.EnumRepository;
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class EnumController {
+
 
     @Autowired
     private EnumRepository enumRepository;
