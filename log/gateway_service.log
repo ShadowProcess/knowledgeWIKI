@@ -1,0 +1,4 @@
+2021-05-14 17:12:49,208 INFO main (SpringApplication.java:659)- No active profile set, falling back to default profiles: default
+2021-05-14 17:12:51,246 INFO main (StartupInfoLogger.java:59)- Started ApiGatewayApplication in 3.352 seconds (JVM running for 3.964)
+2021-05-14 17:20:17,128 INFO main (SpringApplication.java:659)- No active profile set, falling back to default profiles: default
+2021-05-14 17:20:19,105 INFO main (StartupInfoLogger.java:59)- Started ApiGatewayApplication in 3.179 seconds (JVM running for 3.824)

@@ -26,22 +26,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
         </dependency>
-
-
         <dependency>
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <version>1.7</version>
         </dependency>
-        <!--        redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
             <version>2.0.1.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -58,9 +51,20 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--apiGateway-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
     </dependencies>
 
-
+    <!--
+   在SpringBoot项目的POM文件中，我们可以通过在POM文件中继承 Spring-boot-starter-parent来引用SpringBoot默认依赖的jar包，
+   但是，通过parent继承的方法，只能继承一个 spring-boot-starter-parent。实际开发中，用户很可能需要继承自己公司的标准parent配置，
+   这个时候可以使用 scope=import 来实现多继承。
+   通过以下方式，就可以获取(spring-cloud-dependencies).(Finchley.RELEASE).pom文件中dependencyManagement配置的jar包依赖
+   -->
     <dependencyManagement>
         <dependencies>
             <dependency>
