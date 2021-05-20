@@ -1,4 +1,4 @@
-package com.example.seata1.aop;
+package com.example.seata1springboot.aop;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

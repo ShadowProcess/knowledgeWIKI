@@ -1,14 +1,13 @@
-package com.example.seata1;
+package com.example.seata2springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
-public class Seata1Application {
+public class Seata2SpringbootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Seata1Application.class, args);
+        SpringApplication.run(Seata2SpringbootApplication.class, args);
     }
 
 }
