@@ -1,8 +1,12 @@
 package com.example.seata1springboot.controller;
 
 import com.example.seata1springboot.aop.Global;
+import io.seata.core.context.RootContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,12 +16,11 @@ import org.springframework.web.client.RestTemplate;
 
 
 /**
- * 启动Seata1和Seata2服务
  * <p>
  * 当调用接口：
  * http://localhost:8081/user-service/user/account/reduce 的时候会爆出500内部错误。
- * 这时候检查一下数据源或者seata-server的console你会发现数据没有变化，
- * console出现了两个branchId对应的doRollback输出。
+ * 这时候检查一下数据源你会发现数据没有变化，
+ * 而且seata-server的console出现了两个branchId对应的doRollback输出。
  */
 
 @Slf4j
@@ -36,8 +39,32 @@ public class UserController {
     @Global
     public String reduceAccount() {
         int update = jdbcTemplate.update("update t_user set account = account - 1 where id = 1");
-        ResponseEntity<String> forEntity = restTemplate.getForEntity("http://localhost:8082/good-service/good/amount/reduce", String.class);
+
+        String xid = RootContext.getXID();
+        System.out.println("分布式事务id:" + xid);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.add(RootContext.KEY_XID, xid);
+
+        String forEntity = restTemplate.postForObject("http://localhost:8082/good-service/good/amount/reduce", new HttpEntity<String>(headers), String.class);
         log.info("接口返回:{}", forEntity);
-        return forEntity.getBody();
+        return forEntity;
+    }
+
+
+    /**
+     * 带header的GET请求
+     */
+    public void getHasHeader() {
+        long userId = 32L;
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("token", "123");
+        ResponseEntity<String> response = restTemplate.exchange(
+                "http://127.0.0.1:8280/user/{id}",
+                HttpMethod.GET,
+                new HttpEntity<String>(headers),
+                String.class,
+                userId);
+        System.out.println(response.getBody());
     }
 }

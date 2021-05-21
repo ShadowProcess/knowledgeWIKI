@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.4.5</version>
+        <version>2.3.10.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -50,6 +50,19 @@
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.10</version>
         </dependency>
+
+        <!--Springboot使用链路追踪Sleuth，需要注意版本号要和Parent中的SpringBoot版本号对应，否则报错-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+            <version>2.2.8.RELEASE</version>
+        </dependency>
+
+<!--        ————————————————-->
+<!--        ①本例使用的是seata-spring-boot-starter方式，可直接在application.yml/application.properties中进行配置，但是需要手动传递XID；-->
+<!--        ②而使用spring-cloud-alibaba-seata，需要在每个微服务中添加registry.conf和file.conf文件,而且不需要手动传递XID，是自动的-->
+<!--        ③seata1.1.0以后，不需要手动代理数据源，启动类上@SpringBootApplication（exclude = DataSourceAutoConfiguration.class)-->
+<!--        ————————————————-->
         <dependency>
             <groupId>io.seata</groupId>
             <artifactId>seata-spring-boot-starter</artifactId>

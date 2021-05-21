@@ -13,12 +13,11 @@ import org.springframework.web.client.RestTemplate;
 
 
 /**
- * 启动Seata1和Seata2服务
  * <p>
  * 当调用接口：
  * http://localhost:8081/user-service/user/account/reduce 的时候会爆出500内部错误。
- * 这时候检查一下数据源或者seata-server的console你会发现数据没有变化，
- * console出现了两个branchId对应的doRollback输出。
+ * 这时候检查一下数据源你会发现数据没有变化，
+ * 而且seata-server的console出现了两个branchId对应的doRollback输出。
  */
 
 @Slf4j

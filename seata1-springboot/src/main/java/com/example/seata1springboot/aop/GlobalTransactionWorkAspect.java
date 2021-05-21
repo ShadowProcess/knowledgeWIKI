@@ -63,17 +63,18 @@ public class GlobalTransactionWorkAspect {
         log.info("切点执行结果:{}", result);
         String xid = RootContext.getXID();
 
-        if (Objects.equals(result, "success")) {
+        //如果分布式事务上下文XID存在，并且下游接口返回结果是success(代表下游服务执行成功)，那么分布式事务提交。
+        if (StringUtils.isNotBlank(xid) && Objects.equals(result, "success")) {
             log.info("***分布式事务：{} 提交***", xid);
-            GlobalTransactionContext.reload(RootContext.getXID()).commit();
+            GlobalTransactionContext.reload(xid).commit();
             log.info("***分布式事务提交完毕***");
             return;
         }
 
-        //result为返回值,如果调用服务的返回值不为success就进行回滚，说明调用的服务发生错误
+        //其它情况,回滚分布式事务
         if (StringUtils.isNotBlank(xid)) {
-            log.info("***分布式事务：{} 回滚***", xid);
-            GlobalTransactionContext.reload(RootContext.getXID()).rollback();
+            log.info("***分布式事务：{} 开始回滚***", xid);
+            GlobalTransactionContext.reload(xid).rollback();
             log.info("***分布式事务回滚完毕***");
         }
     }
@@ -90,8 +91,8 @@ public class GlobalTransactionWorkAspect {
         log.info("切点方法执行异常:{}", e.getMessage());
         String xid = RootContext.getXID();
         if (StringUtils.isNotBlank(xid)) {
-            log.info("***分布式事务：{} 回滚***", xid);
-            GlobalTransactionContext.reload(RootContext.getXID()).rollback();
+            log.info("***分布式事务：{} 开始回滚***", xid);
+            GlobalTransactionContext.reload(xid).rollback();
             log.info("***分布式事务回滚完毕***");
         }
     }
