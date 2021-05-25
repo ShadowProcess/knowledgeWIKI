@@ -1,6 +1,7 @@
 package com.example.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.example.config.DiyException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
@@ -30,6 +31,11 @@ public class AController {
     @Value("#{'${data.list}'.split(',')}")
     private List<String> list;
 
+
+    @GetMapping("ttt")
+    public int ss(){
+        throw new DiyException("zidingyi");
+    }
 
 
     @ApiOperation(value = "获取用户对象", httpMethod = "GET", response = String.class, notes = "根据用户名获取用户对象")

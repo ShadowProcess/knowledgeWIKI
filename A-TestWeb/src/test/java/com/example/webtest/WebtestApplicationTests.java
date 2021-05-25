@@ -1,6 +1,9 @@
 package com.example.webtest;
 
+import com.example.webtest.bean.Person;
+import com.example.webtest.bean.Ss;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.BeanUtils;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.text.SimpleDateFormat;
@@ -12,7 +15,11 @@ import java.util.Date;
 class WebtestApplicationTests {
 
     @Test
-    void contextLoads() {
+    void sdsds() {
+        Person person1 = new Person("1","1");
+        Ss person2 = new Ss();
+        BeanUtils.copyProperties(person1,person2);
+        System.out.println(person2);
     }
 
 

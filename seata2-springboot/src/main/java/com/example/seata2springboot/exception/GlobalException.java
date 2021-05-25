@@ -1,4 +1,4 @@
-package com.example.seata2springboot.config;
+package com.example.seata2springboot.exception;
 
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -17,4 +17,11 @@ public class GlobalException {
         System.out.println(e.getMessage());
         return e.getMessage();
     }
+
+    @ExceptionHandler(GlobalTransactionException.class)
+    public void processGlobal(){
+        throw new GlobalTransactionException("101","Global Transaction Exception");
+    }
+
+
 }

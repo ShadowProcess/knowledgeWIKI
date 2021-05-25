@@ -2,6 +2,7 @@ package com.example.seata1springboot.controller;
 
 import com.example.seata1springboot.aop.Global;
 import io.seata.core.context.RootContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -50,6 +51,16 @@ public class UserController {
         log.info("接口返回:{}", forEntity);
         return forEntity;
     }
+
+
+
+
+
+
+
+
+
+
 
 
     /**

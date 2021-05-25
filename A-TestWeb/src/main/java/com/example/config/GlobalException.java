@@ -19,6 +19,16 @@ public class GlobalException {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalException.class);
 
+
+    //TODO (全局异常中抛出异常)
+    @ExceptionHandler(DiyException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public String diy(Exception e) {
+        log.error("全局异常信息", e);
+        throw new DiyException("jixu");
+    }
+
+
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleGlobalException(Exception e) {
