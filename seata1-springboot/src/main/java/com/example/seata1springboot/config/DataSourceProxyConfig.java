@@ -8,6 +8,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.web.client.RestTemplate;
 
 import javax.sql.DataSource;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import io.seata.rm.datasource.DataSourceProxy;
+
 
 @Configuration
 public class DataSourceProxyConfig {
@@ -32,4 +35,16 @@ public class DataSourceProxyConfig {
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+
+
+    //听说：Seata分布式事务导致本地事务失效，没有试过，可以用以下方法解决
+//    @Bean
+//    public DataSourceProxy dataSourceProxy(DataSource dataSource) {
+//        return new DataSourceProxy(dataSource);
+//    }
+//    @Bean("txManager")
+//    public DataSourceTransactionManager txManager(DataSourceProxy dataSourceProxy) {
+//        return new DataSourceTransactionManager(dataSourceProxy);
+//    }
 }
