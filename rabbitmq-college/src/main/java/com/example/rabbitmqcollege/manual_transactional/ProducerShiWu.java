@@ -1,4 +1,4 @@
-package com.example.rabbitmqcollege.transactional;
+package com.example.rabbitmqcollege.manual_transactional;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;

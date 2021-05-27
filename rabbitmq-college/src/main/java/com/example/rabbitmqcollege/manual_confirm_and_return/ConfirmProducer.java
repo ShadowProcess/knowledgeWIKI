@@ -1,4 +1,4 @@
-package com.example.rabbitmqcollege.confirm_and_return;
+package com.example.rabbitmqcollege.manual_confirm_and_return;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConfirmListener;

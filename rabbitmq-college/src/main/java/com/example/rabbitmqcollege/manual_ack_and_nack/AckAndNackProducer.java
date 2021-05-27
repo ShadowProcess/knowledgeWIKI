@@ -1,4 +1,4 @@
-package com.example.rabbitmqcollege.ack_and_nack;
+package com.example.rabbitmqcollege.manual_ack_and_nack;
 
 import com.rabbitmq.client.AMQP;
 import com.rabbitmq.client.Channel;

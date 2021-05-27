@@ -1,4 +1,4 @@
-package com.example.rabbitmqcollege.simple_send_receive.sender;
+package com.example.rabbitmqcollege.annotation_send_receive.sender;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,17 +14,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.Date;
 
 
-/**
- * @author Alex
- * <p>
- * 演示RabbitMQ发送端
- *
- * RabbitMQ】三种Exchange模式——订阅、路由、通配符模式
- * .direct 默认的(一对一)
- * .topic  模糊匹配
- * .fanout 发布订阅模式
- */
-
 @Component
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -35,32 +24,41 @@ public class Sender {
 
 
     @Test
-    public void sendComputer() {
-        for (int i = 0; i < 30; i++) {
-            String content = "发送信息到电脑队列，当前时间：" + new Date();
-            this.rabbitmqTemplate.convertAndSend("myElectronics", "computer", content);
-        }
+    public void sendDirect() {
+        String content = "发送信息到direct模式交换机，当前时间：" + new Date();
+        //参数1:交换机     参数2:路由key    参数3:发送的数据
+        this.rabbitmqTemplate.convertAndSend("DirectExchangeDemo", "computer", content);
     }
 
-    /**
-     * RabbitMQ消息持久化
-     * 使用convertAndSend方式发送消息，消息默认就是持久化的.
-     * new MessageProperties() --> DEFAULT_DELIVERY_MODE = MessageDeliveryMode.PERSISTENT --> deliveryMode = 2;
-     */
 
     @Test
-    public void sendPhone() {
-        for (int i = 0; i < 30; i++) {
-            String content = "发送信息到手机队列，当前时间：" + new Date();
-            this.rabbitmqTemplate.convertAndSend("myElectronics", "phone", content);
-        }
+    public void sendFanout() {
+        String content = "发送信息到fanout模式交换机，当前时间：" + new Date();
+        //参数1:交换机     参数2:路由key    参数3:发送的数据
+        this.rabbitmqTemplate.convertAndSend("FanoutExchangeDemo", "phone", content);
     }
+
+
+    @Test
+    public void sendTopic() {
+        String content = "发送信息到fanout模式交换机，当前时间：" + new Date();
+        //参数1:交换机     参数2:路由key    参数3:发送的数据
+        this.rabbitmqTemplate.convertAndSend("TopicExchangeDemo", "1.girl.2", content);
+        this.rabbitmqTemplate.convertAndSend("TopicExchangeDemo", "1.boy.2", content);
+    }
+
+
+
 
 
     //发送持久化消息
     public void sendMessage(final String exchange, final String routingKey, final String content)
             throws AmqpException {
-
+        /**
+         * RabbitMQ消息持久化
+         * 使用convertAndSend方式发送消息，消息默认就是持久化的.
+         * new MessageProperties() --> DEFAULT_DELIVERY_MODE = MessageDeliveryMode.PERSISTENT --> deliveryMode = 2;
+         */
         MessageProperties messageProperties = new MessageProperties();
         messageProperties.setContentType(MessageProperties.CONTENT_TYPE_BYTES);
         messageProperties.setDeliveryMode(MessageProperties.DEFAULT_DELIVERY_MODE); //设置消息持久化
