@@ -1,0 +1,166 @@
+    log_format portal '$remote_addr - $remote_user [$time_local] "$request" '
+           '$status $body_bytes_sent "$http_referer" '
+           '"$http_user_agent" $http_x_forwarded_for';
+
+
+
+server {
+        listen       80;
+        server_name  portal.asia-data.com;
+#        charset utf-8;
+#        index index.html index.htm;
+
+#        allow   210.22.180.234;
+#       deny    all;
+
+#        access_log  /data/0/logs/nginx/portal.asia-data.com.log  portal;
+	error_log  /data/0/logs/nginx/portal.asia-data.com_error.log error;
+
+#set $flag 0;
+
+#if ($uri !~* "/v2/")
+#{
+#set $flag "${flag}1";
+#}
+
+#if ($http_referer ~* "/v2/") {
+#set $flag "${flag}2";
+#}
+
+#if ($flag = "012")
+#{
+#rewrite /(.*)$ /v2/$1 last;
+#rewrite /(.*)$ /v2/$1 redirect;
+#}
+
+#rewrite  "^/$"  http://portal.asia-data.com/newlogin break;
+#rewrite  "^/login$"  http://portal.asia-data.com/newlogin break;
+#proxy_intercept_errors on;
+#error_page 404 = http://portal.asia-data.com/newlogin;
+#error_page 400 = @fallback;
+#error_page 403 = @fallback;
+#error_page 500 = @fallback;
+      
+
+	location ~*  ^/api/
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+	location ~*  ^/new
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+	location ~*  ^/sockjs-node/
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+	}
+	location ~*  ^/static/
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+	location ~*  ^/__webpack_dev_server__/
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+	location  /index.js
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+	location    /index.css
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_old.log portal;
+        proxy_pass http://192.168.2.12:9010;
+        proxy_set_header   Host             $host;
+        proxy_set_header   X-Real-IP        $remote_addr;
+        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+
+#	location   /
+#        {
+#root /data/0/sites/portal-web;
+#        }
+
+	location  /
+        {
+access_log /data/0/logs/nginx/portal.asia-data.com_new.log portal;
+	rewrite  .*  http://portal.asia-data.com/newlogin break;
+       # proxy_pass http://192.168.2.12:9001;
+       # proxy_set_header   Host             $host;
+       # proxy_set_header   X-Real-IP        $remote_addr;
+       # proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+	}
+
+
+
+#location @fallback {
+#	rewrite /(.*) http://portal.asia-data.com/newlogin last;
+#rewrite_log on;
+#        proxy_pass http://portal.asia-data.com;
+#        proxy_set_header   Host             $host;
+#        proxy_set_header   X-Real-IP        $remote_addr;
+#        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+
+#}
+
+
+
+#	location  /oldportal 
+#	{
+#        rewrite ^/(.*)  /login break;
+#        proxy_pass http://192.168.2.23:9001;
+#    }
+
+#	 location /
+#        {
+#        proxy_pass http://192.168.2.12:9001/;
+#        proxy_set_header   Host             $host;
+#        proxy_set_header   X-Real-IP        $remote_addr;
+#        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+#        }
+#        location /
+#        {
+#        proxy_pass http://192.168.30.21:3000;
+#        proxy_set_header   Host             $host;
+#        proxy_set_header   X-Real-IP        $remote_addr;
+#        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+#        }
+#       location /shiro {
+#       proxy_pass http://192.168.20.5:8088;
+#        proxy_set_header   Host             $host;
+#        proxy_set_header   X-Real-IP        $remote_addr;
+#        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+#       }
+#       location /portal {
+#       proxy_pass http://192.168.30.3:8080;
+#        proxy_set_header   Host             $host;
+#        proxy_set_header   X-Real-IP        $remote_addr;
+#        proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+#       }
+}
+

@@ -13,7 +13,7 @@
     <artifactId>nginx-college</artifactId>
     <description>
         俄罗斯人（Igor Sysoev）搞的反向代理服务器，据说支持50000并发
-        Igor Sysoev 15 年前任职于俄罗斯公司 Rambler （俄罗斯最大的搜索引擎和互联网门户之一“rambler.ru”的母公司） ，
+        Igor Sysoev 15 年前任职于俄罗斯公司 Rambler（俄罗斯最大的搜索引擎和互联网门户之一“rambler.ru”的母公司），
         在此期间利用业余时间开发了网页服务器 Nginx。目前，Nginx 已经成为风靡全球的服务器，BAT、Facebook 都将其作为企业 IT 架构的一部分。
         Igor Sysoev 也于 2011 年利用此项目创办了 NGINX 公司。但多年之后，
         他的老东家 Rambler 声称：Nginx 是 Sysoev 在 Rambler 公司任职期间开发的，所有权也应该是公司的。
