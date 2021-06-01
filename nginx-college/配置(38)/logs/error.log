@@ -1,0 +1,120 @@
+2017/12/20 17:10:47 [emerg] 28697#0: unknown "upstream_" variable
+2017/12/22 17:40:25 [emerg] 3332#0: invalid parameter "80" in /usr/local/nginx/conf/conf.d/portal.asia-cdn.com.conf:7
+2017/12/27 07:06:49 [emerg] 6383#0: mkdir() "/data/0/temp/nginx/proxy_cache" failed (2: No such file or directory)
+2017/12/27 07:06:59 [emerg] 6393#0: open() "/data/0/logs/nginx/error.log" failed (2: No such file or directory)
+2018/05/23 02:05:36 [emerg] 2942#0: mkdir() "/data/0/temp/nginx/proxy_cache" failed (2: No such file or directory)
+2018/05/23 02:05:47 [emerg] 2953#0: open() "/data/0/logs/nginx/error.log" failed (2: No such file or directory)
+2018/06/27 07:19:52 [emerg] 25042#0: unexpected "}" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:25
+2018/06/27 07:19:57 [emerg] 25054#0: "proxy_pass" directive is not allowed here in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:16
+2018/06/27 07:20:13 [emerg] 25073#0: "proxy_pass" directive is not allowed here in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:16
+2018/06/27 07:43:00 [emerg] 25681#0: unexpected "}" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:22
+2018/07/05 23:48:53 [emerg] 9563#0: unexpected "}" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:22
+2018/07/05 23:49:04 [emerg] 9577#0: unexpected "}" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:22
+2018/07/05 23:49:38 [emerg] 9599#0: unexpected "}" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:22
+2018/07/05 23:50:07 [emerg] 9621#0: BIO_new_file("/usr/local/nginx/conf/conf/keys/full_chain.pem") failed (SSL: error:02001002:system library:fopen:No such file or directory:fopen('/usr/local/nginx/conf/conf/keys/full_chain.pem','r') error:2006D080:BIO routines:BIO_new_file:no such file)
+2018/07/11 02:54:28 [emerg] 9471#0: invalid parameter "up" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:6
+2018/07/11 02:58:23 [emerg] 9579#0: invalid parameter "timeou=1" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:6
+2018/07/11 02:58:35 [emerg] 9590#0: invalid parameter "timeout=1" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:6
+2018/09/21 16:34:11 [emerg] 13004#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/cloud.asia-cdn.com.conf:18
+2018/09/21 16:35:31 [emerg] 13042#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/cloud.asia-cdn.com.conf:16
+2018/09/21 16:35:58 [emerg] 13059#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/cloud.asia-cdn.com.conf:16
+2018/10/29 20:54:38 [emerg] 26750#0: unknown directive "echo_read_request_body" in /usr/local/nginx/conf/conf.d/callback.asia-cdn.com.conf:22
+2018/10/29 20:56:11 [emerg] 26808#0: unknown directive "localtion" in /usr/local/nginx/conf/conf.d/callback.asia-cdn.com.conf:26
+2018/12/10 17:41:57 [emerg] 32453#0: unknown directive "set_header" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:59
+2018/12/10 17:42:58 [emerg] 32486#0: directive "add_header" is not terminated by ";" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:59
+2018/12/10 17:43:01 [emerg] 32496#0: directive "add_header" is not terminated by ";" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:59
+2018/12/10 17:43:07 [emerg] 32505#0: invalid number of arguments in "add_header" directive in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:55
+2018/12/10 17:44:57 [emerg] 32558#0: invalid number of arguments in "add_header" directive in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:55
+2018/12/10 17:46:35 [emerg] 32626#0: invalid parameter "no-cache" in /usr/local/nginx/conf/conf.d/all.asia-cdn.com.conf:55
+2018/12/27 15:19:11 [emerg] 15179#0: duplicate "log_format" name "dns" in /usr/local/nginx/conf/conf.d/newdns.asia-data.com.conf:3
+2018/12/27 15:23:08 [emerg] 15287#0: duplicate "log_format" name "dns" in /usr/local/nginx/conf/conf.d/newdns.asia-data.com.conf:3
+2018/12/31 16:16:13 [emerg] 22058#0: duplicate location "/" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:25
+2018/12/31 17:13:04 [emerg] 23816#0: duplicate location "/old" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:25
+2018/12/31 17:15:37 [emerg] 23903#0: duplicate location "/old" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:25
+2018/12/31 17:18:04 [emerg] 24009#0: duplicate location "/" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:25
+2018/12/31 17:30:17 [emerg] 24361#0: "proxy_pass" directive is not allowed here in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:17
+2018/12/31 17:46:54 [emerg] 24881#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:23
+2018/12/31 18:16:14 [emerg] 25754#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:20
+2018/12/31 18:17:48 [emerg] 25812#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:20
+2018/12/31 18:25:52 [emerg] 26100#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:20
+2018/12/31 18:28:39 [emerg] 26177#0: unexpected "{" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:17
+2018/12/31 18:56:44 [emerg] 26965#0: duplicate upstream "web_iplibrary" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:6
+2018/12/31 18:57:20 [emerg] 26990#0: duplicate upstream "web_iplibrary" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:6
+2018/12/31 18:57:35 [emerg] 27005#0: duplicate upstream "web_iplibrary" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:6
+2018/12/31 18:58:24 [emerg] 27032#0: duplicate upstream "web_iplibrary" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:6
+2018/12/31 19:27:22 [emerg] 27913#0: invalid number of arguments in "proxy_pass" directive in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:21
+2018/12/31 19:32:13 [emerg] 28069#0: "proxy_pass" directive is duplicate in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:25
+2018/12/31 19:32:41 [emerg] 28090#0: unknown directive "`" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:22
+2018/12/31 19:33:27 [emerg] 28115#0: unknown directive "`" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:22
+2018/12/31 19:34:56 [emerg] 28171#0: unexpected "}" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:59
+2018/12/31 19:35:10 [emerg] 28188#0: unexpected "}" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:61
+2018/12/31 19:36:13 [emerg] 28236#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:22
+2019/01/07 11:23:51 [emerg] 19753#0: unexpected end of file, expecting "}" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:85
+2019/01/07 11:57:51 [emerg] 20762#0: unexpected "}" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:61
+2019/01/07 11:58:02 [emerg] 20782#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:60
+2019/01/07 11:58:14 [emerg] 20795#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:60
+2019/01/07 11:58:37 [emerg] 20809#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:60
+2019/01/07 11:59:37 [emerg] 20838#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:60
+2019/01/07 11:59:45 [emerg] 20848#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:60
+2019/01/07 11:59:54 [emerg] 20858#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:40
+2019/01/07 12:00:07 [emerg] 20888#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:40
+2019/01/07 12:00:50 [emerg] 20911#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:40
+2019/01/07 12:01:02 [emerg] 20949#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:41
+2019/01/07 12:32:49 [emerg] 21840#0: unknown directive "localtion" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:77
+2019/01/07 12:33:10 [emerg] 21863#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:79
+2019/01/07 12:33:50 [emerg] 21884#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:79
+2019/01/07 12:34:06 [emerg] 21897#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:79
+2019/01/07 12:34:57 [emerg] 21936#0: invalid variable name in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:78
+2019/01/07 12:49:44 [emerg] 22433#0: unknown directive "Location" in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:61
+2019/01/07 13:06:14 [emerg] 22919#0: unknown "connection_upgrade" variable
+2019/01/07 13:38:24 [emerg] 23717#0: "access_log" directive is not allowed here in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:35
+2019/01/08 12:09:44 [emerg] 24542#0: "location" directive is not allowed here in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:84
+2019/01/08 20:43:48 [emerg] 4543#0: "proxy_pass" cannot have URI part in location given by regular expression, or inside named location, or inside "if" statement, or inside "limit_except" block in /usr/local/nginx/conf/conf.d/portal.asia-data.com.conf:120
+2019/01/10 16:23:49 [emerg] 3094#0: duplicate "log_format" name "shiro" in /usr/local/nginx/conf/conf.d/shiro.asia-data.com.conf:3
+2019/01/10 16:24:14 [warn] 3114#0: conflicting server name "shiro.asia-data.com" on 0.0.0.0:80, ignored
+2019/01/10 16:24:16 [warn] 3128#0: conflicting server name "shiro.asia-data.com" on 0.0.0.0:80, ignored
+2019/02/20 18:43:29 [emerg] 8376#0: unexpected "}" in /usr/local/nginx/conf/conf.d/eureka.asia-data.com.conf:6
+2019/02/21 14:39:32 [emerg] 5029#0: duplicate "log_format" name "ip" in /usr/local/nginx/conf/conf.d/ip.asia-data.com.conf:3
+2019/02/26 22:35:11 [emerg] 29386#0: invalid parameter "back" in /usr/local/nginx/conf/conf.d/newcloud.asia-data.com.conf:25
+2019/03/14 18:00:52 [emerg] 1261#0: unknown directive "$http_origin" in /usr/local/nginx/conf/conf.d/cychengyuan-vod.48.cn.conf:20
+2019/03/14 18:03:16 [emerg] 1351#0: unknown directive "$http_origin" in /usr/local/nginx/conf/conf.d/cychengyuan-vod.48.cn.conf:20
+2019/03/14 19:40:41 [emerg] 3692#0: directive "set" is not terminated by ";" in /usr/local/nginx/conf/conf.d/cychengyuan-vod.48.cn.conf:22
+2019/03/14 20:58:42 [emerg] 5748#0: unexpected end of file, expecting "}" in /usr/local/nginx/conf/conf.d/cychengyuan-vod.48.cn.conf:33
+2019/03/14 21:02:05 [emerg] 5880#0: invalid number of arguments in "valid_referers" directive in /usr/local/nginx/conf/conf.d/cychengyuan-vod.48.cn.conf:23
+2019/03/17 13:15:32 [emerg] 13348#0: getpwnam("www") failed in /usr/local/nginx/conf/nginx.conf:1
+2019/04/03 03:10:46 [emerg] 24639#0: mkdir() "/data/0/temp/nginx/proxy_cache" failed (2: No such file or directory)
+2019/04/03 03:12:05 [warn] 24702#0: conflicting server name "www.shein.com" on 0.0.0.0:80, ignored
+2020/01/17 17:25:02 [emerg] 24947#0: PEM_read_bio_X509_AUX("/data/0/nginx/cert/baijing/www.baijingapp.com.crt") failed (SSL: error:0906D06C:PEM routines:PEM_read_bio:no start line:Expecting: TRUSTED CERTIFICATE)
+2020/01/17 17:30:13 [emerg] 21207#0: PEM_read_bio_X509_AUX("/data/0/nginx/cert/baijing/www.baijingapp.com.pem") failed (SSL: error:0906D06C:PEM routines:PEM_read_bio:no start line:Expecting: TRUSTED CERTIFICATE)
+2020/01/17 17:41:48 [emerg] 21850#0: PEM_read_bio_X509_AUX("/data/0/nginx/cert/baijing/ssl.pem") failed (SSL: error:0906D06C:PEM routines:PEM_read_bio:no start line:Expecting: TRUSTED CERTIFICATE)
+2020/01/17 18:29:54 [emerg] 1681#0: PEM_read_bio_X509_AUX("/data/0/nginx/cert/baijing/ssl.pem") failed (SSL: error:0906D06C:PEM routines:PEM_read_bio:no start line:Expecting: TRUSTED CERTIFICATE)
+2020/04/10 15:50:21 [notice] 20537#0: signal process started
+2020/04/15 10:07:20 [emerg] 23315#0: duplicate "log_format" name "portal" in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:3
+2020/04/15 10:07:32 [emerg] 23351#0: duplicate "log_format" name "portal" in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:3
+2020/04/15 10:09:41 [emerg] 23673#0: duplicate "log_format" name "portal" in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:3
+2020/04/15 10:09:45 [emerg] 23685#0: duplicate "log_format" name "portal" in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:3
+2020/04/15 10:12:32 [emerg] 24101#0: duplicate "log_format" name "portal" in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:3
+2020/04/15 10:17:59 [emerg] 24865#0: "location" directive is not allowed here in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:47
+2020/04/15 10:20:20 [emerg] 25234#0: "location" directive is not allowed here in /usr/local/nginx/conf/conf.d/portal.asia-fruit.com.conf:47
+2020/04/17 18:28:31 [emerg] 17724#0: unknown log format "portal" in /usr/local/nginx/conf/conf.d/fruit.asia-data.com.conf:36
+2020/04/17 18:29:08 [emerg] 17860#0: unknown log format "portal" in /usr/local/nginx/conf/conf.d/fruit.asia-data.com.conf:36
+2020/04/17 18:35:10 [emerg] 18739#0: unknown log format "portal" in /usr/local/nginx/conf/conf.d/fruit.asia-data.com.conf:36
+2020/04/17 18:35:42 [emerg] 18797#0: unknown log format "portal" in /usr/local/nginx/conf/conf.d/fruit.asia-data.com.conf:36
+2020/04/17 18:36:00 [notice] 18800#0: signal process started
+2020/04/17 18:54:46 [notice] 21537#0: signal process started
+2020/07/20 17:52:23 [notice] 25120#0: signal process started
+2020/08/27 15:12:10 [emerg] 6305#0: duplicate "log_format" name "newshiro" in /usr/local/nginx/conf/conf.d/shiro.asia-data.com.conf:3
+2020/08/27 15:12:21 [emerg] 6339#0: duplicate "log_format" name "newshiro" in /usr/local/nginx/conf/conf.d/shiro.asia-data.com.conf:3
+2020/08/27 15:13:50 [emerg] 6528#0: unknown log format "newcloudshiro" in /usr/local/nginx/conf/conf.d/newshiro.asia-data.com.conf:12
+2020/08/27 15:15:30 [emerg] 6817#0: unknown log format "newcloudshiro" in /usr/local/nginx/conf/conf.d/newshiro.asia-data.com.conf:12
+2020/08/27 15:17:55 [emerg] 7160#0: unknown log format "newcloudshiro" in /usr/local/nginx/conf/conf.d/newshiro.asia-data.com.conf:12
+2020/08/27 15:21:52 [emerg] 7743#0: unknown log format "newcloudshiro" in /usr/local/nginx/conf/conf.d/newshiro.asia-data.com.conf:12
+2020/08/27 15:22:00 [emerg] 7754#0: unknown log format "newcloudshiro" in /usr/local/nginx/conf/conf.d/newshiro.asia-data.com.conf:12
+2020/08/27 15:24:15 [emerg] 8140#0: duplicate "log_format" name "newshiro" in /usr/local/nginx/conf/conf.d/shiro.asia-data.com.conf:3
+2020/10/13 20:57:32 [notice] 13283#0: signal process started
+2020/12/01 20:45:28 [warn] 7283#0: conflicting server name "hk.oss.asia-isp.com" on 0.0.0.0:80, ignored
+2021/03/19 16:42:54 [warn] 4180#0: conflicting server name "api.asia-data.com" on 0.0.0.0:80, ignored
+2021/03/19 16:42:55 [warn] 4192#0: conflicting server name "api.asia-data.com" on 0.0.0.0:80, ignored
+2021/03/19 16:45:37 [warn] 4611#0: conflicting server name "api.asia-data.com" on 0.0.0.0:80, ignored
+2021/03/19 16:45:37 [warn] 4626#0: conflicting server name "api.asia-data.com" on 0.0.0.0:80, ignored
+2021/05/28 17:35:57 [emerg] 3235#0: host not found in upstream "gatebalance" in /usr/local/nginx/conf/conf.d/api.asia-data.com.conf:59
