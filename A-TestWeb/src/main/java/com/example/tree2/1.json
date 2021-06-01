@@ -1,0 +1,44 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "id": 3,
+            "name": "菜单2-2",
+            "parentId": 2,
+            "type": "two-two"
+          }
+        ],
+        "id": 2,
+        "name": "菜单2",
+        "parentId": 1,
+        "type": "two"
+      },
+      {
+        "children": [
+          {
+            "id": 5,
+            "name": "菜单3-3",
+            "parentId": 4,
+            "type": "three-three"
+          }
+        ],
+        "id": 4,
+        "name": "菜单3",
+        "parentId": 1,
+        "type": "three"
+      }
+    ],
+    "id": 1,
+    "name": "菜单1",
+    "parentId": 0,
+    "type": "one"
+  },
+  {
+    "id": 6,
+    "name": "菜单4",
+    "parentId": 0,
+    "type": "six"
+  }
+]

@@ -1,4 +1,4 @@
-package com.example.tree;
+package com.example.tree1;
 
 import lombok.Data;
 
@@ -7,10 +7,10 @@ import java.util.List;
 
 @Data
 public class TreeItem {
+
     private String id;
     private String parentId;
     private String name;
-
     private List<TreeItem> children = new ArrayList<>();
 
     public TreeItem(String id, String parentId, String name) {
