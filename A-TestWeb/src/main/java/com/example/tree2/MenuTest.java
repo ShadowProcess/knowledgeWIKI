@@ -71,7 +71,7 @@ public class MenuTest {
      * 获取节点及其子节点返回对象
      *
      * @param parent
-     * @param list
+     * @param list 所有数据
      * @return
      */
     public static void recursiveMenuTree(MenuVo parent, List<MenuVo> list) {

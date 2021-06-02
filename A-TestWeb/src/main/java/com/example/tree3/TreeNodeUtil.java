@@ -47,7 +47,6 @@ public class TreeNodeUtil {
     }
 
 
-
     /**
      * @param list 数据库里面获取到的全量节点列表
      * @return
@@ -73,12 +72,12 @@ public class TreeNodeUtil {
      * 获取节点及其子节点返回对象
      *
      * @param parent
-     * @param list
+     * @param list   所有数据
      * @return
      */
     public static void recursiveTreeNode(TreeNode parent, List<TreeNode> list) {
         for (TreeNode child : list) {
-            if (Objects.equals(parent.getId(), child.getParentId())) {
+            if (Objects.equals(child.getParentId(), parent.getId())) {
                 parent.getChildren().add(child);
                 recursiveTreeNode(child, list);
             }
