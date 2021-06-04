@@ -32,13 +32,13 @@ public class TreeUtil {
 
 
     public TreeItem enquireTree(List<TreeItem> treeItemList) {
-        if (CollectionUtils.isEmpty(treeItemList)) return null;
         //过滤空对象
+        if (CollectionUtils.isEmpty(treeItemList)) return null;
         List<TreeItem> treeItems = treeItemList.stream()
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
 
-        //存储 id treeItem
+        //构建id和treeItem对应关系
         HashMap<String, TreeItem> itemMap = new HashMap<>();
         treeItems.forEach(x -> itemMap.put(x.getId(), x));
 
@@ -48,13 +48,14 @@ public class TreeUtil {
         //数据封装
         for (TreeItem treeItem : treeItems) {
             String pid = treeItem.getParentId();
+
+            //1.说明该节点为根节点
             if (StringUtils.isEmpty(pid) || pid == "0") {
-                //说明该节点为根节点
                 root = treeItem;
                 continue;
             }
 
-            //该节点不是根节点
+            //2.该节点不是根节点，得到该节点的父节点，把自己添加到父节点下。
             TreeItem parent = itemMap.get(pid);
             parent.getChildren()
                     .add(treeItem);
