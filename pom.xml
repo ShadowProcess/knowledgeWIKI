@@ -49,7 +49,6 @@
         <module>thymeleaf-college</module>
         <module>springboot-principle</module>
         <module>spring-security</module>
-        <module>kubernetes-college</module>
         <module>elasticsearch-college</module>
         <module>aliyun-vue</module>
         <module>gitlab-college</module>

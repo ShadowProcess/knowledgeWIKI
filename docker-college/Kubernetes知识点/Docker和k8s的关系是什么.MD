@@ -1,4 +1,6 @@
 Docker和K8s关系是什么?
+[当 git 产生提交后，gitlab/jenkins 启动容器，下载代码，编译，打包，测试，产生构建物，编译 Dockerfile ，上传 docker 镜像到 registry，最后部署到容器执行。]
+
 
 什么是分布式
 系统中多个模块在不同的服务器上部署，分布式系统
