@@ -1,0 +1,320 @@
+2021-06-29 20:34:06,624 ERROR synDataThread8 (ConversantAPIServiceImpl.java:283)- Service层异常信息: StatementCallback; SQL [insert into t_refresh_error (action_id,provider,status,error_url,process_state,create_date) values(39173,'conversant',2,'http://cf.test.asia-cdn.com/2.txt','0','2021-06-29T20:34:05.462') ON DUPLICATE KEY UPDATE action_id=values(action_id), status=values(status),error_url=values(error_url)]; Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago., 参数: PushTask(actionId=39173, provider=conversant, type=url, urls=[http://cf.test.asia-cdn.com/2.txt]), 堆栈: {}
+org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [insert into t_refresh_error (action_id,provider,status,error_url,process_state,create_date) values(39173,'conversant',2,'http://cf.test.asia-cdn.com/2.txt','0','2021-06-29T20:34:05.462') ON DUPLICATE KEY UPDATE action_id=values(action_id), status=values(status),error_url=values(error_url)]; Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:98)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:419)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:538)
+	at com.asia.cdn.log.conversant.utils.JdbcUtils.insertErrorUrl(JdbcUtils.java:26)
+	at com.asia.cdn.log.conversant.service.ConversantAPIServiceImpl.invalidations(ConversantAPIServiceImpl.java:242)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3559)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3459)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3900)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1552)
+	at com.mysql.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2607)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1480)
+	at sun.reflect.GeneratedMethodAccessor86.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy108.executeUpdate(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1UpdateStatementCallback.doInStatement(JdbcTemplate.java:527)
+	at org.springframework.jdbc.core.JdbcTemplate$1UpdateStatementCallback.doInStatement(JdbcTemplate.java:524)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408)
+	... 15 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3469)
+	... 31 common frames omitted
+2021-06-29 20:34:06,627 ERROR synDataThread8 (SimpleAsyncUncaughtExceptionHandler.java:37)- Unexpected error occurred invoking async method 'public void com.asia.cdn.log.conversant.service.ConversantAPIServiceImpl.invalidations(com.asia.cdn.log.conversant.commons.PushTask) throws java.lang.Exception'.
+com.asia.cdn.log.conversant.commons.ServiceException: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [insert into t_refresh_error (action_id,provider,status,error_url,process_state,create_date) values(39173,'conversant',2,'http://cf.test.asia-cdn.com/2.txt','0','2021-06-29T20:34:05.462') ON DUPLICATE KEY UPDATE action_id=values(action_id), status=values(status),error_url=values(error_url)]; Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.
+	at com.asia.cdn.log.conversant.service.ConversantAPIServiceImpl.invalidations(ConversantAPIServiceImpl.java:284)
+	at sun.reflect.GeneratedMethodAccessor95.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:333)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [insert into t_refresh_error (action_id,provider,status,error_url,process_state,create_date) values(39173,'conversant',2,'http://cf.test.asia-cdn.com/2.txt','0','2021-06-29T20:34:05.462') ON DUPLICATE KEY UPDATE action_id=values(action_id), status=values(status),error_url=values(error_url)]; Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:98)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:419)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:538)
+	at com.asia.cdn.log.conversant.utils.JdbcUtils.insertErrorUrl(JdbcUtils.java:26)
+	at com.asia.cdn.log.conversant.service.ConversantAPIServiceImpl.invalidations(ConversantAPIServiceImpl.java:242)
+	... 12 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 1,170,822 milliseconds ago.  The last packet sent successfully to the server was 3 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3559)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3459)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3900)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.StatementImpl.executeUpdateInternal(StatementImpl.java:1552)
+	at com.mysql.jdbc.StatementImpl.executeLargeUpdate(StatementImpl.java:2607)
+	at com.mysql.jdbc.StatementImpl.executeUpdate(StatementImpl.java:1480)
+	at sun.reflect.GeneratedMethodAccessor86.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy108.executeUpdate(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1UpdateStatementCallback.doInStatement(JdbcTemplate.java:527)
+	at org.springframework.jdbc.core.JdbcTemplate$1UpdateStatementCallback.doInStatement(JdbcTemplate.java:524)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408)
+	... 15 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3469)
+	... 31 common frames omitted
+2021-06-29 21:58:29,837 ERROR synDataThread4 (ConversantAPIServiceImpl.java:140)- Service层异常信息: 域名不存在, 参数: cf.test.asia-cdn.com, 堆栈: 无
+2021-06-29 21:58:30,920 ERROR synDataThread8 (ConversantAPIServiceImpl.java:140)- Service层异常信息: 域名不存在, 参数: cf.test.asia-cdn.com, 堆栈: 无
+2021-06-29 21:59:05,892 ERROR pool-9-thread-10 (DomainService.java:351)- [S130]  周期补数据,查询域名带宽流量，任务出错了：
+java.util.concurrent.ExecutionException: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [select UNIX_TIMESTAMP(record_time) as record_time,status,request,domain from t_log_http_status_minute5 where record_time >= '2021-06-28 21:15:00' and record_time <= '2021-06-29 21:15:00' AND provider='conversant2' and ( domain ='www.vidu.me'or domain ='gcs-static.boltrend.com'or domain ='cdnovs014.loveota.net') ORDER BY record_time]; Communications link failure
+
+The last packet successfully received from the server was 909,862 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 909,862 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil.getCollectResponse(DomainOrFlowUtil.java:91)
+	at com.asia.cdn.log.conversant.service.DomainService.flow(DomainService.java:182)
+	at com.asia.cdn.log.conversant.service.DomainService.total(DomainService.java:142)
+	at com.asia.cdn.log.conversant.component.LogScheduled$2.run(LogScheduled.java:107)
+	at java.lang.Thread.run(Thread.java:745)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [select UNIX_TIMESTAMP(record_time) as record_time,status,request,domain from t_log_http_status_minute5 where record_time >= '2021-06-28 21:15:00' and record_time <= '2021-06-29 21:15:00' AND provider='conversant2' and ( domain ='www.vidu.me'or domain ='gcs-static.boltrend.com'or domain ='cdnovs014.loveota.net') ORDER BY record_time]; Communications link failure
+
+The last packet successfully received from the server was 909,862 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 909,862 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:98)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:419)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:474)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:484)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForList(JdbcTemplate.java:510)
+	at com.asia.cdn.log.conversant.utils.JdbcUtil.GetHttpStatus(JdbcUtil.java:211)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil.getHttpStatus(DomainOrFlowUtil.java:487)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil$3.call(DomainOrFlowUtil.java:87)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil$3.call(DomainOrFlowUtil.java:84)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	... 3 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 909,862 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3559)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3459)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3900)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1381)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy108.executeQuery(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:458)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408)
+	... 12 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3469)
+	... 26 common frames omitted
+2021-06-29 21:59:06,153 ERROR pool-9-thread-4 (DomainService.java:351)- [S134]  周期补数据,查询域名带宽流量，任务出错了：
+java.util.concurrent.ExecutionException: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [select UNIX_TIMESTAMP(record_time) as record_time,status,request,domain from t_log_http_status_minute5 where record_time >= '2021-06-27 21:15:00' and record_time <= '2021-06-28 21:18:00' AND provider='conversant2' and ( domain ='opt-gok-cystatic.mjyx.com'or domain ='cdn.vidmix.xyz'or domain ='update2.farlight84miraclegames.com'or domain ='dog-static.boltrend.com'or domain ='static.kimi.com.tw'or domain ='clifile.dhgames.cn'or domain ='disgaea-static.neshpub.com'or domain ='svod.anycdn.cc') ORDER BY record_time]; Communications link failure
+
+The last packet successfully received from the server was 6,630,375 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 6,630,375 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil.getCollectResponse(DomainOrFlowUtil.java:91)
+	at com.asia.cdn.log.conversant.service.DomainService.flow(DomainService.java:182)
+	at com.asia.cdn.log.conversant.service.DomainService.total(DomainService.java:142)
+	at com.asia.cdn.log.conversant.component.LogScheduled$2.run(LogScheduled.java:107)
+	at java.lang.Thread.run(Thread.java:745)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [select UNIX_TIMESTAMP(record_time) as record_time,status,request,domain from t_log_http_status_minute5 where record_time >= '2021-06-27 21:15:00' and record_time <= '2021-06-28 21:18:00' AND provider='conversant2' and ( domain ='opt-gok-cystatic.mjyx.com'or domain ='cdn.vidmix.xyz'or domain ='update2.farlight84miraclegames.com'or domain ='dog-static.boltrend.com'or domain ='static.kimi.com.tw'or domain ='clifile.dhgames.cn'or domain ='disgaea-static.neshpub.com'or domain ='svod.anycdn.cc') ORDER BY record_time]; Communications link failure
+
+The last packet successfully received from the server was 6,630,375 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 6,630,375 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:98)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:419)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:474)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:484)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForList(JdbcTemplate.java:510)
+	at com.asia.cdn.log.conversant.utils.JdbcUtil.GetHttpStatus(JdbcUtil.java:211)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil.getHttpStatus(DomainOrFlowUtil.java:487)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil$3.call(DomainOrFlowUtil.java:87)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil$3.call(DomainOrFlowUtil.java:84)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	... 3 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 6,630,375 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3559)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3459)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3900)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1381)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy108.executeQuery(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:458)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408)
+	... 12 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3469)
+	... 26 common frames omitted
+2021-06-29 21:59:34,132 ERROR synDataThread7 (ConversantAPIServiceImpl.java:140)- Service层异常信息: 域名不存在, 参数: cf.test.asia-cdn.com, 堆栈: 无
+2021-06-29 22:12:57,471 ERROR pool-9-thread-6 (DomainService.java:351)- [S145]  周期补数据,查询域名带宽流量，任务出错了：
+java.util.concurrent.ExecutionException: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [select UNIX_TIMESTAMP(record_time) as record_time,status,request,domain from t_log_http_status_minute5 where record_time >= '2021-06-28 21:25:00' and record_time <= '2021-06-29 21:24:00' AND provider='conversant2' and ( domain ='dl.x7sy.com'or domain ='pawa-static.neshpub.com'or domain ='www.revegame.com') ORDER BY record_time]; Communications link failure
+
+The last packet successfully received from the server was 830,582 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 830,582 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil.getCollectResponse(DomainOrFlowUtil.java:91)
+	at com.asia.cdn.log.conversant.service.DomainService.flow(DomainService.java:182)
+	at com.asia.cdn.log.conversant.service.DomainService.total(DomainService.java:142)
+	at com.asia.cdn.log.conversant.component.LogScheduled$2.run(LogScheduled.java:107)
+	at java.lang.Thread.run(Thread.java:745)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.springframework.dao.RecoverableDataAccessException: StatementCallback; SQL [select UNIX_TIMESTAMP(record_time) as record_time,status,request,domain from t_log_http_status_minute5 where record_time >= '2021-06-28 21:25:00' and record_time <= '2021-06-29 21:24:00' AND provider='conversant2' and ( domain ='dl.x7sy.com'or domain ='pawa-static.neshpub.com'or domain ='www.revegame.com') ORDER BY record_time]; Communications link failure
+
+The last packet successfully received from the server was 830,582 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.; nested exception is com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 830,582 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at org.springframework.jdbc.support.SQLExceptionSubclassTranslator.doTranslate(SQLExceptionSubclassTranslator.java:98)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:73)
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:81)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:419)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:474)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:484)
+	at org.springframework.jdbc.core.JdbcTemplate.queryForList(JdbcTemplate.java:510)
+	at com.asia.cdn.log.conversant.utils.JdbcUtil.GetHttpStatus(JdbcUtil.java:211)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil.getHttpStatus(DomainOrFlowUtil.java:487)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil$3.call(DomainOrFlowUtil.java:87)
+	at com.asia.cdn.log.conversant.utils.DomainOrFlowUtil$3.call(DomainOrFlowUtil.java:84)
+	at java.util.concurrent.FutureTask.run$$$capture(FutureTask.java:266)
+	at java.util.concurrent.FutureTask.run(FutureTask.java)
+	... 3 common frames omitted
+Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet successfully received from the server was 830,582 milliseconds ago.  The last packet sent successfully to the server was 0 milliseconds ago.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3559)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3459)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3900)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2527)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2680)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2483)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2441)
+	at com.mysql.jdbc.StatementImpl.executeQuery(StatementImpl.java:1381)
+	at sun.reflect.GeneratedMethodAccessor87.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:497)
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114)
+	at com.sun.proxy.$Proxy108.executeQuery(Unknown Source)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:458)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:408)
+	... 12 common frames omitted
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.jdbc.MysqlIO.readFully(MysqlIO.java:3011)
+	at com.mysql.jdbc.MysqlIO.reuseAndReadPacket(MysqlIO.java:3469)
+	... 26 common frames omitted
+2021-06-29 22:12:58,036 ERROR synDataThread3 (ConversantAPIServiceImpl.java:140)- Service层异常信息: 域名不存在, 参数: cf.test.asia-cdn.com, 堆栈: 无
+
