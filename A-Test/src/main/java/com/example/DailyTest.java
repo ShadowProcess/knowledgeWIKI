@@ -17,6 +17,7 @@ import java.util.stream.Stream;
 
 public class DailyTest {
 
+
     public final String s() {
         return "final修饰方法";
     }
@@ -71,9 +72,8 @@ public class DailyTest {
 
         //TODO 方法中也可以写内部类
         class AC {
-            private String s = "方法中的内部类";
-
             public void s() {
+                String s = "方法中的内部类";
                 System.out.println(s);
             }
         }
