@@ -14,7 +14,7 @@ public class AsyncController {
     @GetMapping("ss")
     public String s(){
         asyncService.ss();
-        return "s";
+        return "请求Async方法";
     }
 
 

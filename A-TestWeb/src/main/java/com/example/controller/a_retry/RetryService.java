@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 public class RetryService {
 
 
-
     @Async
     @Retryable(value = {Exception.class}, maxAttempts = 3, backoff = @Backoff(delay = 3000))
     public void ss() throws Exception {
@@ -19,6 +18,7 @@ public class RetryService {
     }
 
 
+    //如果Retryable方法，重试后依然执行失败时，调用该方法。
     @Recover
     public void recover(Exception e) {
         System.out.println("Retryable fail call...");

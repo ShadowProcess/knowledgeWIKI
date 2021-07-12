@@ -14,6 +14,6 @@ public class RetryController {
     @GetMapping("sss")
     public String sss() throws Exception {
         retryService.ss();
-        return "ss";
+        return "请求Retryable方法";
     }
 }

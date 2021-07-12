@@ -13,6 +13,6 @@ public class AsyncService {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("yi bu");
+        System.out.println("异步执行！！！");
     }
 }
