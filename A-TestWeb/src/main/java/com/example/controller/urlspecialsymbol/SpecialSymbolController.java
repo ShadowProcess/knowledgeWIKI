@@ -1,4 +1,4 @@
-package com.example.controller.specialsymbol;
+package com.example.controller.urlspecialsymbol;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
