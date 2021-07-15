@@ -25,7 +25,7 @@ import java.util.stream.Collectors;
 
 //注：先说下思路，可以直接在下方写java代码，可以使用任何内置方法，点击左上角运行按钮随时调试
 
-public class A {
+public class TwoDimensionalArray {
     public static void main(String[] args) {
         List<Integer> list = new ArrayList<>();
         Random random = new Random();
