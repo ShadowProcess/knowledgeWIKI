@@ -18,6 +18,10 @@ import java.util.stream.Stream;
 public class DailyTest {
 
 
+    @Test
+    public void ssss1(){
+    }
+
     public final String s() {
         return "final修饰方法";
     }
